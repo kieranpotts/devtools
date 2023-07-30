@@ -1,0 +1,7 @@
+= Tools
+
+''''
+
+Copyright © 2020-2023 Kieran Potts – All rights reserved
+
+The executable binaries redistributed via this repository are copyright their respective authors and may be subject to alternative free and open source software licenses.
