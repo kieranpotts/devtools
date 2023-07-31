@@ -21,6 +21,7 @@ This repository encapsulates configuration for the following tools. All are OPTI
 - https://ohmyposh.dev/[Oh-My-Posh]
 - https://code.visualstudio.com/[Visual Studio Code]
 - https://github.com/microsoft/terminal[Windows Terminal]
+- https://www.sublimemerge.com/[Sublime Merge]
 
 Windows binaries are bundled for `delta`, `lazygit` and `oh-my-posh`. To use these programs from the command line, add this repository's `bin` directory to your system's `PATH` environment variable. Other required programs should be installed manually.
 
@@ -52,7 +53,14 @@ New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Roaming\Code\User
 New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Roaming\Code\User\snippets\global.code-snippets" -Target "C:\path\to\tools\etc\vscode\global.code-snippets" -Force
 
 New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Roaming\lazygit\config.yml" -Target "C:\path\to\tools\etc\lazygit\config.yml" -Force
+
+New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Roaming\Sublime Merge\Packages\User\Preferences.sublime-settings" -Target "C:\path\to\tools\etc\sublime-merge\Preferences.sublime-settings" -Force
 ----
+
+////
+TODO: Edit config for Sublime Merge
+TODO: Edit config for Sublime Text
+////
 
 ////
 TODO: Add equivalent documentation for Unix-like systems.

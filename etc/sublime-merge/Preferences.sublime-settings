@@ -1,0 +1,9 @@
+{
+  "side_bar_layout": "columns",
+  "font_face": "Hack",
+  "font_size": 12,
+  "theme": "auto",
+  "diff_style": "side-by-side",
+  "render_commit_dialog_message_at_top": false,
+  "tab_size": 2
+}
