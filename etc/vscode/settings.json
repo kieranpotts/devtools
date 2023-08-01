@@ -99,8 +99,10 @@
 
   // Disable guidelines to indicate there's no maximum line length for AsciiDoc
   // files, but maintain the default bounded wrap in the editor.
-  "[asciidoc]":{
-    "editor.rulers": []
+  "[asciidoc]": {
+    "editor.rulers": [],
+    "editor.wordWrap": "bounded",
+    "editor.wordWrapColumn": 120,
   },
 
   // Don't implement word wrap for HTML documents (wrap at the viewport), and
@@ -113,8 +115,10 @@
 
   // Disable guidelines to indicate there's no maximum line length for Markdown
   // files, but maintain the default bounded wrap in the editor.
-  "[markdown]":{
-    "editor.rulers": []
+  "[markdown]": {
+    "editor.rulers": [],
+    "editor.wordWrap": "bounded",
+    "editor.wordWrapColumn": 120,
   },
 
   // Auto-save changes after 5 seconds inactivity.
