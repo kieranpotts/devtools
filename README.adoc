@@ -1,4 +1,4 @@
-= Tools
+= 🔒 Tools
 
 This is a repository of binaries and configurations for some of my development tools. This repository is maintained to facilitate the backing up and restoration of my local development environment configuration, and to ease the synchronization and porting of my dev tools between different computers. This repository includes the following:
 
