@@ -177,8 +177,8 @@
     "editorInfo.foreground": "#00aaff88",
 
     // Make the line highlight color very subtle.
-    "editor.lineHighlightBackground": "#f9f9f9",
-    "editor.lineHighlightBorder": "#f9f9f9",
+    // "editor.lineHighlightBackground": "#f9f9f9",
+    // "editor.lineHighlightBorder": "#f9f9f9",
 
     // Matches "KP" theme in Windows Terminal settings:
     "terminal.background": "#282C34",
@@ -204,7 +204,7 @@
   },
 
   // Themes.
-  "workbench.colorTheme": "GitHub Light Default",
+  "workbench.colorTheme": "GitHub Dark",
   "workbench.iconTheme": "vs-minimal",
 
   // Shrink tab size as the available space decreases.
