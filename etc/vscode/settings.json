@@ -1,4 +1,5 @@
 {
+
   // Disable the breadcrumb trail across the top of editors.
   "breadcrumbs.enabled": false,
 
@@ -93,6 +94,18 @@
   // Wrap long lines at the viewport but up to maximum of 120 characters.
   "editor.wordWrap": "bounded",
   "editor.wordWrapColumn": 120,
+
+  // AsciiDoc line wrap config must be defined separately.
+  "[asciidoc]": {
+    "editor.wordWrap": "bounded",
+    "editor.wordWrapColumn": 120
+  },
+
+  // Markdown line wrap config must be defined separately.
+  "[markdown]": {
+    "editor.wordWrap": "bounded",
+    "editor.wordWrapColumn": 120
+  },
 
   // Don't show extension recommendations in toast popups in the corner.
   "extensions.ignoreRecommendations": true,
@@ -213,4 +226,5 @@
   // built-in `tsc` type checker instance, which will infer type information from
   // the code and JSDoc-style notations.
   "js/ts.implicitProjectConfig.checkJs": false
+
 }
