@@ -1,35 +1,44 @@
 = 🔒 Tools
 
-This is a repository of binaries and configurations for some of my development tools. This repository is maintained to facilitate the backing up and restoration of my local development environment configuration, and to ease the synchronization and porting of my dev tools between different computers. This repository includes the following:
+This is a repository of binaries and configurations for my personal development environment.
 
-- Terminal customization using [Oh-My-Posh](https://ohmyposh.dev/)
-- VS Code user-level settings, including theme and keybindings
-- Windows Terminal configuration
-- Binaries for command line utilities like [lazygit](https://github.com/jesseduffield/lazygit)
+This repository is maintained to facilitate the backing up and restoration of my local development environment configuration, and to ease the synchronization and porting of my development tools between different computers.
 
-These configurations extend from my https://github.com/kieranpotts/dotfiles[dotfiles], which MUST be installed first on new machines.
+This repository includes the following:
+
+- Terminal customization using https://ohmyposh.dev/[Oh-My-Posh]
+- Binaries for command line utilities like https://github.com/jesseduffield/lazygit[lazygit]
+- Windows Terminal startup batch script
+- VS Code user-level settings including theme and keybindings
+- VS Code workspace configuration files
+
+This a private repository but the configurations compliment my public https://github.com/kieranpotts/dotfiles[dotfiles].
 
 == Documentation
 
 === Requirements
 
-This repository encapsulates configuration for the following tools. All are OPTIONAL.
+This repository encapsulates configuration for the following tools, which SHOULD be pre-installed on the local filesystem. All are OPTIONAL.
 
-- https://github.com/dandavison/delta[Delta] (less-based pager with syntax highlighting)
+- https://github.com/dandavison/delta[Delta]
 - https://git-scm.com/[Git]
 - https://github.com/jesseduffield/lazygit[LazyGit]
 - https://ohmyposh.dev/[Oh-My-Posh]
+- https://www.sublimemerge.com/[Sublime Merge]
 - https://code.visualstudio.com/[Visual Studio Code]
 - https://github.com/microsoft/terminal[Windows Terminal]
-- https://www.sublimemerge.com/[Sublime Merge]
 
-Windows binaries are bundled for `delta`, `lazygit` and `oh-my-posh`. To use these programs from the command line, add this repository's `bin` directory to your system's `PATH` environment variable. Other required programs should be installed manually.
+Windows binaries for `delta`, `lazygit` and `oh-my-posh` are included in this repository. These can be enabled simply by adding this repository's `bin` directory to your system's `PATH` environment variable. Fresh binaries can be downloaded for these programs from the following links. All other programs MUST be installed manually.
+
+* https://github.com/dandavison/delta/releases
+* https://github.com/jesseduffield/lazygit/releases
+* https://github.com/JanDeDobbeleer/oh-my-posh/releases
 
 === Installation
 
 ==== 1. Install the fonts
 
-The configurations for VSCode and Windows Terminal depend on the following fonts being installed locally:
+The configurations for VS Code and Windows Terminal depend on the following fonts being installed locally:
 
 * Hack
 * Hack Nerd Font
@@ -38,53 +47,61 @@ Hack is a programming font. It adds special ligatures that merge multiple consec
 
 Both these fonts are included in the `./vendor/fonts` directory and need to be installed manually. The Hack Nerd Font is the Windows-compatible version.
 
-==== 2. Add the `bin` directory to your system PATH environment variable
+==== 2. Create symlinks to the configuration files
 
-This repository's `bin` directory contains various executable programs including `oh-my-posh` and `lazygit` binaries (for Windows only). It is RECOMMENDED you add the `bin` directory to your system PATH environment variable, which will make these programs available from the command line.
+Configuration files are included for various development tools, including Visual Studio Code and Windows Terminal, for easy portability between machines.
 
-==== 3. Create symlinks to the configuration files
+To use these configuration, you will need to create symlinks to them. On Windows, run Windows Powershell in administrator mode and execute the following commands, changing the filesystem paths as required.
 
-Configuration files are included for various development tools, including Visual Studio Code and Windows Terminal, for easy portability between machines. You will need to create symlinks to enable these configurations. Run Windows Powershell in administrator mode and execute the following commands, changing the filesystem paths as required:
-
+.LazyGit
 [source,powershell]
 ----
-New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Local\Packages\Microsoft.WindowsTerminal_[hash]\LocalState\settings.json" -Target "C:\path\to\tools\etc\wt\settings.json" -Force
+New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Roaming\lazygit\config.yml" -Target "C:\path\to\tools\etc\lazygit\config.yml" -Force
+----
 
+.Sublime Merge
+[source,powershell]
+----
+New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Roaming\Sublime Merge\Packages\User\Preferences.sublime-settings" -Target "C:\path\to\tools\etc\sublime-merge\Preferences.sublime-settings" -Force
+----
+
+.Visual Studio Code
+[source,powershell]
+----
 New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Roaming\Code\User\settings.json" -Target "C:\path\to\tools\etc\vscode\settings.json" -Force
 
 New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Roaming\Code\User\keybindings.json" -Target "C:\path\to\tools\etc\vscode\keybindings.json" -Force
 
 New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Roaming\Code\User\snippets\global.code-snippets" -Target "C:\path\to\tools\etc\vscode\global.code-snippets" -Force
+----
 
-New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Roaming\lazygit\config.yml" -Target "C:\path\to\tools\etc\lazygit\config.yml" -Force
-
-New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Roaming\Sublime Merge\Packages\User\Preferences.sublime-settings" -Target "C:\path\to\tools\etc\sublime-merge\Preferences.sublime-settings" -Force
+.Windows Terminal
+[source,powershell]
+----
+New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Local\Packages\Microsoft.WindowsTerminal_[hash]\LocalState\settings.json" -Target "C:\path\to\tools\etc\wt\settings.json" -Force
 ----
 
 ////
 TODO: Edit config for Sublime Merge
 TODO: Edit config for Sublime Text
-////
-
-////
 TODO: Add equivalent documentation for Unix-like systems.
 ////
 
-==== 4. Enable the shell theme
+==== 3. Enable the shell theme
 
 The process for enabling the custom Oh-My-Posh theme is different. First, create a link to the `etc/oh-my-posh` directory from `~/oh-my-posh` in the home directory of your system user. On Windows, use Powershell running with administrator privileges.
-
-[source,sh]
-----
-ln -s path/to/etc/oh-my-posh ~/oh-my-posh
-----
 
 [source,powershell]
 ----
 New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\oh-my-posh" -Target "C:\path\to\tools\etc\oh-my-posh" -Force
 ----
 
-Add the following to your `.bash_profile` (use the `local.bash_profile` installed from the dotfiles):
+[source,sh]
+----
+ln -s path/to/etc/oh-my-posh ~/oh-my-posh
+----
+
+Next, add the following to your `.bash_profile`. Use the `local.bash_profile` file installed from the dotfiles repo:
 
 [source,sh]
 ----
@@ -115,30 +132,25 @@ NOTE: `wget` is not pre-installed in the Git Bash emulator. Download the https:/
 
 Oh My Posh is highly customizable. See https://ohmyposh.dev/docs/[the website] for more options. As a cross-platform framework, configurations can be shared between shells. So you can expose your Powershell, Git Bash and WSL environments to the same configuration, ensuring a consistent prompt in every shell environment running in every terminal program.
 
-==== 5. GitHub Codespaces configuration (optional step)
+////
+TODO: Add docs for configuring WSL.
+TODO: Add docs for configuring PowerShell, eg to use same Oh-My-Posh config
+////
+
+==== 4. GitHub Codespaces configuration (optional step)
 
 Go to your https://github.com/settings/codespaces[GitHub Codespaces options] and enable the following setting. This will use your VS Code Settings in GitHub Codespaces.
 
 image::github-enable-settings-sync.png[]
 
-=== Updating
+=== Run scripts
 
-This repository includes Windows binaries for the following utilities:
+The contents of the `run` directory contain various scripts and configurations to automate the management of the local development environment. The run scripts are:
 
-* `delta` (a pager with syntax highlighting)
-* `lazygit` (Git client)
-* `oh-my-posh` (terminal customization framework)
-
-Fresh binaries can be downloaded from the following links:
-
-* https://github.com/dandavison/delta/releases
-* https://github.com/jesseduffield/lazygit/releases
-* https://github.com/JanDeDobbeleer/oh-my-posh/releases
-
-////
-TODO: Add docs for configuring WSL.
-TODO: Add docs for configuring PowerShell, eg to use same Oh-My-Posh config
-////
+* `install.sh`: Bash script to automatically clone all code repositories.
+* `sync.sh`: Bash script to automatically synchronize the main branches of all local repositories with their tracked upstream branches.
+* `personal.code-workspace`: Workspace configuration for all code repositories.
+* `wt.bat`: Startup script for Windows Terminal, loads pre-configured tabs.
 
 ''''
 
