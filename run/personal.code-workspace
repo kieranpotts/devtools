@@ -42,6 +42,9 @@
       // Live Share – Pair programme and collaborate in real-time.
       "ms-vsliveshare.vsliveshare",
 
+      // Lorem Ipsum — Adds commands to generate dummy text.
+      "tyriar.lorem-ipsum",
+
       // Remote - SSH: Editing Configuration Files – Edit SSH configuration files.
       "ms-vscode-remote.remote-ssh-edit",
 
