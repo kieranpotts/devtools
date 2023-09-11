@@ -1,5 +1,4 @@
 {
-
   // Disable the breadcrumb trail across the top of editors.
   "breadcrumbs.enabled": false,
 
@@ -13,14 +12,14 @@
   // Use the latest version of VS Code's new (experimental) diff editor.
   "diffEditor.experimental.useVersion2": true,
 
-  // Hide unchanged regions in the new diff editor.
-  "diffEditor.experimental.collapseUnchangedRegions": true,
-
   // Mark inline deletions and insertions.
   "diffEditor.experimental.showEmptyDecorations": true,
 
   // Markup blocks of code that have moved to different lines.
   "diffEditor.experimental.showMoves": true,
+
+  // Automatically collapse regions of code that are not relevant to the merge.
+  "diffEditor.hideUnchangedRegions.enabled": true,
 
   // Disable various auto-complete mechanisms in the code editor.
   "editor.autoClosingBrackets": "never",
@@ -40,14 +39,16 @@
   "editor.fontSize": 13,
   "editor.fontWeight": "400",
 
-  // Enable various auto-formatting mechanisms in the code editor.
-  "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
-  "editor.formatOnType": true,
+  // Disable all auto-formatting mechanisms by default. This means projects MUST
+  // enable these features on a per-repo basis.
+  "editor.formatOnPaste": false,
+  "editor.formatOnSave": false,
+  "editor.formatOnType": false,
 
-  // Enable auto-fixes.
+  // Disable auto-fixes by default, so also requiring individual projects to
+  // explicitly opt-in to this feature.
   "editor.codeActionsOnSave": {
-    "source.fixAll": true
+    "source.fixAll": false
   },
 
   // Render guidelines for indentation and bracket pairs.
@@ -68,10 +69,9 @@
   "editor.renderControlCharacters": true,
   "editor.renderWhitespace": "all",
 
-  // Render vertical guidelines at 80, 100 120 columns. Code lines SHOULD be
-  // less than 80 characters long and MUST be less than 100 characters. Comment
-  // lines MAY be a little longer, up to 120 characters.
-  "editor.rulers": [80, 100, 120],
+  // Disable vertical guidelines by default. These SHOULD be configured on a
+  // per-repository basis.
+  "editor.rulers": [],
 
   // Prioritize snippet suggestions over all other hints. Pre-select the first.
   "editor.snippetSuggestions": "none",
@@ -80,45 +80,22 @@
   // Turn on tab completion for snippets.
   "editor.tabCompletion": "onlySnippets",
 
-  // Transform tab indents to two spaces. Enforce this – don't allow VS Code
-  // to override based on what it thinks is the existing indentation format of
-  // each file.
+  // By default, do not transform tabs to spaces. The purpose here is to
+  // enforce this policy on a repo-by-repo basis.
   "editor.detectIndentation": false,
-  "editor.insertSpaces": true,
-  "editor.tabSize": 2,
+  "editor.insertSpaces": false,
 
   // Rules for highlighting special unicode characters.
   "editor.unicodeHighlight.allowedCharacters": {
     "–": true // Don't warn about use of en-dash (–) characters in code.
   },
 
-  // Wrap long lines at the viewport up to maximum of 120 characters.
+  // Wrap long lines at the viewport but up to maximum of 120 characters.
   "editor.wordWrap": "bounded",
   "editor.wordWrapColumn": 120,
 
-  // Disable guidelines to indicate there's no maximum line length for AsciiDoc
-  // files, but maintain the default bounded wrap in the editor.
-  "[asciidoc]": {
-    "editor.rulers": [],
-    "editor.wordWrap": "bounded",
-    "editor.wordWrapColumn": 120
-  },
-
-  // Don't implement word wrap for HTML documents (wrap at the viewport), and
-  // disable guidelines to indicate there should not be any imposition of
-  // maximum line length for this file type.
-  "[html]": {
-    "editor.rulers": [],
-    "editor.wordWrap": "on"
-  },
-
-  // Disable guidelines to indicate there's no maximum line length for Markdown
-  // files, but maintain the default bounded wrap in the editor.
-  "[markdown]": {
-    "editor.rulers": [],
-    "editor.wordWrap": "bounded",
-    "editor.wordWrapColumn": 120
-  },
+  // Don't show extension recommendations in toast popups in the corner.
+  "extensions.ignoreRecommendations": true,
 
   // Auto-save changes after 5 seconds inactivity.
   "files.autoSave": "afterDelay",
@@ -134,7 +111,7 @@
   "git.enableSmartCommit": true, // Commit all working changes when nothing is yet staged.
   "git.enableStatusBarSync": false, // Remove sync control from status bar
   "git.followTagsWhenSync": true, // Sync tags, too.
-  "git.mergeEditor": true, // Use VSCode's new merge editor for resolving conflicts.
+  "git.mergeEditor": true, // Use VS Code's new merge editor for resolving conflicts.
   "git.pruneOnFetch": true, // Automatically prune references to deleted upstream branches.
   "git.rebaseWhenSync": true, // Enforce rebase strategy on sync, to maintain linear history.
   "git.repositoryScanMaxDepth": 3, // Scan for Git repositories in sub-folders to a max depth of 3.
@@ -157,20 +134,20 @@
   // Adds "Open in Windows Terminal" to right-click menu of Explorer items.
   "terminal.explorerKind": "external",
 
-  // Use VSCode's non-native title bar with the command centre in the middle.
+  // Use VS Code's non-native title bar with the command centre in the middle.
   "window.titleBarStyle": "custom",
   "window.commandCenter": true,
 
-  // Use VSCode's non-native dialog windows.
+  // Use VS Code's non-native dialog windows.
   "window.dialogStyle": "custom",
 
   // Add a burger icon to the side bar to open the menu.
   "window.menuBarVisibility": "compact",
 
-  // Open new VSCode windows maximized.
+  // Open new VS Code windows maximized.
   "window.newWindowDimensions": "maximized",
-
   "workbench.colorCustomizations": {
+
     // Use lighter colors for those squiggly underlines.
     "editorError.foreground": "#ff000077",
     "editorWarning.foreground": "#ffee0099",
@@ -180,7 +157,7 @@
     // "editor.lineHighlightBackground": "#f9f9f9",
     // "editor.lineHighlightBorder": "#f9f9f9",
 
-    // Matches "KP" theme in Windows Terminal settings:
+    // Matches "Hacks" theme in Windows Terminal settings:
     "terminal.background": "#282C34",
     "terminal.foreground": "#DCDFE4",
     "terminalCursor.background": "#FFFFFF",
@@ -219,6 +196,21 @@
 
   // Zen mode.
   "zenMode.centerLayout": false,
-  "zenMode.hideTabs": false
+  "zenMode.hideTabs": false,
 
+  // LANGUAGE-SPECIFIC SETTINGS:
+
+  // By default, disable VS Code's built-in formatter and validation for JavaScript
+  // syntax. Projects are therefore REQUIRED to enable third party formatters and
+  // validators, such as ESLint, and to configure those tools specifically for
+  // for compatibility with the project's syntax.
+  "javascript.format.enable": false,
+  "javascript.validate.enable": false,
+
+  // Disable the TypeScript type checker in all JavaScript files by default.
+  // (This is the default behavior anyway.) Disabling this means that JavaScript
+  // files MUST include a `@ts-check` comment at the top to opt-in to VS Code's
+  // built-in `tsc` type checker instance, which will infer type information from
+  // the code and JSDoc-style notations.
+  "js/ts.implicitProjectConfig.checkJs": false
 }
