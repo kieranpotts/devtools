@@ -34,7 +34,7 @@ for repo in ${repos[@]}; do
 
   # Suppress output, but exit code will be 0 if the command succeeds
   # (which means the directory is already a Git repository).
-  git rev-parse 2> /dev/null
+  (cd ${local_path}; git rev-parse 2> /dev/null)
   if [ $? == 0 ]; then
     echo "Already a Git repository, skipping..."
     continue
@@ -42,15 +42,18 @@ for repo in ${repos[@]}; do
 
   if find "${local_path}" -mindepth 1 -print -quit 2> /dev/null | grep -q .; then
     echo "Directory is not empty, initializing as a Git repo"
-    git init
+    (cd ${local_path}; git init)
     continue
   fi
 
   echo "Cloning ${remote_url}"
-  git clone ${remote_url}
+  (cd ${local_path}; git clone ${remote_url} .)
 
   echo "Switching to ${main_branch}"
-  git switch ${main_branch}
+  (cd ${local_path}; git switch ${main_branch})
+
+  echo "Setting Git user name and email for repo"
+  (cd ${local_path}; git config user.name "Kieran Potts"; git config user.email "hello@kieranpotts.com")
 
 done
 

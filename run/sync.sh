@@ -30,38 +30,44 @@ for repo in ${repos[@]}; do
 
   # Suppress output, but exit code will be 0 if the command succeeds
   # (which means the directory is a Git repository).
-  git rev-parse 2> /dev/null
+  echo ${local_path}
+  (cd ${local_path}; git rev-parse 2> /dev/null)
   if [ $? != 0 ]; then
     echo "Not a Git repository, skipping..."
     continue
   fi
 
-  # Stash anything dirty in the working tree.
-  initial_stash_count=$(git rev-list --walk-reflogs --count refs/stash 2> /dev/null)
-  git stash push --include-untracked
+  (
+    cd ${local_path}
 
-  initial_branch=$(git branch --show-current)
+    # Stash anything dirty in the working tree.
+    initial_stash_count=$(git rev-list --walk-reflogs --count refs/stash 2> /dev/null)
+    git stash push --include-untracked
 
-  if [ "$initial_branch" != "${main_branch}" ]; then
-    echo "Switching to ${main_branch}"
-    git switch ${main_branch}
-  fi
+    initial_branch=$(git branch --show-current)
 
-  upstream_branch=$(git rev-parse --abbrev-ref --symbolic-full-name @{upstream})
+    if [ "$initial_branch" != "${main_branch}" ]; then
+      echo "Switching to ${main_branch}"
+      git switch ${main_branch}
+    fi
 
-  if [ ! -z "$upstream_branch" ]; then
-    git pull --rebase --prune
-    git push --follow-tags
-  else
-    git push --set-upstream origin HEAD --follow-tags
-  fi
+    upstream_branch=$(git rev-parse --abbrev-ref --symbolic-full-name @{upstream})
 
-  git switch ${initial_branch}
+    if [ ! -z "$upstream_branch" ]; then
+      git pull --rebase --prune
+      git push --follow-tags
+    else
+      git push --set-upstream origin HEAD --follow-tags
+    fi
 
-  new_stash_count=$(git rev-list --walk-reflogs --count refs/stash 2> /dev/null)
-  if [ "${new_stash_count:-0}" != "${initial_stash_count:-0}" ]; then
-    git stash pop
-  fi
+    git switch ${initial_branch}
+
+    new_stash_count=$(git rev-list --walk-reflogs --count refs/stash 2> /dev/null)
+    if [ "${new_stash_count:-0}" != "${initial_stash_count:-0}" ]; then
+      git stash pop
+    fi
+
+  )
 
 done
 
