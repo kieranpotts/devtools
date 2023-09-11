@@ -1,0 +1,259 @@
+{
+
+  "extensions": {
+
+    // The following are general-purpose extensions for VS Code, which will be
+    // useful in the context of most projects. Language servers and tool-
+    // specific extensions, such as the official Python extension and wrappers
+    // for JavaScript tools such as ESLint, SHOULD instead be added to the
+    // `.vscode/extensions.js` file in the root of individual projects.
+    //
+    // To load the recommended extensions, go to the *Workspace Recommendations*
+    // section of VS Code's *Extensions* panel. See also:
+    //
+    // https://code.visualstudio.com/docs/editor/extension-marketplace#_workspace-recommended-extensions
+
+    "recommendations": [
+
+      // Code Spell Checker – Spelling checker for all source code.
+      "streetsidesoftware.code-spell-checker",
+
+      // Draw.io – Edit images with draw.io directly inside VS Code.
+      "hediet.vscode-drawio",
+
+      // Fold Plus – Additional code folding commands.
+      "dakara.dakara-foldplus",
+
+      // Git History – `git log` GUI plus a minimal set of other `git` operations.
+      "donjayamanne.githistory",
+
+      // GitHub Codespaces – Power-up instant remote development environments.
+      "github.codespaces",
+
+      // GitHub Pull Requests and Issues – Browser GitHub PRs and issues directly from VS Code.
+      "github.vscode-pull-request-github",
+
+      // GitHub Repositories – Remotely browse and edit any GitHub repository.
+      "GitHub.remotehub",
+
+      // GitHub Theme – GitHub-style theme for VS Code.
+      "GitHub.github-vscode-theme",
+
+      // Live Share – Pair programme and collaborate in real-time.
+      "ms-vsliveshare.vsliveshare",
+
+      // Remote - SSH: Editing Configuration Files – Edit SSH configuration files.
+      "ms-vscode-remote.remote-ssh-edit",
+
+      // Remote Repositories – Remotely browse and edit Git repositories.
+      "ms-vscode.remote-repositories",
+
+      // Render Line Endings – Displays line ending symbols and other white space characters.
+      "medo64.render-crlf",
+
+      // Restore Editors – Quickly save and restore groups of editors (ie tabs).
+      "amodio.restore-editors",
+
+      // SVG – Preview and edit SVG files.
+      "jock.svg",
+
+      // Todo Tree – Browse TODO, FIXME and other comments.
+      "gruntfuggly.todo-tree",
+
+      // vscode-pdf – Render PDF documents in VS Code.
+      "tomoki1207.pdf"
+    ]
+
+  },
+
+  "folders": [
+    {
+      "name": "archive 🔒",
+      "path": "../../../personal/archive"
+    },
+    {
+      "name": "blog",
+      "path": "../../../personal/blog"
+    },
+    {
+      "name": "cheats",
+      "path": "../../../personal/cheats"
+    },
+    {
+      "name": "dotfiles",
+      "path": "../../../personal/dotfiles"
+    },
+    {
+      "name": "garden",
+      "path": "../../../personal/garden"
+    },
+    {
+      "name": "kieranpotts",
+      "path": "../../../personal/kieranpotts"
+    },
+    {
+      "name": "library 🔒",
+      "path": "../../../personal/library"
+    },
+    {
+      "name": "linters ✍",
+      "path": "../../../personal/linters"
+    },
+    {
+      "name": "process ✍",
+      "path": "../../../personal/process"
+    },
+    {
+      "name": "standards ✍",
+      "path": "../../../personal/standards"
+    },
+    {
+      "name": "tools 🔒",
+      "path": "../../../personal/tools"
+    },
+    {
+      "name": "hacksjs/decisions",
+      "path": "../../../projects/hacksjs/decisions"
+    },
+    {
+      "name": "hacksjs/hacksjs ✍",
+      "path": "../../../projects/hacksjs/hacksjs"
+    },
+    {
+      "name": "nirvarnia/decisions",
+      "path": "../../../projects/nirvarnia/decisions"
+    },
+    {
+      "name": "nirvarnia/nirvarnia ✍",
+      "path": "../../../projects/nirvarnia/nirvarnia"
+    },
+    {
+      "name": "nirvarnia/prototypes",
+      "path": "../../../projects/nirvarnia/prototypes"
+    },
+    {
+      "name": "srcflow/srcflow ✍",
+      "path": "../../../projects/srcflow/srcflow"
+    }
+  ],
+
+  "settings": {
+
+    // BUILT-IN SETTINGS
+
+    // Remove some repositories from VS Code's built-in Git GUI.
+    "git.ignoredRepositories": [],
+
+    // Prompt for user confirmation before committing to certain "protected"
+    // branches.
+    "git.branchProtection": [
+      //"dev"
+    ],
+
+    // EXTENSION SETTINGS
+
+    // AsciiDoc extension configuration.
+    // https://marketplace.visualstudio.com/items?itemName=asciidoctor.asciidoctor-vscode
+    "asciidoc.preview.refreshInterval": 0,
+    "asciidoc.preview.useEditorStyle": false,
+    "asciidoc.preview.scrollPreviewWithEditor": false,
+    "asciidoc.preview.scrollEditorWithPreview": false,
+    "asciidoc.preview.markEditorSelection": false,
+    "asciidoc.preview.doubleClickToSwitchToEditor": false ,
+
+    // Render line ending extension.
+    // https://marketplace.visualstudio.com/items?itemName=medo64.render-crlf
+
+    // Character used to display LF (line-feed) line ending
+    // (aka Linux/Mac line ending).
+    "code-eol.newlineCharacter": "↓",
+
+    // Character used to display CR (carriage-return) line ending
+    // (aka old Macintosh line ending).
+    "code-eol.returnCharacter" : "←",
+
+    // Character used to display CRLF (carriage-return, line-feed) line ending
+    // (aka Windows line ending).
+    "code-eol.crlfCharacter"   : "↵",
+
+    // Spell check language. For consistency with our technical documentation,
+    // we write in American English.
+    "cSpell.language": "en-US",
+
+    // File paths to not spell check.
+    "cSpell.ignorePaths": [
+      ".git",
+      ".vscode",
+      "*.log"
+    ],
+
+    // Disable spelling errors on compound words like 'errormessage' and
+    // 'builddir'. This setting makes the cSpell spell check unreliable and so
+    // we must delimit words in code, eg 'errorMessage` or `build_dir`.
+    "cSpell.allowCompoundWords": false,
+
+    // Custom dictionary.
+    "cSpell.customDictionaries": {
+      "personalDictionary": {
+        "name": "personalDictionary",
+        "path": "./inc/cspell/dictionary.txt",
+        "scope": "workspace",
+        "addWords": true
+      }
+    },
+
+    // Spellings to always ignore. These are not real words, but are names or
+    // identifiers of some kind: people's names, domain names, URL slugs, etc.
+    "cSpell.ignoreWords": [
+      "hackscorp",
+      "hacksjs",
+      "kieran",
+      "kieranpotts",
+      "nirvarnia",
+      "potts",
+    ],
+
+    // Spellings always considered incorrect.
+    // This is useful for common spelling errors.
+    // For example, "hte" should be "the".
+    "cSpell.flagWords": [
+      "hte",
+      "vscode"
+    ],
+
+    // Settings for the vscode-jest extension.
+    // https://github.com/jest-community/vscode-jest
+
+    // Annoyingly, if this extension is enabled in a multi-root workspace, by default
+    // Jest will try to find a test suite configuration in every project in the workspace,
+    // and reveal terminal errors for every project it does not. So we must explicitly
+    // DISABLE the Jest extension for all repos in which it is not needed.
+    "jest.disabledWorkspaceFolders": [
+      "archive 🔒",
+      "blog",
+      "dotfiles",
+      "garden",
+      "kieranpotts",
+      "library 🔒",
+      "process ✍",
+      "standards ✍",
+      "tools 🔒",
+      "hacksjs/decisions",
+      "hacksjs/hacksjs ✍",
+      "nirvarnia/decisions",
+      "nirvarnia/nirvarnia ✍",
+      "nirvarnia/prototypes",
+      "srcflow/srcflow ✍"
+    ],
+
+    // Configuration for the ToDo Tree extension.
+    // https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree
+
+    // Use only `TODO` notations. This setting works only in workspace roots.
+    "todo-tree.general.tags": [
+      "TODO",
+    ]
+
+  }
+
+}
