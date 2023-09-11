@@ -41,7 +41,7 @@
   {
     "defaults":
     {
-      "colorScheme": "KP",
+      "colorScheme": "Hacks",
       "font":
       {
         "face": "Hack NF",
@@ -53,7 +53,7 @@
     "list":
     [
       {
-        "colorScheme": "KP",
+        "colorScheme": "Hacks",
         "font":
         {
           "face": "Hack NF",
@@ -65,7 +65,7 @@
         "padding": "20"
       },
       {
-        "colorScheme": "KP",
+        "colorScheme": "Hacks",
         "font":
         {
           "face": "Hack NF",
@@ -77,7 +77,7 @@
         "padding": "20"
       },
       {
-        "colorScheme": "KP",
+        "colorScheme": "Hacks",
         "font":
         {
           "face": "Hack NF",
@@ -90,7 +90,7 @@
         "source": "Windows.Terminal.Azure"
       },
       {
-        "colorScheme": "KP",
+        "colorScheme": "Hacks",
         "font":
         {
           "face": "Hack NF",
@@ -103,7 +103,7 @@
         "source": "Git"
       },
       {
-        "colorScheme": "KP",
+        "colorScheme": "Hacks",
         "font":
         {
           "face": "Hack NF",
@@ -120,7 +120,7 @@
   "schemes":
   [
     {
-      "name": "KP",
+      "name": "Hacks",
       "background": "#282C34",
       "selectionBackground": "#FFFFFF",
       "cursorColor": "#FFFFFF",
