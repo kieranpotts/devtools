@@ -234,6 +234,7 @@
     "jest.disabledWorkspaceFolders": [
       "archive 🔒",
       "blog",
+      "cheats",
       "dotfiles",
       "garden",
       "kieranpotts",
