@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# Note: the "library" repo has been removed to save local disk space. This repo is best managed directly upstream.
-repos=("archive" "blog" "cheats" "dotfiles" "garden" "kieranpotts" "linters" "process" "standards" "tools" "hacksjs/decisions" "hacksjs/hacksjs" "nirvarnia/decisions" "nirvarnia/nirvarnia" "nirvarnia/prototypes" "srcflow/srcflow")
+repos=("archive" "blog" "cheats" "dotfiles" "garden" "kieranpotts" "library" "linters" "process" "standards" "tools" "hacksjs/decisions" "hacksjs/hacksjs" "nirvarnia/decisions" "nirvarnia/nirvarnia" "nirvarnia/prototypes" "srcflow/srcflow")
 
 # Local paths are relative to the user's `~/dev` root.
 declare -A local_paths
@@ -11,6 +10,7 @@ local_paths["cheats"]="personal/cheats"
 local_paths["dotfiles"]="personal/dotfiles"
 local_paths["garden"]="personal/garden"
 local_paths["kieranpotts"]="personal/kieranpotts"
+local_paths["library"]="personal/library"
 local_paths["linters"]="personal/linters"
 local_paths["process"]="personal/process"
 local_paths["standards"]="personal/standards"
@@ -29,6 +29,7 @@ remote_urls["cheats"]="git@github.com:kieranpotts/cheats.git"
 remote_urls["dotfiles"]="git@github.com:kieranpotts/dotfiles.git"
 remote_urls["garden"]="git@github.com:kieranpotts/garden.git"
 remote_urls["kieranpotts"]="git@github.com:kieranpotts/kieranpotts.git"
+remote_urls["library"]="git@github.com:kieranpotts/library.git"
 remote_urls["linters"]="git@github.com:kieranpotts/linters.git"
 remote_urls["process"]="git@github.com:kieranpotts/process.git"
 remote_urls["standards"]="git@github.com:kieranpotts/standards.git"
@@ -47,6 +48,7 @@ main_branches["cheats"]="main"
 main_branches["dotfiles"]="dev"
 main_branches["garden"]="main"
 main_branches["kieranpotts"]="main"
+main_branches["library"]="main"
 main_branches["linters"]="init"
 main_branches["process"]="init"
 main_branches["standards"]="init"

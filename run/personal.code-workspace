@@ -95,6 +95,10 @@
       "path": "../../../personal/kieranpotts"
     },
     {
+      "name": "library 🔒",
+      "path": "../../../personal/library"
+    },
+    {
       "name": "linters ✍",
       "path": "../../../personal/linters"
     },
@@ -234,6 +238,7 @@
       "dotfiles",
       "garden",
       "kieranpotts",
+      "library 🔒",
       "process ✍",
       "standards ✍",
       "tools 🔒",
