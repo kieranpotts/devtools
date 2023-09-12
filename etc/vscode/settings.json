@@ -158,6 +158,11 @@
 
   // Open new VS Code windows maximized.
   "window.newWindowDimensions": "maximized",
+
+  // Zoom level.
+  "window.zoomLevel": 0.5,
+
+  // Theme overrides.
   "workbench.colorCustomizations": {
 
     // Use lighter colors for those squiggly underlines.
