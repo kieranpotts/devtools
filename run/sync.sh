@@ -25,7 +25,7 @@ for repo in ${repos[@]}; do
 
   echo $(for i in $(seq 1 80); do printf "-"; done)
 
-  local_path=${dev_path}/${local_paths["${repo}"]}
+  local_path=${dev_path}/${repo}
   main_branch=${main_branches["${repo}"]}
 
   # Suppress output, but exit code will be 0 if the command succeeds
