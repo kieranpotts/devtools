@@ -71,72 +71,128 @@
 
   "folders": [
     {
-      "name": "archive 🔒",
+      "name": "__OLD__",
+      "path": "../../../__OLD__"
+    },
+    {
+      "name": "personal/archive 🔒",
       "path": "../../../personal/archive"
     },
     {
-      "name": "blog",
+      "name": "personal/blog",
       "path": "../../../personal/blog"
     },
     {
-      "name": "cheats",
+      "name": "personal/cheats",
       "path": "../../../personal/cheats"
     },
     {
-      "name": "dotfiles",
+      "name": "personal/dotfiles",
       "path": "../../../personal/dotfiles"
     },
     {
-      "name": "garden",
+      "name": "personal/garden",
       "path": "../../../personal/garden"
     },
     {
-      "name": "kieranpotts",
+      "name": "personal/kieranpotts",
       "path": "../../../personal/kieranpotts"
     },
     {
-      "name": "library 🔒",
+      "name": "personal/library 🔒",
       "path": "../../../personal/library"
     },
     {
-      "name": "linters ✍",
+      "name": "personal/linters ✍",
       "path": "../../../personal/linters"
     },
     {
-      "name": "process ✍",
+      "name": "personal/process ✍",
       "path": "../../../personal/process"
     },
     {
-      "name": "standards ✍",
+      "name": "personal/standards ✍",
       "path": "../../../personal/standards"
     },
     {
-      "name": "tools 🔒",
+      "name": "personal/tools 🔒",
       "path": "../../../personal/tools"
     },
     {
-      "name": "hacksjs/decisions",
+      "name": "projects/hacksjs/decisions",
       "path": "../../../projects/hacksjs/decisions"
     },
     {
-      "name": "hacksjs/hacksjs ✍",
+      "name": "projects/hacksjs/hacksjs ✍",
       "path": "../../../projects/hacksjs/hacksjs"
     },
     {
-      "name": "nirvarnia/decisions",
+      "name": "projects/nirvarnia/decisions",
       "path": "../../../projects/nirvarnia/decisions"
     },
     {
-      "name": "nirvarnia/nirvarnia ✍",
+      "name": "projects/nirvarnia/nirvarnia ✍",
       "path": "../../../projects/nirvarnia/nirvarnia"
     },
     {
-      "name": "nirvarnia/prototypes",
+      "name": "projects/nirvarnia/prototypes",
       "path": "../../../projects/nirvarnia/prototypes"
     },
     {
-      "name": "srcflow/srcflow ✍",
+      "name": "projects/srcflow/srcflow ✍",
       "path": "../../../projects/srcflow/srcflow"
+    },
+    {
+      "name": "work/hackscorp/engineering/engineering-guide 🔒",
+      "path": "../../../work/hackscorp/engineering/engineering-guide"
+    },
+    {
+      "name": "work/hackscorp/engineering/technical-standards 🔒",
+      "path": "../../../work/hackscorp/engineering/technical-standards"
+    },
+    {
+      "name": "work/hackscorp/marketing/brands 🔒",
+      "path": "../../../work/hackscorp/marketing/brands"
+    },
+    {
+      "name": "work/hackscorp/recruitment/technical-tests 🔒",
+      "path": "../../../work/hackscorp/recruitment/technical-tests"
+    },
+    {
+      "name": "work/hackscorp/recruitment/technical-tests-solutions 🔒",
+      "path": "../../../work/hackscorp/recruitment/technical-tests-solutions"
+    },
+    {
+      "name": "work/informwire/code/informwire 🔒",
+      "path": "../../../work/informwire/code/informwire"
+    },
+    {
+      "name": "work/informwire/docs/business-plan 🔒",
+      "path": "../../../work/informwire/docs/business-plan"
+    },
+    {
+      "name": "work/informwire/docs/competitor-analysis 🔒",
+      "path": "../../../work/informwire/docs/competitor-analysis"
+    },
+    {
+      "name": "work/informwire/docs/decision-log 🔒",
+      "path": "../../../work/informwire/docs/decision-log"
+    },
+    {
+      "name": "work/informwire/docs/dependency-register 🔒",
+      "path": "../../../work/informwire/docs/dependency-register"
+    },
+    {
+      "name": "work/informwire/docs/ontology 🔒",
+      "path": "../../../work/informwire/docs/ontology"
+    },
+    {
+      "name": "work/informwire/docs/requirements-specification 🔒",
+      "path": "../../../work/informwire/docs/requirements-specification"
+    },
+    {
+      "name": "work/informwire/docs/technical-documentation 🔒",
+      "path": "../../../work/informwire/docs/technical-documentation"
     }
   ],
 
@@ -232,22 +288,36 @@
     // and reveal terminal errors for every project it does not. So we must explicitly
     // DISABLE the Jest extension for all repos in which it is not needed.
     "jest.disabledWorkspaceFolders": [
-      "archive 🔒",
-      "blog",
-      "cheats",
-      "dotfiles",
-      "garden",
-      "kieranpotts",
-      "library 🔒",
-      "process ✍",
-      "standards ✍",
-      "tools 🔒",
-      "hacksjs/decisions",
-      "hacksjs/hacksjs ✍",
-      "nirvarnia/decisions",
-      "nirvarnia/nirvarnia ✍",
-      "nirvarnia/prototypes",
-      "srcflow/srcflow ✍"
+      "__OLD__",
+      "personal/archive 🔒",
+      "personal/blog",
+      "personal/cheats",
+      "personal/dotfiles",
+      "personal/garden",
+      "personal/kieranpotts",
+      "personal/library 🔒",
+      "personal/process ✍",
+      "personal/standards ✍",
+      "personal/tools 🔒",
+      "projects/hacksjs/decisions",
+      "projects/hacksjs/hacksjs ✍",
+      "projects/nirvarnia/decisions",
+      "projects/nirvarnia/nirvarnia ✍",
+      "projects/nirvarnia/prototypes",
+      "projects/srcflow/srcflow ✍",
+      "work/hackscorp/engineering/engineering-guide 🔒",
+      "work/hackscorp/engineering/technical-standards 🔒",
+      "work/hackscorp/marketing/brands 🔒",
+      "work/hackscorp/recruitment/technical-tests 🔒",
+      "work/hackscorp/recruitment/technical-tests-solutions 🔒",
+      "work/informwire/code/informwire 🔒",
+      "work/informwire/docs/business-plan 🔒",
+      "work/informwire/docs/competitor-analysis 🔒",
+      "work/informwire/docs/decision-log 🔒",
+      "work/informwire/docs/dependency-register 🔒",
+      "work/informwire/docs/ontology 🔒",
+      "work/informwire/docs/requirements-specification 🔒",
+      "work/informwire/docs/technical-documentation 🔒",
     ],
 
     // Configuration for the ToDo Tree extension.
