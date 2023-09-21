@@ -123,7 +123,7 @@
       "path": "../../../projects/hacksjs/decisions"
     },
     {
-      "name": "projects/hacksjs/hacksjs ✍",
+      "name": "projects/hacksjs/hacksjs",
       "path": "../../../projects/hacksjs/hacksjs"
     },
     {
@@ -300,7 +300,7 @@
       "personal/standards ✍",
       "personal/tools 🔒",
       "projects/hacksjs/decisions",
-      "projects/hacksjs/hacksjs ✍",
+      // "projects/hacksjs/hacksjs",
       "projects/nirvarnia/decisions",
       "projects/nirvarnia/nirvarnia ✍",
       "projects/nirvarnia/prototypes",
