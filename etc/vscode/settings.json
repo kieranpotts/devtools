@@ -224,6 +224,7 @@
   // files MUST include a `@ts-check` comment at the top to opt-in to VS Code's
   // built-in `tsc` type checker instance, which will infer type information from
   // the code and JSDoc-style notations.
-  "js/ts.implicitProjectConfig.checkJs": false
+"js/ts.implicitProjectConfig.checkJs": false,
+"window.zoomLevel": 1
 
 }
