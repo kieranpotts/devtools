@@ -45,7 +45,7 @@
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
 
-  // Enable auto-fixes. Required for EditorConfig.
+  // Enable auto-fixes.
   "editor.codeActionsOnSave": {
     "source.fixAll": true
   },
