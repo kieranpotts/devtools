@@ -107,6 +107,10 @@
       "path": "../../../personal/process"
     },
     {
+      "name": "personal/prototypes",
+      "path": "../../../personal/prototypes"
+    },
+    {
       "name": "personal/snippets",
       "path": "../../../personal/snippets"
     },
@@ -133,10 +137,6 @@
     {
       "name": "projects/nirvarnia/nirvarnia ✍",
       "path": "../../../projects/nirvarnia/nirvarnia"
-    },
-    {
-      "name": "projects/nirvarnia/prototypes",
-      "path": "../../../projects/nirvarnia/prototypes"
     },
     {
       "name": "projects/srcflow/srcflow ✍",
@@ -296,6 +296,7 @@
       "personal/kieranpotts",
       "personal/library 🔒",
       "personal/process ✍",
+      "personal/prototypes",
       "personal/snippets",
       "personal/standards ✍",
       "personal/tools 🔒",
@@ -303,7 +304,6 @@
       // "projects/hacksjs/hacksjs",
       "projects/nirvarnia/decisions",
       "projects/nirvarnia/nirvarnia ✍",
-      "projects/nirvarnia/prototypes",
       "projects/srcflow/srcflow ✍",
       "work/hackscorp/engineering/engineering-guide 🔒",
       "work/hackscorp/engineering/technical-standards 🔒",
