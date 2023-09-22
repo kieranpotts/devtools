@@ -154,6 +154,8 @@ The contents of the `run` directory contain various scripts and configurations t
 * `personal.code-workspace`: Workspace configuration for all code repositories.
 * `wt.bat`: Startup script for Windows Terminal, loads pre-configured tabs.
 
+NOTE: Some repositories use Git LFS for large file storage. This SHOULD be installed first, before cloning any repositories that use it.
+
 ''''
 
 Copyright © 2020-2023 Kieran Potts – All rights reserved
