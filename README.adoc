@@ -131,7 +131,6 @@ Fresh binaries can be downloaded from the following links:
 * https://github.com/jesseduffield/lazygit/releases
 * https://github.com/JanDeDobbeleer/oh-my-posh/releases
 
-
 ////
 TODO: Add docs for configuring WSL.
 TODO: Add docs for configuring PowerShell, eg to use same Oh-My-Posh config
