@@ -83,10 +83,6 @@
       "path": "../../../personal/blog"
     },
     {
-      "name": "personal/cheats",
-      "path": "../../../personal/cheats"
-    },
-    {
       "name": "personal/dotfiles",
       "path": "../../../personal/dotfiles"
     },
@@ -109,6 +105,10 @@
     {
       "name": "personal/process ✍",
       "path": "../../../personal/process"
+    },
+    {
+      "name": "personal/snippets",
+      "path": "../../../personal/snippets"
     },
     {
       "name": "personal/standards ✍",
@@ -291,12 +291,12 @@
       "__OLD__",
       "personal/archive 🔒",
       "personal/blog",
-      "personal/cheats",
       "personal/dotfiles",
       "personal/garden",
       "personal/kieranpotts",
       "personal/library 🔒",
       "personal/process ✍",
+      "personal/snippets",
       "personal/standards ✍",
       "personal/tools 🔒",
       "projects/hacksjs/decisions",
