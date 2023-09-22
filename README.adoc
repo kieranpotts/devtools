@@ -22,19 +22,23 @@ This repository encapsulates configuration for the following tools, which SHOULD
 
 - https://github.com/dandavison/delta[Delta]
 - https://git-scm.com/[Git]
-- https://github.com/jesseduffield/lazygit[LazyGit]
+- https://github.com/jesseduffield/lazygit#installation[LazyGit]
 - https://ohmyposh.dev/[Oh-My-Posh]
 - https://www.sublimemerge.com/[Sublime Merge]
 - https://code.visualstudio.com/[Visual Studio Code]
 - https://github.com/microsoft/terminal[Windows Terminal]
 
-Windows binaries for `delta`, `lazygit` and `oh-my-posh` are included in this repository. These can be enabled simply by adding this repository's `bin` directory to your system's `PATH` environment variable. Fresh binaries can be downloaded for these programs from the following links. All other programs MUST be installed manually.
+Windows binaries for `delta`, `lazygit` and `oh-my-posh` are included in this repository. These can be enabled simply by adding this repository's `bin` directory to your system's `PATH` environment variable. Fresh binaries can be downloaded for these programs from the following links.
 
 * https://github.com/dandavison/delta/releases
 * https://github.com/jesseduffield/lazygit/releases
 * https://github.com/JanDeDobbeleer/oh-my-posh/releases
 
+All other programs MUST be installed manually.
+
 === Installation
+
+`git clone` this repository to a local directory called `personal/tools`, then follow the steps below.
 
 ==== 1. Install the fonts
 
@@ -45,7 +49,7 @@ The configurations for VS Code and Windows Terminal depend on the following font
 
 Hack is a programming font. It adds special ligatures that merge multiple consecutive characters into a single composite glyph, for example `>=` is presented as `≥` and `!=` as `≠`, improving readability without changing the code. Hack NF (Nerd Font) is a version of the same font extended with additional glyphs that are used to create visual design effects like icons and rounded corners in a shell's prompt line.
 
-Both these fonts are included in the `./vendor/fonts` directory and need to be installed manually. The Hack Nerd Font is the Windows-compatible version.
+Both these fonts are included in the `./vendor/fonts` directory and need to be installed manually.
 
 ==== 2. Create symlinks to the configuration files
 
@@ -53,38 +57,36 @@ Configuration files are included for various development tools, including Visual
 
 To use these configuration, you will need to create symlinks to them. On Windows, run Windows Powershell in administrator mode and execute the following commands, changing the filesystem paths as required.
 
-.LazyGit
+.Windows
 [source,powershell]
 ----
+# LazyGit
 New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Roaming\lazygit\config.yml" -Target "C:\path\to\tools\etc\lazygit\config.yml" -Force
-----
 
-.Sublime Merge
-[source,powershell]
-----
+# Sublime Merge
 New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Roaming\Sublime Merge\Packages\User\Preferences.sublime-settings" -Target "C:\path\to\tools\etc\sublime-merge\Preferences.sublime-settings" -Force
-----
 
-.Visual Studio Code
-[source,powershell]
-----
+# Visual Studio Code
 New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Roaming\Code\User\settings.json" -Target "C:\path\to\tools\etc\vscode\settings.json" -Force
-
 New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Roaming\Code\User\keybindings.json" -Target "C:\path\to\tools\etc\vscode\keybindings.json" -Force
-
 New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Roaming\Code\User\snippets\global.code-snippets" -Target "C:\path\to\tools\etc\vscode\global.code-snippets" -Force
+
+# Windows Terminal
+New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Local\Packages\Microsoft.WindowsTerminal_[hash]\LocalState\settings.json" -Target "C:\path\to\tools\etc\wt\settings.json" -Force
 ----
 
-.Windows Terminal
-[source,powershell]
+.Unix-like systems
+[source,sh]
 ----
-New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Local\Packages\Microsoft.WindowsTerminal_[hash]\LocalState\settings.json" -Target "C:\path\to\tools\etc\wt\settings.json" -Force
+# Visual Studio Code
+ln --symbolic --force path/to/tools/etc/vscode/settings.json ~/.config/Code/User/settings.json
+ln --symbolic --force path/to/tools/etc/vscode/keybindings.json ~/.config/Code/User/keybindings.json
+ln --symbolic --force path/to/tools/etc/vscode/global.code-snippets ~/.config/Code/User/snippets/global.code-snippets
 ----
 
 ////
 TODO: Edit config for Sublime Merge
 TODO: Edit config for Sublime Text
-TODO: Add equivalent documentation for Unix-like systems.
 ////
 
 ==== 3. Enable the shell theme
@@ -98,10 +100,10 @@ New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\oh-my-posh" -Target "C:\p
 
 [source,sh]
 ----
-ln -s path/to/etc/oh-my-posh ~/oh-my-posh
+ln --symbolic --force path/to/tools/etc/oh-my-posh ~/oh-my-posh
 ----
 
-Next, add the following to your `.bash_profile`. Use the `local.bash_profile` file installed from the dotfiles repo:
+Next, add the following to your `.bash_profile`. Use the `local.bash_profile` file installed from the https://github.com/kieranpotts/dotfiles[dotfiles repo]:
 
 [source,sh]
 ----
