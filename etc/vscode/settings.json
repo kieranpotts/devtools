@@ -137,7 +137,7 @@
   "git.mergeEditor": true, // Use VSCode's new merge editor for resolving conflicts.
   "git.pruneOnFetch": true, // Automatically prune references to deleted upstream branches.
   "git.rebaseWhenSync": true, // Enforce rebase strategy on sync, to maintain linear history.
-  "git.repositoryScanMaxDepth": -1, // Scan for Git repositories in sub-folders to an unlimited depth.
+  "git.repositoryScanMaxDepth": 3, // Scan for Git repositories in sub-folders to a max depth of 3.
 
   // Collapse search results, so files must be expanded to show matching text.
   "search.collapseResults": "alwaysCollapse",
