@@ -1,5 +1,4 @@
 {
-
   // Disable the breadcrumb trail across the top of editors.
   "breadcrumbs.enabled": false,
 
