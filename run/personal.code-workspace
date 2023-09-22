@@ -135,7 +135,7 @@
       "path": "../../../projects/nirvarnia/decisions"
     },
     {
-      "name": "projects/nirvarnia/nirvarnia ✍",
+      "name": "projects/nirvarnia/nirvarnia",
       "path": "../../../projects/nirvarnia/nirvarnia"
     },
     {
@@ -303,7 +303,7 @@
       "projects/hacksjs/decisions",
       // "projects/hacksjs/hacksjs",
       "projects/nirvarnia/decisions",
-      "projects/nirvarnia/nirvarnia ✍",
+      "projects/nirvarnia/nirvarnia",
       "projects/srcflow/srcflow ✍",
       "work/hackscorp/engineering/engineering-guide 🔒",
       "work/hackscorp/engineering/technical-standards 🔒",
