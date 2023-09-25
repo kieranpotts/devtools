@@ -2,7 +2,7 @@
 
 # List of repos. The names represent their local filesystem paths and how
 # they are named in VS Code.
-repos=("personal/archive" "personal/blog" "personal/dotfiles" "personal/garden" "personal/kieranpotts" "personal/library" "personal/linters" "personal/process" "personal/prototypes" "personal/snippets" "personal/standards" "personal/tools" "projects/hacksjs/decisions" "projects/hacksjs/hacksjs" "projects/nirvarnia/decisions" "projects/nirvarnia/nirvarnia" "projects/srcflow/srcflow" "work/hackscorp/engineering/engineering-guide" "work/hackscorp/engineering/technical-standards" "work/hackscorp/marketing/brands" "work/hackscorp/recruitment/technical-tests" "work/hackscorp/recruitment/technical-tests-solutions" "work/informwire/code/informwire" "work/informwire/docs/business-plan" "work/informwire/docs/competitor-analysis" "work/informwire/docs/decision-log" "work/informwire/docs/dependency-register" "work/informwire/docs/ontology" "work/informwire/docs/requirements-specification" "work/informwire/docs/technical-documentation")
+repos=("personal/archive" "personal/blog" "personal/dotfiles" "personal/garden" "personal/kieranpotts" "personal/library" "personal/linters" "personal/process" "personal/prototypes" "personal/snippets" "personal/standards" "personal/tools" "projects/nirvarnia/decisions" "projects/nirvarnia/nirvarnia" "projects/srcflow/srcflow" "work/hackscorp/engineering/engineering-guide" "work/hackscorp/engineering/technical-standards" "work/hackscorp/marketing/brands" "work/hackscorp/recruitment/technical-tests" "work/hackscorp/recruitment/technical-tests-solutions" "work/informwire/code/informwire" "work/informwire/docs/business-plan" "work/informwire/docs/competitor-analysis" "work/informwire/docs/decision-log" "work/informwire/docs/dependency-register" "work/informwire/docs/ontology" "work/informwire/docs/requirements-specification" "work/informwire/docs/technical-documentation")
 
 declare -A remote_urls
 remote_urls["personal/archive"]="git@github.com:kieranpotts/archive.git"
@@ -17,8 +17,6 @@ remote_urls["personal/prototypes"]="git@github.com:kieranpotts/prototypes.git"
 remote_urls["personal/snippets"]="git@github.com:kieranpotts/snippets.git"
 remote_urls["personal/standards"]="git@github.com:kieranpotts/standards.git"
 remote_urls["personal/tools"]="git@github.com:kieranpotts/tools.git"
-remote_urls["projects/hacksjs/decisions"]="git@github.com:hacksjs/decisions.git"
-remote_urls["projects/hacksjs/hacksjs"]="git@github.com:hacksjs/hacksjs.git"
 remote_urls["projects/nirvarnia/decisions"]="git@github.com:nirvarnia/decisions.git"
 remote_urls["projects/nirvarnia/nirvarnia"]="git@github.com:nirvarnia/nirvarnia.git"
 remote_urls["projects/srcflow/srcflow"]="git@github.com:srcflow/srcflow.git"
@@ -49,8 +47,6 @@ main_branches["personal/prototypes"]="main"
 main_branches["personal/snippets"]="main"
 main_branches["personal/standards"]="init"
 main_branches["personal/tools"]="main"
-main_branches["projects/hacksjs/decisions"]="main"
-main_branches["projects/hacksjs/hacksjs"]="v0/dev"
 main_branches["projects/nirvarnia/decisions"]="main"
 main_branches["projects/nirvarnia/nirvarnia"]="v0/dev"
 main_branches["projects/srcflow/srcflow"]="init"

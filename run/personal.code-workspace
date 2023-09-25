@@ -123,22 +123,6 @@
       "path": "../../../personal/tools"
     },
     {
-      "name": "projects/hacksjs/antora-ui",
-      "path": "../../../projects/hacksjs/antora-ui"
-    },
-    {
-      "name": "projects/hacksjs/decisions",
-      "path": "../../../projects/hacksjs/decisions"
-    },
-    {
-      "name": "projects/hacksjs/hacksjs",
-      "path": "../../../projects/hacksjs/hacksjs"
-    },
-    {
-      "name": "projects/hacksjs/website",
-      "path": "../../../projects/hacksjs/website"
-    },
-    {
       "name": "projects/nirvarnia/decisions",
       "path": "../../../projects/nirvarnia/decisions"
     },
@@ -272,11 +256,8 @@
     // Spellings to always ignore. These are not real words, but are names or
     // identifiers of some kind: people's names, domain names, URL slugs, etc.
     "cSpell.ignoreWords": [
-      "hackscorp",
-      "hacksjs",
       "kieran",
       "kieranpotts",
-      "nirvarnia",
       "potts",
     ],
 
@@ -308,10 +289,6 @@
       "personal/snippets",
       "personal/standards ✍",
       "personal/tools 🔒",
-      "projects/hacksjs/antora-ui",
-      "projects/hacksjs/decisions",
-      // "projects/hacksjs/hacksjs",
-      "projects/hacksjs/website",
       "projects/nirvarnia/decisions",
       "projects/nirvarnia/nirvarnia",
       "projects/srcflow/srcflow ✍",
