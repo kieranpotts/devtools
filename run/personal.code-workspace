@@ -123,6 +123,10 @@
       "path": "../../../personal/tools"
     },
     {
+      "name": "projects/hacksjs/antora-ui",
+      "path": "../../../projects/hacksjs/antora-ui"
+    },
+    {
       "name": "projects/hacksjs/decisions",
       "path": "../../../projects/hacksjs/decisions"
     },
@@ -304,6 +308,7 @@
       "personal/snippets",
       "personal/standards ✍",
       "personal/tools 🔒",
+      "projects/hacksjs/antora-ui",
       "projects/hacksjs/decisions",
       // "projects/hacksjs/hacksjs",
       "projects/hacksjs/website",
