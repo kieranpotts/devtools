@@ -145,17 +145,6 @@ Go to your https://github.com/settings/codespaces[GitHub Codespaces options] and
 
 image::github-enable-settings-sync.png[]
 
-=== Run scripts
-
-The contents of the `run` directory contain various scripts and configurations to automate the management of the local development environment. The run scripts are:
-
-* `install.sh`: Bash script to automatically clone all code repositories.
-* `sync.sh`: Bash script to automatically synchronize the main branches of all local repositories with their tracked upstream branches.
-* `personal.code-workspace`: Workspace configuration for all code repositories.
-* `wt.bat`: Startup script for Windows Terminal, loads pre-configured tabs.
-
-NOTE: Some repositories use Git LFS for large file storage. This SHOULD be installed first, before cloning any repositories that use it.
-
 ''''
 
 Copyright © 2020-2023 Kieran Potts – All rights reserved
