@@ -160,7 +160,7 @@
   "window.newWindowDimensions": "maximized",
 
   // Zoom level.
-  "window.zoomLevel": 0.5,
+  "window.zoomLevel": 1,
 
   // Theme overrides.
   "workbench.colorCustomizations": {
