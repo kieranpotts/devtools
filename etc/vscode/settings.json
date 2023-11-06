@@ -74,6 +74,8 @@
   "editor.rulers": [],
 
   // Prioritize snippet suggestions over all other hints. Pre-select the first.
+  // Show the toolbar automatically — this works well with Copilot.
+  "editor.inlineSuggest.showToolbar": "always",
   "editor.snippetSuggestions": "none",
   "editor.suggestSelection": "recentlyUsedByPrefix",
 
@@ -153,14 +155,17 @@
   // Use VS Code's non-native dialog windows.
   "window.dialogStyle": "custom",
 
-  // Add a burger icon to the side bar to open the menu.
-  "window.menuBarVisibility": "compact",
-
   // Open new VS Code windows maximized.
   "window.newWindowDimensions": "maximized",
 
+  // Collapse window menu into a hamburger dropdown.
+  "window.menuBarVisibility": "compact",
+
   // Zoom level.
   "window.zoomLevel": 1,
+
+  // Activity bar.
+  "workbench.activityBar.location": "top",
 
   // Theme overrides.
   "workbench.colorCustomizations": {
@@ -198,7 +203,7 @@
   },
 
   // Themes.
-  "workbench.colorTheme": "GitHub Dark",
+  "workbench.colorTheme": "Default Light Modern",
   "workbench.iconTheme": "vs-minimal",
 
   // Shrink tab size as the available space decreases.
@@ -213,7 +218,6 @@
 
   // Zen mode.
   "zenMode.centerLayout": false,
-  "zenMode.hideTabs": false,
 
   // LANGUAGE-SPECIFIC SETTINGS:
 
@@ -229,6 +233,14 @@
   // files MUST include a `@ts-check` comment at the top to opt-in to VS Code's
   // built-in `tsc` type checker instance, which will infer type information from
   // the code and JSDoc-style notations.
-  "js/ts.implicitProjectConfig.checkJs": false
+  "js/ts.implicitProjectConfig.checkJs": false,
+
+  // EXTENSIONS.
+
+  "github.copilot.advanced": {
+    "debug.showScores": true,
+    "inlineSuggestCount": 12,
+    "listCount": 12,
+  },
 
 }
