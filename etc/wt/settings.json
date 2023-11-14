@@ -106,7 +106,7 @@
                 "name": "Git Bash",
                 "padding": "20",
                 "source": "Git",
-                "startingDirectory": "D:\\"
+                "startingDirectory": "C:\\dev"
             },
             {
                 "colorScheme": "Hacks",
