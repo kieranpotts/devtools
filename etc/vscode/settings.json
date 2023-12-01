@@ -108,8 +108,8 @@
     "editor.wordWrapColumn": 120
   },
 
-  // Don't show extension recommendations in toast popups in the corner.
-  "extensions.ignoreRecommendations": true,
+  // Show recommended extensions.
+  "extensions.ignoreRecommendations": false,
 
   // Auto-save changes after 5 seconds inactivity.
   "files.autoSave": "afterDelay",
