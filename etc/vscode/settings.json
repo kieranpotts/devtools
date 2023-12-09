@@ -48,7 +48,7 @@
   // Disable auto-fixes by default, so also requiring individual projects to
   // explicitly opt-in to this feature.
   "editor.codeActionsOnSave": {
-    "source.fixAll": false
+    "source.fixAll": "never"
   },
 
   // Render guidelines for indentation and bracket pairs.
