@@ -203,7 +203,7 @@
   },
 
   // Themes.
-  "workbench.colorTheme": "Default Light Modern",
+  "workbench.colorTheme": "Visual Studio Light",
   "workbench.iconTheme": "vs-minimal",
 
   // Shrink tab size as the available space decreases.
