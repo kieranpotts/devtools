@@ -1,6 +1,6 @@
 = 🔒 Tools
 
-This is a repository of binaries and configurations for my personal development environment.
+This is a repository of binaries and configurations for my default personal development environment.
 
 This repository is maintained to facilitate the backing up and restoration of my local development environment configuration, and to ease the synchronization and porting of my development tools between different computers.
 
@@ -66,10 +66,10 @@ New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Roaming\lazygit\c
 # Sublime Merge
 New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Roaming\Sublime Merge\Packages\User\Preferences.sublime-settings" -Target "C:\path\to\tools\etc\sublime-merge\Preferences.sublime-settings" -Force
 
-# Visual Studio Code
-New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Roaming\Code\User\settings.json" -Target "C:\path\to\tools\etc\vscode\settings.json" -Force
-New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Roaming\Code\User\keybindings.json" -Target "C:\path\to\tools\etc\vscode\keybindings.json" -Force
-New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Roaming\Code\User\snippets\global.code-snippets" -Target "C:\path\to\tools\etc\vscode\global.code-snippets" -Force
+# VS Code / VS Codium
+New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Roaming\[Code|VSCodium]\User\settings.json" -Target "C:\path\to\tools\etc\vscode\settings.json" -Force
+New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Roaming\[Code|VSCodium]\User\keybindings.json" -Target "C:\path\to\tools\etc\vscode\keybindings.json" -Force
+New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Roaming\[Code|VSCodium]\User\snippets\global.code-snippets" -Target "C:\path\to\tools\etc\vscode\global.code-snippets" -Force
 
 # Windows Terminal
 New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Local\Packages\Microsoft.WindowsTerminal_[hash]\LocalState\settings.json" -Target "C:\path\to\tools\etc\wt\settings.json" -Force
