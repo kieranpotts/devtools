@@ -158,8 +158,8 @@
   // Open new VS Code windows maximized.
   "window.newWindowDimensions": "maximized",
 
-  // Collapse window menu into a hamburger dropdown.
-  "window.menuBarVisibility": "compact",
+  // Menu is hidden but can be toggled visible with the Alt key.
+  "window.menuBarVisibility": "toggle",
 
   // Zoom level.
   "window.zoomLevel": 1,
