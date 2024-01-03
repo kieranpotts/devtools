@@ -161,7 +161,7 @@
   // Menu is hidden but can be toggled visible with the Alt key.
   "window.menuBarVisibility": "toggle",
 
-  // Zoom level.
+  // Zoom +1 level by default.
   "window.zoomLevel": 1,
 
   // Activity bar.
@@ -216,8 +216,8 @@
   "workbench.tree.indent": 24,
   "workbench.tree.renderIndentGuides": "none",
 
-  // Zen mode.
-  "zenMode.centerLayout": false,
+  // Hide tabs when in Zen mode.
+  "zenMode.showTabs": "none",
 
   // LANGUAGE-SPECIFIC SETTINGS:
 
