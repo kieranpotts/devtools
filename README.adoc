@@ -1,4 +1,4 @@
-= 🔒 Tools
+= Tools
 
 This is a repository of binaries and configurations for my default personal development environment.
 
@@ -6,13 +6,12 @@ This repository is maintained to facilitate the backing up and restoration of my
 
 This repository includes the following:
 
-- Terminal customization using https://ohmyposh.dev/[Oh-My-Posh]
-- Binaries for command line utilities like https://github.com/jesseduffield/lazygit[lazygit]
-- Windows Terminal startup batch script
-- VS Code user-level settings including theme and keybindings
-- VS Code workspace configuration files
+* Terminal customization using https://ohmyposh.dev/[Oh-My-Posh]
+* Binaries for command line utilities like https://github.com/jesseduffield/lazygit[lazygit]
+* Windows Terminal startup batch script
+* VS Code user-level settings including theme and keybindings
 
-This a private repository but the configurations compliment my public https://github.com/kieranpotts/dotfiles[dotfiles].
+These tools extend my https://github.com/kieranpotts/dotfiles[dotfiles], which are scoped to Unix command line utilities and shell configuration only. These tools are primarily for Windows environments.
 
 == Documentation
 
@@ -28,7 +27,7 @@ This repository encapsulates configuration for the following tools, which SHOULD
 - https://code.visualstudio.com/[Visual Studio Code]
 - https://github.com/microsoft/terminal[Windows Terminal]
 
-Windows binaries for `delta`, `lazygit` and `oh-my-posh` are included in this repository. These can be enabled simply by adding this repository's `bin` directory to your system's `PATH` environment variable. Fresh binaries can be downloaded for these programs from the following links.
+Windows binaries for `delta`, `lazygit` and `oh-my-posh` are included in this repository. These can be enabled simply by adding this repository's `bin` directory to the system's `PATH` environment variable. Fresh binaries can be downloaded for these programs from the following links.
 
 * https://github.com/dandavison/delta/releases
 * https://github.com/jesseduffield/lazygit/releases
@@ -53,7 +52,7 @@ Both these fonts are included in the `./vendor/fonts` directory and need to be i
 
 ==== 2. Create symlinks to the configuration files
 
-Configuration files are included for various development tools, including Visual Studio Code and Windows Terminal, for easy portability between machines.
+Configuration files are included for various development tools, including VS Code and Windows Terminal, for easy portability between machines.
 
 To use these configuration, you will need to create symlinks to them. On Windows, run Windows Powershell in administrator mode and execute the following commands, changing the filesystem paths as required.
 
@@ -78,16 +77,11 @@ New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Local\Packages\Mi
 .Unix-like systems
 [source,sh]
 ----
-# Visual Studio Code
+# VS Code / VS Codium
 ln --symbolic --force path/to/tools/etc/vscode/settings.json ~/.config/Code/User/settings.json
 ln --symbolic --force path/to/tools/etc/vscode/keybindings.json ~/.config/Code/User/keybindings.json
 ln --symbolic --force path/to/tools/etc/vscode/global.code-snippets ~/.config/Code/User/snippets/global.code-snippets
 ----
-
-////
-TODO: Edit config for Sublime Merge
-TODO: Edit config for Sublime Text
-////
 
 ==== 3. Enable the shell theme
 
@@ -132,7 +126,7 @@ rm themes.zip
 
 NOTE: `wget` is not pre-installed in the Git Bash emulator. Download the https://eternallybored.org/misc/wget/[binary from here]
 
-Oh My Posh is highly customizable. See https://ohmyposh.dev/docs/[the website] for more options. As a cross-platform framework, configurations can be shared between shells. So you can expose your Powershell, Git Bash and WSL environments to the same configuration, ensuring a consistent prompt in every shell environment running in every terminal program.
+Oh My Posh is highly customizable. See https://ohmyposh.dev/docs/[the web site] for more options. As a cross-platform framework, configurations can be shared between shells. So you can expose your Powershell, Git Bash and WSL environments to the same configuration, ensuring a consistent prompt in every shell environment running in every terminal program.
 
 ////
 TODO: Add docs for configuring WSL.
@@ -147,6 +141,6 @@ image::github-enable-settings-sync.png[]
 
 ''''
 
-Copyright © 2020-2023 Kieran Potts – All rights reserved
+© Kieran Potts — link:./LICENSE.txt[CC BY-SA 4.0]
 
 The executable binaries redistributed via this repository are copyright their respective authors and may be subject to alternative free and open source software licenses.
