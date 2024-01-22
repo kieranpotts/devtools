@@ -55,7 +55,7 @@
   "editor.guides.indentation": true,
   "editor.guides.bracketPairs": true,
 
-  // Disable inlay hints, which get injected within code (eg showing function parameter names).
+  // By default, disable inlay hints, which get injected within code (eg showing function parameter names).
   "editor.inlayHints.enabled": "off",
 
   // Show line numbers but hide the minimap.
