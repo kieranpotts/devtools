@@ -1,0 +1,20 @@
+# ==============================================================================
+# This file SHOULD be used to extend and overwrite the default user-level Git
+# configuration symlinked from `~/.gitconfig`. You SHOULD edit this file
+# directly, rather than use the `git config --global` command.
+# https://git-scm.com/docs/git-config
+# ==============================================================================
+
+[user]
+
+  # These settings determine what values end up in the `author` and `committer`
+  # fields of commit objects.
+  # https://git-scm.com/docs/git-config#Documentation/git-config.txt-username
+  email = [your-email-address]
+  name = [your-name-or-username]
+
+[core]
+
+  # Override the `ssh` command called internally by `git fetch` and `git push`.
+  # Use this to load a different identity than the defauls, eg `~/.ssh/id_dsa`.
+  #sshCommand = ssh -i ~/.ssh/id_rsa_kieranpotts2024

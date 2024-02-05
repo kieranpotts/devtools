@@ -7,7 +7,7 @@
     120
   ],
 
-  // Transform tab indents to two spaces. Enforce this — don't allow VS Code
+  // Transform tab indents to two spaces. Enforce this – don't allow VS Code
   // to override based on what it thinks is the existing indentation format of
   // each file.
   "editor.detectIndentation": false,

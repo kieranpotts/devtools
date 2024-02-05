@@ -62,7 +62,7 @@
   "editor.lineNumbers": "on",
   "editor.minimap.enabled": false,
 
-  // Scrolls about 3 lines for every 1 mouse wheel increment.s
+  // Scrolls about 3 lines for every 1 mouse wheel increment.
   "editor.mouseWheelScrollSensitivity": 1,
 
   // Render control and empty space characters.
@@ -74,7 +74,7 @@
   "editor.rulers": [],
 
   // Prioritize snippet suggestions over all other hints. Pre-select the first.
-  // Show the toolbar automatically — this works well with Copilot.
+  // Show the toolbar automatically – this works well with Copilot.
   "editor.inlineSuggest.showToolbar": "always",
   "editor.snippetSuggestions": "none",
   "editor.suggestSelection": "recentlyUsedByPrefix",
@@ -87,9 +87,12 @@
   "editor.detectIndentation": false,
   "editor.insertSpaces": false,
 
-  // Rules for highlighting special unicode characters.
+  // Rules for highlighting special unicode characters. Don't warn about use
+  // of en-dash (–) and em-dash (—) characters in code. I use these characters
+  // in comments pretty frequently.
   "editor.unicodeHighlight.allowedCharacters": {
-    "–": true // Don't warn about use of en-dash (–) characters in code.
+    "–": true,
+    "—": true,
   },
 
   // Wrap long lines at the viewport but up to maximum of 120 characters.
@@ -116,19 +119,19 @@
   "files.autoSaveDelay": 5000,
 
   // Built-in Git GUI.
-  "git.allowNoVerifyCommit": true, // Allow overriding of Git hooks on commit operations.
-  "git.autofetch": true, // Automatically fetch new commits from origin.
+  "git.allowNoVerifyCommit": true,             // Allow overriding of Git hooks on commit operations.
+  "git.autofetch": true,                       // Automatically fetch new commits from origin.
   "git.autoRepositoryDetection": "subFolders", // Detect Git repositories in sub-folders.
-  "git.autoStash": true, // Use temporary stash to enable syncing when working tree is dirty.
-  "git.confirmNoVerifyCommit": false, // Don't confirm `--no-verify` commits, the option must be explicitly selected.
-  "git.confirmSync": false, // Confirm before running sync operation (it may rewrite history).
-  "git.enableSmartCommit": true, // Commit all working changes when nothing is yet staged.
-  "git.enableStatusBarSync": false, // Remove sync control from status bar
-  "git.followTagsWhenSync": true, // Sync tags, too.
-  "git.mergeEditor": true, // Use VS Code's new merge editor for resolving conflicts.
-  "git.pruneOnFetch": true, // Automatically prune references to deleted upstream branches.
-  "git.rebaseWhenSync": true, // Enforce rebase strategy on sync, to maintain linear history.
-  "git.repositoryScanMaxDepth": 3, // Scan for Git repositories in sub-folders to a max depth of 3.
+  "git.autoStash": true,                       // Use temporary stash to enable syncing when working tree is dirty.
+  "git.confirmNoVerifyCommit": false,          // Don't confirm `--no-verify` commits.
+  "git.confirmSync": false,                    // Confirm before running sync operation (it may rewrite history).
+  "git.enableSmartCommit": true,               // Commit all working changes when nothing is yet staged.
+  "git.enableStatusBarSync": false,            // Remove sync control from status bar
+  "git.followTagsWhenSync": true,              // Sync tags, too.
+  "git.mergeEditor": true,                     // Use VS Code's new merge editor for resolving conflicts.
+  "git.pruneOnFetch": true,                    // Automatically prune references to deleted upstream branches.
+  "git.rebaseWhenSync": true,                  // Enforce rebase strategy on sync, to maintain linear history.
+  "git.repositoryScanMaxDepth": 3,             // Scan for Git repositories in sub-folders to a max depth of 3.
 
   // Collapse search results, so files must be expanded to show matching text.
   "search.collapseResults": "alwaysCollapse",
@@ -136,7 +139,7 @@
   // Integrated terminal configuration. Use Git Bash by default.
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.cursorWidth": 3,
-  "terminal.integrated.defaultLocation": "editor", // Open in a new editor tab rather than panel
+  "terminal.integrated.defaultLocation": "editor", // Open in a new editor tab rather than panel.
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   "terminal.integrated.enableMultiLinePasteWarning": false,
   "terminal.integrated.fontFamily": "Hack NF",
@@ -176,10 +179,10 @@
     "editorInfo.foreground": "#00aaff88",
 
     // Make the line highlight color very subtle.
-    // "editor.lineHighlightBackground": "#f9f9f9",
-    // "editor.lineHighlightBorder": "#f9f9f9",
+    "editor.lineHighlightBackground": "#f9f9f9",
+    "editor.lineHighlightBorder": "#f9f9f9",
 
-    // Matches "Hacks" theme in Windows Terminal settings:
+    // Matches "kp2024" theme in Windows Terminal settings:
     "terminal.background": "#282C34",
     "terminal.foreground": "#DCDFE4",
     "terminalCursor.background": "#FFFFFF",
@@ -224,7 +227,7 @@
   // By default, disable VS Code's built-in formatter and validation for JavaScript
   // syntax. Projects are therefore REQUIRED to enable third party formatters and
   // validators, such as ESLint, and to configure those tools specifically for
-  // for compatibility with the project's syntax.
+  // for compatibility with each project's syntax.
   "javascript.format.enable": false,
   "javascript.validate.enable": false,
 
