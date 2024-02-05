@@ -1,0 +1,231 @@
+# ==============================================================================
+# This file establishes global options for the Git version control system.
+# These settings are scoped to the system user.
+#
+# https://git-scm.com/docs/git-config
+# ==============================================================================
+
+[branch]
+
+  # Change the ordering of branches outputted from `git branch`. Sort in
+  # descending order of last commit date.
+  sort = -authordate:iso8601
+
+[core]
+
+  # Do not transform line endings to CRLF on Windows clients at checkout. This
+  # is unnecessary since all modern code editors can be configured to support
+  # Unix line endings (LF).
+  autocrlf = false
+
+  # Configure the default text editor that Git will use when it needs you to
+  # edit a file or type an extended input message. If not configured, Git
+  # uses your system's default editor. LazyGit will also read this setting and
+  # use the configured editor for file editing operations. Reference:
+  # https://www.git-scm.com/book/en/v2/Appendix-C%3A-Git-Commands-Setup-and-Config#ch_core_editor
+  editor = vim --nofork
+
+  # Normalize the line endings to the Unix standard (LF) on all files that Git
+  # auto-detects as being text based. This is equivalent to adding the following
+  # rule to `.gitattributes`:
+  # ----
+  # * text=auto eol=lf
+  # ----
+  eol = lf
+
+  # Establish a global `.gitignore` file, which will be applied to all local
+  # Git repositories but never be committed to any repository. Use this file to
+  # include TODOs, scratch files or any other personal materials to the
+  # working directories of local Git repositories without running the risk of
+  # those files being committed to any repository.
+  excludesFile = ~/local.gitignore
+
+  # By default Git uses `less` to page output from commands like `git log` and
+  # `git diff`. I prefer Delta: https://github.com/dandavison/delta
+  pager = delta
+
+[delta]
+
+  # Custom configuration for the Delta pager.
+
+  # This will need to be changed to true if the terminal uses a light theme.
+  light = false
+
+  # Show line numbers with diff output.
+  line-numbers = true
+
+  # Use `n` and `N` to move between diff sections.
+  navigate = true
+
+  # Show diffs in two vertical panels.
+  # https://dandavison.github.io/delta/side-by-side-view.html
+  side-by-side = true
+
+[diff]
+
+  # Color moved lines differently from changed lines. This is the same as adding
+  # the `--color-moved` flag to `git diff`. Options are "no", "default",
+  # "plain", "zebra" and "dimmed_zebra". https://git-scm.com/docs/diff-options
+  colorMoved = default
+
+  # Use vimdiff as diff tool.
+  tool = vimdiff
+
+[difftool]
+
+  # Don't prompt to open the configured difftool, just open it.
+  prompt = false
+
+[fetch]
+
+  # On `fetch` operations, automatically prune from the local repository any
+  # references to branches and tags in the upstream repository that no longer
+  # exist there.
+  prune = true
+
+[filter "lfs"]
+
+  # Default configuration for Git LFS. This configuration is what gets added
+  # automatically by the `git lfs install` command. https://git-lfs.com/
+  process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+
+[init]
+
+  # Change the name of the default branch, which gets set when a new Git
+  # repository is initialized the first time.
+  defaultBranch = dev
+
+[interactive]
+
+  # When an interactive command such as `git add --patch` shows a colorized
+  # diff, Git will pipe the diff through the shell command defined by this
+  # configuration variable. The command may further markup the diff before
+  # rendering. This is how we pipe the diff through the Delta pager. Delta's
+  # `--color-only` flag disables Delta from structurally changing the diff,
+  # which is required to maintain compatibility with Git.
+  # https://git-scm.com/docs/git-config
+  diffFilter = delta --color-only
+
+[merge]
+
+  # The `merge.conflictStyle` option specifies the style in which conflicted
+  # hunks are written out in working tree files. The default option is "merge",
+  # which prints `=======` to demarcate conflicting changes, which are
+  # themselves ringfenced by `<<<<<<<` on one side and `>>>>>>>` on the other.
+  # An alternate style, "diff3", adds a `|||||||` marker and the original text
+  # before the `=======` marker. This is not recommended since not all
+  # mainstream merge tools understand this syntax.
+  # https://git-scm.com/docs/merge-config
+  # conflictStyle = diff3
+
+  # By default, Git does not create an explicit merge commit if merging a
+  # commit that is a descendant of the current HEAD commit. Instead, the tip
+  # of the current branch is simply fast-forwarded to the commit being merged.
+  # Otherwise an explicit merge commit is created to resolve the divergent work
+  # between the source and target branches. This is equivalent to using the
+  # `--ff` flag or setting `merge.ff` to `true` – but it's easier to think of
+  # this as "auto" mode, it means "fast-forward if possible".
+  #
+  # Whe `merge.ff` is set to `false` or the `--no-ff` flag is used, an explicit
+  # merge commit will be recorded every time, even if a simple fast-forward
+  # operation is possible. This option can't be used with `--squash` for reasons
+  # that are well explained here: https://stackoverflow.com/a/14322024
+  #
+  # Finally, `merge.ff` can be set to `"only"`, which is the equivalent of
+  # using the `--ff-only` flag. With this setting, Git will refuse to handle
+  # merges that cannot be simply fast-forwarded. This means, where there is
+  # divergent work in the source branch, the target branch must first be rebased
+  # on the source branch before the merge operation will succeed.
+  #
+  # Squash (`--squash`) and fast-forwarding (`--ff-only`) are the two merge
+  # strategies that achieve linear commit histories. It is possible to use
+  # the two options together (`--squash --ff-only`). In this case, if the source
+  # branch has diverged from the target branch (so a fast-forward is not
+  # possible) then the merge is rejected. Otherwise, rather than fast-forwarding,
+  # all the extra commits on the target branch are squashed onto the source
+  # branch, creating a new commit there.
+  #
+  # The following resource provides a good summary of theseGit merge strategies:
+  # https://bit.ly/3ZZ2xOi
+  #
+  # My preference is to use `git merge` to perform true merges, ie creating
+  # explicit merge commits even when not needed to resolve conflicts, and to
+  # use aliases such as `git squash` and `git fast-forward` to apply other
+  # integration strategies.
+  ff = false
+
+  # Set the default for `git mergetool --tool=[tool]`. For vimdiff, the following
+  # values are supported:
+  # - vimdiff:  use Vim with a custom layout as specified using separate hints
+  # - vimdiff1: use Vim with a 2 panes layout: LOCAL and REMOTE
+  # - vimdiff2: use Vim with a 3 panes layout: LOCAL, MERGED and REMOTE
+  # - vimdiff3: use Vim where only the MERGED file is shown
+  tool = vimdiff2
+
+[mergetool]
+
+  # Prevent generation of `.orig` files, which can all-too-easily get committed
+  # to source control by accident.
+  keepBackup = false
+
+  # Don't prompt to open the configured mergetool.
+  prompt = false
+
+[pull]
+
+  # On `git pull` operations, always rebase the current branch on top of the
+  # upstream branch after fetching. This helps to maintain a clean, linear
+  # commit history.
+  rebase = true
+
+[push]
+
+  # Push tags with commits by default. Equivalent to the `--follow-tags` option.
+  followTags = true
+
+  # By default, push branches to branches of the same name in the upstream repo.
+  # It means you can `git push` excluding the `<remote> <branch>` parameters.
+  default = current
+
+  # Automatically set up branch tracking. This is equivalent to using
+  # `--set-upstream` | `-u` on `git push`. This option must be used in
+  # conjunction with an appropriate `default` option, eg `default = current`.
+  # This option is available since Git 2.37.
+  autoSetupRemote = true
+
+[rebase]
+
+  # Add the `--autosquash` option to every `rebase` operation by default. This
+  # will automatically handle commit messages that are prefixed "squash!",
+  # "fixup!" or "amend!", changing the rebase action from "pick" to "squash",
+  # "fixup" and "fixup -C" respectively. See https://stackoverflow.com/a/66833278
+  #
+  # (Note: "fixup -C" is the same as "fixup" except the log message of the
+  # "fixup!" commit replaces the message of the target commit, rather than the
+  # other way around.)
+  #
+  # This is a better default because interactive rebase still gives us the
+  # chance to edit the actions per commit, before the rebase operation proper.
+  # And this default behavior can still be disabled on a case-by-case basis by
+  # adding the `--no-autosquash` option to the `git rebase` command.
+  autosquash = true
+
+[safe]
+
+  # If your Git repositories are on an external drive, Git will consider them
+  # to be owned by someone else and therefore unsafe by default. This setting
+  # completely opts-out of this security check.
+  # https://git-scm.com/docs/git-config#Documentation/git-config.txt-safedirectory
+  directory = *
+
+[include]
+
+  # Allow extensions to this base Git configuration via `~/local.gitconfig`.
+  # Note, the `include.path` config MUST be maintained at the bottom of the
+  # `.gitconfig` template, as the contents of the included path are injected
+  # at this position and we want the included file to have the opportunity to
+  # override anything in the `.gitconfig` template.
+  path = ~/local.gitconfig
