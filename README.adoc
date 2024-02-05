@@ -41,8 +41,7 @@ You are welcome to use this repository as a starting point for your own developm
 * link:./docs/contributing/acknowledgments.adoc[Acknowledgments]
 
 ''''
-
-Copyright © 2020-2024 Kieran Potts – link:./LICENSE.txt[MIT License]
+Copyright © 2020-present Kieran Potts, link:./LICENSE.txt[MIT License]
 
 The font files and executable binaries redistributed via this repository are copyright their respective authors and subject to the terms of the same MIT License. Follow the links below to view the license for each binary.
 
