@@ -68,27 +68,30 @@ To use these configuration, you will need to create symlinks to them. On Windows
 [source,powershell]
 ----
 # LazyGit
-New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Roaming\lazygit\config.yml" -Target "C:\path\to\tools\etc\lazygit\config.yml" -Force
+New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Roaming\lazygit\config.yml" -Target "C:\path\to\devtools\etc\lazygit\config.yml" -Force
 
 # Sublime Merge
-New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Roaming\Sublime Merge\Packages\User\Preferences.sublime-settings" -Target "C:\path\to\tools\etc\sublime-merge\Preferences.sublime-settings" -Force
+New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Roaming\Sublime Merge\Packages\User\Preferences.sublime-settings" -Target "C:\path\to\devtools\etc\sublime-merge\Preferences.sublime-settings" -Force
 
 # VS Code / VS Codium
-New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Roaming\[Code|VSCodium]\User\settings.json" -Target "C:\path\to\tools\etc\vscode\settings.json" -Force
-New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Roaming\[Code|VSCodium]\User\keybindings.json" -Target "C:\path\to\tools\etc\vscode\keybindings.json" -Force
-New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Roaming\[Code|VSCodium]\User\snippets\global.code-snippets" -Target "C:\path\to\tools\etc\vscode\global.code-snippets" -Force
+New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Roaming\[Code|VSCodium]\User\settings.json" -Target "C:\path\to\devtools\etc\vscode\settings.json" -Force
+New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Roaming\[Code|VSCodium]\User\keybindings.json" -Target "C:\path\to\devtools\etc\vscode\keybindings.json" -Force
+New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Roaming\[Code|VSCodium]\User\snippets\global.code-snippets" -Target "C:\path\to\devtools\etc\vscode\global.code-snippets" -Force
 
 # Windows Terminal
-New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Local\Packages\Microsoft.WindowsTerminal_[hash]\LocalState\settings.json" -Target "C:\path\to\tools\etc\wt\settings.json" -Force
+New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Local\Packages\Microsoft.WindowsTerminal_[hash]\LocalState\settings.json" -Target "C:\path\to\devtools\etc\wt\settings.json" -Force
 ----
 
 .Unix-like systems
 [source,sh]
 ----
+# LazyGit
+ln --symbolic --force path/to/devtools/etc/lazygit/config.yml ~/.config/lazygit/config.yml
+
 # VS Code / VS Codium
-ln --symbolic --force path/to/tools/etc/vscode/settings.json ~/.config/Code/User/settings.json
-ln --symbolic --force path/to/tools/etc/vscode/keybindings.json ~/.config/Code/User/keybindings.json
-ln --symbolic --force path/to/tools/etc/vscode/global.code-snippets ~/.config/Code/User/snippets/global.code-snippets
+ln --symbolic --force path/to/devtools/etc/vscode/settings.json ~/.config/Code/User/settings.json
+ln --symbolic --force path/to/devtools/etc/vscode/keybindings.json ~/.config/Code/User/keybindings.json
+ln --symbolic --force path/to/devtools/etc/vscode/global.code-snippets ~/.config/Code/User/snippets/global.code-snippets
 ----
 
 === 3. Enable the shell theme
