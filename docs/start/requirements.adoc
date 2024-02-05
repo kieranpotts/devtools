@@ -2,7 +2,7 @@
 
 All dependencies are OPTIONAL.
 
-The dotfiles and Git aliases are compatible with UNIX-like environments. https://gitforwindows.org/[Git Bash for Windows] is supported.
+The dotfiles and Git aliases are compatible with UNIX-like environments. https://gitforwindows.org/[Git Bash for Windows] is supported. On Windows, WSL2 and required virtualization should be enabled, and "Ubuntu" installed via the Microsoft Store.
 
 The Git configuration has been tested with https://git-scm.com/[Git] v29. It is recommended also to install https://github.com/dandavison/delta[Delta], a paging utility. The Git configuration swaps `less` for `delta` for paging output from commands like `git log` and `git diff`.
 
