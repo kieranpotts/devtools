@@ -6,10 +6,10 @@ My dotfiles include handy aliases and functions for UNIX-like systems, a better 
 
 In addition to my dotfiles, this repository also includes the following:
 
-* Prompt line customization using link:https://ohmyposh.dev/[Oh-My-Posh]
-* Binaries for command line utilities like link:https://github.com/jesseduffield/lazygit[lazygit]
-* VS Code user-level settings, including theme and keybindings
-* Windows Terminal settings
+* Prompt line customization using link:https://ohmyposh.dev/[Oh-My-Posh].
+* Binaries for command line utilities like link:https://github.com/jesseduffield/lazygit[lazygit].
+* VS Code user-level settings, including theme and keybindings, so these can be synced across devices without needing to sign-in to the same Microsoft/GitHub account.
+* Windows Terminal settings.
 
 You are welcome to use this repository as a starting point for your own development environment configuration. Fork it and modify it to suit your own needs.
 
