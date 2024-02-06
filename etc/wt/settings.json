@@ -35,7 +35,7 @@
     "firstWindowPreference": "defaultProfile",
     "initialCols": 90,
     "initialRows": 30,
-    "launchMode": "maximized",
+    "launchMode": "default",
     "newTabMenu":
     [
         {

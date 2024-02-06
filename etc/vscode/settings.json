@@ -206,7 +206,7 @@
   },
 
   // Themes.
-  "workbench.colorTheme": "Visual Studio Light",
+  "workbench.colorTheme": "GitHub Light Default",
   "workbench.iconTheme": "vs-minimal",
 
   // Shrink tab size as the available space decreases.
