@@ -17,6 +17,11 @@ if [ -f ~/devtools/dist/aliases/posix/index.sh ]; then
   source ~/devtools/dist/aliases/posix/index.sh
 fi
 
+# Load utility functions that are compatible with all POSIX-compliant shells.
+if [ -f ~/devtools/dist/functions/posix/index.sh ]; then
+  source ~/devtools/dist/functions/posix/index.sh
+fi
+
 # Load the user's `~/local.profile` file, which can be used to override
 # anything set in this file.
 if [ -f ~/local.profile ]; then
