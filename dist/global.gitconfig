@@ -8,8 +8,21 @@
 [branch]
 
   # Change the ordering of branches outputted from `git branch`. Sort in
-  # descending order of last commit date.
-  sort = -authordate:iso8601
+  # descending order of last commit date, rather than alphabetically (default)
+  #sort = -authordate:iso8601
+  sort = -committerdate:iso8601
+
+[commit]
+
+  # This adds the whole commit diff in the text editor when you're editing the
+  # commit message. This is useful for reviewing the changes you're committing
+  # and writing a meaningful commit message.
+  verbose = true
+
+[color]
+
+  # Turn off color in CLI output.
+  # ui = false
 
 [core]
 
@@ -37,11 +50,16 @@
   # Git repositories but never be committed to any repository. Use this file to
   # include TODOs, scratch files or any other personal materials to the
   # working directories of local Git repositories without running the risk of
-  # those files being committed to any repository.
+  # those files being committed to any repository. Defaults to
+  # ` ~/.config/git/ignore`.
   excludesFile = ~/local.gitignore
 
   # By default Git uses `less` to page output from commands like `git log` and
-  # `git diff`. I prefer Delta: https://github.com/dandavison/delta
+  # `git diff`. I prefer Delta, which is a pager with built-in syntax
+  # highlighting: https://github.com/dandavison/delta
+  #
+  # Other options include "cat" (for disabling paging altogether), or using
+  # "less" with additional arguments for customizing the pager behavior.
   pager = delta
 
 [delta]
@@ -63,12 +81,28 @@
 
 [diff]
 
+  # Git's default diff algorithm is `myers`, which is a general-purpose
+  # algorithm that works well for most use cases. However, it can be slow for
+  # large files and the diff output can be hard to read. Other options include
+  # `minimal`, `patience` and `histogram`. The histogram algorithm I've found
+  # to strike a good balance. See Lup Peng's blog post for more details about
+  # how these diff algorithms work:
+  # https://luppeng.wordpress.com/2020/10/10/when-to-use-each-of-the-git-diff-algorithms/
+  algotithm = histogram
+
   # Color moved lines differently from changed lines. This is the same as adding
   # the `--color-moved` flag to `git diff`. Options are "no", "default",
   # "plain", "zebra" and "dimmed_zebra". https://git-scm.com/docs/diff-options
   colorMoved = default
 
-  # Use vimdiff as diff tool.
+  # When `colorMoved` is set to "default", this ignores indentation changes.
+  colorMovedWS = allow-indentation-change
+
+  # Include more context in diffs.
+  context = 10
+
+  # Use vimdiff as diff tool. Other options include difftastic, meld and
+  # nvimdiffs.
   tool = vimdiff
 
 [difftool]
@@ -78,10 +112,15 @@
 
 [fetch]
 
+  # See `transfer.fsckobjects` for an explanation of this setting.
+  fsckobjects = true
+
   # On `fetch` operations, automatically prune from the local repository any
-  # references to branches and tags in the upstream repository that no longer
-  # exist there.
+  # references to branches in the upstream repository that no longer exist there.
   prune = true
+
+  # Also prune references to non-existent tags.
+  prunetags = true
 
 [filter "lfs"]
 
@@ -91,6 +130,15 @@
   required = true
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
+
+[help]
+
+  # Git will make suggestions for mistyped commands like  `git ocmmit` in
+  # help text. You can use this option to have Git run the suggested command
+  # automatically, either "immediate" or after a delay in tenths of a second
+  # (eg. "1" for 0.1 seconds). For safety, the best option is to be prompted
+  # if you do indeed intend to run the suggested command.
+  autocorrect = prompt
 
 [init]
 
@@ -109,17 +157,34 @@
   # https://git-scm.com/docs/git-config
   diffFilter = delta --color-only
 
+[log]
+
+  # Display dates as `2024-01-31 12:00:00` instead of `Wed Jan 31 12:00:50 2024`.
+  date = iso
+
 [merge]
 
   # The `merge.conflictStyle` option specifies the style in which conflicted
   # hunks are written out in working tree files. The default option is "merge",
   # which prints `=======` to demarcate conflicting changes, which are
   # themselves ringfenced by `<<<<<<<` on one side and `>>>>>>>` on the other.
-  # An alternate style, "diff3", adds a `|||||||` marker and the original text
-  # before the `=======` marker. This is not recommended since not all
-  # mainstream merge tools understand this syntax.
+  #
+  # An alternate style, "diff3", adds a `|||||||` marker followed by the original
+  # text before either branch changed it. Being able to see the common ancestor
+  # of the merge conflicts gives a baseline frame of reference for understanding
+  # why the lines were changed differently in each branch. See Edward Anderson's
+  # blog post: https://blog.nilbus.com/take-the-pain-out-of-git-conflict-resolution-use-diff3/
+  #
+  # A new merge conflict algorithm added in Git 2.35 in January 2022 is better
+  # still. It expands on diff3 but reduces some of the noise by only showing
+  # what is _different_ between the conflicting branches. It automatically
+  # accepts any changes that are the same across both branches. Michael Gattozzi
+  # has written a good explanation of this feature: https://ductile.systems/zdiff3/
+  #
+  # The downside of using these alternative diffing algorithms is they are not
+  # all compatible with mainstream GUI merge rools.
   # https://git-scm.com/docs/merge-config
-  # conflictStyle = diff3
+  conflictStyle = zdiff3
 
   # By default, Git does not create an explicit merge commit if merging a
   # commit that is a descendant of the current HEAD commit. Instead, the tip
@@ -163,6 +228,7 @@
   # - vimdiff1: use Vim with a 2 panes layout: LOCAL and REMOTE
   # - vimdiff2: use Vim with a 3 panes layout: LOCAL, MERGED and REMOTE
   # - vimdiff3: use Vim where only the MERGED file is shown
+  # Other options include meld, nvim or nvimdiff.
   tool = vimdiff2
 
 [mergetool]
@@ -181,6 +247,14 @@
   # commit history.
   rebase = true
 
+  # An alternative setting is to use `--ff-only` to ensure that the current
+  # branch is only ever fast-forwarded to the upstream branch, and never merged
+  # with an explicit commit. If there is divergent work in the upstream branch,
+  # the pull operation will fail, forcing the user to do an initial `git rebase`.
+  # This setting overrides `merge.ff` when pulling, and it will take precedence
+  # over the `pull.rebase` option.
+  #ff = only
+
 [push]
 
   # Push tags with commits by default. Equivalent to the `--follow-tags` option.
@@ -191,9 +265,9 @@
   default = current
 
   # Automatically set up branch tracking. This is equivalent to using
-  # `--set-upstream` | `-u` on `git push`. This option must be used in
-  # conjunction with an appropriate `default` option, eg `default = current`.
-  # This option is available since Git 2.37.
+  # `--set-upstream` | `-u` on `git push`. I think this option is intended for
+  # use with `push.default = simple`, but `push.default = current` achieves
+  # the same thing. This option is available since Git 2.37.
   autoSetupRemote = true
 
 [rebase]
@@ -207,11 +281,42 @@
   # "fixup!" commit replaces the message of the target commit, rather than the
   # other way around.)
   #
+  # The aim of this feature is to make it easier to modify old commits.
+  #
   # This is a better default because interactive rebase still gives us the
   # chance to edit the actions per commit, before the rebase operation proper.
   # And this default behavior can still be disabled on a case-by-case basis by
   # adding the `--no-autosquash` option to the `git rebase` command.
   autosquash = true
+
+  # Add the `--autostash` option to every `rebase` operation by default. This
+  # will automatically stash local changes before the rebase operation, and
+  # then apply the stash after the rebase operation. This is useful when you
+  # want to rebase a branch while it has uncommitted changes. The downside is
+  # you may end up with merge conflicts in your working tree.
+  autostash = true
+
+  # Don't allow deleting missing commits during a rebase operation.
+  missingCommitsCheck = error
+
+  # Makes it easier to rebase multiple stacked branches at a time. See:
+  # https://andrewlock.net/working-with-stacked-branches-in-git-is-easier-with-update-refs/
+  updateRefs = true
+
+[receive]
+
+  # See `transfer.fsckobjects` for an explanation of this setting.
+  fsckobjects = true
+
+[rerere]
+
+  # This enabled rerere, which stands for "reuse recorded resolution". This
+  # feature records how you resolve conflicts and then automatically applies
+  # the same resolution to the same conflicts in the future. This is useful
+  # when you're working on a long-lived feature branch and you're frequently
+  # rebasing it on top of the latest changes in the main branch.
+  # https://git-scm.com/book/en/v2/Git-Tools-Rerere
+  enabled = true
 
 [safe]
 
@@ -220,6 +325,19 @@
   # completely opts-out of this security check.
   # https://git-scm.com/docs/git-config#Documentation/git-config.txt-safedirectory
   directory = *
+
+[transfer]
+
+  # Checks all data objects eagerly for data corruption. This will rarely be
+  # useful when syncing with Git repositories hosted in modern cloud services
+  # like GitHub. But when interacting with legacy Git repositories, data objects
+  # may not be compatible with current Git versions. This setting stops the
+  # transfer of legacy data objects via fetches, therefore preventing corruption
+  # of your local repositories.
+  #
+  # https://git-scm.com/docs/git-fsck
+  # https://git-scm.com/docs/git-config#Documentation/git-config.txt-transferfsckObjects
+  fsckobjects = true
 
 [include]
 
