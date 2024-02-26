@@ -240,6 +240,13 @@
 
   // EXTENSIONS.
 
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": true,
+    "asciidoc": true,
+    "markdown": true,
+  },
+
   "github.copilot.advanced": {
     "debug.showScores": true,
     "inlineSuggestCount": 12,
