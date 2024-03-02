@@ -17,5 +17,33 @@
   {
     "key": "ctrl+alt+z",
     "command": "workbench.action.toggleZenMode"
+  },
+
+  // Toggle voice dictation. Required VS Code Speech extension.
+  {
+    "key": "ctrl+shift+s",
+    "command": "workbench.action.chat.startVoiceChat",
+    "when": "!voiceChatInProgress"
+  },
+  {
+    "key": "ctrl+shift+s",
+    "command": "workbench.action.chat.stopListeningAndSubmit",
+    "when": "voiceChatInProgress"
+  },
+
+  // Remove built-in shortcuts for Ctrl+Shift+s.
+  {
+    "key": "ctrl+shift+s",
+    "command": "-workbench.action.files.saveAs"
+  },
+  {
+    "key": "ctrl+shift+s",
+    "command": "-markdown-preview-enhanced.syncPreview",
+    "when": "editorLangId == 'markdown'"
+  },
+  {
+    "key": "ctrl+shift+s",
+    "command": "-workbench.action.files.saveLocalFile",
+    "when": "remoteFileDialogVisible"
   }
 ]

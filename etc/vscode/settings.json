@@ -238,7 +238,7 @@
   // the code and JSDoc-style notations.
   "js/ts.implicitProjectConfig.checkJs": false,
 
-  // EXTENSIONS.
+  // OTHER EXTENSIONS.
 
   "github.copilot.enable": {
     "*": true,
