@@ -152,8 +152,10 @@
   "terminal.explorerKind": "external",
 
   // Use VS Code's non-native title bar with the command centre in the middle.
+  // Show only the name of the folder or workspace in the window title bar.
   "window.titleBarStyle": "custom",
   "window.commandCenter": true,
+  "window.title": "${dirty}${rootName}${separator}",
 
   // Use VS Code's non-native dialog windows.
   "window.dialogStyle": "custom",
