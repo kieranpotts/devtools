@@ -10,8 +10,8 @@
     // EditorConfig — .editorconfig file support.
     "editorconfig.editorconfig",
 
-    // Add support for .vimrc file syntax.
-    "voidei.vscode-vimrc"
+    // Add support for Vim Language, Vim Script
+    "xadillax.viml"
 
   ]
 }

@@ -8,39 +8,22 @@ The Git configuration has been tested with https://git-scm.com/[Git] v29. It is 
 
 Configurations are also included for the following programs:
 
-- https://github.com/jesseduffield/lazygit#installation[LazyGit]
-- https://ohmyposh.dev/[Oh-My-Posh]
-- https://www.sublimemerge.com/[Sublime Merge]
-- https://www.vim.org/[Vim]
-- https://code.visualstudio.com/[Visual Studio Code]
-- https://github.com/microsoft/terminal[Windows Terminal]
-
-The full version of Vim (`/usr/bin/vim.basic`) is recommended. The `.vimrc` file installed from this repository is not compatible with the minimalist version of Vim (`/usr/bin/vim.tiny`), which is installed by default on some Linux distros. To check which version of Vim is installed on your system, run:
-
-[source,sh]
-----
-readlink -f `which vi`
-----
-
-To install the full version of Vim, run:
-
-[source,sh]
-----
-sudo apt update
-sudo apt install vim
-----
+* https://github.com/jesseduffield/lazygit#installation[LazyGit]
+* https://neovim.io/[Neovim]
+* https://ohmyposh.dev/[Oh-My-Posh]
+* https://www.sublimemerge.com/[Sublime Merge]
+* https://code.visualstudio.com/[Visual Studio Code]
+* https://github.com/microsoft/terminal[Windows Terminal]
 
 == Bundled binaries
 
-Windows binaries for `delta`, `lazygit` and `oh-my-posh` are included in this repository. These can be enabled simply by adding this repository's `bin` directory to your system's `PATH` environment variable.
-
-For Unix-like environments, these binaries must be installed manually. Follow the links below for installation instructions:
+Windows binaries for `delta`, `lazygit` and `oh-my-posh` are included in this repository. These can be enabled simply by adding this repository's `bin` directory to your system's `PATH` environment variable. For Unix-like environments, these binaries must be installed manually. Follow the links below for installation instructions:
 
 * link:https://dandavison.github.io/delta/installation.html[Delta] (On Ubuntu/ WSL, `git-delta` is bundled with the `git-extras` package and can therefore be installed using `sudo apt install git-extras`.)
 * link:https://github.com/jesseduffield/lazygit[LazyGit]
 * link:https://ohmyposh.dev/docs/installation/linux[Oh-My-Posh]
 
-All other dependencies must be manually installed.
+All other dependencies must be manually installed on all systems.
 
 ****
 Fresh Windows binaries can be downloaded from the following links. Binaries for the x86-64 or AMD64 architectures are used.

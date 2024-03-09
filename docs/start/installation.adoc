@@ -80,18 +80,25 @@ New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Roaming\[Code|VSC
 
 # Windows Terminal
 New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Local\Packages\Microsoft.WindowsTerminal_[hash]\LocalState\settings.json" -Target "C:\path\to\devtools\etc\wt\settings.json" -Force
+
+# Neovim
+New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Local\nvim\init.vim" -Target "C:\path\to\devtools\etc\nvim\init.vim" -Force
 ----
 
 .Unix-like systems
 [source,sh]
 ----
 # LazyGit
-ln --symbolic --force path/to/devtools/etc/lazygit/config.yml ~/.config/lazygit/config.yml
+ln --symbolic --force /full/path/to/devtools/etc/lazygit/config.yml ~/.config/lazygit/config.yml
 
 # VS Code / VS Codium
-ln --symbolic --force path/to/devtools/etc/vscode/settings.json ~/.config/Code/User/settings.json
-ln --symbolic --force path/to/devtools/etc/vscode/keybindings.json ~/.config/Code/User/keybindings.json
-ln --symbolic --force path/to/devtools/etc/vscode/global.code-snippets ~/.config/Code/User/snippets/global.code-snippets
+ln --symbolic --force /full/path/to/devtools/etc/vscode/settings.json ~/.config/Code/User/settings.json
+ln --symbolic --force /full/path/to/devtools/etc/vscode/keybindings.json ~/.config/Code/User/keybindings.json
+ln --symbolic --force /full/path/to/devtools/etc/vscode/global.code-snippets ~/.config/Code/User/snippets/global.code-snippets
+
+# Nvim
+mkdir -p ~/.config/nvim
+ln --symbolic --force /full/path/to/devtools/etc/nvim/init.vim ~/.config/nvim/init.vim
 ----
 
 === 3. Enable the shell theme
