@@ -1,12 +1,86 @@
 = Requirements
 
-All dependencies are OPTIONAL.
+The dotfiles and Git aliases are compatible with UNIX-like environments. https://gitforwindows.org/[Git Bash for Windows] is supported. On Windows, WSL2 (and the required virtualization) should be enabled, and "Ubuntu" installed via the Microsoft Store.
 
-The dotfiles and Git aliases are compatible with UNIX-like environments. https://gitforwindows.org/[Git Bash for Windows] is supported. On Windows, WSL2 and required virtualization should be enabled, and "Ubuntu" installed via the Microsoft Store.
+The Git configuration has been tested with https://git-scm.com/[Git] v2.39.1 and is known to be incompatible with versions before v2.34. https://gitforwindows.org/[Git for Windows] is recommended for the Windows platform. For Debian distros, run the following command to check which is the current version of Git available via the APT package manager.
 
-The Git configuration has been tested with https://git-scm.com/[Git] v29. It is recommended also to install https://github.com/dandavison/delta[Delta], a paging utility. The Git configuration swaps `less` for `delta` for paging output from commands like `git log` and `git diff`.
+[source,sh]
+----
+apt-cache policy git
+----
 
-Configurations are also included for the following programs:
+If the available version is >= v2.34, go ahead and install it using the following commands.
+
+[source,sh]
+----
+sudo apt-get update
+sudo apt-get install git -y
+----
+
+Alternatively you can specify the version of a package to install, using either of the following commands.
+
+[source,sh]
+----
+sudo apt-get install <package-name>=<package-version-number>
+sudo apt-get -t=<target release> install <package-name>
+----
+
+Check the installed version with the command `git --version`.
+
+If you want to install a newer version of Git than is available via the default package registries, use `wget` to download the version directly from the source. For example, to download the source for Git v2.34.0, run the following command.
+
+[source,sh]
+----
+wget https://github.com/git/git/archive/refs/tags/v2.34.0.tar.gz
+----
+
+Before extracting the package, install the following packages.
+
+[source,sh]
+----
+sudo apt-get update
+sudo apt-get install libz-dev libssl-dev libcurl4-gnutls-dev libexpat1-dev gettext cmake gcc
+----
+
+Extract the Git package, then navigate to the extracted directory (path names may differ).
+
+[source,sh]
+----
+tar -zxf v2.34.0.tar.gz
+cd git-2.34.0
+----
+
+Run the following command to install the package. This is a slow operation.
+
+[source,sh]
+----
+make prefix=/usr/local all
+sudo make prefix=/usr/local install
+----
+
+Check the installed version with the command `git --version`. Use `rm` to remove the temporary files and directories.
+
+Some repositories use https://git-lfs.com/[Git Large File Storage]. This is a Git extension that removes large files from the repository and stores them elsewhere, cross-referenced from the Git repository using pointers. To install Git LFS, first download and install the Git command line extension from the https://git-lfs.com/[Git LFS website]. Git LFS is available for the APT package manager – `sudo apt-get install git-lfs` – else see the https://github.com/git-lfs/git-lfs/blob/main/INSTALLING.md[installation instructions].
+
+Then run the following command:
+
+[source,sh]
+----
+git lfs install
+----
+
+In each Git repository where you want to use Git LFS, run the following command to configure the file types that you'd like Git LFS to manage, or edit the `.gitattributes` file directly (this file MUST be committed).
+
+[source,sh]
+----
+git lfs track "*.pdf"
+----
+
+Then commit and push as you normally would. To convert existing files, already committed to the repository, use the `git lfs migrate` command. See the https://github.com/git-lfs/git-lfs/blob/main/docs/man/git-lfs-migrate.adoc[documentation].
+
+It is RECOMMENDED also to install https://github.com/dandavison/delta[Delta], a paging utility. The Git configuration swaps `less` for `delta` for paging output from commands like `git log` and `git diff`.
+
+This repository also includes configurations for the following programs – all of which are OPTIONAL.
 
 * https://github.com/jesseduffield/lazygit#installation[LazyGit]
 * https://neovim.io/[Neovim]
