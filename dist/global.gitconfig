@@ -137,7 +137,8 @@
   # help text. You can use this option to have Git run the suggested command
   # automatically, either "immediate" or after a delay in tenths of a second
   # (eg. "1" for 0.1 seconds). For safety, the best option is to be prompted
-  # if you do indeed intend to run the suggested command.
+  # if you do indeed intend to run the suggested command. This option
+  # requires Git >= 2.34.
   autocorrect = prompt
 
 [init]
