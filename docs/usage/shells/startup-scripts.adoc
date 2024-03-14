@@ -31,15 +31,15 @@ if [ -f ~/.bashrc ]; then
 fi
 ```
 
-== What `bin/update!` does
+== What `bin/posix/update!` does
 
-The `bin/update!` script for these devtools will install a symlinked `~/.profile` file in your home directory. This is used to set some global environment variables (which will be inherited by all subshells). The `~/.profile` script is also used to load POSIX-compliant, shell-agnostic aliases and functions, as well as a suite of other utilities that will be useful in every interactive shell environment.
+The `bin/posix/update!` script for these devtools will install a symlinked `~/.profile` file in your home directory. This is used to set some global environment variables (which will be inherited by all subshells). The `~/.profile` script is also used to load POSIX-compliant, shell-agnostic aliases and functions, as well as a suite of other utilities that will be useful in every interactive shell environment.
 
-The `bin/update!` script also installs a symlinked `~/.bash_profile` file in your home directory. This includes a command to source the `~/.profile` script, thus Bash terminal environments will inherit the POSIX-compliant, shell-agnostic configuration defined in `~/.profile`. And, as per common practice, the `~/.bash_profile` file also sources `~/.bashrc`, so ensuring consistent behavior regardless of the mode in which terminal programs run Bash by default.
+The `bin/posix/update!` script also installs a symlinked `~/.bash_profile` file in your home directory. This includes a command to source the `~/.profile` script, thus Bash terminal environments will inherit the POSIX-compliant, shell-agnostic configuration defined in `~/.profile`. And, as per common practice, the `~/.bash_profile` file also sources `~/.bashrc`, so ensuring consistent behavior regardless of the mode in which terminal programs run Bash by default.
 
 The `~/.bash_profile` file is used to set environment variables while `~/.bashrc` is used to define aliases and functions, and to customize the prompt and history. Both scripts depend on Bash-specific syntax and APIs.
 
-The `bin/update!` script also installs "local" versions of all these files into your user directory:
+The `bin/posix/update!` script also installs "local" versions of all these files into your user directory:
 
 - `local.profile`
 - `local.bash_profile`

@@ -25,25 +25,25 @@ New-Item -ItemType SymbolicLink -Path "C:\Users\[Username]\devtools" -Target "C:
 
 == Dotfiles installation
 
-=== 1. Run the update script
+=== 1. Run the `update!` script
 
-Change to the root directory of the cloned repository and run the `bin/update!` shell script. If your OS is Windows, your terminal program MUST be run with administrator privileges in order for the script to be able to create the necessary symlinks.
+Change to the root directory of the cloned repository and run the `bin/posix/update!` shell script. If your OS is Windows, your terminal program MUST be run with administrator privileges in order for the script to be able to create the necessary symlinks.
 
 [source,sh]
 ----
 cd ~/devtools
-sh bin/update!
+sh bin/posix/update!
 ----
 
 The update script will install and enable the dotfiles. The first time you do this, you will need to exit your terminal program then restart it. Doing so will create a new login shell, which will load the newly-installed dotfiles at startup.
 
-=== 2. Add the `bin` directory to your system PATH environment variable
+=== 2. Add the `bin/*` directories to your system PATH environment variable
 
-This repository's `bin` directory contains various `git-*` shell scripts that are mapped to Git aliases. It is RECOMMENDED you add the `bin` directory to your system PATH environment variable, to make these Git commands available from the command line.
+This repository's `bin/posix` directory contains various `git-*` shell scripts that are mapped to Git aliases. It is RECOMMENDED you add the `bin/posix` directory to your system PATH environment variable, to make these Git commands available from the command line on all Unix-like systems (including Git Bash for Windows).
 
-For Unix shells, the `local.bash_profile` file already includes a script to add `~/devtools/bin` to the `PATH` environment variable.
+For Unix shells, the `local.bash_profile` file already includes a script to add `~/devtools/bin/posix` to the `PATH` environment variable.
 
-On Windows, adding `~/devtools/bin` to your system PATH will also make available the bundled Windows binaries for the Delta, LazyGit and Oh-My-Posh tools, so you won't need to manually install these programs.
+On Windows, also adding `~/devtools/bin/windows` to your system PATH will also make available the bundled Windows binaries for Delta, LazyGit, Oh-My-Posh and other tools, so you won't need to manually install these programs.
 
 == Program configurations
 
