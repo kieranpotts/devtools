@@ -4,10 +4,10 @@ It is easy to update your system to use the latest dotfiles configuration from t
 
 [source,sh]
 ----
-sh bin/update!
+sh bin/posix/update!
 ----
 
-Or, if you have added this repository's `bin` directory to your system PATH, then you can just type:
+Or, if you have added this repository's `bin/posix` directory to your system PATH, then you can just type:
 
 [source,sh]
 ----

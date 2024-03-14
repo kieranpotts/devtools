@@ -1,3 +1,3 @@
 = The `bin` directory
 
-This directory is intended to be added to the user's system PATH, thus making the Git aliases and binaries executable from the command line.
+The `bin/posix` and `bin/windows` directories are intended to be added to the user's system PATH (depending on the OS), thus making the Git aliases and binaries executable from the command line.

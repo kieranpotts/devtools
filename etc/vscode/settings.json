@@ -18,9 +18,6 @@
   // Markup blocks of code that have moved to different lines.
   "diffEditor.experimental.showMoves": true,
 
-  // Automatically collapse regions of code that are not relevant to the merge.
-  "diffEditor.hideUnchangedRegions.enabled": true,
-
   // Disable various auto-complete mechanisms in the code editor.
   "editor.autoClosingBrackets": "never",
   "editor.autoClosingDelete": "never",
@@ -254,5 +251,6 @@
     "inlineSuggestCount": 12,
     "listCount": 12,
   },
+  "diffEditor.hideUnchangedRegions.enabled": true,
 
 }
