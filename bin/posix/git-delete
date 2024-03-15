@@ -35,25 +35,31 @@ branch="${1}"
 # If not, let the user select from a list.
 if [ -z "${branch}" ]; then
 
-  branches=()
-  eval "$(git for-each-ref --sort='-authordate:iso8601' --shell --format='branches+=(%(refname))' refs/heads/)"
+  branches=$(git for-each-ref --sort='-authordate:iso8601' --format='%(refname)' refs/heads/)
 
   # TODO:
   # Remove main, master and current branch from list of available branches to delete.
 
-  length=${#branches[@]}
-  for (( i=0; i<${length}; i++ ))
+  set -- "${branches}"
+  i=0
+  for branch_name
   do
-    branch_name="${branches[$i]}"
-
     # Remove refs/heads/ from start of branch name
-    printf "%b${i}%b - ${branch_name:11}" "${YELLOW}" "${RESET}"
+    branch_name=$(echo "$branch_name" | sed 's|refs/heads/||')
+    printf "%b${i}%b - ${branch_name}" "${YELLOW}" "${RESET}"
+    i=$((i + 1))
   done
 
   echo ""
   printf "%bType the number of the branch you want to delete:%b" "${BLUE}" "${RESET}"
 
-  read -p "> " index
+  # Bash-compatible code:
+  #read -p "> " index
+
+  # Posix-compatible code:
+  printf "> " >&2
+  read -r index
+
   echo ""
 
   if [ -z "${index}" ]; then
@@ -70,7 +76,7 @@ printf "%bAttempting deletion of %b ${branch} %b" "${GREEN}" "${REVERSED}" "${RE
 
 # Attempt to delete the local branch. Silence non-error output and capture
 # errors. Respond to errors by asking the user if they want to try a force-delete.
-git branch --quiet --delete ${branch} 2> /dev/null
+git branch --quiet --delete "${branch}" 2> /dev/null
 EXIT_CODE_1=$?
 
 if [ ${EXIT_CODE_1} -eq 1 ]; then
@@ -79,14 +85,20 @@ if [ ${EXIT_CODE_1} -eq 1 ]; then
   printf "%bBranch deletion failed.%b" "${RED}" "${RESET}"
   echo "Would you like to force deletion of this branch?"
   echo "WARNING: This is a destructive operation. This risks permanently losing commits that don't exist in the history of any other local branch."
-  read -p "Force delete? (y/n) " choice
+
+  # Bash-compatible code:
+  #read -p "Force delete? (y/n) " choice
+
+  # Posix-compatible code:
+  printf "Force delete? (y/n) " >&2
+  read -r choice
 
   case "$choice" in
     y|Y )
       # Hide all errors from these commands. Basically, if these fail, the
       # branch almost certainly does not exist or is somehow protected from
       # deletion (for example, it is the current checked out branch).
-      git branch --quiet --delete --force ${branch} 2> /dev/null
+      git branch --quiet --delete --force "${branch}" 2> /dev/null
       printf "%bDone.%b" "${GREEN}" "${RESET}"
       ;;
 

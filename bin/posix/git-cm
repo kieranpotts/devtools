@@ -20,7 +20,12 @@
 msg="${1}"
 
 if [ -z "${msg}" ]; then
-  read -p "Type a short commit message: " msg
+  # Bash-compatible code:
+  #read -p "Type a short commit message: " msg
+
+  # Posix-compatible code:
+  printf "> " >&2
+  read -r msg
 fi
 
 if [ -z "${msg}" ]; then

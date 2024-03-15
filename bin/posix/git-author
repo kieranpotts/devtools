@@ -31,20 +31,27 @@ REPO_PATH=$(dirname "$BIN_PATH")
 
 # If there's an environment variable called `X_GIT_COMMIT_VERIFY` and its value
 # is `0`, then we apply the `--no-verify` flag to the `git commit` operation.
-VERIFY=${X_GIT_COMMIT_VERIFY:-1}
+VERIFY="${X_GIT_COMMIT_VERIFY:-1}"
 
 # Get the name of the current branch.
 branch=$(git branch --show-current)
 
 # Target revision.
-REV=$(git rev-parse ${1:-HEAD})
+REV=$(git rev-parse "${1:-HEAD}")
 
 # Checkout the target commit. Git repo enters a "detached HEAD" state.
-git checkout ${REV}
+git checkout "${REV}"
 
 echo ""
 printf "%bAuthor's name (leave empty to use your default user.name config):%b" "${BLUE}" "${RESET}"
-read -p "> " name
+
+# Bash-compatible code:
+#read -p "> " name
+
+# Posix-compatible code:
+printf "> " >&2
+read -r name
+
 echo ""
 
 if [ -z "${name}" ]; then
@@ -58,7 +65,14 @@ if [ -z "${name}" ]; then
 else
 
   printf "%bAuthor's email address:%b" "${BLUE}" "${RESET}"
-  read -p "> " email
+
+  # Bash-compatible code:
+  #read -p "> " email
+
+  # Posix-compatible code:
+  printf "> " >&2
+  read -r email
+
   echo ""
 
   if [ -z "${email}" ]; then
@@ -76,9 +90,9 @@ fi
 
 # New commit.
 NEW_REV=$(git rev-parse HEAD)
-echo ${NEW_REV}
+echo "${NEW_REV}"
 
 # Switch back to the previous branch then give the user the opportunity
 # to rebase the branch on the new revision.
-git switch ${branch}
-git rebase --interactive ${NEW_REV}
+git switch "${branch}"
+git rebase --interactive "${NEW_REV}"

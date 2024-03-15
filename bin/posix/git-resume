@@ -32,7 +32,11 @@ REPO_PATH=$(dirname "$BIN_PATH")
 # Get message of last commit.
 msg=$(git show -s --format=%B HEAD)
 
-if [ "${msg}" = "WIP" ] || [ "${msg: -6}" = " - WIP" ]; then
+# Bash-specific way to get the last 6 characters of a string.
+#if [ "${msg}" = "WIP" ] || [ "${msg: -6}" = " - WIP" ]; then
+
+msg_end=`echo ${msg} | tail -c 7`
+if [ "${msg}" = "WIP" ] || [ "${msg_end}" = " - WIP" ]; then
   git reset HEAD~1 --mixed
 else
   printf "%bLast commit is not work-in-progress%b" "${RED}" "${RESET}" >&2
