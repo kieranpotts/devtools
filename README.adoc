@@ -44,9 +44,4 @@ You are welcome to use this repository as a starting point for your own developm
 ''''
 Copyright © 2020-present Kieran Potts, link:./LICENSE.txt[MIT License]
 
-The font files and executable binaries redistributed via this repository are copyright their respective authors and subject to the terms of the same MIT License. Follow the links below to view the license for each binary.
-
-* https://github.com/dandavison/delta/blob/main/LICENSE[Delta]
-* https://github.com/source-foundry/Hack/blob/master/LICENSE.md[Hack]
-* https://github.com/jesseduffield/lazygit/blob/master/LICENSE[LazyGit]
-* https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/COPYING[Oh-My-Posh]
+The font files and executable binaries redistributed via this repository are copyright their respective authors and may be subject to alternative free and open source software licenses.
