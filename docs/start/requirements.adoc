@@ -105,6 +105,7 @@ All other dependencies must be manually installed on all systems.
 Fresh Windows binaries can be downloaded from the following links. Binaries for the x86-64 architecture – also known as also called x86_64, x64, or amd64 – are bundled. This is the 64-bit CPU architecture used in Intel and AMD processors.
 
 * https://github.com/dandavison/delta/releases[delta]
+* https://github.com/jqlang/jq/releases[jq]
 * https://github.com/jesseduffield/lazygit/releases[lazygit]
 * https://sourceforge.net/projects/ezwinports/files/[make] — search for the latest `without-guile-w32-bin` and extract the `make.exe` file from the archive.
 * https://github.com/JanDeDobbeleer/oh-my-posh/releases[oh-my-posh]
