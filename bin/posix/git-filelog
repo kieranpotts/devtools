@@ -13,7 +13,12 @@
 file="${1}"
 
 if [ -z "${file}" ]; then
-  read -p "Type a file path: " file
+  # Bash-compatible code:
+  #read -p "Type a file path: " file
+
+  # Posix-compatible code:
+  printf "Type a file path: " >&2
+  read -r file
 fi
 
 if [ -z "${file}" ]; then

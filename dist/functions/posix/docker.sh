@@ -12,7 +12,7 @@
 #
 runDockerFromFile() {
   if [ -z "$1" ]; then
-    docker run --detach $(docker build -q .)
+    docker run --detach "$(docker build -q .)"
   else
     docker build --tag "$1" .
     docker run --detach "$1"
