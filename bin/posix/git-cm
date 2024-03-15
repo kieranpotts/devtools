@@ -43,14 +43,14 @@ REPO_PATH=$(dirname "$BIN_PATH")
 # Source ANSI code variables.
 . "${REPO_PATH}/lib/ansi-codes.sh"
 
-printf "%sgit add --all%s" "${REVERSED}" "${RESET}"
+printf "%bgit add --all%b" "${REVERSED}" "${RESET}"
 git add --all
 
 # If there's an environment variable called `X_GIT_COMMIT_VERIFY` and its value
 # is `0`, then we apply the `--no-verify` flag to the `git commit` operation.
 VERIFY=${X_GIT_COMMIT_VERIFY:-1}
 
-printf "%sgit commit --quiet --message \"${msg}\"%s" "${REVERSED}" "${RESET}"
+printf "%bgit commit --quiet --message \"${msg}\"%b" "${REVERSED}" "${RESET}"
 
 if [ "$VERIFY" -eq "0" ]; then
   git commit --quiet --no-verify --message "${msg}"

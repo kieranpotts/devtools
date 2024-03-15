@@ -35,6 +35,6 @@ msg=$(git show -s --format=%B HEAD)
 if [ "${msg}" = "WIP" ] || [ "${msg: -6}" = " - WIP" ]; then
   git reset HEAD~1 --mixed
 else
-  printf "%sLast commit is not work-in-progress%s" "${RED}" "${RESET}" >&2
+  printf "%bLast commit is not work-in-progress%b" "${RED}" "${RESET}" >&2
   exit 1
 fi
