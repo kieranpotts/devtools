@@ -109,4 +109,5 @@ Fresh Windows binaries can be downloaded from the following links. Binaries for 
 * https://sourceforge.net/projects/ezwinports/files/[make] — search for the latest `without-guile-w32-bin` and extract the `make.exe` file from the archive.
 * https://github.com/JanDeDobbeleer/oh-my-posh/releases[oh-my-posh]
 * https://eternallybored.org/misc/wget/[wget] — download the latest x64 `.exe` file.
+* https://www.xpdfreader.com/download.html[Xpdf] — download the Windows Xpdf command line tool, extract, and copy the contents of the `bin64` directory.
 ****
