@@ -4,4 +4,4 @@
 # Load all POSIX-compliant shell functions.
 # ==============================================================================
 
-source ~/devtools/dist/functions/posix/docker.sh
+. ~/devtools/dist/functions/posix/docker.sh

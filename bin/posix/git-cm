@@ -28,11 +28,7 @@ if [ -z "${msg}" ]; then
   exit 1
 fi
 
-# TODO: Move `repo_path` to external lib function.
-
 # Absolute path to this script, eg `/path/to/devtools/bin/posix/foo.sh`.
-# TODO: `readlink` is not a POSIX utility, so need to find a better cross-
-# platform way of achieving this.
 FILE_PATH=$(readlink -f "$0")
 
 # Absolute path to this script's parent directory, thus `/path/to/devtools/bin/posix`.
@@ -45,16 +41,16 @@ BIN_PATH=$(dirname "$DIR_PATH")
 REPO_PATH=$(dirname "$BIN_PATH")
 
 # Source ANSI code variables.
-source "${REPO_PATH}/lib/ansi-codes.sh"
+. "${REPO_PATH}/lib/ansi-codes.sh"
 
-echo -e "${REVERSED}git add --all${RESET}"
+printf "%sgit add --all%s" "${REVERSED}" "${RESET}"
 git add --all
 
 # If there's an environment variable called `X_GIT_COMMIT_VERIFY` and its value
 # is `0`, then we apply the `--no-verify` flag to the `git commit` operation.
 VERIFY=${X_GIT_COMMIT_VERIFY:-1}
 
-echo -e "${REVERSED}git commit --quiet --message \"${msg}\"${RESET}"
+printf "%sgit commit --quiet --message \"${msg}\"%s" "${REVERSED}" "${RESET}"
 
 if [ "$VERIFY" -eq "0" ]; then
   git commit --quiet --no-verify --message "${msg}"

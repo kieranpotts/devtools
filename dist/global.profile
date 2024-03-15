@@ -14,20 +14,20 @@
 
 # Load aliases that are compatible with all POSIX-compliant shells.
 if [ -f ~/devtools/dist/aliases/posix/index.sh ]; then
-  source ~/devtools/dist/aliases/posix/index.sh
+  . ~/devtools/dist/aliases/posix/index.sh
 fi
 
 # Load utility functions that are compatible with all POSIX-compliant shells.
 if [ -f ~/devtools/dist/functions/posix/index.sh ]; then
-  source ~/devtools/dist/functions/posix/index.sh
+  . ~/devtools/dist/functions/posix/index.sh
 fi
 
 # Load the user's `~/local.profile` file, which can be used to override
 # anything set in this file.
 if [ -f ~/local.profile ]; then
-  source ~/local.profile
+  . ~/local.profile
 fi
 
 # Add an alias to reload this profile. This alias SHOULD be overridden in
 # any shell-specific profiles such as `~/.bash_profile`.
-alias reload!="source ~/.profile"
+alias reload!=". ~/.profile"

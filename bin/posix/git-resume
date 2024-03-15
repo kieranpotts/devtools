@@ -14,11 +14,7 @@
 # `git wip` command.
 # ==============================================================================
 
-# TODO: Move `repo_path` to external lib function.
-
 # Absolute path to this script, eg `/path/to/devtools/bin/posix/foo.sh`.
-# TODO: `readlink` is not a POSIX utility, so need to find a better cross-
-# platform way of achieving this.
 FILE_PATH=$(readlink -f "$0")
 
 # Absolute path to this script's parent directory, thus `/path/to/devtools/bin/posix`.
@@ -31,7 +27,7 @@ BIN_PATH=$(dirname "$DIR_PATH")
 REPO_PATH=$(dirname "$BIN_PATH")
 
 # Source ANSI code variables.
-source "${REPO_PATH}/lib/ansi-codes.sh"
+. "${REPO_PATH}/lib/ansi-codes.sh"
 
 # Get message of last commit.
 msg=$(git show -s --format=%B HEAD)
@@ -39,6 +35,6 @@ msg=$(git show -s --format=%B HEAD)
 if [ "${msg}" = "WIP" ] || [ "${msg: -6}" = " - WIP" ]; then
   git reset HEAD~1 --mixed
 else
-  echo -e "${RED}Last commit is not work-in-progress${RESET}" >&2
+  printf "%sLast commit is not work-in-progress%s" "${RED}" "${RESET}" >&2
   exit 1
 fi

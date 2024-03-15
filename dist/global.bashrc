@@ -9,7 +9,7 @@
 
 # Load the user's `~/local.bashrc` file.
 if [ -f ~/local.bashrc ]; then
-  source ~/local.bashrc
+  . ~/local.bashrc
 fi
 
 export NVM_DIR="$HOME/.nvm"
