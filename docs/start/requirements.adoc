@@ -93,7 +93,7 @@ This repository also includes configurations for the following programs – all 
 
 Windows binaries for `delta`, `lazygit`, `oh-my-posh` and others are included in this repository. These can be enabled simply by adding this repository's `bin/windows` directory to your system's `PATH` environment variable.
 
-For Unix-like environments, these binaries must be installed manually. Follow the links below for installation instructions:
+For Unix-like environments, equivalent packages must be installed manually. Follow the links below for installation instructions for utilities that are not commonly pre-installed:
 
 * link:https://dandavison.github.io/delta/installation.html[Delta] (On Ubuntu/ WSL, `git-delta` is bundled with the `git-extras` package and can therefore be installed using `sudo apt install git-extras`.)
 * link:https://github.com/jesseduffield/lazygit[LazyGit]
@@ -102,10 +102,11 @@ For Unix-like environments, these binaries must be installed manually. Follow th
 All other dependencies must be manually installed on all systems.
 
 ****
-Fresh Windows binaries can be downloaded from the following links. Binaries for the x86-64 or AMD64 architectures are used.
+Fresh Windows binaries can be downloaded from the following links. Binaries for the x86-64 architecture – also known as also called x86_64, x64, or amd64 – are bundled. This is the 64-bit CPU architecture used in Intel and AMD processors.
 
 * https://github.com/dandavison/delta/releases[delta]
 * https://github.com/jesseduffield/lazygit/releases[lazygit]
-* https://github.com/JanDeDobbeleer/oh-my-posh/releases[oh-my-posh]
 * https://sourceforge.net/projects/ezwinports/files/[make] — search for the latest `without-guile-w32-bin` and extract the `make.exe` file from the archive.
+* https://github.com/JanDeDobbeleer/oh-my-posh/releases[oh-my-posh]
+* https://eternallybored.org/misc/wget/[wget] — download the latest x64 `.exe` file.
 ****
