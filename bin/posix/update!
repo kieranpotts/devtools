@@ -19,8 +19,9 @@
 # ```
 # ==============================================================================
 
+# @deprecated: The repository should be synced manually.
 # Default branch for this repository.
-DEFAULT_BRANCH="main"
+# DEFAULT_BRANCH="main"
 
 # This is required for the `ln` command to generate proper symlinks in
 # MSysGit / Git for Windows. Without this configuration the `ln` command in
@@ -31,11 +32,7 @@ if windows; then
   export MSYS=winsymlinks:nativestrict
 fi
 
-# TODO: Move `repo_path` to external lib function.
-
 # Absolute path to this script, eg `/path/to/devtools/bin/posix/foo.sh`.
-# TODO: `readlink` is not a POSIX utility, so need to find a better cross-
-# platform way of achieving this.
 FILE_PATH=$(readlink -f "$0")
 
 # Absolute path to this script's parent directory, thus `/path/to/devtools/bin/posix`.

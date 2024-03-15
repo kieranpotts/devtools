@@ -17,11 +17,7 @@
 # - https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-update-index.html
 # ==============================================================================
 
-# TODO: Move `repo_path` to external lib function.
-
 # Absolute path to this script, eg `/path/to/devtools/bin/posix/foo.sh`.
-# TODO: `readlink` is not a POSIX utility, so need to find a better cross-
-# platform way of achieving this.
 FILE_PATH=$(readlink -f "$0")
 
 # Absolute path to this script's parent directory, thus `/path/to/devtools/bin/posix`.
@@ -34,7 +30,7 @@ BIN_PATH=$(dirname "$DIR_PATH")
 REPO_PATH=$(dirname "$BIN_PATH")
 
 # Source ANSI code variables.
-source "${REPO_PATH}/lib/ansi-codes.sh"
+. "${REPO_PATH}/lib/ansi-codes.sh"
 
-echo -e "${BRIGHT_BLUE}Changes to the following files will not be available to add to the staging index:${RESET}"
+printf "%sChanges to the following files will not be available to add to the staging index:%s" "${BRIGHT_BLUE}" "${RESET}"
 git ls-files -v | grep "^[[:lower:]]"
