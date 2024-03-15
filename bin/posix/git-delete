@@ -47,17 +47,17 @@ if [ -z "${branch}" ]; then
     branch_name="${branches[$i]}"
 
     # Remove refs/heads/ from start of branch name
-    printf "%s${i}%s - ${branch_name:11}" "${YELLOW}" "${RESET}"
+    printf "%b${i}%b - ${branch_name:11}" "${YELLOW}" "${RESET}"
   done
 
   echo ""
-  printf "%sType the number of the branch you want to delete:%s" "${BLUE}" "${RESET}"
+  printf "%bType the number of the branch you want to delete:%b" "${BLUE}" "${RESET}"
 
   read -p "> " index
   echo ""
 
   if [ -z "${index}" ]; then
-    printf "%sBranch not provided, exiting...%s" "${RED}" "${RESET}" >&2
+    printf "%bBranch not provided, exiting...%b" "${RED}" "${RESET}" >&2
     exit 1
   fi
 
@@ -66,7 +66,7 @@ if [ -z "${branch}" ]; then
 
 fi
 
-printf "%sAttempting deletion of %s ${branch} %s" "${GREEN}" "${REVERSED}" "${RESET}"
+printf "%bAttempting deletion of %b ${branch} %b" "${GREEN}" "${REVERSED}" "${RESET}"
 
 # Attempt to delete the local branch. Silence non-error output and capture
 # errors. Respond to errors by asking the user if they want to try a force-delete.
@@ -76,7 +76,7 @@ EXIT_CODE_1=$?
 if [ ${EXIT_CODE_1} -eq 1 ]; then
 
   echo ""
-  printf "%sBranch deletion failed.%s" "${RED}" "${RESET}"
+  printf "%bBranch deletion failed.%b" "${RED}" "${RESET}"
   echo "Would you like to force deletion of this branch?"
   echo "WARNING: This is a destructive operation. This risks permanently losing commits that don't exist in the history of any other local branch."
   read -p "Force delete? (y/n) " choice
@@ -87,18 +87,18 @@ if [ ${EXIT_CODE_1} -eq 1 ]; then
       # branch almost certainly does not exist or is somehow protected from
       # deletion (for example, it is the current checked out branch).
       git branch --quiet --delete --force ${branch} 2> /dev/null
-      printf "%sDone.%s" "${GREEN}" "${RESET}"
+      printf "%bDone.%b" "${GREEN}" "${RESET}"
       ;;
 
     n|N )
-      printf "%sExiting...%s" "${RED}" "${RESET}"
+      printf "%bExiting...%b" "${RED}" "${RESET}"
       ;;
 
     * )
-      printf "%sExiting...%s" "${RED}" "${RESET}"
+      printf "%bExiting...%b" "${RED}" "${RESET}"
       ;;
   esac
 
 else
-  printf "%sDone.%s" "${GREEN}" "${RESET}"
+  printf "%bDone.%b" "${GREEN}" "${RESET}"
 fi

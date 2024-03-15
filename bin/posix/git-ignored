@@ -32,5 +32,5 @@ REPO_PATH=$(dirname "$BIN_PATH")
 # Source ANSI code variables.
 . "${REPO_PATH}/lib/ansi-codes.sh"
 
-printf "%sChanges to the following files will not be available to add to the staging index:%s" "${BRIGHT_BLUE}" "${RESET}"
+printf "%bChanges to the following files will not be available to add to the staging index:%b" "${BRIGHT_BLUE}" "${RESET}"
 git ls-files -v | grep "^[[:lower:]]"
