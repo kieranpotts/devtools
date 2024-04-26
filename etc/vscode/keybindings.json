@@ -2,15 +2,15 @@
   // Open external terminal in own window (start at current working directory).
   {
     "key": "ctrl+alt+t",
+    "when": "!terminalFocus",
     "command": "workbench.action.terminal.openNativeConsole",
-    "when": "!terminalFocus"
   },
 
   // Open external terminal in new tab (start at current working directory).
   {
     "key": "ctrl+shift+t",
+    "when": "terminalProcessSupported",
     "command": "workbench.action.terminal.newWithCwd",
-    "when": "terminalProcessSupported"
   },
 
   // Toggle zen mode.
@@ -33,26 +33,21 @@
     "command": "git.unstageSelectedRanges",
   },
   // {
-  //   "key": "u",
-  //   "command": "git.unstageSelectedRanges",
-  //   "when": "isInDiffEditor && editorTextFocus"
-  // },
-  // {
   //   "key": "r",
+  //   "when": "isInDiffEditor && editorTextFocus",
   //   "command": "git.revertSelectedRanges",
-  //   "when": "isInDiffEditor && editorTextFocus"
   // }
 
   // Toggle voice dictation. Requires VS Code Speech extension.
   {
     "key": "ctrl+shift+s",
+    "when": "!voiceChatInProgress",
     "command": "workbench.action.chat.startVoiceChat",
-    "when": "!voiceChatInProgress"
   },
   {
     "key": "ctrl+shift+s",
+    "when": "voiceChatInProgress",
     "command": "workbench.action.chat.stopListeningAndSubmit",
-    "when": "voiceChatInProgress"
   },
 
   // Remove built-in shortcuts for Ctrl+Shift+s.
@@ -62,12 +57,12 @@
   },
   {
     "key": "ctrl+shift+s",
+    "when": "editorLangId == 'markdown'",
     "command": "-markdown-preview-enhanced.syncPreview",
-    "when": "editorLangId == 'markdown'"
   },
   {
     "key": "ctrl+shift+s",
+    "when": "remoteFileDialogVisible",
     "command": "-workbench.action.files.saveLocalFile",
-    "when": "remoteFileDialogVisible"
   }
 ]
