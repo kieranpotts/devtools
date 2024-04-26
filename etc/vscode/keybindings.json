@@ -19,7 +19,31 @@
     "command": "workbench.action.toggleZenMode"
   },
 
-  // Toggle voice dictation. Required VS Code Speech extension.
+  // Stage selected range
+  {
+    "key": "ctrl+space",
+    "when": "isInDiffEditor && editorTextFocus",
+    "command": "git.stageSelectedRanges",
+    
+  },
+  {
+    "key": "ctrl+space",
+    // Diff editor is in read-only when viewing the staging index rather than the working tree.
+    "when": "isInDiffEditor && editorTextFocus && editorReadonly",
+    "command": "git.unstageSelectedRanges",
+  },
+  // {
+  //   "key": "u",
+  //   "command": "git.unstageSelectedRanges",
+  //   "when": "isInDiffEditor && editorTextFocus"
+  // },
+  // {
+  //   "key": "r",
+  //   "command": "git.revertSelectedRanges",
+  //   "when": "isInDiffEditor && editorTextFocus"
+  // }
+
+  // Toggle voice dictation. Requires VS Code Speech extension.
   {
     "key": "ctrl+shift+s",
     "command": "workbench.action.chat.startVoiceChat",
