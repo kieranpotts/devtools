@@ -133,6 +133,13 @@
   "git.rebaseWhenSync": true,                  // Enforce rebase strategy on sync, to maintain linear history.
   "git.repositoryScanMaxDepth": 3,             // Scan for Git repositories in sub-folders to a max depth of 3.
 
+  // Enable the feature to automatically save and restore open editors when switching between source control branches.
+  // Since VS Code 1.89.0.
+  "scm.workingSets.enabled": true,
+
+  // When switching new a branch for the first time, close all currently-open editors.
+  "scm.workingSets.default": "empty",
+
   // Collapse search results, so files must be expanded to show matching text.
   "search.collapseResults": "alwaysCollapse",
 
@@ -254,6 +261,5 @@
     "inlineSuggestCount": 12,
     "listCount": 12,
   },
-  "diffEditor.hideUnchangedRegions.enabled": true,
 
 }
