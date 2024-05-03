@@ -18,6 +18,9 @@
   // Markup blocks of code that have moved to different lines.
   "diffEditor.experimental.showMoves": true,
 
+  // Show unchanged regions in the diff editor.
+  "diffEditor.hideUnchangedRegions.enabled": true,
+
   // Disable various auto-complete mechanisms in the code editor.
   "editor.autoClosingBrackets": "never",
   "editor.autoClosingDelete": "never",
