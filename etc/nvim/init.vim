@@ -26,12 +26,23 @@ set nocompatible
 " Show line numbers.
 set number
 
-" Set 50, 80 and 120 column borders.
-" 50 is the recommended line length for Git commit message titles.
-set colorcolumn=52,80,120
+" Set 52 and 80 column borders.
+" 52 is the recommended line length for Git commit message titles.
+set colorcolumn=52,80
+hi ColorColumn ctermbg=darkgrey guibg=darkgrey
 
 " Do not wrap lines. Allow long lines to extend as far as the line goes.
-set nowrap
+"set nowrap
+
+" Doft-wrap lines (ie visually wrap) that would otherwise extend beyond the screen width.
+" Wrap at 121 columns, breaking by word rather than character.
+set linebreak
+set columns=120
+set wrap
+
+" These options are used for hard-wrapping when typing (ie automatically inserting new lines).
+set textwidth=0
+set wrapmargin=0
 
 " Highlight the current cursor line (horizontal).
 set cursorline
