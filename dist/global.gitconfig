@@ -19,6 +19,9 @@
   # and writing a meaningful commit message.
   verbose = true
 
+  # Custom template for extended (multi-line) commit messages.
+  template = ~/local.gitmessage
+
 [color]
 
   # Turn off color in CLI output.
