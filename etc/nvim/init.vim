@@ -26,8 +26,9 @@ set nocompatible
 " Show line numbers.
 set number
 
-" Set an 80 column border for good coding style.
-set cc=80
+" Set 50, 80 and 120 column borders.
+" 50 is the recommended line length for Git commit message titles.
+set colorcolumn=52,80,120
 
 " Do not wrap lines. Allow long lines to extend as far as the line goes.
 set nowrap

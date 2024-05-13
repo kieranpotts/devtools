@@ -1,6 +1,32 @@
-Subject line (try to keep under 50 characters)
+# <type>: <subject>
+# |<--------  maximum of 50 characters  -------->|
 
-Multi-line description of commit,
-feel free to be detailed.
+# <body>
+# Provide a detailed description of this change. Wrap text over
+# multiple lines as needed.
+# |<------------   maximum line length of 72 characters   ------------>|
 
-[Ticket: X]
+# <footer>
+# Optional footers. Uncomment as needed.
+#Ticket: #<issue number>
+#Closes: #<issue number>
+
+#===============================================================================
+# <type> can be:
+#   constraint  - implementation of a new non-functional requirement
+#   feature     - a new, changed or deprecated feature
+#   fix         - bug fix
+#   maintenance - changes to documentation and other housekeeping tasks
+#   refactor    - refactoring production, test or other code
+#
+# Append " - WIP" to the <subject> if the change is being implemented
+# incrementally, eg behind a feature flag.
+#
+# Tips:
+#   - Capitalize the subject line.
+#   - Use the imperative mood in the subject line.
+#   - Do not end the subject line with a period.
+#   - Separate subject from body with a single blank line.
+#   - Use the body to explain what and why, now how.
+#   - Use "-" for bullet points in the body.
+#===============================================================================
