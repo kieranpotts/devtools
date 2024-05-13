@@ -43,7 +43,7 @@ REV=$(git rev-parse "${1:-HEAD}")
 git checkout "${REV}"
 
 echo ""
-printf "%bAuthor's name (leave empty to use your default user.name config):%b" "${BLUE}" "${RESET}"
+printf "%bAuthor's name (leave empty to use your default user.name config):%b\n" "${BLUE}" "${RESET}"
 
 # Bash-compatible code:
 #read -p "> " name
@@ -64,7 +64,7 @@ if [ -z "${name}" ]; then
 
 else
 
-  printf "%bAuthor's email address:%b" "${BLUE}" "${RESET}"
+  printf "%bAuthor's email address:%b\n" "${BLUE}" "${RESET}"
 
   # Bash-compatible code:
   #read -p "> " email
@@ -76,7 +76,7 @@ else
   echo ""
 
   if [ -z "${email}" ]; then
-    printf "%bEmail not provided, exiting...%b" "${RED}" "${RESET}" >&2
+    printf "%b%b Email not provided, exiting. %b\n" "${RED}" "${REVERSED}" "${RESET}" >&2
     exit 1
   fi
 

@@ -41,7 +41,8 @@ if [ -z "${msg}" ]; then
   #read -p "Type a short comment > " msg
 
   # Posix-compatible code:
-  printf "%bType a short comment > %b" "${BLUE}" "${RESET}" >&2
+  printf "%bType a short comment. %b\n" "${BLUE}" "${RESET}" >&2
+  printf "> " >&2
   read -r msg
 fi
 
@@ -57,7 +58,7 @@ printf "feature [%bf%b]     - New or improved operation or behavior\n" "${UNDERL
 printf "maintenance [%bm%b] - Routine housekeeping\n" "${UNDERLINE}" "${RESET}"
 printf "refactor [%br%b]    - Design and code improvements\n" "${UNDERLINE}" "${RESET}"
 printf "other [%bx%b]       - General changes\n" "${UNDERLINE}" "${RESET}"
-printf "%b> %b" "${BLUE}" "${RESET}" >&2
+printf "> " >&2
 read -r type
 
 case "${type}" in
@@ -70,7 +71,8 @@ case "${type}" in
     ;;
 esac
 
-printf "%bIs this work-in-progress? (y/n) > %b" "${BLUE}" "${RESET}" >&2
+printf "%bIs this work-in-progress? (y/n) %b\n" "${BLUE}" "${RESET}" >&2
+printf "> " >&2
 read -r wip
 
 case "${wip}" in
@@ -82,6 +84,7 @@ case "${wip}" in
     ;;
 esac
 
+echo "\n"
 printf "%bgit add --all%b\n" "${DIM}" "${RESET}"
 git add --all
 

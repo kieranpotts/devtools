@@ -63,7 +63,7 @@ if [ -z "${branch}" ]; then
   echo ""
 
   if [ -z "${index}" ]; then
-    printf "%bBranch not provided, exiting...%b" "${RED}" "${RESET}" >&2
+    printf "%b%b Branch not provided, exiting. %b" "${RED}" "${REVERSED}" "${RESET}" >&2
     exit 1
   fi
 
