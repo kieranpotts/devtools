@@ -215,7 +215,7 @@
   },
 
   // Themes.
-  "workbench.colorTheme": "GitHub Light Default",
+  "workbench.colorTheme": "GitHub Light Colorblind (Beta)",
   "workbench.iconTheme": "vs-minimal",
 
   // Shrink tab size as the available space decreases.
