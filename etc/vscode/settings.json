@@ -36,7 +36,6 @@
   // Editor font.
   "editor.fontFamily": "Hack, monospace",
   "editor.fontLigatures": true,
-  "editor.fontSize": 13,
   "editor.fontWeight": "400",
 
   // Disable all auto-formatting mechanisms by default. This means projects MUST
@@ -143,11 +142,11 @@
   // Collapse search results, so files must be expanded to show matching text.
   "search.collapseResults": "alwaysCollapse",
 
-  // Integrated terminal configuration. Use Git Bash by default.
+  // Integrated terminal configuration.
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.cursorWidth": 3,
   "terminal.integrated.defaultLocation": "editor", // Open in a new editor tab rather than panel.
-  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.defaultProfile.windows": "Ubuntu (WSL)",
   "terminal.integrated.enableMultiLinePasteWarning": false,
   "terminal.integrated.fontFamily": "Hack NF",
   "terminal.integrated.shellIntegration.enabled": true,
@@ -251,6 +250,7 @@
 
   "github.copilot.enable": {
     "*": true,
+    "enableAutoCompletions": true,
     "plaintext": true,
     "asciidoc": true,
     "markdown": true,
@@ -261,5 +261,4 @@
     "inlineSuggestCount": 12,
     "listCount": 12,
   },
-
 }
