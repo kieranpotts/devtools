@@ -232,6 +232,10 @@
 
   // LANGUAGE-SPECIFIC SETTINGS:
 
+  // Disable auto-closing tags.
+  "html.autoClosingTags": false,
+  "javascript.autoClosingTags": false,
+
   // By default, disable VS Code's built-in formatter and validation for JavaScript
   // syntax. Projects are therefore REQUIRED to enable third party formatters and
   // validators, such as ESLint, and to configure those tools specifically for
