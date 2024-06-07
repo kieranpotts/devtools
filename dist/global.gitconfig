@@ -244,6 +244,14 @@
   # Don't prompt to open the configured mergetool.
   prompt = false
 
+[pager]
+
+  # pager.<cmd>
+  # https://git-scm.com/docs/git-config#Documentation/git-config.txt-pagerltcmdgt
+
+  # Enable paged output for the `git status` command.
+  status = true
+
 [pull]
 
   # On `git pull` operations, always rebase the current branch on top of the
