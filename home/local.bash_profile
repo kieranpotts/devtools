@@ -9,4 +9,4 @@
 # to standard error because `oh-my-posh` is an optional dependency, so we don't
 # want to assume it is installed.
 # https://ohmyposh.dev/
-eval "$(oh-my-posh init bash --config ~/devtools/etc/oh-my-posh/themes/kp2024.omp.json 2> /dev/null)"
+#eval "$(oh-my-posh init bash --config ~/devtools/etc/oh-my-posh/themes/kp2024.omp.json 2> /dev/null)"

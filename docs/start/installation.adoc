@@ -105,7 +105,7 @@ ln --symbolic --force /full/path/to/devtools/etc/nvim/init.vim ~/.config/nvim/in
 
 A custom prompt theme is included. It is a fork of the popular Agnoster theme, which is included with Oh-My-Posh, a cross-platform prompt theming framework for Powershell, Git Bash, WSL and other shells.
 
-The theme is enabled via the following command in the `~/local.bash_profile` file.
+The theme is enabled via the following command in the `~/local.bash_profile` file. You just need to uncomment the line to enable it.
 
 [source,sh]
 ----
