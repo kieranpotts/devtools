@@ -4,6 +4,27 @@
 # Aliases for `cd`.
 # ==============================================================================
 
+# Build a Docker image from a Dockerfile in the current directory.
+#
+buildDockerImage() {
+  if [ -z "$1" ]; then
+    docker build .
+  else
+    docker build --tag "$1" .
+  fi
+}
+
+# Run a Docker container from an image.
+#
+runDockerContainer() {
+  if [ -z "$1" ]; then
+    echo "Usage: runDockerContainer <image_name>\n"
+    echo "Get the image name by running 'docker image ls'."
+    return 1
+  fi
+  docker run --detach "$1"
+}
+
 # Build an image and immediately run a container in the background from it.
 # Requires a Dockerfile in the current directory.
 #
