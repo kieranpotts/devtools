@@ -6,7 +6,9 @@
 
 # Build an image and immediately run a container in the background from it.
 # Requires a Dockerfile in the current directory.
-# Optionally pass a name for the image (else one will be automatically created).
+#
+# Optionally pass a name for the image, and an image name will be generated
+# automatically.
 #
 # Reference: https://stackoverflow.com/questions/36075525/
 #
