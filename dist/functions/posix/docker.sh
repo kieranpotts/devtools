@@ -21,6 +21,19 @@ runDockerFromFile() {
   fi
 }
 
+# List all available docker images.
+#
 listDockerImages() {
   docker image ls
+}
+
+# SSH into a running container.
+#
+sshDockerContainer() {
+  if [ -z "$1" ]; then
+    echo "Usage: sshDocker <container_id>\n"
+    echo "Get the container ID by running 'docker ps'."
+    return 1
+  fi
+  docker exec -it "$1" /bin/bash
 }
