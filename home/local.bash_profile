@@ -10,3 +10,6 @@
 # want to assume it is installed.
 # https://ohmyposh.dev/
 #eval "$(oh-my-posh init bash --config ~/devtools/etc/oh-my-posh/themes/kp2024.omp.json 2> /dev/null)"
+
+# Change to a specific directory when starting a new terminal session.
+#cd ~/devtools
