@@ -1,196 +1,197 @@
 {
-  // Disable the breadcrumb trail across the top of editors.
+  /* Disable the breadcrumb trail across the top of editors. */
   "breadcrumbs.enabled": false,
 
-  // Clear the terminal before running a new debugging session.
+  /* Clear the terminal before running a new debugging session. */
   "debug.terminal.clearBeforeReusing": true,
 
-  // Use VS Code's improved diff algorithm for the old diff editor
-  // as well as the new one.
+  /* Use VS Code's improved diff algorithm for the old diff editor
+  as well as the new one. */
   "diffEditor.diffAlgorithm": "advanced",
 
-  // Use the latest version of VS Code's new (experimental) diff editor.
+  /* Use the latest version of VS Code's new (experimental) diff editor. */
   "diffEditor.experimental.useVersion2": true,
 
-  // Mark inline deletions and insertions.
+  /* Mark inline deletions and insertions. */
   "diffEditor.experimental.showEmptyDecorations": true,
 
-  // Markup blocks of code that have moved to different lines.
+  /* Markup blocks of code that have moved to different lines. */
   "diffEditor.experimental.showMoves": true,
 
-  // Show unchanged regions in the diff editor.
+  /* Show unchanged regions in the diff editor. */
   "diffEditor.hideUnchangedRegions.enabled": true,
 
-  // Disable various auto-complete mechanisms in the code editor.
+  /* Disable various auto-complete mechanisms in the code editor. */
   "editor.autoClosingBrackets": "never",
   "editor.autoClosingDelete": "never",
   "editor.autoClosingOvertype": "never",
   "editor.autoClosingQuotes": "never",
   "editor.autoSurround": "never",
 
-  // Highlight folded ranges and always base code folding on indentation level
-  // rather than language-specific syntax.
+  /* Highlight folded ranges and always base code folding on indentation level
+  rather than language-specific syntax. */
   "editor.foldingHighlight": true,
   "editor.foldingStrategy": "indentation",
 
-  // Editor font.
+  /* Editor font. */
   "editor.fontFamily": "Hack, monospace",
   "editor.fontLigatures": true,
   "editor.fontWeight": "400",
 
-  // Disable all auto-formatting mechanisms by default. This means projects MUST
-  // enable these features on a per-repo basis.
+  /* Disable all auto-formatting mechanisms by default. This means projects MUST
+  enable these features on a per-repo basis. */
   "editor.formatOnPaste": false,
   "editor.formatOnSave": false,
   "editor.formatOnType": false,
 
-  // Disable auto-fixes by default, so also requiring individual projects to
-  // explicitly opt-in to this feature.
+  /* Disable auto-fixes by default, so also requiring individual projects to
+  explicitly opt-in to this feature. */
   "editor.codeActionsOnSave": {
     "source.fixAll": "never"
   },
 
-  // Render guidelines for indentation and bracket pairs.
+  /* Render guidelines for indentation and bracket pairs. */
   "editor.guides.indentation": true,
   "editor.guides.bracketPairs": true,
 
-  // By default, disable inlay hints, which get injected within code (eg showing function parameter names).
+  /* By default, disable inlay hints, which get injected within code
+  (eg showing function parameter names). */
   "editor.inlayHints.enabled": "off",
 
-  // Show line numbers but hide the minimap.
+  /* Show line numbers but hide the minimap. */
   "editor.lineNumbers": "on",
   "editor.minimap.enabled": false,
 
-  // Scrolls about 3 lines for every 1 mouse wheel increment.
+  /* Scrolls about 3 lines for every 1 mouse wheel increment. */
   "editor.mouseWheelScrollSensitivity": 1,
 
-  // Render control and empty space characters.
+  /* Render control and empty space characters. */
   "editor.renderControlCharacters": true,
   "editor.renderWhitespace": "all",
 
-  // Disable vertical guidelines by default. These SHOULD be configured on a
-  // per-repository basis.
+  /* Disable vertical guidelines by default. These SHOULD be configured on a
+  per-repository basis. */
   "editor.rulers": [],
 
-  // Prioritize snippet suggestions over all other hints. Pre-select the first.
-  // Show the toolbar automatically – this works well with Copilot.
+  /* Prioritize snippet suggestions over all other hints. Pre-select the first.
+  Show the toolbar automatically – this works well with Copilot. */
   "editor.inlineSuggest.showToolbar": "always",
   "editor.snippetSuggestions": "none",
   "editor.suggestSelection": "recentlyUsedByPrefix",
 
-  // Turn on tab completion for snippets.
+  /* Turn on tab completion for snippets. */
   "editor.tabCompletion": "onlySnippets",
 
-  // By default, do not transform tabs to spaces. The purpose here is to
-  // enforce this policy on a repo-by-repo basis.
+  /* By default, do not transform tabs to spaces. The purpose here is to
+  enforce this policy on a repo-by-repo basis. */
   "editor.detectIndentation": false,
   "editor.insertSpaces": false,
 
-  // Rules for highlighting special unicode characters. Don't warn about use
-  // of en-dash (–) and em-dash (—) characters in code. I use these characters
-  // in comments pretty frequently.
+  /* Rules for highlighting special unicode characters. Don't warn about use
+  of en-dash (–) and em-dash (—) characters in code. I use these characters
+  in comments pretty frequently. */
   "editor.unicodeHighlight.allowedCharacters": {
     "–": true,
     "—": true,
   },
 
-  // Wrap long lines at the viewport but up to maximum of 120 characters.
+  /* Wrap long lines at the viewport but up to maximum of 120 characters. */
   "editor.wordWrap": "bounded",
   "editor.wordWrapColumn": 120,
 
-  // AsciiDoc line wrap config must be defined separately.
+  /* AsciiDoc line wrap config must be defined separately. */
   "[asciidoc]": {
     "editor.wordWrap": "bounded",
     "editor.wordWrapColumn": 80
   },
 
-  // Markdown line wrap config must be defined separately.
+  /* Markdown line wrap config must be defined separately. */
   "[markdown]": {
     "editor.wordWrap": "bounded",
     "editor.wordWrapColumn": 80
   },
 
-  // Show recommended extensions.
+  /* Show recommended extensions. */
   "extensions.ignoreRecommendations": false,
-  
-  // Autosave.
+
+  /* Autosave. */
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 5000,
 
-  // Built-in Git GUI.
-  "git.allowNoVerifyCommit": true,             // Allow overriding of Git hooks on commit operations.
-  "git.autofetch": true,                       // Automatically fetch new commits from origin.
-  "git.autoRepositoryDetection": "subFolders", // Detect Git repositories in sub-folders.
-  "git.autoStash": true,                       // Use temporary stash to enable syncing when working tree is dirty.
-  "git.confirmNoVerifyCommit": false,          // Don't confirm `--no-verify` commits.
-  "git.confirmSync": false,                    // Confirm before running sync operation (it may rewrite history).
-  "git.enableSmartCommit": true,               // Commit all working changes when nothing is yet staged.
-  "git.enableStatusBarSync": false,            // Remove sync control from status bar
-  "git.followTagsWhenSync": true,              // Sync tags, too.
-  "git.mergeEditor": true,                     // Use VS Code's new merge editor for resolving conflicts.
-  "git.pruneOnFetch": true,                    // Automatically prune references to deleted upstream branches.
-  "git.rebaseWhenSync": true,                  // Enforce rebase strategy on sync, to maintain linear history.
-  "git.repositoryScanMaxDepth": 3,             // Scan for Git repositories in sub-folders to a max depth of 3.
+  /* Built-in Git GUI. */
+  "git.allowNoVerifyCommit": true,             /* Allow overriding of Git hooks on commit operations. */
+  "git.autofetch": true,                       /* Automatically fetch new commits from origin. */
+  "git.autoRepositoryDetection": "subFolders", /* Detect Git repositories in sub-folders. */
+  "git.autoStash": true,                       /* Use temporary stash to enable syncing when working tree is dirty. */
+  "git.confirmNoVerifyCommit": false,          /* Don't confirm `--no-verify` commits. */
+  "git.confirmSync": false,                    /* Confirm before running sync operation (it may rewrite history). */
+  "git.enableSmartCommit": true,               /* Commit all working changes when nothing is yet staged. */
+  "git.enableStatusBarSync": false,            /* Remove sync control from status bar. */
+  "git.followTagsWhenSync": true,              /* Sync tags, too. */
+  "git.mergeEditor": true,                     /* Use VS Code's new merge editor for resolving conflicts. */
+  "git.pruneOnFetch": true,                    /* Automatically prune references to deleted upstream branches. */
+  "git.rebaseWhenSync": true,                  /* Enforce rebase strategy on sync, to maintain linear history. */
+  "git.repositoryScanMaxDepth": 3,             /* Scan for Git repositories in sub-folders to a max depth of 3. */
 
-  // Enable the feature to automatically save and restore open editors when switching between source control branches.
-  // Since VS Code 1.89.0.
+  /* Enable the feature to automatically save and restore open editors when
+  switching between source control branches. Since VS Code 1.89.0. */
   "scm.workingSets.enabled": true,
 
-  // When switching new a branch for the first time, close all currently-open editors.
+  /* When switching new a branch for the first time, close all currently-open editors. */
   "scm.workingSets.default": "empty",
 
-  // Collapse search results, so files must be expanded to show matching text.
+  /* Collapse search results, so files must be expanded to show matching text. */
   "search.collapseResults": "alwaysCollapse",
 
-  // Integrated terminal configuration.
+  /* Integrated terminal configuration. */
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.cursorWidth": 3,
-  "terminal.integrated.defaultLocation": "editor", // Open in a new editor tab rather than panel.
+  "terminal.integrated.defaultLocation": "editor", /* Open in a new editor tab rather than panel. */
   "terminal.integrated.defaultProfile.windows": "Ubuntu (WSL)",
   "terminal.integrated.enableMultiLinePasteWarning": false,
   "terminal.integrated.fontFamily": "Hack NF",
   "terminal.integrated.shellIntegration.enabled": true,
 
-  // Use Windows Terminal as the external editor.
+  /* Use Windows Terminal as the external editor. */
   "terminal.external.windowsExec": "wt",
 
-  // Adds "Open in Windows Terminal" to right-click menu of Explorer items.
+  /* Adds "Open in Windows Terminal" to right-click menu of Explorer items. */
   "terminal.explorerKind": "external",
 
-  // Use VS Code's non-native title bar with the command centre in the middle.
-  // Show only the name of the folder or workspace in the window title bar.
+  /* Use VS Code's non-native title bar with the command centre in the middle.
+  Show only the name of the folder or workspace in the window title bar. */
   "window.titleBarStyle": "custom",
   "window.commandCenter": true,
   "window.title": "${dirty}${rootName}${separator}",
 
-  // Use VS Code's non-native dialog windows.
+  /* Use VS Code's non-native dialog windows. */
   "window.dialogStyle": "custom",
 
-  // Open new VS Code windows maximized.
+  /* Open new VS Code windows maximized. */
   "window.newWindowDimensions": "maximized",
 
-  // Menu is hidden but can be toggled visible with the Alt key.
+  /* Menu is hidden but can be toggled visible with the Alt key. */
   "window.menuBarVisibility": "toggle",
 
-  // Zoom +1 level by default.
+  /* Zoom +1 level by default. */
   "window.zoomLevel": 1,
 
-  // Activity bar.
+  /* Activity bar. */
   "workbench.activityBar.location": "top",
 
-  // Theme overrides.
+  /* Theme overrides. */
   "workbench.colorCustomizations": {
 
-    // Use lighter colors for those squiggly underlines.
+    /* Use lighter colors for those squiggly underlines. */
     "editorError.foreground": "#ff000077",
     "editorWarning.foreground": "#ffee0099",
     "editorInfo.foreground": "#00aaff88",
 
-    // Make the line highlight color very subtle.
+    /* Make the line highlight color very subtle. */
     "editor.lineHighlightBackground": "#f9f9f9",
     "editor.lineHighlightBorder": "#f9f9f9",
 
-    // Matches "kp2024" theme in Windows Terminal settings:
+    /* Matches "kp2024" theme in Windows Terminal settings. */
     "terminal.background": "#282C34",
     "terminal.foreground": "#DCDFE4",
     "terminalCursor.background": "#FFFFFF",
@@ -213,59 +214,59 @@
     "terminal.ansiYellow": "#E5C07B"
   },
 
-  // Themes.
+  /* Themes. */
   "workbench.colorTheme": "GitHub Light Colorblind (Beta)",
   "workbench.iconTheme": "vs-minimal",
 
-  // Shrink tab size as the available space decreases.
+  /* Shrink tab size as the available space decreases. */
   "workbench.editor.tabSizing": "shrink",
 
-  // Disable startup editor, which means editors are restored from prior session.
+  /* Disable startup editor, which means editors are restored from prior session. */
   "workbench.startupEditor": "none",
 
-  // Visual presentation of tree views in panels - eg File Explorer.
+  /* Visual presentation of tree views in panels - eg File Explorer. */
   "workbench.tree.indent": 24,
   "workbench.tree.renderIndentGuides": "none",
 
-  // Hide tabs when in Zen mode.
+  /* Hide tabs when in Zen mode. */
   "zenMode.showTabs": "none",
 
-  // LANGUAGE-SPECIFIC SETTINGS:
+  /* LANGUAGE-SPECIFIC SETTINGS: */
 
-  // Disable auto-closing tags.
+  /* Disable auto-closing tags. */
   "html.autoClosingTags": false,
   "javascript.autoClosingTags": false,
 
-  // By default, disable VS Code's built-in formatter and validation for JavaScript
-  // syntax. Projects are therefore REQUIRED to enable third party formatters and
-  // validators, such as ESLint, and to configure those tools specifically for
-  // for compatibility with each project's syntax.
+  /* By default, disable VS Code's built-in formatter and validation for JavaScript
+  syntax. Projects are therefore REQUIRED to enable third party formatters and
+  validators, such as ESLint, and to configure those tools specifically for
+  for compatibility with each project's syntax. */
   "javascript.format.enable": false,
   "javascript.validate.enable": false,
 
-  // Disable the TypeScript type checker in all JavaScript files by default.
-  // (This is the default behavior anyway.) Disabling this means that JavaScript
-  // files MUST include a `@ts-check` comment at the top to opt-in to VS Code's
-  // built-in `tsc` type checker instance, which will infer type information from
-  // the code and JSDoc-style notations.
+  /* Disable the TypeScript type checker in all JavaScript files by default.
+  (This is the default behavior anyway.) Disabling this means that JavaScript
+  files MUST include a `@ts-check` comment at the top to opt-in to VS Code's
+  built-in `tsc` type checker instance, which will infer type information from
+  the code and JSDoc-style notations. */
   "js/ts.implicitProjectConfig.checkJs": false,
 
-  // EXTENSIONS.
+  /* EXTENSIONS. */
 
-  // --- Asciidoc extension ---
-  // https://marketplace.visualstudio.com/items?itemName=asciidoctor.asciidoctor-vscode
+  /* --- Asciidoc extension ---
+  https://marketplace.visualstudio.com/items?itemName=asciidoctor.asciidoctor-vscode */
 
-  // Enable support for embedded diagrams in AsciiDoc, via Kroki.
-  // This needs to be enabled at the user or workspace level.
-  // https://marketplace.visualstudio.com/items?itemName=asciidoctor.asciidoctor-vscode
+  /* Enable support for embedded diagrams in AsciiDoc, via Kroki.
+  This needs to be enabled at the user or workspace level.
+  https://marketplace.visualstudio.com/items?itemName=asciidoctor.asciidoctor-vscode */
   "asciidoc.extensions.enableKroki": true,
   "asciidoc.preview.asciidoctorAttributes": {
     //"kroki-server-url": "https://kroki.io",
     "kroki-server-url": "http://localhost:8080",
   },
 
-  // --- GitHub Copilot extension ---
-  // https://marketplace.visualstudio.com/items?itemName=GitHub.copilot
+  /* --- GitHub Copilot extension ---
+  https://marketplace.visualstudio.com/items?itemName=GitHub.copilot */
 
   "github.copilot.enable": {
     "*": true,
@@ -283,8 +284,8 @@
     "listCount": 12,
   },
 
-  // --- PlantUML extension ---
-  // https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml
+  /* --- PlantUML extension ---
+  https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml */
 
   // "plantuml.server": "https://www.plantuml.com/plantuml",
   "plantuml.server": "http://localhost:8080",

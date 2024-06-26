@@ -1,34 +1,34 @@
 [
-  // Open external terminal in own window (start at current working directory).
+  /* Open external terminal in own window (start at current working directory). */
   {
     "key": "ctrl+alt+t",
     "when": "!terminalFocus",
     "command": "workbench.action.terminal.openNativeConsole",
   },
 
-  // Open external terminal in new tab (start at current working directory).
+  /* Open external terminal in new tab (start at current working directory). */
   {
     "key": "ctrl+shift+t",
     "when": "terminalProcessSupported",
     "command": "workbench.action.terminal.newWithCwd",
   },
 
-  // Toggle zen mode.
+  /* Toggle zen mode. */
   {
     "key": "ctrl+alt+z",
     "command": "workbench.action.toggleZenMode"
   },
 
-  // Stage selected range
+  /* Stage selected range */
   {
     "key": "ctrl+space",
     "when": "isInDiffEditor && editorTextFocus",
     "command": "git.stageSelectedRanges",
-    
+
   },
   {
     "key": "ctrl+space",
-    // Diff editor is in read-only when viewing the staging index rather than the working tree.
+    /* Diff editor is in read-only when viewing the staging index rather than the working tree. */
     "when": "isInDiffEditor && editorTextFocus && editorReadonly",
     "command": "git.unstageSelectedRanges",
   },
@@ -38,7 +38,7 @@
   //   "command": "git.revertSelectedRanges",
   // }
 
-  // Toggle voice dictation. Requires VS Code Speech extension.
+  /* Toggle voice dictation. Requires VS Code Speech extension. */
   {
     "key": "ctrl+shift+s",
     "when": "!voiceChatInProgress",
@@ -50,7 +50,7 @@
     "command": "workbench.action.chat.stopListeningAndSubmit",
   },
 
-  // Remove built-in shortcuts for Ctrl+Shift+s.
+  /* Remove built-in shortcuts for Ctrl+Shift+s. */
   {
     "key": "ctrl+shift+s",
     "command": "-workbench.action.files.saveAs"
