@@ -63,7 +63,11 @@
   #
   # Other options include "cat" (for disabling paging altogether), or using
   # "less" with additional arguments for customizing the pager behavior.
-  pager = delta
+  #
+  # @deprecated - Delta is causing too many problems to install in some
+  # environments. Will look to implement an alternative pager, and this
+  # should be moved to local.gitconfig anyway.
+  #pager = delta
 
 [delta]
 
