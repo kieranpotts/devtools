@@ -57,6 +57,10 @@
   # ` ~/.config/git/ignore`.
   excludesFile = ~/local.gitignore
 
+  # Ignore file mode changes in Git. If the user changes file permissions
+  # using `chmod`, these changes should not be committed to source control.
+  fileMode = false
+
   # By default Git uses `less` to page output from commands like `git log` and
   # `git diff`. I prefer Delta, which is a pager with built-in syntax
   # highlighting: https://github.com/dandavison/delta
