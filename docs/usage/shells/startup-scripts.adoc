@@ -19,7 +19,7 @@ Interactive login shells look for a file called `/etc/profile` and, if the file 
 
 Different shells extend the standard startup behaviors with their own proprietary conventions. For example, Bash will attempt to execute `~/.bash_profile`, `~/.bash_login` or `~/.profile` – the first one it finds, in that order – when started in interactive login mode. The `~/.bash_profile` file, if it exists, takes precedence over `~/.profile`
 
-Finally, Bash reads a file called `~/.bashrc` ("Bash run command"), if it exists, when the shell is run in interactive non-login mode, for example when `bash` is called to execute a script.
+Bash reads a file called `~/.bashrc` ("Bash run command"), if it exists, when the shell is run in _interactive non-login_ mode, for example when `bash` is called to execute a script.
 
 As a general rule, `~/.bash_profile` should be used to set environment variables and to run commands that need to be run only once per session, while `~/.bashrc` should be used to do things every time Bash is run, regardless of the mode in which it operates. The `~/.bashrc` file is a good place to define aliases and functions, and to customize the prompt and history.
 
