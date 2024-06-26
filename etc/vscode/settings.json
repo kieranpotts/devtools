@@ -250,7 +250,22 @@
   // the code and JSDoc-style notations.
   "js/ts.implicitProjectConfig.checkJs": false,
 
-  // OTHER EXTENSIONS.
+  // EXTENSIONS.
+
+  // --- Asciidoc extension ---
+  // https://marketplace.visualstudio.com/items?itemName=asciidoctor.asciidoctor-vscode
+
+  // Enable support for embedded diagrams in AsciiDoc, via Kroki.
+  // This needs to be enabled at the user or workspace level.
+  // https://marketplace.visualstudio.com/items?itemName=asciidoctor.asciidoctor-vscode
+  "asciidoc.extensions.enableKroki": true,
+  "asciidoc.preview.asciidoctorAttributes": {
+    //"kroki-server-url": "https://kroki.io",
+    "kroki-server-url": "http://localhost:8080",
+  },
+
+  // --- GitHub Copilot extension ---
+  // https://marketplace.visualstudio.com/items?itemName=GitHub.copilot
 
   "github.copilot.enable": {
     "*": true,
@@ -267,4 +282,11 @@
     "inlineSuggestCount": 12,
     "listCount": 12,
   },
+
+  // --- PlantUML extension ---
+  // https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml
+
+  // "plantuml.server": "https://www.plantuml.com/plantuml",
+  "plantuml.server": "http://localhost:8080",
+  "plantuml.render": "PlantUMLServer",
 }
