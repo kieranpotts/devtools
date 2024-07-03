@@ -27,4 +27,4 @@ When you ran the `bin/update!` script, your previous Git configuration would hav
 
 NOTE: From now on you SHOULD NOT use the `git config --global` command to update your Git configuration. If you do, this command will update the file symlinked from `~/.gitconfig`. To avoid this, you SHOULD instead edit the `~/local.gitconfig` file directly.
 
-You MAY also edit the `~/local.gitignore` file to configure global https://git-scm.com/docs/gitignore[Git ignore rules]. By default, this file adds rules to ignore files or directories named `__TODO__` or `__NOTES__` in any Git repository anywhere on your local filesystem. It means the contents of these paths will be private to you and will not be committed to source control.
+You MAY also edit the `~/local.gitignore` file to configure global https://git-scm.com/docs/gitignore[Git ignore rules]. By default, this file adds rules to ignore files or directories named `__TODO__`, `__NOTES__` or `__SCRIPTS__` in any Git repository anywhere on your local filesystem. It means the contents of these paths will be private to you and will not be committed to source control.
