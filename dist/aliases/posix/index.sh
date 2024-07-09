@@ -9,4 +9,5 @@
 . ~/devtools/dist/aliases/posix/grep.sh
 . ~/devtools/dist/aliases/posix/ls.sh
 . ~/devtools/dist/aliases/posix/mkdir.sh
+. ~/devtools/dist/aliases/posix/nvim.sh
 . ~/devtools/dist/aliases/posix/sudo.sh
