@@ -1,3 +1,5 @@
 = The `bin` directory
 
-The `bin/posix` and `bin/windows` directories are intended to be added to the user's system PATH (depending on the OS), thus making the Git aliases and binaries executable from the command line.
+The `bin` directory is intended to be added to the user's system PATH, so making the bundled binaries, such as `jq` and `make`, available from the command line in any working directory.
+
+All bundled binaries are compatible with Windows running on x86-64 architecture.

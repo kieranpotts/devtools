@@ -191,7 +191,7 @@
     "editor.lineHighlightBackground": "#f9f9f9",
     "editor.lineHighlightBorder": "#f9f9f9",
 
-    /* Matches "kp2024" theme in Windows Terminal settings. */
+    /* Matches "kp" theme in Windows Terminal settings. */
     "terminal.background": "#282C34",
     "terminal.foreground": "#DCDFE4",
     "terminalCursor.background": "#FFFFFF",

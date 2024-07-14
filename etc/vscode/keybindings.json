@@ -64,5 +64,5 @@
     "key": "ctrl+shift+s",
     "when": "remoteFileDialogVisible",
     "command": "-workbench.action.files.saveLocalFile",
-  }
+  },
 ]

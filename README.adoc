@@ -1,45 +1,19 @@
 = Devtools
 
-This repository encapsulates my personal UNIX dotfiles, plus binaries and configurations for my main development tools. I maintain this repository to facilitate the backing up and restoration of my local development environment configuration, and to ease the synchronization and porting of my development tools between different computers.
+This repository encapsulates configurations for some of my development tools including Visual Studio Code and Windows Terminal, as well as command line utilities including jq and LazyGit, and Windows ports of Unix looks like `make` and `wget`.
 
-My dotfiles include handy aliases and functions for UNIX-like systems, a better default configuration for Git, and an extensive suite of useful Git aliases – things like `git sync`, `git amend`, `git squash`, `git fixup` and `git undo`. I've made some effort to make my dotfiles as cross-platform compatible as possible. Most of the shell scripts are POSIX-compliant and will therefore run in all UNIX shells. For Windows, a Linux emulator like Git Bash for Windows or a virtual machine like WSL2 is required.
+I maintain this repository to make it easier to port configurations between different computers.
 
-In addition to my dotfiles, this repository also includes the following:
-
-* Prompt line customization using link:https://ohmyposh.dev/[Oh-My-Posh].
-* Binaries for command line utilities like link:https://github.com/jesseduffield/lazygit[lazygit].
-* VS Code user-level settings, including theme and keybindings (allowing these things to be synced between multiple Microsoft/GitHub accounts).
-* Windows Terminal settings.
-* Neovim configuration and plugins.
-
-You are welcome to use this repository as a starting point for your own development environment configuration. Fork it and modify it to suit your own needs.
+.Devtools vs Dotfiles
+****
+My devtools are for Windows. I also maintain a link:https://github.com/kieranpotts/dotfiles[dotfiles] repository that captures further devtools configuration for UNIX-like environments. On Windows, the dotfiles should be installed on a guest OS such as WSL2 or an emulator like Git Bash. The devtools should be installed on the host OS.
+****
 
 == Documentation
 
-=== Get started
-
-* link:./docs/start/requirements.adoc[Requirements]
-* link:./docs/start/installation.adoc[Installation]
-* link:./docs/start/configuration.adoc[Configuration]
-* link:./docs/start/updating.adoc[Updating]
-
-=== Usage
-
-==== Shells
-
-* link:./docs/usage/shells/startup-scripts.adoc[Shell startup scripts]
-* link:./docs/usage/shells/environment-variables.adoc[Shell environment variables]
-* link:./docs/usage/shells/aliases.adoc[Shell aliases]
-* link:./docs/usage/shells/functions.adoc[Shell functions]
-
-==== Git
-
-* link:./docs/usage/git/config.adoc[Git config]
-* link:./docs/usage/git/aliases.adoc[Git aliases]
-
-=== Contributing
-
-* link:./docs/contributing/acknowledgments.adoc[Acknowledgments]
+* link:./docs/requirements.adoc[Requirements]
+* link:./docs/installation.adoc[Installation]
+* link:./docs/maintenance.adoc[Maintenance]
 
 ''''
 Copyright © 2020-present Kieran Potts, link:./LICENSE.txt[MIT License]
