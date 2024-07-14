@@ -159,6 +159,10 @@
   /* Adds "Open in Windows Terminal" to right-click menu of Explorer items. */
   "terminal.explorerKind": "external",
 
+  /* Change the color scheme based on the system's color scheme. See 
+  workbench.preferred*Theme` settings for additional options. */
+  "window.autoDetectColorScheme": true,
+
   /* Use VS Code's non-native title bar with the command centre in the middle.
   Show only the name of the folder or workspace in the window title bar. */
   "window.titleBarStyle": "custom",
@@ -216,8 +220,13 @@
     "terminal.ansiBrightYellow":"#EBCB8B",
   },
 
-  /* Themes. */
-  "workbench.colorTheme": "GitHub Light Colorblind (Beta)",
+  /* Themes. When `window.autoDetectColorScheme` is true, the `colorTheme` option
+  is ignored and the `preferred*Theme` options are used instead. */
+  "workbench.colorTheme": "GitHub Light",
+  "workbench.preferredDarkColorTheme": "GitHub Dark",
+  "workbench.preferredHighContrastColorTheme": "GitHub Dark High Contrast",
+  "workbench.preferredHighContrastLightColorTheme": "GitHub Light High Contrast",
+  "workbench.preferredLightColorTheme": "GitHub Light",
   "workbench.iconTheme": "vs-minimal",
 
   /* Shrink tab size as the available space decreases. */
