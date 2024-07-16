@@ -159,7 +159,7 @@
   /* Adds "Open in Windows Terminal" to right-click menu of Explorer items. */
   "terminal.explorerKind": "external",
 
-  /* Change the color scheme based on the system's color scheme. See 
+  /* Change the color scheme based on the system's color scheme. See
   workbench.preferred*Theme` settings for additional options. */
   "window.autoDetectColorScheme": true,
 
@@ -187,37 +187,37 @@
   /* Theme overrides. */
   "workbench.colorCustomizations": {
 
-    /* Use lighter colors for those squiggly underlines. */
-    "editorError.foreground": "#ff000077",
-    "editorWarning.foreground": "#ffee0099",
-    "editorInfo.foreground": "#00aaff88",
+    // /* Use lighter colors for those squiggly underlines. */
+    // "editorError.foreground": "#ff000077",
+    // "editorWarning.foreground": "#ffee0099",
+    // "editorInfo.foreground": "#00aaff88",
 
-    /* Make the line highlight color very subtle. */
-    "editor.lineHighlightBackground": "#f9f9f9",
-    "editor.lineHighlightBorder": "#f9f9f9",
+    // /* Make the line highlight color very subtle. */
+    // "editor.lineHighlightBackground": "#f9f9f9",
+    // "editor.lineHighlightBorder": "#f9f9f9",
 
-    /* Matches the "Ocean" theme in Windows Terminal settings. Based on:
-    https://glitchbone.github.io/vscode-base16-term/#/ocean */
-    "terminalCursor.background":"#C0C5CE",
-    "terminalCursor.foreground":"#C0C5CE",
-    "terminal.background":"#2B303B",
-    "terminal.foreground":"#C0C5CE",
-    "terminal.ansiBlack":"#2B303B",
-    "terminal.ansiBlue":"#8FA1B3",
-    "terminal.ansiCyan":"#96B5B4",
-    "terminal.ansiGreen":"#A3BE8C",
-    "terminal.ansiMagenta":"#B48EAD",
-    "terminal.ansiRed":"#BF616A",
-    "terminal.ansiWhite":"#C0C5CE",
-    "terminal.ansiYellow":"#EBCB8B",
-    "terminal.ansiBrightBlack":"#65737E",
-    "terminal.ansiBrightBlue":"#8FA1B3",
-    "terminal.ansiBrightCyan":"#96B5B4",
-    "terminal.ansiBrightGreen":"#A3BE8C",
-    "terminal.ansiBrightMagenta":"#B48EAD",
-    "terminal.ansiBrightRed":"#BF616A",
-    "terminal.ansiBrightWhite":"#EFF1F5",
-    "terminal.ansiBrightYellow":"#EBCB8B",
+    // /* Matches the "Ocean" theme in Windows Terminal settings. Based on:
+    // https://glitchbone.github.io/vscode-base16-term/#/ocean */
+    // "terminalCursor.background":"#C0C5CE",
+    // "terminalCursor.foreground":"#C0C5CE",
+    // "terminal.background":"#2B303B",
+    // "terminal.foreground":"#C0C5CE",
+    // "terminal.ansiBlack":"#2B303B",
+    // "terminal.ansiBlue":"#8FA1B3",
+    // "terminal.ansiCyan":"#96B5B4",
+    // "terminal.ansiGreen":"#A3BE8C",
+    // "terminal.ansiMagenta":"#B48EAD",
+    // "terminal.ansiRed":"#BF616A",
+    // "terminal.ansiWhite":"#C0C5CE",
+    // "terminal.ansiYellow":"#EBCB8B",
+    // "terminal.ansiBrightBlack":"#65737E",
+    // "terminal.ansiBrightBlue":"#8FA1B3",
+    // "terminal.ansiBrightCyan":"#96B5B4",
+    // "terminal.ansiBrightGreen":"#A3BE8C",
+    // "terminal.ansiBrightMagenta":"#B48EAD",
+    // "terminal.ansiBrightRed":"#BF616A",
+    // "terminal.ansiBrightWhite":"#EFF1F5",
+    // "terminal.ansiBrightYellow":"#EBCB8B",
   },
 
   /* Themes. When `window.autoDetectColorScheme` is true, the `colorTheme` option
