@@ -37,7 +37,7 @@
   "workbench.preferredLightColorTheme": "Ocean Light",
   "workbench.iconTheme": "vs-minimal",
 
-  /** 
+  /**
    * Panels
    */
 
@@ -212,34 +212,34 @@
 
   /* Detect Git repositories in sub-folders. */
   "git.autoRepositoryDetection": "subFolders",
-  
+
   /* Use temporary stash to enable syncing when working tree is dirty. */
   "git.autoStash": true,
-  
+
   /* Don't confirm `--no-verify` commits. */
   "git.confirmNoVerifyCommit": false,
-  
+
   /* Confirm before running sync operation (it may rewrite history). */
   "git.confirmSync": false,
-  
+
   /* Commit all working changes when nothing is yet staged. */
   "git.enableSmartCommit": true,
-  
+
   /* Remove sync control from status bar. */
   "git.enableStatusBarSync": false,
-  
+
   /* Sync tags, too. */
   "git.followTagsWhenSync": true,
-  
+
   /* Use VS Code's new merge editor for resolving conflicts. */
   "git.mergeEditor": true,
-  
+
   /* Automatically prune references to deleted upstream branches. */
   "git.pruneOnFetch": true,
-  
+
   /* Enforce rebase strategy on sync, to maintain linear history. */
   "git.rebaseWhenSync": true,
-  
+
   /* Scan for Git repositories in sub-folders to a max depth of 3. */
   "git.repositoryScanMaxDepth": 3,
 
@@ -333,7 +333,8 @@
   },
 
   /* When previewing Asciidoc files, use VS Code's built-in preview style
-  rather than the default Asciidoc style. */
+  rather than the default Asciidoc style. This ensures the colors of the
+  preview are consistent with the enabled VS Code theme. */
   "asciidoc.preview.useEditorStyle": true,
 
   /* Enable Antora support. */
