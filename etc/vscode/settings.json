@@ -1,25 +1,60 @@
 {
-  /* Disable the breadcrumb trail across the top of editors. */
-  "breadcrumbs.enabled": false,
+  /**
+   * Theme and window chrome
+   */
 
-  /* Clear the terminal before running a new debugging session. */
-  "debug.terminal.clearBeforeReusing": true,
+  /* Change the color scheme based on the system's color scheme. See
+  workbench.preferred*Theme` settings for additional options. */
+  "window.autoDetectColorScheme": true,
 
-  /* Use VS Code's improved diff algorithm for the old diff editor
-  as well as the new one. */
-  "diffEditor.diffAlgorithm": "advanced",
+  /* Use VS Code's non-native title bar with the command centre in the middle.
+  Show only the name of the folder or workspace in the window title bar. */
+  "window.titleBarStyle": "custom",
+  "window.commandCenter": true,
+  "window.title": "${dirty}${rootName}${separator}",
 
-  /* Use the latest version of VS Code's new (experimental) diff editor. */
-  "diffEditor.experimental.useVersion2": true,
+  /* Use VS Code's non-native dialog windows. */
+  "window.dialogStyle": "custom",
 
-  /* Mark inline deletions and insertions. */
-  "diffEditor.experimental.showEmptyDecorations": true,
+  /* Open new VS Code windows maximized. */
+  "window.newWindowDimensions": "maximized",
 
-  /* Markup blocks of code that have moved to different lines. */
-  "diffEditor.experimental.showMoves": true,
+  /* Menu is hidden but can be toggled visible with the Alt key. */
+  "window.menuBarVisibility": "toggle",
 
-  /* Show unchanged regions in the diff editor. */
-  "diffEditor.hideUnchangedRegions.enabled": true,
+  /* Zoom +1 level by default. */
+  "window.zoomLevel": 1,
+
+  /* Activity bar. */
+  "workbench.activityBar.location": "top",
+
+  /* Themes. When `window.autoDetectColorScheme` is true, the `colorTheme` option
+  is ignored and the `preferred*Theme` options are used instead. */
+  "workbench.colorTheme": "GitHub Light",
+  "workbench.preferredDarkColorTheme": "GitHub Dark",
+  "workbench.preferredHighContrastColorTheme": "GitHub Dark High Contrast",
+  "workbench.preferredHighContrastLightColorTheme": "GitHub Light High Contrast",
+  "workbench.preferredLightColorTheme": "Ocean Light",
+  "workbench.iconTheme": "vs-minimal",
+
+  /** 
+   * Panels
+   */
+
+  /* Visual presentation of tree views in panels - eg File Explorer. */
+  "workbench.tree.indent": 24,
+  "workbench.tree.renderIndentGuides": "always",
+
+  /* Stick scroll within tree views in the side panels. */
+  "workbench.tree.enableStickyScroll": true,
+  "workbench.tree.stickyScrollMaxItemCount": 3,
+
+  /* Collapse search results, so files must be expanded to show matching text. */
+  "search.collapseResults": "alwaysCollapse",
+
+  /**
+   * Tabs, tabs groups, and editor.
+   */
 
   /* Disable various auto-complete mechanisms in the code editor. */
   "editor.autoClosingBrackets": "never",
@@ -36,6 +71,7 @@
   /* Editor font. */
   "editor.fontFamily": "Hack, monospace",
   "editor.fontLigatures": true,
+  "editor.fontSize": 14,
   "editor.fontWeight": "400",
 
   /* Disable all auto-formatting mechanisms by default. This means projects MUST
@@ -52,18 +88,33 @@
 
   /* Render guidelines for indentation and bracket pairs. */
   "editor.guides.indentation": true,
+  "editor.guides.highlightActiveIndentation": false,
   "editor.guides.bracketPairs": true,
 
   /* By default, disable inlay hints, which get injected within code
   (eg showing function parameter names). */
   "editor.inlayHints.enabled": "off",
 
-  /* Show line numbers but hide the minimap. */
+  /* Show line numbers and the minimap. */
   "editor.lineNumbers": "on",
-  "editor.minimap.enabled": false,
+  "editor.minimap.enabled": true,
+  "editor.minimap.renderCharacters": false,
+  "editor.minimap.size": "fit",
+  "editor.minimap.showSlider": "always",
+
+  /* Disable the breadcrumb trail across the top of editors. */
+  "breadcrumbs.enabled": false,
+
+  /* Scrollbar. */
+  "editor.scrollbar.vertical": "visible",
+  "editor.scrollbar.horizontalScrollbarSize": 14,
 
   /* Scrolls about 3 lines for every 1 mouse wheel increment. */
   "editor.mouseWheelScrollSensitivity": 1,
+
+  /* Sticky scroll. */
+  "editor.stickyScroll.enabled": true,
+  "editor.stickyScroll.maxLineCount": 5,
 
   /* Render control and empty space characters. */
   "editor.renderControlCharacters": true,
@@ -75,6 +126,7 @@
 
   /* Prioritize snippet suggestions over all other hints. Pre-select the first.
   Show the toolbar automatically – this works well with Copilot. */
+  "editor.inlineSuggest.enabled": true,
   "editor.inlineSuggest.showToolbar": "always",
   "editor.snippetSuggestions": "none",
   "editor.suggestSelection": "recentlyUsedByPrefix",
@@ -111,27 +163,85 @@
     "editor.wordWrapColumn": 80
   },
 
-  /* Show recommended extensions. */
-  "extensions.ignoreRecommendations": false,
+  /* Shrink tab size as the available space decreases. */
+  "workbench.editor.tabSizing": "shrink",
+
+  /* Disable startup editor, which means editors are restored from prior session. */
+  "workbench.startupEditor": "none",
+
+  /* Hide tabs when in Zen mode. */
+  "zenMode.showTabs": "none",
+
+  /**
+   * Auto-save and other editing features
+   */
 
   /* Autosave. */
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 5000,
 
-  /* Built-in Git GUI. */
-  "git.allowNoVerifyCommit": true,             /* Allow overriding of Git hooks on commit operations. */
-  "git.autofetch": true,                       /* Automatically fetch new commits from origin. */
-  "git.autoRepositoryDetection": "subFolders", /* Detect Git repositories in sub-folders. */
-  "git.autoStash": true,                       /* Use temporary stash to enable syncing when working tree is dirty. */
-  "git.confirmNoVerifyCommit": false,          /* Don't confirm `--no-verify` commits. */
-  "git.confirmSync": false,                    /* Confirm before running sync operation (it may rewrite history). */
-  "git.enableSmartCommit": true,               /* Commit all working changes when nothing is yet staged. */
-  "git.enableStatusBarSync": false,            /* Remove sync control from status bar. */
-  "git.followTagsWhenSync": true,              /* Sync tags, too. */
-  "git.mergeEditor": true,                     /* Use VS Code's new merge editor for resolving conflicts. */
-  "git.pruneOnFetch": true,                    /* Automatically prune references to deleted upstream branches. */
-  "git.rebaseWhenSync": true,                  /* Enforce rebase strategy on sync, to maintain linear history. */
-  "git.repositoryScanMaxDepth": 3,             /* Scan for Git repositories in sub-folders to a max depth of 3. */
+  /**
+   * Diff and Merge Editor
+   */
+
+  /* Use VS Code's improved diff algorithm for the old diff editor
+  as well as the new one. */
+  "diffEditor.diffAlgorithm": "advanced",
+
+  /* Mark inline deletions and insertions. */
+  "diffEditor.experimental.showEmptyDecorations": true,
+
+  /* Markup blocks of code that have moved to different lines. */
+  "diffEditor.experimental.showMoves": true,
+
+  /* Show unchanged regions in the diff editor. */
+  "diffEditor.hideUnchangedRegions.enabled": true,
+
+  /**
+   * Source code management (SCM) and the built-in Git GUI.
+   */
+
+  /* Default name for new Git branches when created via VS Code's GUI. */
+  "git.defaultBranchName": "dev",
+
+  /* Allow overriding of Git hooks on commit operations. */
+  "git.allowNoVerifyCommit": true,
+
+  /* Automatically fetch new commits from origin. */
+  "git.autofetch": true,
+
+  /* Detect Git repositories in sub-folders. */
+  "git.autoRepositoryDetection": "subFolders",
+  
+  /* Use temporary stash to enable syncing when working tree is dirty. */
+  "git.autoStash": true,
+  
+  /* Don't confirm `--no-verify` commits. */
+  "git.confirmNoVerifyCommit": false,
+  
+  /* Confirm before running sync operation (it may rewrite history). */
+  "git.confirmSync": false,
+  
+  /* Commit all working changes when nothing is yet staged. */
+  "git.enableSmartCommit": true,
+  
+  /* Remove sync control from status bar. */
+  "git.enableStatusBarSync": false,
+  
+  /* Sync tags, too. */
+  "git.followTagsWhenSync": true,
+  
+  /* Use VS Code's new merge editor for resolving conflicts. */
+  "git.mergeEditor": true,
+  
+  /* Automatically prune references to deleted upstream branches. */
+  "git.pruneOnFetch": true,
+  
+  /* Enforce rebase strategy on sync, to maintain linear history. */
+  "git.rebaseWhenSync": true,
+  
+  /* Scan for Git repositories in sub-folders to a max depth of 3. */
+  "git.repositoryScanMaxDepth": 3,
 
   /* Enable the feature to automatically save and restore open editors when
   switching between source control branches. Since VS Code 1.89.0. */
@@ -140,15 +250,16 @@
   /* When switching new a branch for the first time, close all currently-open editors. */
   "scm.workingSets.default": "empty",
 
-  /* Collapse search results, so files must be expanded to show matching text. */
-  "search.collapseResults": "alwaysCollapse",
+  /**
+   * Terminal
+   */
 
   /* Integrated terminal configuration. */
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.cursorWidth": 3,
   "terminal.integrated.defaultLocation": "editor", /* Open in a new editor tab rather than panel. */
   "terminal.integrated.defaultProfile.windows": "Ubuntu (WSL)",
-  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
   "terminal.integrated.fontFamily": "Hack NF",
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.shellIntegration.enabled": true,
@@ -159,90 +270,33 @@
   /* Adds "Open in Windows Terminal" to right-click menu of Explorer items. */
   "terminal.explorerKind": "external",
 
-  /* Change the color scheme based on the system's color scheme. See
-  workbench.preferred*Theme` settings for additional options. */
-  "window.autoDetectColorScheme": true,
+  /* Clear the terminal before running a new debugging session. */
+  "debug.terminal.clearBeforeReusing": true,
 
-  /* Use VS Code's non-native title bar with the command centre in the middle.
-  Show only the name of the folder or workspace in the window title bar. */
-  "window.titleBarStyle": "custom",
-  "window.commandCenter": true,
-  "window.title": "${dirty}${rootName}${separator}",
+  /* Sticky-scroll within integrated terminal. */
+  "terminal.integrated.stickyScroll.enabled": true,
+  "terminal.integrated.stickyScroll.maxLineCount": 3,
 
-  /* Use VS Code's non-native dialog windows. */
-  "window.dialogStyle": "custom",
+  /**
+   * Notebooks
+   */
 
-  /* Open new VS Code windows maximized. */
-  "window.newWindowDimensions": "maximized",
+   "notebook.stickyScroll.enabled": true,
+   "notebook.stickyScroll.mode": "indented",
 
-  /* Menu is hidden but can be toggled visible with the Alt key. */
-  "window.menuBarVisibility": "toggle",
+  /**
+   * Extensions and built-in services
+   */
 
-  /* Zoom +1 level by default. */
-  "window.zoomLevel": 1,
+  /* Don't show recommended extensions. */
+  "extensions.ignoreRecommendations": false,
 
-  /* Activity bar. */
-  "workbench.activityBar.location": "top",
+  /* Synchronize keybindings based on the OS. */
+  "settingsSync.keybindingsPerPlatform": true,
 
-  /* Theme overrides. */
-  "workbench.colorCustomizations": {
-
-    // /* Use lighter colors for those squiggly underlines. */
-    // "editorError.foreground": "#ff000077",
-    // "editorWarning.foreground": "#ffee0099",
-    // "editorInfo.foreground": "#00aaff88",
-
-    // /* Make the line highlight color very subtle. */
-    // "editor.lineHighlightBackground": "#f9f9f9",
-    // "editor.lineHighlightBorder": "#f9f9f9",
-
-    // /* Matches the "Ocean" theme in Windows Terminal settings. Based on:
-    // https://glitchbone.github.io/vscode-base16-term/#/ocean */
-    // "terminalCursor.background":"#C0C5CE",
-    // "terminalCursor.foreground":"#C0C5CE",
-    // "terminal.background":"#2B303B",
-    // "terminal.foreground":"#C0C5CE",
-    // "terminal.ansiBlack":"#2B303B",
-    // "terminal.ansiBlue":"#8FA1B3",
-    // "terminal.ansiCyan":"#96B5B4",
-    // "terminal.ansiGreen":"#A3BE8C",
-    // "terminal.ansiMagenta":"#B48EAD",
-    // "terminal.ansiRed":"#BF616A",
-    // "terminal.ansiWhite":"#C0C5CE",
-    // "terminal.ansiYellow":"#EBCB8B",
-    // "terminal.ansiBrightBlack":"#65737E",
-    // "terminal.ansiBrightBlue":"#8FA1B3",
-    // "terminal.ansiBrightCyan":"#96B5B4",
-    // "terminal.ansiBrightGreen":"#A3BE8C",
-    // "terminal.ansiBrightMagenta":"#B48EAD",
-    // "terminal.ansiBrightRed":"#BF616A",
-    // "terminal.ansiBrightWhite":"#EFF1F5",
-    // "terminal.ansiBrightYellow":"#EBCB8B",
-  },
-
-  /* Themes. When `window.autoDetectColorScheme` is true, the `colorTheme` option
-  is ignored and the `preferred*Theme` options are used instead. */
-  "workbench.colorTheme": "GitHub Light",
-  "workbench.preferredDarkColorTheme": "GitHub Dark",
-  "workbench.preferredHighContrastColorTheme": "GitHub Dark High Contrast",
-  "workbench.preferredHighContrastLightColorTheme": "GitHub Light High Contrast",
-  "workbench.preferredLightColorTheme": "GitHub Light",
-  "workbench.iconTheme": "vs-minimal",
-
-  /* Shrink tab size as the available space decreases. */
-  "workbench.editor.tabSizing": "shrink",
-
-  /* Disable startup editor, which means editors are restored from prior session. */
-  "workbench.startupEditor": "none",
-
-  /* Visual presentation of tree views in panels - eg File Explorer. */
-  "workbench.tree.indent": 24,
-  "workbench.tree.renderIndentGuides": "none",
-
-  /* Hide tabs when in Zen mode. */
-  "zenMode.showTabs": "none",
-
-  /* LANGUAGE-SPECIFIC SETTINGS: */
+  /**
+   * Language-specific settings
+   */
 
   /* Disable auto-closing tags. */
   "html.autoClosingTags": false,
@@ -262,7 +316,9 @@
   the code and JSDoc-style notations. */
   "js/ts.implicitProjectConfig.checkJs": false,
 
-  /* EXTENSIONS. */
+  /**
+   * Extension settings
+   */
 
   /* --- Asciidoc extension ---
   https://marketplace.visualstudio.com/items?itemName=asciidoctor.asciidoctor-vscode */
@@ -275,6 +331,13 @@
     //"kroki-server-url": "https://kroki.io",
     "kroki-server-url": "http://localhost:8080",
   },
+
+  /* When previewing Asciidoc files, use VS Code's built-in preview style
+  rather than the default Asciidoc style. */
+  "asciidoc.preview.useEditorStyle": true,
+
+  /* Enable Antora support. */
+  "asciidoc.antora.enableAntoraSupport": true,
 
   /* --- GitHub Copilot extension ---
   https://marketplace.visualstudio.com/items?itemName=GitHub.copilot */
@@ -301,4 +364,5 @@
   // "plantuml.server": "https://www.plantuml.com/plantuml",
   "plantuml.server": "http://localhost:8080",
   "plantuml.render": "PlantUMLServer",
+
 }
