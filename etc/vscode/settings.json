@@ -3,10 +3,6 @@
    * Theme and window chrome
    */
 
-  /* Change the color scheme based on the system's color scheme. See
-  workbench.preferred*Theme` settings for additional options. */
-  "window.autoDetectColorScheme": true,
-
   /* Use VS Code's non-native title bar with the command centre in the middle.
   Show only the name of the folder or workspace in the window title bar. */
   "window.titleBarStyle": "custom",
@@ -19,27 +15,21 @@
   /* Open new VS Code windows maximized. */
   "window.newWindowDimensions": "maximized",
 
-  /* Menu is hidden but can be toggled visible with the Alt key. */
-  "window.menuBarVisibility": "toggle",
-
-  /* Zoom +1 level by default. */
+  /* Zoom. */
   "window.zoomLevel": 1,
 
-  /* Activity bar. */
-  "workbench.activityBar.location": "top",
+  /* Change the color scheme based on the system's color scheme. See
+  workbench.preferred*Theme` settings for additional options. */
+  "window.autoDetectColorScheme": true,
 
   /* Themes. When `window.autoDetectColorScheme` is true, the `colorTheme` option
-  is ignored and the `preferred*Theme` options are used instead. */
+  is ignored and the `preferred**Theme` options are used instead. */
   "workbench.colorTheme": "GitHub Light",
+  "workbench.preferredLightColorTheme": "Ocean Light",
   "workbench.preferredDarkColorTheme": "GitHub Dark",
   "workbench.preferredHighContrastColorTheme": "GitHub Dark High Contrast",
   "workbench.preferredHighContrastLightColorTheme": "GitHub Light High Contrast",
-  "workbench.preferredLightColorTheme": "Ocean Light",
   "workbench.iconTheme": "vs-minimal",
-
-  /**
-   * Panels
-   */
 
   /* Visual presentation of tree views in panels - eg File Explorer. */
   "workbench.tree.indent": 24,
@@ -364,6 +354,6 @@
 
   // "plantuml.server": "https://www.plantuml.com/plantuml",
   "plantuml.server": "http://localhost:8080",
-  "plantuml.render": "PlantUMLServer",
+  "plantuml.render": "PlantUMLServer"
 
 }
