@@ -83,7 +83,7 @@
 
   /* By default, disable inlay hints, which get injected within code
   (eg showing function parameter names). */
-  "editor.inlayHints.enabled": "off",
+  "editor.inlayHints.enabled": "on",
 
   /* Show line numbers and the minimap. */
   "editor.lineNumbers": "on",
