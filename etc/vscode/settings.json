@@ -275,6 +275,13 @@
    "notebook.stickyScroll.mode": "indented",
 
   /**
+   * External browser
+   */
+
+  /* Open links in Firefox. */
+  "workbench.externalBrowser": "firefox",
+
+  /**
    * Extensions and built-in services
    */
 
