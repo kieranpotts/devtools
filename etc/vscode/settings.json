@@ -15,6 +15,9 @@
   /* Open new VS Code windows maximized. */
   "window.newWindowDimensions": "maximized",
 
+  /* Activity Bar position. */
+  "workbench.activityBar.location": "top",
+
   /* Zoom. */
   "window.zoomLevel": 1,
 
