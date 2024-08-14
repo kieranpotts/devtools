@@ -91,9 +91,7 @@
   /* Show line numbers and the minimap. */
   "editor.lineNumbers": "on",
   "editor.minimap.enabled": true,
-  "editor.minimap.renderCharacters": false,
-  "editor.minimap.size": "fit",
-  "editor.minimap.showSlider": "always",
+"editor.minimap.renderCharacters": false,
 
   /* Disable the breadcrumb trail across the top of editors. */
   "breadcrumbs.enabled": false,
@@ -251,7 +249,7 @@
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.cursorWidth": 3,
   "terminal.integrated.defaultLocation": "editor", /* Open in a new editor tab rather than panel. */
-  "terminal.integrated.defaultProfile.windows": "Ubuntu (WSL)",
+  // "terminal.integrated.defaultProfile.windows": "Ubuntu (WSL)",
   "terminal.integrated.enableMultiLinePasteWarning": "never",
   "terminal.integrated.fontFamily": "Hack NF",
   "terminal.integrated.fontSize": 14,
@@ -364,6 +362,51 @@
 
   // "plantuml.server": "https://www.plantuml.com/plantuml",
   "plantuml.server": "http://localhost:8080",
-  "plantuml.render": "PlantUMLServer"
+"plantuml.render": "PlantUMLServer",
+"editor.minimap.size": "fill",
+"cSpell.userWords": [
+	"Kieran",
+	"kieranpotts"
+],
+// "terminal.integrated.profiles.linux": {
+// 	"bash": {
+// 		"path": "bash",
+// 		"icon": "terminal-bash"
+// 	},
+// 	// "zsh": {
+// 	// 	"path": "zsh"
+// 	// },
+// 	// "fish": {
+// 	// 	"path": "fish"
+// 	// },
+// 	"tmux": {
+// 		"path": "tmux",
+// 		"icon": "terminal-tmux"
+// 	},
+// 	// "pwsh": {
+// 	// 	"path": "pwsh",
+// 	// 	"icon": "terminal-powershell"
+// 	// }
+// },
+"terminal.integrated.defaultProfile.linux": "bash",
+// "terminal.integrated.profiles.windows": {
+
+// 	"PowerShell": {
+// 		"source": "PowerShell",
+// 		"icon": "terminal-powershell"
+// 	},
+// 	"Command Prompt": {
+// 		"path": [
+// 			"${env:windir}\\Sysnative\\cmd.exe",
+// 			"${env:windir}\\System32\\cmd.exe"
+// 		],
+// 		"args": [],
+// 		"icon": "terminal-cmd"
+// 	},
+// 	"Git Bash": {
+// 		"source": "Git Bash"
+// 	}
+// },
+"terminal.integrated.defaultProfile.windows": "Git Bash",
 
 }
