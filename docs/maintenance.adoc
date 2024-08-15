@@ -1,4 +1,5 @@
 = Maintenance
+
 General notes for project maintainers.
 
 == Updating the binaries
@@ -25,5 +26,5 @@ Fresh Windows binaries can be downloaded from the following links. Binaries for 
 
 [NOTE]
 ======
-NeoVim is not available as a standalone binary. It MUST be installed using a link:https://github.com/neovim/neovim/blob/master/INSTALL.md[package manager like Winget or Chocolatey] or the Windows installer package available from the link:https://github.com/neovim/neovim/releases[releases page]. 
+NeoVim is not available as a standalone binary. It MUST be installed using a link:https://github.com/neovim/neovim/blob/master/INSTALL.md[package manager like Winget or Chocolatey] or the Windows installer package available from the project's link:https://github.com/neovim/neovim/releases[releases page].
 ======

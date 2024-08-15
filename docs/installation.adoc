@@ -1,4 +1,5 @@
 = Installation
+
 Steps to install and update these devtools on your Windows machine.
 
 == 1. Fork and clone
@@ -50,10 +51,8 @@ Adding `~/devtools/bin` to your system PATH will make available the bundled Wind
 
 == Related configurations
 
-=== GitHub Codespaces configuration
-
 Go to your https://github.com/settings/codespaces[GitHub Codespaces options] and enable the following setting.
 
 image::./github-enable-settings-sync.png[]
 
-Now, if you login to VS Code using your GitHub account, and enable Settings Sync in VS Code, your local VS Code settings will be automatically loaded into every virtual GitHub Codespace you create, ensuring a consistent user experience between cloud and local instances of VS Code.
+Now, if you login to VS Code using your GitHub account, and if you enable Settings Sync in VS Code, your local VS Code settings will be automatically loaded into every virtual GitHub Codespace you create - ensuring a consistent user experience between cloud and local instances of VS Code.
