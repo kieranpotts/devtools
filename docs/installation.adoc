@@ -46,8 +46,14 @@ New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Local\Packages\Mi
 
 Adding `~/devtools/bin` to your system PATH will make available the bundled Windows binaries for Delta, LazyGit, Oh-My-Posh, and many other tools.
 
-== 5. GitHub Codespaces configuration
+''''
 
-Go to your https://github.com/settings/codespaces[GitHub Codespaces options] and enable the following setting. Now, if you login to VS Code using your GitHub account, and enable Settings Sync in VS Code, your local VS Code settings will be automatically loaded into every virtual GitHub Codespace you create, ensuring a consistent user experience between cloud and local instances of VS Code.
+== Related configurations
+
+=== GitHub Codespaces configuration
+
+Go to your https://github.com/settings/codespaces[GitHub Codespaces options] and enable the following setting.
 
 image::./github-enable-settings-sync.png[]
+
+Now, if you login to VS Code using your GitHub account, and enable Settings Sync in VS Code, your local VS Code settings will be automatically loaded into every virtual GitHub Codespace you create, ensuring a consistent user experience between cloud and local instances of VS Code.
