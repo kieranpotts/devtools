@@ -91,7 +91,8 @@
   /* Show line numbers and the minimap. */
   "editor.lineNumbers": "on",
   "editor.minimap.enabled": true,
-"editor.minimap.renderCharacters": false,
+  "editor.minimap.size": "fill",
+  "editor.minimap.renderCharacters": false,
 
   /* Disable the breadcrumb trail across the top of editors. */
   "breadcrumbs.enabled": false,
@@ -135,7 +136,7 @@
   in comments pretty frequently. */
   "editor.unicodeHighlight.allowedCharacters": {
     "–": true,
-    "—": true,
+    "—": true
   },
 
   /* Wrap long lines at the viewport but up to maximum of 120 characters. */
@@ -249,11 +250,14 @@
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.cursorWidth": 3,
   "terminal.integrated.defaultLocation": "editor", /* Open in a new editor tab rather than panel. */
-  // "terminal.integrated.defaultProfile.windows": "Ubuntu (WSL)",
   "terminal.integrated.enableMultiLinePasteWarning": "never",
   "terminal.integrated.fontFamily": "Hack NF",
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.shellIntegration.enabled": true,
+
+  /* Default profiles for integrated terminal - varies between Windows and WSL. */
+  "terminal.integrated.defaultProfile.linux": "bash",
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
 
   /* Use Windows Terminal as the external editor. */
   "terminal.external.windowsExec": "wt",
@@ -327,7 +331,7 @@
   "asciidoc.extensions.enableKroki": true,
   "asciidoc.preview.asciidoctorAttributes": {
     //"kroki-server-url": "https://kroki.io",
-    "kroki-server-url": "http://localhost:8080",
+    "kroki-server-url": "http://localhost:8080"
   },
 
   /* When previewing Asciidoc files, use VS Code's built-in preview style
@@ -346,7 +350,7 @@
     "enableAutoCompletions": true,
     "plaintext": true,
     "asciidoc": true,
-    "markdown": true,
+    "markdown": true
   },
 
   "github.copilot.editor.enableAutoCompletions": true,
@@ -354,7 +358,7 @@
   "github.copilot.advanced": {
     "debug.showScores": true,
     "inlineSuggestCount": 12,
-    "listCount": 12,
+    "listCount": 12
   },
 
   /* --- PlantUML extension ---
@@ -362,51 +366,6 @@
 
   // "plantuml.server": "https://www.plantuml.com/plantuml",
   "plantuml.server": "http://localhost:8080",
-"plantuml.render": "PlantUMLServer",
-"editor.minimap.size": "fill",
-"cSpell.userWords": [
-	"Kieran",
-	"kieranpotts"
-],
-// "terminal.integrated.profiles.linux": {
-// 	"bash": {
-// 		"path": "bash",
-// 		"icon": "terminal-bash"
-// 	},
-// 	// "zsh": {
-// 	// 	"path": "zsh"
-// 	// },
-// 	// "fish": {
-// 	// 	"path": "fish"
-// 	// },
-// 	"tmux": {
-// 		"path": "tmux",
-// 		"icon": "terminal-tmux"
-// 	},
-// 	// "pwsh": {
-// 	// 	"path": "pwsh",
-// 	// 	"icon": "terminal-powershell"
-// 	// }
-// },
-"terminal.integrated.defaultProfile.linux": "bash",
-// "terminal.integrated.profiles.windows": {
-
-// 	"PowerShell": {
-// 		"source": "PowerShell",
-// 		"icon": "terminal-powershell"
-// 	},
-// 	"Command Prompt": {
-// 		"path": [
-// 			"${env:windir}\\Sysnative\\cmd.exe",
-// 			"${env:windir}\\System32\\cmd.exe"
-// 		],
-// 		"args": [],
-// 		"icon": "terminal-cmd"
-// 	},
-// 	"Git Bash": {
-// 		"source": "Git Bash"
-// 	}
-// },
-"terminal.integrated.defaultProfile.windows": "Git Bash",
+  "plantuml.render": "PlantUMLServer"
 
 }
