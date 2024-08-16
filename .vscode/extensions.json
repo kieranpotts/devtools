@@ -10,8 +10,5 @@
     /* EditorConfig — .editorconfig file support. */
     "editorconfig.editorconfig",
 
-    /* Add support for Vim Language, Vim Script. */
-    "xadillax.viml"
-
   ]
 }

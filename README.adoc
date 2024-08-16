@@ -1,13 +1,11 @@
 = Devtools
 
-This repository encapsulates configurations for some of my development tools including Visual Studio Code and Windows Terminal, as well as command line utilities including jq and LazyGit, and Windows ports of Unix looks like `make` and `wget`.
+This repository encapsulates configurations for some of my development tools including Visual Studio Code and Windows Terminal, and Windows ports of Unix looks like `make` and `wget`. I maintain this repository to make it easier to port configurations between different computers.
 
-I maintain this repository to make it easier to port configurations between different computers.
-
-.Devtools vs Dotfiles
-****
-My devtools are for Windows. I also maintain a link:https://github.com/kieranpotts/dotfiles[dotfiles] repository that captures further devtools configuration for UNIX-like environments. On Windows, the dotfiles should be installed on a guest OS such as WSL2 or an emulator like Git Bash. The devtools should be installed on the host OS.
-****
+[NOTE]
+======
+My devtools configs are for Windows. I also maintain a link:https://github.com/kieranpotts/dotfiles[dotfiles] repository that captures further devtools configuration for UNIX-like environments. On Windows, the dotfiles should be installed on a guest OS such as WSL2 and/or an emulator like Git Bash. The devtools should be installed on the host OS.
+======
 
 == Documentation
 

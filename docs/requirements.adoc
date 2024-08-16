@@ -1,7 +1,5 @@
 = Requirements
 
-What you need to use these devtools.
-
 These devtools are for installation on Windows.
 
 This repository includes configurations for the following programs, all of which are OPTIONAL.
@@ -9,7 +7,3 @@ This repository includes configurations for the following programs, all of which
 * link:https://www.sublimemerge.com/[Sublime Merge]
 * link:https://code.visualstudio.com/[Visual Studio Code]
 * link:https://github.com/microsoft/terminal[Windows Terminal]
-
-== Bundled binaries
-
-Windows binaries for `delta`, `lazygit`, `oh-my-posh` and other programs are included in this repository. These can be enabled simply by adding this repository's `bin` directory to your system's `PATH` environment variable. Delta, LazyGit, and Oh My Posh are required for my link:https://github.com/kieranpotts/dotfiles[dotfiles] configuration to work in Git Bash for Windows. For WSL2 and other Unix environments, the equivalent packages must be installed manually.

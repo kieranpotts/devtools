@@ -4,7 +4,7 @@ Steps to install and update these devtools on your Windows machine.
 
 == 1. Fork and clone
 
-If you are not a maintainer, first fork this repository to your own GitHub account. Clone the upstream repository to your local machine.
+If you are not a maintainer, first fork this repository to your own GitHub account. Then clone the upstream repository to any location on your local machine.
 
 [source]
 ----
@@ -26,7 +26,9 @@ TrueType formats of both fonts are included in the `./vendor/fonts` directory an
 
 Configuration files are included in the `etc` directory for various development tools, including VS Code and Windows Terminal, for easy portability between machines.
 
-To use these configuration, you will need to create symlinks to them. On Windows, run Windows Powershell in administrator mode and execute the following commands, changing the filesystem paths as required.
+To use these configuration, you will need to create symlinks to them, from the locations the target programs expect them to be.
+
+Run Windows Powershell in administrator mode and execute the following commands, changing the filesystem paths as required.
 
 .Windows
 [source]
@@ -45,14 +47,16 @@ New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Local\Packages\Mi
 
 == 4. Add the `bin` directory to the PATH environment variable
 
-Adding `~/devtools/bin` to your system PATH will make available the bundled Windows binaries for Delta, LazyGit, Oh-My-Posh, and many other tools.
+Windows binaries for various programs are included in the `bin` directory of this repository. These programs be installed simply by adding this repository's `bin` directory to your system's `PATH` environment variable.
+
+The `delta`, `lazygit`, `oh-my-posh` binaries are required for my link:https://github.com/kieranpotts/dotfiles[dotfiles] configuration to work in Git Bash for Windows. For WSL2 and other Unix environments, the equivalent packages can be installed using my link:https://github.com/kieranpotts/bootstrap[bootstrap] script.
 
 ''''
 
 == Related configurations
 
-Go to your https://github.com/settings/codespaces[GitHub Codespaces options] and enable the following setting.
+Use GitHub Settings Sync to keep your local VS Code settings in sync with your GitHub Codespaces. Go to your https://github.com/settings/codespaces[GitHub Codespaces options] and enable the following option:
 
-image::./github-enable-settings-sync.png[]
+image::./_/github-enable-settings-sync.png[]
 
-Now, if you login to VS Code using your GitHub account, and if you enable Settings Sync in VS Code, your local VS Code settings will be automatically loaded into every virtual GitHub Codespace you create - ensuring a consistent user experience between cloud and local instances of VS Code.
+You will need to login to VS Code using your GitHub account, and enable Settings Sync in your user settings. With all of these steps completed, your GitHub Codespaces will automatically load your local VS Code settings, ensuring a consistent user experience between cloud and local instances of VS Code.
