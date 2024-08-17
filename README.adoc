@@ -37,7 +37,7 @@ The configurations for VS Code and Windows Terminal depend on the following font
 
 TrueType formats of both fonts are included in the `./vendor/fonts` directory and need to be installed manually.
 
-[INFO]
+[NOTE]
 ======
 Hack is a programming font. It adds special ligatures that merge multiple consecutive characters into a single composite glyph, for example `>=` is presented as `≥` and `!=` as `≠`, improving readability without changing the code. Hack NF (Nerd Font) is a version of the same font extended with additional glyphs that are used to create visual effects like icons and rounded corners in a shell's prompt line.
 ======
@@ -74,7 +74,7 @@ New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Local\Packages\Mi
 
 Windows binaries for various programs are bundled in the `bin` directory of this repository. These programs can be installed on your Windows machine simply by adding this repository's `bin` directory to your system's `PATH` environment variable.
 
-[INFO]
+[NOTE]
 ======
 The `delta`, `lazygit`, `oh-my-posh` binaries are required for my link:https://github.com/kieranpotts/dotfiles[dotfiles] configuration to work in Git Bash for Windows. For WSL2 and other Unix environments, the equivalent packages can be installed using my link:https://github.com/kieranpotts/bootstrap[bootstrap] script.
 ======
