@@ -1,9 +1,0 @@
-= Requirements
-
-These devtools are for installation on Windows.
-
-This repository includes configurations for the following programs, all of which are OPTIONAL.
-
-* link:https://www.sublimemerge.com/[Sublime Merge]
-* link:https://code.visualstudio.com/[Visual Studio Code]
-* link:https://github.com/microsoft/terminal[Windows Terminal]
