@@ -16,19 +16,16 @@ Configurations are included for the following programs, all of which are OPTIONA
 
 === Installation
 
-
-Steps to install and update these devtools on your Windows machine.
-
-==== 1. Fork and clone
-
-Fork this repository to your own GitHub account, then clone the upstream repository to any location on your local machine.
+To install these devtools on your own Windows machine, first fork this repository to your own GitHub account, then clone the upstream repository to any location on your local filesystem:
 
 [source]
 ----
 git clone git@github.com:<user_or_org>/devtools.git
 ----
 
-==== 2. Install the fonts
+Then follow the steps below to set up everything.
+
+==== 1. Install the fonts
 
 The configurations for VS Code and Windows Terminal depend on the following fonts being installed locally:
 
@@ -42,11 +39,9 @@ TrueType formats of both fonts are included in the `./vendor/fonts` directory an
 Hack is a programming font. It adds special ligatures that merge multiple consecutive characters into a single composite glyph, for example `>=` is presented as `≥` and `!=` as `≠`, improving readability without changing the code. Hack NF (Nerd Font) is a version of the same font extended with additional glyphs that are used to create visual effects like icons and rounded corners in a shell's prompt line.
 ======
 
-==== 3. Create symlinks to the configuration files
+==== 2. Create symlinks to the configuration files
 
-Configuration files are included for various development tools, including VS Code and Windows Terminal, for easy portability between machines. To use these configuration, you will need to create symlinks to them, from the locations the target programs expect them to be.
-
-Run Windows Powershell in administrator mode and execute the following commands, changing the filesystem paths as required.
+Configuration files are included for various development tools, including VS Code and Windows Terminal, for easy portability between machines. To use these configurations, you will need to create symlinks to them from the filesystem locations the target programs expect them to be. To do that, run Windows Powershell in administrator mode and execute the following commands, changing the filesystem paths as required.
 
 .Sublime Merge
 [source]
@@ -70,26 +65,24 @@ New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Roaming\[Code|VSC
 New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Local\Packages\Microsoft.WindowsTerminal_[hash]\LocalState\settings.json" -Target "C:\path\to\devtools\etc\wt\settings.json" -Force
 ----
 
-==== 4. Add the `bin` directory to your PATH environment variable
+==== 3. Add the `bin` directory to your PATH environment variable
 
 Windows binaries for various programs are bundled in the `bin` directory of this repository. These programs can be installed on your Windows machine simply by adding this repository's `bin` directory to your system's `PATH` environment variable.
 
 [NOTE]
 ======
-The `delta`, `lazygit`, `oh-my-posh` binaries are required for my link:https://github.com/kieranpotts/dotfiles[dotfiles] configuration to work in Git Bash for Windows. For WSL2 and other Unix environments, the equivalent packages can be installed using my link:https://github.com/kieranpotts/bootstrap[bootstrap] script.
+The `delta`, `lazygit`, `oh-my-posh` binaries are required for my link:https://github.com/kieranpotts/dotfiles[dotfiles] configuration to work in Git Bash for Windows. For WSL2 and other Unix environments, the equivalent packages can be installed using my link:https://github.com/kieranpotts/bootstrap[bootstrap] scripts.
 ======
 
-==== 5. Sync VS Code settings with GitHub Codespaces
+==== 4. Sync VS Code settings with GitHub Codespaces
 
-Optionally, you can use GitHub Settings Sync to keep your local VS Code settings in sync with your GitHub Codespaces. Go to your https://github.com/settings/codespaces[GitHub Codespaces options] and enable the following option:
+Optionally, you can use GitHub Settings Sync to have a consistent user experience between cloud and local instances of VS Code. You will need to login to VS Code using your GitHub account, and enable Settings Sync in your VS Code user settings. Then go to your https://github.com/settings/codespaces[GitHub Codespaces options] and enable the following option:
 
 image::./_/github-enable-settings-sync.png[]
 
-You will need to login to VS Code using your GitHub account, and enable Settings Sync in your user settings. With all of these steps completed, your GitHub Codespaces will automatically load your local VS Code settings, ensuring a consistent user experience between cloud and local instances of VS Code.
-
 === Maintenance
 
-NOTE: The following documentation is for the project maintainers.
+_The following documentation is for the project maintainers._
 
 Fresh Windows binaries can be downloaded from the following links. The binaries bundled in this repository are for the x86-64 architecture, also known as x86_64, x64, or amd64, and compatible with the 64-bit CPU architecture used in Intel and AMD processors.
 
