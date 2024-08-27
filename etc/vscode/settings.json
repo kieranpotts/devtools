@@ -93,6 +93,7 @@
   "editor.minimap.enabled": true,
   "editor.minimap.size": "fill",
   "editor.minimap.renderCharacters": false,
+  "editor.minimap.showSlider": "always",
 
   /* Disable the breadcrumb trail across the top of editors. */
   "breadcrumbs.enabled": false,
@@ -334,10 +335,12 @@
     "kroki-server-url": "http://localhost:8080"
   },
 
-  /* When previewing Asciidoc files, use VS Code's built-in preview style
+  /* When previewing Asciidoc files, use VS Code's workbench color theme,
   rather than the default Asciidoc style. This ensures the colors of the
   preview are consistent with the enabled VS Code theme. */
   "asciidoc.preview.useEditorStyle": true,
+
+  // "asciidoc.preview.style": "github",
 
   /* Enable Antora support. */
   "asciidoc.antora.enableAntoraSupport": true,
