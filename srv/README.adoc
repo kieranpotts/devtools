@@ -1,3 +1,0 @@
-= The `srv` directory
-
-The `srv` directory contains files that I used "served" from github.com.

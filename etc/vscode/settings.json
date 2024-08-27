@@ -347,8 +347,6 @@
   preview are consistent with the enabled VS Code theme. */
   "asciidoc.preview.useEditorStyle": true,
 
-  // "asciidoc.preview.style": "github",
-
   /* Enable Antora support. */
   "asciidoc.antora.enableAntoraSupport": true,
 
