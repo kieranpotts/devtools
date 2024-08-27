@@ -288,6 +288,13 @@
   "workbench.externalBrowser": "firefox",
 
   /**
+   * Security settings
+   */
+
+  /* Always open untrusted files into a trusted workspace without prompting. */
+  "security.workspace.trust.untrustedFiles": "open",
+
+  /**
    * Extensions and built-in services
    */
 
