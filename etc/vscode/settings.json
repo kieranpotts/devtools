@@ -350,6 +350,62 @@
   /* Enable Antora support. */
   "asciidoc.antora.enableAntoraSupport": true,
 
+  /* --- Code Spell Checker extension ---
+  https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker */
+
+  /* Spell check language. For consistency with our technical documentation,
+  we write in American English. */
+  "cSpell.language": "en-US",
+
+  /* File paths to not spell check. */
+  "cSpell.ignorePaths": [
+    ".git",
+    ".vscode",
+    "*.log"
+  ],
+
+  /* Disable spelling errors on compound words like 'errormessage' and
+  'builddir'. This setting makes the cSpell spell check unreliable and so
+  we must delimit words in code, eg 'errorMessage` or `build_dir`. */
+  "cSpell.allowCompoundWords": false,
+
+  /* Custom dictionary. */
+  "cSpell.customDictionaries": {
+    "personalDictionary": {
+      "name": "Personal Dictionary",
+      "path": "${userHome}/var/dictionary.txt",
+      "scope": "user",
+      "addWords": true
+    }
+  },
+
+  /* Spellings to always ignore. These are not real words, but are names or
+  identifiers of some kind: people's names, domain names, URL slugs, etc. */
+  "cSpell.ignoreWords": [
+    "kieran",
+    "kieranpotts",
+    "potts"
+  ],
+
+  /* Spellings always considered incorrect. This is useful for common spelling
+  errors. For example, "hte" should be "the". */
+  "cSpell.flagWords": [
+    "backend",   // "back-end"
+    "frontend",  // "front-end"
+    "homepage",
+    "hte",
+    "lifecycle", // "life cycle"
+    "mockup",    // "mock-up"
+    "mockups",   // "mock-ups"
+    "vscode",
+    "web app",   // "webapp"
+    "web apps",  // "webapps"
+    "web page",  // "webpage"
+    "web pages", // "webpages"
+    "web site",  // "website"
+    "web sites"  // "websites"
+  ],
+
   /* --- GitHub Copilot extension ---
   https://marketplace.visualstudio.com/items?itemName=GitHub.copilot */
 

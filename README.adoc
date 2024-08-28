@@ -65,7 +65,17 @@ New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Roaming\[Code|VSC
 New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Local\Packages\Microsoft.WindowsTerminal_[hash]\LocalState\settings.json" -Target "C:\path\to\devtools\etc\wt\settings.json" -Force
 ----
 
-==== 3. Add the `bin` directory to your PATH environment variable
+==== 3. Create a symlink to the dictionary file
+
+Again running Windows Powershell in administrator mode, execute the following command, changing the filesystem paths as required. This creates a symlink to `./var/dictionary.txt` in this repository from the same path in your home directory. This path is referenced from `./etc/vscode/settings.json` and is used by the Code Spell Checker extension as a custom dictionary.
+
+.VS Code / VS Codium
+[source]
+----
+New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\var\dictionary.txt" -Target "C:\path\to\devtools\var\dictionary.txt" -Force
+----
+
+==== 4. Add the `bin` directory to your PATH environment variable
 
 Windows binaries for various programs are bundled in the `bin` directory of this repository. These programs can be installed on your Windows machine simply by adding this repository's `bin` directory to your system's `PATH` environment variable.
 
@@ -74,7 +84,7 @@ Windows binaries for various programs are bundled in the `bin` directory of this
 The `delta`, `lazygit`, `oh-my-posh` binaries are required for my link:https://github.com/kieranpotts/dotfiles[dotfiles] configuration to work in Git Bash for Windows. For WSL2 and other Unix environments, the equivalent packages can be installed using my link:https://github.com/kieranpotts/bootstrap[bootstrap] scripts.
 ======
 
-==== 4. Sync VS Code settings with GitHub Codespaces
+==== 5. Sync VS Code settings with GitHub Codespaces
 
 Optionally, you can use GitHub Settings Sync to have a consistent user experience between cloud and local instances of VS Code. You will need to login to VS Code using your GitHub account, and enable Settings Sync in your VS Code user settings. Then go to your https://github.com/settings/codespaces[GitHub Codespaces options] and enable the following option:
 
