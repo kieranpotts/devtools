@@ -1,6 +1,128 @@
 {
   "recommendations": [
 
+    /*
+    The following are general-purpose extensions for VS Code, which will be
+    useful in the context of most software projects. These are the extensions
+    I have installed in VS Code by default, and enabled in every workspace.
+
+    In general, language servers and tool-specific extensions, such as the
+    official Python extension and wrappers for JavaScript tools such as ESLint,
+    SHOULD be added to each repository's `.vscode/extensions.js` file, as
+    required for each project.
+
+    To install the extensions, go to the *Workspace Recommendations*
+    section of VS Code's *Extensions* panel. Alternatively, open this repository
+    in its own workspace, and VS Code will prompt you to install the workspace
+    recommendations.
+
+    See also:
+    https://code.visualstudio.com/docs/editor/extension-marketplace#_workspace-recommended-extensions
+    */
+
+    /* Code Spell Checker — Spelling checker for all source code. */
+    "streetsidesoftware.code-spell-checker",
+
+    /* Dev Containers — Open any folder or repository in a Docker container.
+    Requires Docker to be installed locally. */
+    "ms-vscode-remote.remote-containers",
+
+    /* Docker — Built-in UI to create and manage Docker containers.
+    Requires Docker to be installed locally. */
+    "ms-azuretools.vscode-docker",
+
+    /* DotEnv — Support for .env file syntax. */
+    "mikestead.dotenv",
+
+    /* Draw.io — Edit images with draw.io directly inside VS Code. */
+    "hediet.vscode-drawio",
+
+    /* Fold Plus — Additional code folding commands. */
+    "dakara.dakara-foldplus",
+
+    /* Git History — Adds a `git log` panel to VS Code. */
+    "guodongsun.vscode-git-cruise",
+
+    /* GitHub Codespaces — Power-up instant remote development environments. */
+    "github.codespaces",
+
+    /* GitHub Copilot — Intelligent code suggestions. */
+    "github.copilot",
+
+    /* GitHub Pull Requests and Issues — Browser GitHub PRs and issues directly from VS Code. */
+    "github.vscode-pull-request-github",
+
+    /* GitHub Repositories — Remotely browse and edit any GitHub repository. */
+    "GitHub.remotehub",
+
+    /* GitHub Theme — GitHub-style theme for VS Code. */
+    "GitHub.github-vscode-theme",
+
+    /* GitHub Actions — Official extension for GitHub Actions. */
+    "github.vscode-github-actions",
+
+    /* IntelliCode — AI-assisted development. */
+    "visualstudioexptteam.vscodeintellicode",
+
+    /* Live Server — Simple development server for static assets, with live reload. */
+    "ritwickdey.liveserver",
+
+    /* Live Share — Pair programme and collaborate in real-time. */
+    "ms-vsliveshare.vsliveshare",
+
+    /* Lorem Ipsum — Adds commands to generate dummy text. */
+    "tyriar.lorem-ipsum",
+
+    /* Luna Paint — Image editing. */
+    "tyriar.luna-paint",
+
+    /* Markdown Table — Adds features for easy editing of Markdown tables. */
+    "takumii.markdowntable",
+
+    /* Markdown Preview Mermaid Support — Render Mermaid diagrams in Markdown previews. */
+    "bierner.markdown-mermaid",
+
+    /* Microsoft Edge Tools — Use the Edge browser and its DevTools from within VS Code. */
+    "ms-edgedevtools.vscode-edge-devtools",
+
+    /* Plant UML — Serve UML diagrams from plain text markup. */
+    "jebbs.plantuml",
+
+    /* Remote - SSH: Connect to a remote machine using SSH. */
+    "ms-vscode-remote.remote-ssh",
+
+    /* Remote - SSH: Editing Configuration Files — Edit SSH configuration files. */
+    "ms-vscode-remote.remote-ssh-edit",
+
+    /* Remote Repositories — Remotely browse and edit Git repositories. */
+    "ms-vscode.remote-repositories",
+
+    /* Render Line Endings — Displays line ending symbols and other white space characters. */
+    "medo64.render-crlf",
+
+    /* Restore Editors — Quickly save and restore groups of editors (ie editor tabs). */
+    "amodio.restore-editors",
+
+    /* SVG — Preview and edit SVG files. */
+    "jock.svg",
+
+    /* Todo Tree — Browse TODO, FIXME and other comments. */
+    "gruntfuggly.todo-tree",
+
+    /* VS Code Speech — Speech recognition. */
+    "ms-vscode.vscode-speech",
+
+    /* vscode-pdf — Render PDF documents in VS Code. */
+    "tomoki1207.pdf",
+
+    /* WSL — Open folders and workspaces from WSL. */
+    "ms-vscode-remote.remote-wsl",
+
+    /*
+    The following extensions are specific to the languages and tools used
+    in this repository.
+    */
+
     /* AsciiDoc — Provides language support for AsciiDoc. */
     "asciidoctor.asciidoctor-vscode",
 
