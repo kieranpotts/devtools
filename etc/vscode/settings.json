@@ -373,11 +373,12 @@
   we must delimit words in code, eg 'errorMessage` or `build_dir`. */
   "cSpell.allowCompoundWords": false,
 
-  /* Custom dictionary. */
+  /* Custom dictionary. Using an absolute path to the settings.json 
+  file is the most reliable approach. */
   "cSpell.customDictionaries": {
     "personalDictionary": {
       "name": "Personal Dictionary",
-      "path": "${userHome}/var/dictionary.txt",
+      "path": "C:\\dev\\personal\\devtools\\var\\dictionary.txt",
       "scope": "user",
       "addWords": true
     }
