@@ -114,11 +114,8 @@
   "editor.renderWhitespace": "all",
 
   /* Default editor rulers. */
-  "editor.rulers": [
-    80,
-    100,
-    120
-  ],
+  "editor.rulers": [],
+
 
   /* Prioritize snippet suggestions over all other hints. Pre-select the first.
   Show the toolbar automatically – this works well with Copilot. */
