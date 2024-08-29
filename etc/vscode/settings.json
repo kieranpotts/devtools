@@ -130,10 +130,12 @@
   /* Turn on tab completion for snippets. */
   "editor.tabCompletion": "onlySnippets",
 
-  /* By default, do not transform tabs to spaces. The purpose here is to
-  enforce this policy on a repo-by-repo basis. */
+  /* Transform tab indents to two spaces by default. Enforce this by disabling
+  automatic indentation detection. It is RECOMMENDED to replicate these settings
+  in each repository and workspace, to enforce appropriate formatting. */
   "editor.detectIndentation": false,
-  "editor.insertSpaces": false,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
 
   /* Rules for highlighting special unicode characters. Don't warn about use
   of en-dash (–) and em-dash (—) characters in code. I use these characters
