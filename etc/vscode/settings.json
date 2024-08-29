@@ -116,6 +116,16 @@
   /* Default editor rulers. */
   "editor.rulers": [],
 
+  /* A good default is to have VS Code automatically detect the indentation
+  convention of each file. It is RECOMMENDED, however, to disable indentation
+  detection and enforce a consistent approach on a per-repository basis. */
+  "editor.detectIndentation": true,
+
+  /* When detectIndentation is on, VS Code will determine the following
+  settings automatically. */
+  // "editor.insertSpaces": true,
+  // "editor.tabSize": 2,
+
 
   /* Prioritize snippet suggestions over all other hints. Pre-select the first.
   Show the toolbar automatically – this works well with Copilot. */
