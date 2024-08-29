@@ -67,18 +67,6 @@
   "editor.fontSize": 14,
   "editor.fontWeight": "400",
 
-  /* Disable all auto-formatting mechanisms by default. This means projects MUST
-  enable these features on a per-repo basis. */
-  "editor.formatOnPaste": false,
-  "editor.formatOnSave": false,
-  "editor.formatOnType": false,
-
-  /* Disable auto-fixes by default, so also requiring individual projects to
-  explicitly opt-in to this feature. */
-  "editor.codeActionsOnSave": {
-    "source.fixAll": "never"
-  },
-
   /* Render guidelines for indentation and bracket pairs. */
   "editor.guides.indentation": true,
   "editor.guides.highlightActiveIndentation": false,
@@ -126,6 +114,17 @@
   // "editor.insertSpaces": true,
   // "editor.tabSize": 2,
 
+  /* Disable all auto-formatting mechanisms by default. This means projects MUST
+  enable these features on a per-repo basis. */
+  "editor.formatOnPaste": false,
+  "editor.formatOnSave": false,
+  "editor.formatOnType": false,
+
+  /* Disable auto-fixes by default, so also requiring individual projects to
+  explicitly opt-in to this feature. */
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "never"
+  },
 
   /* Prioritize snippet suggestions over all other hints. Pre-select the first.
   Show the toolbar automatically – this works well with Copilot. */
@@ -136,13 +135,6 @@
 
   /* Turn on tab completion for snippets. */
   "editor.tabCompletion": "onlySnippets",
-
-  /* Transform tab indents to two spaces by default. Enforce this by disabling
-  automatic indentation detection. It is RECOMMENDED to replicate these settings
-  in each repository and workspace, to enforce appropriate formatting. */
-  "editor.detectIndentation": false,
-  "editor.insertSpaces": true,
-  "editor.tabSize": 2,
 
   /* Rules for highlighting special unicode characters. Don't warn about use
   of en-dash (–) and em-dash (—) characters in code. I use these characters
@@ -385,7 +377,7 @@
   we must delimit words in code, eg 'errorMessage` or `build_dir`. */
   "cSpell.allowCompoundWords": false,
 
-  /* Custom dictionary. Using an absolute path to the settings.json 
+  /* Custom dictionary. Using an absolute path to the settings.json
   file is the most reliable approach. */
   "cSpell.customDictionaries": {
     "personalDictionary": {
