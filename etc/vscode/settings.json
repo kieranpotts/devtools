@@ -1,5 +1,70 @@
 {
   /**
+   * Project-specific configuration.
+   *
+   * The following settings are related to conventions for indentation, line
+   * wrapping and formatting. Since these concerns tend to be project-specific,
+   * I have these options disabled by default and I enable and configure them
+   * on a per-repository or per-workspace basis.
+   */
+
+  /* Turn off editor rulers (line-wrapping guidelines) by default. */
+  "editor.rulers": [],
+
+  /* By default, turn off word wrap - completely! */
+  "editor.wordWrap": "off",
+
+  /* A good default is to have VS Code automatically detect the indentation
+  convention of each file. This SHOULD be disabled and a consistent indentation
+  convention enforced within each repository. */
+  "editor.detectIndentation": true,
+
+  /* When `editor.detectIndentation` is on, VS Code will determine the following
+  settings automatically. */
+  // "editor.insertSpaces": true,
+  // "editor.tabSize": 2,
+
+  /* Enable rendering of control characters, but disable rendering of empty
+  space characters, by default. */
+  "editor.renderControlCharacters": true,
+  "editor.renderWhitespace": "none",
+
+  /* Disable all auto-formatting mechanisms by default. */
+  "editor.formatOnPaste": false,
+  "editor.formatOnSave": false,
+  "editor.formatOnType": false,
+
+  /* Disable auto-fixes by default. */
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "never"
+  },
+
+  /* By default, disable VS Code's built-in formatter and validation for JS
+  syntax. Projects are therefore REQUIRED to enable third party formatters and
+  validators, such as ESLint, and to configure those tools specifically for
+  for compatibility with each project's syntax. */
+  "javascript.format.enable": false,
+  "javascript.validate.enable": false,
+
+  /* Disable the TypeScript type checker in all JavaScript files by default.
+  (This is the default behavior anyway.) Disabling this means that JavaScript
+  files MUST include a `@ts-check` comment at the top to opt-in to VS Code's
+  built-in `tsc` type checker instance, which will infer type information from
+  the code and JSDoc-style notations. Alternatively this setting can be enabled
+  on a per-repository or per-workspace basis. */
+  "js/ts.implicitProjectConfig.checkJs": false,
+
+  /* Prompt for user confirmation before committing directly to trunk lines.
+  Where protected branches are configured in the upstream repository, this
+  setting SHOULD be configured at the repository level. It helps to avoid
+  `git push` failures. */
+  "git.branchProtectionPrompt": "alwaysPrompt",
+  "git.branchProtection": [
+    // "stable",
+    // "release/*",
+  ],
+
+  /**
    * Theme and window chrome.
    */
 
@@ -22,11 +87,11 @@
   "window.zoomLevel": 1,
 
   /* Change the color scheme based on the system's color scheme. See
-  workbench.preferred*Theme` settings for additional options. */
+  `workbench.preferred[**]Theme` settings for additional options. */
   "window.autoDetectColorScheme": true,
 
   /* Themes. When `window.autoDetectColorScheme` is true, the `colorTheme` option
-  is ignored and the `preferred**Theme` options are used instead. */
+  is ignored and the `preferred[**]Theme` options are used instead. */
   "workbench.colorTheme": "GitHub Light",
   "workbench.preferredLightColorTheme": "Ocean Light",
   "workbench.preferredDarkColorTheme": "GitHub Dark",
@@ -84,7 +149,7 @@
   "editor.minimap.showSlider": "always",
 
   /* Disable the breadcrumb trail across the top of editors. */
-  "breadcrumbs.enabled": false,
+  "breadcrumbs.enabled": true,
 
   /* Scrollbar. */
   "editor.scrollbar.vertical": "visible",
@@ -97,35 +162,6 @@
   "editor.stickyScroll.enabled": true,
   "editor.stickyScroll.maxLineCount": 5,
 
-  /* Render control and empty space characters. */
-  "editor.renderControlCharacters": true,
-  "editor.renderWhitespace": "all",
-
-  /* Default editor rulers. */
-  "editor.rulers": [],
-
-  /* A good default is to have VS Code automatically detect the indentation
-  convention of each file. It is RECOMMENDED, however, to disable indentation
-  detection and enforce a consistent approach on a per-repository basis. */
-  "editor.detectIndentation": true,
-
-  /* When detectIndentation is on, VS Code will determine the following
-  settings automatically. */
-  // "editor.insertSpaces": true,
-  // "editor.tabSize": 2,
-
-  /* Disable all auto-formatting mechanisms by default. This means projects MUST
-  enable these features on a per-repo basis. */
-  "editor.formatOnPaste": false,
-  "editor.formatOnSave": false,
-  "editor.formatOnType": false,
-
-  /* Disable auto-fixes by default, so also requiring individual projects to
-  explicitly opt-in to this feature. */
-  "editor.codeActionsOnSave": {
-    "source.fixAll": "never"
-  },
-
   /* Prioritize snippet suggestions over all other hints. Pre-select the first.
   Show the toolbar automatically – this works well with Copilot. */
   "editor.inlineSuggest.enabled": true,
@@ -135,30 +171,6 @@
 
   /* Turn on tab completion for snippets. */
   "editor.tabCompletion": "onlySnippets",
-
-  /* Rules for highlighting special unicode characters. Don't warn about use
-  of en-dash (–) and em-dash (—) characters in code. I use these characters
-  in comments pretty frequently. */
-  "editor.unicodeHighlight.allowedCharacters": {
-    "–": true,
-    "—": true
-  },
-
-  /* Wrap long lines at the viewport but up to maximum of 120 characters. */
-  "editor.wordWrap": "bounded",
-  "editor.wordWrapColumn": 120,
-
-  /* AsciiDoc line wrap config must be defined separately. */
-  "[asciidoc]": {
-    "editor.wordWrap": "bounded",
-    "editor.wordWrapColumn": 80
-  },
-
-  /* Markdown line wrap config must be defined separately. */
-  "[markdown]": {
-    "editor.wordWrap": "bounded",
-    "editor.wordWrapColumn": 80
-  },
 
   /* Shrink tab size as the available space decreases. */
   "workbench.editor.tabSizing": "shrink",
@@ -302,8 +314,8 @@
    * Extensions and built-in services.
    */
 
-  /* Don't show recommended extensions. */
-  "extensions.ignoreRecommendations": false,
+  /* Don't show popups for recommended extensions. */
+  "extensions.ignoreRecommendations": true,
 
   /* Synchronize keybindings based on the OS. */
   "settingsSync.keybindingsPerPlatform": true,
@@ -312,23 +324,10 @@
    * Language-specific settings.
    */
 
-  /* Disable auto-closing tags. */
+  /* Disable auto-closing tags - it's saves typing but is often more annoying
+  than it's worth. */
   "html.autoClosingTags": false,
   "javascript.autoClosingTags": false,
-
-  /* By default, disable VS Code's built-in formatter and validation for JavaScript
-  syntax. Projects are therefore REQUIRED to enable third party formatters and
-  validators, such as ESLint, and to configure those tools specifically for
-  for compatibility with each project's syntax. */
-  "javascript.format.enable": false,
-  "javascript.validate.enable": false,
-
-  /* Disable the TypeScript type checker in all JavaScript files by default.
-  (This is the default behavior anyway.) Disabling this means that JavaScript
-  files MUST include a `@ts-check` comment at the top to opt-in to VS Code's
-  built-in `tsc` type checker instance, which will infer type information from
-  the code and JSDoc-style notations. */
-  "js/ts.implicitProjectConfig.checkJs": false,
 
   /**
    * Extension settings.
