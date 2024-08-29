@@ -11,8 +11,8 @@
   /* Turn off editor rulers (line-wrapping guidelines) by default. */
   "editor.rulers": [],
 
-  /* By default, turn off word wrap - completely! */
-  "editor.wordWrap": "off",
+  /* By default, wrap lines at the edge of the viewport. */
+  "editor.wordWrap": "on",
 
   /* A good default is to have VS Code automatically detect the indentation
   convention of each file. This SHOULD be disabled and a consistent indentation

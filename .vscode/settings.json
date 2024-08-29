@@ -12,10 +12,10 @@
   "editor.wordWrap": "bounded",
   "editor.wordWrapColumn": 120,
   "[asciidoc]": {
-    "editor.wordWrap": "off",
+    "editor.wordWrap": "on",
   },
   "[markdown]": {
-    "editor.wordWrap": "off",
+    "editor.wordWrap": "on",
   },
 
   /* Enforce 2 spaces for indentation. */
