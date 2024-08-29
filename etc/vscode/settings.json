@@ -113,9 +113,12 @@
   "editor.renderControlCharacters": true,
   "editor.renderWhitespace": "all",
 
-  /* Disable vertical guidelines by default. These SHOULD be configured on a
-  per-repository basis. */
-  "editor.rulers": [],
+  /* Default editor rulers. */
+  "editor.rulers": [
+    80,
+    100,
+    120
+  ],
 
   /* Prioritize snippet suggestions over all other hints. Pre-select the first.
   Show the toolbar automatically – this works well with Copilot. */
