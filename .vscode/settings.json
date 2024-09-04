@@ -37,7 +37,8 @@
     "source.fixAll": "always",
   },
 
-  /* JS/TS formatting and validation MUST be set per-repo AND per-workspace. */
+  /* For JS/TS code, formatting and validation MUST be configured per-repo,
+  AND per-workspace where multiple JS/TS repos are part of a larger project. */
   "javascript.format.enable": false,
   "javascript.validate.enable": false,
   "js/ts.implicitProjectConfig.checkJs": false,
