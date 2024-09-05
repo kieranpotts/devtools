@@ -333,6 +333,11 @@
    * Extension settings.
    */
 
+  /* Associate certain files with extensions. */
+  "workbench.editorAssociations": {
+    "*.ico": "luna.editor"
+  },
+
   /*
   Asciidoc extension.
   https://marketplace.visualstudio.com/items?itemName=asciidoctor.asciidoctor-vscode
