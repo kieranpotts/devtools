@@ -69,7 +69,6 @@ New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\AppData\Local\Packages\Mi
 
 Again running Windows Powershell in administrator mode, execute the following command, changing the filesystem paths as required. This creates a symlink to `./var/dictionary.txt` in this repository from your home directory, `~/.cspell/dictionary.txt`. This path is referenced from `./etc/vscode/settings.json` and is used by the Code Spell Checker extension as a custom dictionary.
 
-.VS Code / VS Codium
 [source]
 ----
 New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\.cspell\dictionary.txt" -Target "C:\path\to\devtools\var\dictionary.txt" -Force
@@ -77,7 +76,7 @@ New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\.cspell\dictionary.txt" -
 
 [NOTE]
 ======
-VS Code looks for the dictionary file on the filesystem of the open workspace. Thus, if remote virtual machines or WSL are used for development, `~/.cspell/dictionary.txt` will be automatically created from scratch on each one. To synchronize the dictionary between multiple machines, this repository will need to be cloned on each machine and the location `~/.cspell/dictionary.txt` symlinked back to the `./var/dictionary.txt` file in the repository. On Linux machines:
+VS Code looks for the dictionary file on the filesystem of the open workspace. Thus, if remote virtual machines or WSL are used for development, `~/.cspell/dictionary.txt` will be automatically created from scratch on each machine. To synchronize the dictionary between multiple machines, this repository will need to be cloned on each machine and the location `~/.cspell/dictionary.txt` symlinked back to the `./var/dictionary.txt` file in the local instance of this repository. On Linux:
 
 [source]
 ----
