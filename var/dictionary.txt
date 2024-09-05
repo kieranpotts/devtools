@@ -19,6 +19,7 @@ camelcase
 chsh
 codebases
 Codepen
+Codespaces
 cyclometric
 datatracker
 decompiler
