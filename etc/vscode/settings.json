@@ -381,12 +381,19 @@
   we must delimit words in code, eg 'errorMessage` or `build_dir`. */
   "cSpell.allowCompoundWords": false,
 
-  /* Custom dictionary. Using an absolute path to the settings.json
-  file is the most reliable approach. */
+  /* Custom dictionary. The dictionary file will be automatically created,
+  if it does not already exists, in the user's home directory on the
+  filesystem of the workspace. If VS Code is running in Windows but the
+  open workspace is in WSL, the dictionary will be installed in the guest
+  OS, WSL. But if the open workspace is on the host OS filesystem, the
+  dictionary will be installed in the user's home directory on Windows.
+  To keep the two synchronized, this repository should be cloned in both
+  Windows and WSL, and in both the ~/.cspell/dictionary.txt location
+  symlinked back to the `./var/dictionary.txt` file in this repository. */
   "cSpell.customDictionaries": {
     "personalDictionary": {
       "name": "Personal Dictionary",
-      "path": "C:\\dev\\personal\\devtools\\var\\dictionary.txt",
+      "path": "~/.cspell/dictionary.txt",
       "scope": "user",
       "addWords": true
     }
