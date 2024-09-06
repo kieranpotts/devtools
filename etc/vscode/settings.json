@@ -252,6 +252,9 @@
   /* Enforce rebase strategy on sync, to maintain linear history. */
   "git.rebaseWhenSync": true,
 
+  /* Automatically replace local tags with the remote tags. */
+  "git.replaceTagsWhenPull": true,
+
   /* Scan for Git repositories in sub-folders to a max depth of 3. */
   "git.repositoryScanMaxDepth": 3,
 
