@@ -53,6 +53,7 @@ hateoas
 IIFE
 inclusivity
 keychain
+knowledgebase
 Laravel
 lazygit
 lcov
