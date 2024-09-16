@@ -42,6 +42,7 @@ eslintconfig
 espree
 Evolvability
 filesystems
+financials
 Fira
 forwardable
 freemium
