@@ -108,6 +108,7 @@ superset
 supersets
 Symfony
 tabindex
+templating
 toolchains
 transcompilation
 transcompile
