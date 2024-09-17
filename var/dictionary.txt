@@ -49,6 +49,7 @@ freemium
 freespace
 gitdir
 gitmodules
+GOPATH
 gzipped
 hacksjs
 Hashbang
