@@ -127,27 +127,30 @@
   "schemes":
   [
     {
+      "name": "Ocean",
+
       "background": "#2b303b",
+      "selectionBackground": "#3c444f",
+      "foreground": "#c7ccd1",
+      "cursorColor": "#c7ccd1",
+
       "black": "#2b303b",
       "blue": "#5e81ac",
-      "brightBlack": "#6b7280",
-      "brightBlue": "#5e81ac",
-      "brightCyan": "#96b5b4",
-      "brightGreen": "#a3be8c",
-      "brightPurple": "#b48ead",
-      "brightRed": "#bf616a",
-      "brightWhite": "#e4e7eb",
-      "brightYellow": "#ebcb8b",
-      "cursorColor": "#c7ccd1",
       "cyan": "#96b5b4",
-      "foreground": "#c7ccd1",
       "green": "#a3be8c",
-      "name": "Ocean",
       "purple": "#b48ead",
       "red": "#bf616a",
-      "selectionBackground": "#a1a7b2",
       "white": "#c7ccd1",
-      "yellow": "#ebcb8b"
+      "yellow": "#ebcb8b",
+
+      "brightBlack": "#6b7280",
+      "brightBlue": "#9db3cd",
+      "brightCyan": "#c0d3d2",
+      "brightGreen": "#c8d8bb",
+      "brightPurple": "#d2bcce",
+      "brightRed": "#d9a1a6",
+      "brightWhite": "#c7ccd1",
+      "brightYellow": "#f3e0b9"
     }
   ],
   "showTabsInTitlebar": true,
