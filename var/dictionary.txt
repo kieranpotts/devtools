@@ -101,6 +101,7 @@ ruleset
 rulesets
 runtimes
 scriptable
+sharded
 speciality
 Specsavers
 stackoverflow
