@@ -74,6 +74,7 @@ mergetools
 metacharacter
 metacharacters
 mockups
+nanoservices
 nonblock
 nonconstructor
 nonoctal
@@ -90,6 +91,7 @@ postversion
 powerline
 preg
 preversion
+rebalancing
 rebrand
 rebranded
 rebranding
