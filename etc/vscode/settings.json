@@ -469,6 +469,7 @@
   https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml
   */
 
+  /* Enable rendering of PlantUML diagrams in Markdown. */
   // "plantuml.server": "https://www.plantuml.com/plantuml",
   "plantuml.server": "http://localhost:8080",
   "plantuml.render": "PlantUMLServer",
