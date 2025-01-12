@@ -42,6 +42,7 @@ embedable
 eslintconfig
 espree
 Evolvability
+failovers
 filesystems
 financials
 Fira
