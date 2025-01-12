@@ -117,6 +117,9 @@
     /* Todo Tree: Browse TODO, FIXME and other comments. */
     "gruntfuggly.todo-tree",
 
+    /* UMLet: Generate diagrams with UMLet. To use, simply create a new text file with the `.uxf` extension. */
+    "theumletteam.umlet",
+
     /* VS Code Speech: Speech recognition. */
     "ms-vscode.vscode-speech",
 
