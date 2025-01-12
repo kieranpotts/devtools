@@ -62,4 +62,11 @@
     ],
     "description": "Replace left angle bracket + equal sign with less-than-or-equal-to character"
   },
+  "Plus or Minus": {
+    "prefix": "+-",
+    "body": [
+      "±",
+    ],
+    "description": "Replace a plus sign followed by a minus sign with the plus-or-minus character"
+  },
 }
