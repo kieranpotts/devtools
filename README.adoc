@@ -5,6 +5,7 @@
 :link-codespace-settings: https://github.com/settings/codespaces
 :link-delta: https://github.com/dandavison/delta/releases
 :link-htmlq: https://github.com/mgdm/htmlq/releases
+:link-jabba: https://github.com/shyiko/jabba/releases
 :link-jq: https://github.com/jqlang/jq/releases
 :link-lazygit: https://github.com/jesseduffield/lazygit/releases
 :link-make: https://sourceforge.net/projects/ezwinports/files/
@@ -187,6 +188,8 @@ Intel and AMD processors.
 * {link-delta}[*delta*]: Look for `delta-<version>-x86_64-pc-windows-msvc.zip`
 
 * {link-htmlq}[*htmlq*]: Look for the latest `htmlq-x86_64-windows.zip` release.
+
+* {link-jabba}[*jabba*]: Look for the latest `windows-amd64.exe` release.
 
 * {link-jq}[*jq*]: Look for the latest `jq-win64.exe` release.
 
