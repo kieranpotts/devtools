@@ -454,6 +454,13 @@
   },
 
   /*
+  Copilot extension.
+  */
+
+  /* Disable the annoying "Press Ctrl+I to ask copilot to do something..." inline hint. */
+  "inlineChat.lineNaturalLanguageHint": false,
+
+  /*
   Jest extension. This is not one of my default extensions, but it is required
   for some of my projects, and the extension has an annoying habit of opening
   terminals when it is enabled and workspaces are opened without a Jest
@@ -499,6 +506,6 @@
   /* Use only `TODO` notations. This setting works only in workspace roots. */
   "todo-tree.general.tags": [
     "TODO"
-  ]
+  ],
 
 }
