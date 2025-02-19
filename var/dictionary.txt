@@ -8,6 +8,7 @@ autocrlf
 autodetected
 autodetects
 autofetch
+automations
 autosquash
 backreference
 backreferenced
@@ -18,8 +19,10 @@ browserslist
 camelcase
 chsh
 codebases
+codenames
 Codepen
 Codespaces
+commoditized
 Cyclomatic
 cyclometric
 Datagram
@@ -43,6 +46,7 @@ eslintconfig
 espree
 Evolvability
 failovers
+featureset
 filesystems
 financials
 Fira
@@ -101,6 +105,7 @@ reflog
 regexes
 renormalize
 replatforming
+roadmaps
 ruleset
 rulesets
 runtimes
@@ -109,6 +114,7 @@ sharded
 speciality
 Specsavers
 stackoverflow
+strictfp
 styleguide
 stylesheet
 superset
@@ -125,9 +131,11 @@ transcompilers
 tsdoc
 Ungreedy
 unselectable
+userland
 vals
 vars
 vimdiff
+virtualizes
 visualstudio
 webapp
 webapps
