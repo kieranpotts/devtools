@@ -139,6 +139,7 @@ virtualizes
 visualstudio
 webapp
 webapps
+webmail
 webpage
 webpages
 website
