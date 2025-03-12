@@ -1,5 +1,7 @@
 accesskey
 adoc
+affordance
+affordances
 agnoster
 Antora
 arity
