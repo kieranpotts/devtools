@@ -48,7 +48,9 @@ embedable
 eslintconfig
 espree
 Evolvability
+exfiltration
 failovers
+Fargate
 featureset
 filesystems
 financials
@@ -56,6 +58,8 @@ Fira
 forwardable
 freemium
 freespace
+Geolocation
+Geoproximity
 gitdir
 gitmodules
 GOPATH
@@ -133,6 +137,7 @@ transcompiler
 transcompilers
 tsdoc
 Ungreedy
+unmarshalling
 unselectable
 userland
 vals
