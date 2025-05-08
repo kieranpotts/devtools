@@ -169,6 +169,9 @@
   "editor.snippetSuggestions": "none",
   "editor.suggestSelection": "recentlyUsedByPrefix",
 
+  /* Disable highlighting of ambiguous characters, eg. – (em dash) instead of - (hyphen). */
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+
   /* Turn on tab completion for snippets. */
   "editor.tabCompletion": "onlySnippets",
 
