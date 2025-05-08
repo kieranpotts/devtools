@@ -302,8 +302,8 @@
    * Notebooks.
    */
 
-   "notebook.stickyScroll.enabled": true,
-   "notebook.stickyScroll.mode": "indented",
+  "notebook.stickyScroll.enabled": true,
+  "notebook.stickyScroll.mode": "indented",
 
   /**
    * External browser.
