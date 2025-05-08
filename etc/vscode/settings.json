@@ -93,7 +93,7 @@
   /* Themes. When `window.autoDetectColorScheme` is true, the `colorTheme` option
   is ignored and the `preferred[**]Theme` options are used instead. */
   "workbench.colorTheme": "GitHub Light",
-  "workbench.preferredLightColorTheme": "Ocean Light",
+  "workbench.preferredLightColorTheme": "GitHub Light",
   "workbench.preferredDarkColorTheme": "GitHub Dark",
   "workbench.preferredHighContrastColorTheme": "GitHub Dark High Contrast",
   "workbench.preferredHighContrastLightColorTheme": "GitHub Light High Contrast",
