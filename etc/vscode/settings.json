@@ -201,6 +201,9 @@
   "diffEditor.diffAlgorithm": "legacy",
   "mergeEditor.diffAlgorithm": "legacy",
 
+  /* Timeout in milliseconds after which diff computation is cancelled. Zero = disabled timeout. */
+  "diffEditor.maxComputationTime": 10000,
+
   /* Mark inline deletions and insertions. */
   "diffEditor.experimental.showEmptyDecorations": true,
 
