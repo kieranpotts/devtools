@@ -196,9 +196,10 @@
    * Diff and merge editor.
    */
 
-  /* Use VS Code's improved diff algorithm for the old diff editor
-  as well as the new one. */
-  "diffEditor.diffAlgorithm": "advanced",
+  /* Do not use VS Code's new "advanced" diff algorithm just yet – unfortunately
+  it's proven to be quite slow at handling large diffs. */
+  "diffEditor.diffAlgorithm": "legacy",
+  "mergeEditor.diffAlgorithm": "legacy",
 
   /* Mark inline deletions and insertions. */
   "diffEditor.experimental.showEmptyDecorations": true,
