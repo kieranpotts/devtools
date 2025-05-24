@@ -426,20 +426,20 @@
   /* Spellings always considered incorrect. This is useful for common spelling
   errors. For example, "hte" should be "the". */
   "cSpell.flagWords": [
-    "backend",   // back-end
-    "frontend",  // front-end"
-    "homepage",  // home page
-    "hte",       // the
-    "lifecycle", // life cycle
-    "mockup",    // mock-up
-    "mockups",   // mock-ups
-    "vscode",    // vs code
-    "web app",   // webapp
-    "web apps",  // webapps
-    "web page",  // webpage
-    "web pages", // webpages
-    "web site",  // website
-    "web sites"  // websites
+    "backend",    // back-end
+    "frontend",   // front-end"
+    "homepage",   // home page
+    "hte",        // the
+    "life cycle", // lifecycle
+    "mockup",     // mock-up
+    "mockups",    // mock-ups
+    "vscode",     // vs code
+    "web app",    // webapp
+    "web apps",   // webapps
+    "web page",   // webpage
+    "web pages",  // webpages
+    "web site",   // website
+    "web sites"   // websites
   ],
 
   /*
