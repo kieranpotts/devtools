@@ -114,6 +114,8 @@ reflog
 regexes
 renormalize
 replatforming
+résumé
+résumés
 roadmaps
 ruleset
 rulesets
