@@ -150,7 +150,15 @@ ln -s -f /path/to/devtools/var/dictionary.txt ~/.cspell/dictionary.txt
 
 ======
 
-==== 4. Add the `bin` directory to your PATH environment variable
+==== 4. Import the VS Code profiles
+
+In VS Code, go to File > Preferences > Profile > Profiles. Click the dropdown
+next to the New Profile button. Click Import Profile. Choose Select File. Select
+one of the `*.code-profile` files in `./etc/vscode`.
+
+Repeat for the remaining profiles.
+
+==== 5. Add the `bin` directory to your PATH environment variable
 
 Windows binaries for various programs are bundled in the `bin` directory of
 this repository. These programs can be installed on your Windows machine simply
@@ -165,7 +173,7 @@ WSL2 and other Unix environments, the equivalent packages can be installed
 using my {link-bootstrap}[bootstrap] scripts.
 ======
 
-==== 4. Sync VS Code settings with GitHub Codespaces
+==== 6. Sync VS Code settings with GitHub Codespaces
 
 Optionally, you can use GitHub Settings Sync to have a consistent user
 experience between cloud and local instances of VS Code. You will need to login
