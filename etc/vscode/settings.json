@@ -505,6 +505,5 @@
   /* Use only `TODO` notations. This setting works only in workspace roots. */
   "todo-tree.general.tags": [
     "TODO"
-  ],
-
+  ]
 }
