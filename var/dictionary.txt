@@ -149,6 +149,7 @@ vars
 vimdiff
 virtualizes
 visualstudio
+vscode
 webapp
 webapps
 webmail
