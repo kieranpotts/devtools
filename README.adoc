@@ -116,41 +116,7 @@ New-Item -ItemType SymbolicLink `
   -Force
 ----
 
-==== 3. Create symlinks to the dictionary file
-
-Again running Windows Powershell in administrator mode, execute the following
-command, changing the filesystem paths as required. This creates a symlink to
-`./var/dictionary.txt` in this repository from your home directory,
-`~/.cspell/dictionary.txt`. This path is referenced from
-`./etc/vscode/settings.json` and is used by the Code Spell Checker extension as
-a custom dictionary.
-
-[source]
-----
-New-Item -ItemType SymbolicLink `
-  -Path "C:\Users\[User]\.cspell\dictionary.txt" `
-  -Target "C:\path\to\devtools\var\dictionary.txt" `
-  -Force
-----
-
-[NOTE]
-======
-VS Code looks for the dictionary file on the filesystem of the open workspace.
-Thus, if remote virtual machines or WSL are used for development,
-`~/.cspell/dictionary.txt` will be automatically created from scratch on each
-machine. To synchronize the dictionary between multiple machines, this
-repository will need to be cloned on each machine and the location
-`~/.cspell/dictionary.txt` symlinked back to the `./var/dictionary.txt` file
-in the local instance of this repository. On Linux:
-
-[source]
-----
-ln -s -f /path/to/devtools/var/dictionary.txt ~/.cspell/dictionary.txt
-----
-
-======
-
-==== 4. Import the VS Code profiles
+==== 3. Import the VS Code profiles
 
 In VS Code, go to File > Preferences > Profile > Profiles. Click the dropdown
 next to the New Profile button. Click Import Profile. Choose Select File. Select
@@ -158,7 +124,7 @@ one of the `*.code-profile` files in `./etc/vscode`.
 
 Repeat for the remaining profiles.
 
-==== 5. Add the `bin` directory to your PATH environment variable
+==== 4. Add the `bin` directory to your PATH environment variable
 
 Windows binaries for various programs are bundled in the `bin` directory of
 this repository. These programs can be installed on your Windows machine simply
@@ -173,7 +139,7 @@ WSL2 and other Unix environments, the equivalent packages can be installed
 using my {link-bootstrap}[bootstrap] scripts.
 ======
 
-==== 6. Sync VS Code settings with GitHub Codespaces
+==== 5. Sync VS Code settings with GitHub Codespaces
 
 Optionally, you can use GitHub Settings Sync to have a consistent user
 experience between cloud and local instances of VS Code. You will need to login
