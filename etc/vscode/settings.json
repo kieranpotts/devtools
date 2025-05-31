@@ -480,17 +480,6 @@
   /* Fully disable the Jest extension, if it is installed, in this workspace.
   Requires v6 of the extension. */
   "jest.enable": false,
-
-  /*
-  PlantUML extension.
-  https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml
-  */
-
-  /* Enable rendering of PlantUML diagrams in Markdown. */
-  // "plantuml.server": "https://www.plantuml.com/plantuml",
-  "plantuml.server": "http://localhost:8080",
-  "plantuml.render": "PlantUMLServer",
-
   /*
   Render Line Endings extension.
   https://marketplace.visualstudio.com/items?itemName=medo64.render-crlf
