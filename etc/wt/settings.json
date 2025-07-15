@@ -2,10 +2,10 @@
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
     "actions": [],
-    "confirmCloseAllTabs": false,
     "copyFormatting": "none",
     "copyOnSelect": true,
-    "defaultProfile": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+    "confirmCloseAllTabs": false,
+    "defaultProfile": "{963ff2f7-6aed-5ce3-9d91-90d99571f53a}",
     "firstWindowPreference": "defaultProfile",
     "initialCols": 90,
     "initialRows": 30,
@@ -30,6 +30,10 @@
         {
             "id": "Terminal.ToggleFocusMode",
             "keys": "f11"
+        },
+        {
+            "id": "Terminal.DuplicatePaneAuto",
+            "keys": "alt+shift+d"
         }
     ],
     "launchMode": "default",
@@ -53,8 +57,29 @@
         },
         "list": 
         [
+            // {
+            //     "guid": "{d8e96812-b789-5068-a5ae-10b2fb53e95f}",
+            //     "hidden": false,
+            //     "name": "Ubuntu 24.04.1 LTS",
+            //     "source": "CanonicalGroupLimited.Ubuntu24.04LTS_79rhkp1fndgsc"
+            // },
             {
                 "colorScheme": "Ocean",
+                "font": 
+                {
+                    "face": "Hack NF",
+                    "size": 12
+                },
+                "guid": "{963ff2f7-6aed-5ce3-9d91-90d99571f53a}",
+                "hidden": false,
+                "name": "Ubuntu-24.04",
+                "padding": "20",
+                "source": "Windows.Terminal.Wsl",
+                "startingDirectory": "/home/kieran/dev"
+            },
+            {
+                "colorScheme": "Ocean",
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
                 "font": 
                 {
                     "face": "Hack NF",
@@ -67,6 +92,7 @@
             },
             {
                 "colorScheme": "Ocean",
+                "commandline": "%SystemRoot%\\System32\\cmd.exe",
                 "font": 
                 {
                     "face": "Hack NF",
@@ -89,35 +115,8 @@
                 "name": "Azure Cloud Shell",
                 "padding": "20",
                 "source": "Windows.Terminal.Azure"
-            },
-            {
-                "colorScheme": "Ocean",
-                "font": 
-                {
-                    "face": "Hack NF",
-                    "size": 12
-                },
-                "guid": "{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}",
-                "hidden": false,
-                "name": "Git Bash",
-                "padding": "20",
-                "source": "Git",
-                "startingDirectory": "C:\\dev"
-            },
-            {
-                "colorScheme": "Ocean",
-                "font": 
-                {
-                    "face": "Hack NF",
-                    "size": 12
-                },
-                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
-                "hidden": false,
-                "name": "Ubuntu",
-                "padding": "20",
-                "source": "Windows.Terminal.Wsl",
-                "startingDirectory": "/home/kieran/dev"
             }
+            
         ]
     },
     "schemes": 

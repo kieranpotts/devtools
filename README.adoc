@@ -98,6 +98,8 @@ New-Item -ItemType SymbolicLink `
 
 ==== 3. Import the VS Code profiles
 
+NOTE: This step is required only if Settings Sync is not enabled in VS Code.
+
 In VS Code, go to File > Preferences > Profile > Profiles. Click the dropdown next to the New Profile button. Click Import Profile. Choose Select File. Select one of the `*.code-profile` files in `./etc/vscode`.
 
 Repeat for the remaining profiles.
