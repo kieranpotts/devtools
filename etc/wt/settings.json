@@ -2,9 +2,9 @@
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
     "actions": [],
+    "confirmCloseAllTabs": false,
     "copyFormatting": "none",
     "copyOnSelect": true,
-    "confirmCloseAllTabs": false,
     "defaultProfile": "{963ff2f7-6aed-5ce3-9d91-90d99571f53a}",
     "firstWindowPreference": "defaultProfile",
     "initialCols": 90,
@@ -20,12 +20,12 @@
             "keys": "alt+enter"
         },
         {
-            "id": "Terminal.FindText",
-            "keys": "ctrl+shift+f"
-        },
-        {
             "id": "Terminal.PasteFromClipboard",
             "keys": "ctrl+v"
+        },
+        {
+            "id": "Terminal.FindText",
+            "keys": "ctrl+shift+f"
         },
         {
             "id": "Terminal.ToggleFocusMode",
@@ -116,7 +116,6 @@
                 "padding": "20",
                 "source": "Windows.Terminal.Azure"
             }
-            
         ]
     },
     "schemes": 
