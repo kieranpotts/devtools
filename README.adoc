@@ -68,7 +68,7 @@ New-Item -ItemType SymbolicLink `
   -Force
 ----
 
-.VS Code / VS Codium
+.VS Code / VS Codium on Windows
 [source]
 ----
 New-Item -ItemType SymbolicLink `
@@ -85,6 +85,16 @@ New-Item -ItemType SymbolicLink `
   -Path "C:\Users\[User]\AppData\Roaming\[Code|VSCodium]\User\snippets\global.code-snippets" `
   -Target "C:\path\to\devtools\etc\vscode\global.code-snippets" `
   -Force
+----
+
+.VS Code / VS Codium on Linux
+[source]
+----
+# Run these commands from the root directory of this repository.
+
+ln --symbolic --force "${PWD}/etc/vscode/settings.json" ~/.config/[Code|VSCodium]/User/settings.json
+ln --symbolic --force "${PWD}/etc/vscode/keybindings.json" ~/.config/[Code|VSCodium]/User/keybindings.json
+ln --symbolic --force "${PWD}/etc/vscode/global.code-snippets" ~/.config/[Code|VSCodium]/User/snippets/global.code-snippets
 ----
 
 .Windows Terminal
