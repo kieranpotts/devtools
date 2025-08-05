@@ -340,7 +340,7 @@
   Language-specific settings.
   */
 
-   /* Disable auto-closing tags - it's saves typing but is often more annoying
+   /* Disable auto-closing tags - it saves typing but is often more annoying
   than it's worth. */
   "html.autoClosingTags": false,
   "javascript.autoClosingTags": false
