@@ -61,7 +61,7 @@
   "js/ts.implicitProjectConfig.checkJs": false,
 
   /* Disable auto-closing tags for HTML and JS – consistent with the defaults
-  for "editor.autoClosingBrackets" and related settings (see below). It saves 
+  for "editor.autoClosingBrackets" and related settings (see below). It saves
   typing but is often more annoying than it's worth! */
   "html.autoClosingTags": false,
   "javascript.autoClosingTags": false,
@@ -174,7 +174,7 @@
   "editor.suggestSelection": "recentlyUsedByPrefix",
   "editor.tabCompletion": "onlySnippets",
 
-  /* Enable highlighting of ambiguous characters, 
+  /* Enable highlighting of ambiguous characters,
   eg. – (em dash) instead of - (hyphen). */
   "editor.unicodeHighlight.ambiguousCharacters": true,
 
@@ -231,9 +231,9 @@
   Source code management (SCM) and the built-in Git GUI.
   */
 
-  /* By default, prompt for user confirmation before committing directly to 
-  trunk lines. These are good defaults, but where protected branches are 
-  configured in the upstream repository, these settings SHOULD be explicitly 
+  /* By default, prompt for user confirmation before committing directly to
+  trunk lines. These are good defaults, but where protected branches are
+  configured in the upstream repository, these settings SHOULD be explicitly
   configured at the repository level – to help avoid `git push` failures.
   Other repositories may disable this entirely. */
   "git.branchProtectionPrompt": "alwaysPrompt",
@@ -242,7 +242,7 @@
     "master",
     "trunk",
     "dev",
-    "release/*",
+    "release/*"
   ],
 
   /* The default name for new Git branches when created via VS Code's GUI. */
@@ -296,7 +296,7 @@
   workspaces. */
   "scm.workingSets.enabled": true,
 
-  /* When switching new a branch for the first time, close all 
+  /* When switching new a branch for the first time, close all
   currently-open editors. */
   "scm.workingSets.default": "empty",
 
@@ -359,6 +359,6 @@
   "extensions.ignoreRecommendations": true,
 
   /* Synchronize keybindings based on the OS. */
-  "settingsSync.keybindingsPerPlatform": true,
+  "settingsSync.keybindingsPerPlatform": true
 
 }
