@@ -264,7 +264,7 @@
   "git.confirmNoVerifyCommit": false,
 
   /* Confirm before running sync operation (it may rewrite history). */
-  "git.confirmSync": true,
+  "git.confirmSync": false,
 
   /* Just go ahead and stage all working changes when committing an empty stage. */
   "git.enableSmartCommit": true,
