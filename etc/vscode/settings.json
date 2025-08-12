@@ -1,43 +1,49 @@
 {
-  /*
+  /* ---------------------------------------------------------------------------
   Project-specific configuration.
 
   The following settings are related to conventions for indentation, line
-  wrapping and formatting. Since these concerns tend to be project-specific,
-  I have these options disabled by default and I enable and configure them
-  on a per-repository or per-workspace basis.
+  wrapping, and formatting. Since these concerns tend to be project-specific,
+  I have most of these options disabled by default here, then I enable and
+  configure them on a per-repository and/or per-workspace basis.
   */
 
-  /* Turn off editor rulers (line-wrapping guidelines) by default. */
+  /* By default, turn off editor rulers (line-wrapping guidelines). */
   "editor.rulers": [],
 
   /* By default, wrap lines at the edge of the viewport. */
   "editor.wordWrap": "on",
 
   /* A good default is to have VS Code automatically detect the indentation
-  convention of each file. This SHOULD be disabled and a consistent indentation
-  convention enforced within each repository. */
+  convention of each file. Within repository-level settings, this SHOULD be
+  disabled and consistent indentation enforced. */
   "editor.detectIndentation": true,
 
   /* When `editor.detectIndentation` is on, VS Code will determine the following
-  settings automatically. */
-  // "editor.insertSpaces": true,
-  // "editor.tabSize": 2,
+  settings automatically. The following settings are still good fallbacks. */
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
 
-  /* Enable rendering of control characters, but disable rendering of empty
-  space characters, by default. */
+  /* By default, enable rendering of control characters, and render all empty
+  space characters, too. */
   "editor.renderControlCharacters": true,
-  "editor.renderWhitespace": "none",
+  "editor.renderWhitespace":"all",
 
-  /* Disable all auto-formatting mechanisms by default. */
+  /* By default, disable all auto-formatting mechanisms. These settings SHOULD
+  be re-enabled on a case-by-case basis in repositories and workspaces. See also
+  "language-specific settings", below. */
   "editor.formatOnPaste": false,
   "editor.formatOnSave": false,
   "editor.formatOnType": false,
 
-  /* Disable auto-fixes by default. */
+  /* Likewise, by default, disable code auto-fixes. */
   "editor.codeActionsOnSave": {
     "source.fixAll": "never"
   },
+
+  /* ---------------------------------------------------------------------------
+  Language-specific settings. These also tend to be project-specific.
+  */
 
   /* By default, disable VS Code's built-in formatter and validation for JS
   syntax. Projects are therefore REQUIRED to enable third party formatters and
@@ -46,7 +52,7 @@
   "javascript.format.enable": false,
   "javascript.validate.enable": false,
 
-  /* Disable the TypeScript type checker in all JavaScript files by default.
+  /* By default, disable the TypeScript type checker in all JavaScript files.
   (This is the default behavior anyway.) Disabling this means that JavaScript
   files MUST include a `@ts-check` comment at the top to opt-in to VS Code's
   built-in `tsc` type checker instance, which will infer type information from
@@ -54,37 +60,15 @@
   on a per-repository or per-workspace basis. */
   "js/ts.implicitProjectConfig.checkJs": false,
 
-  /* Prompt for user confirmation before committing directly to trunk lines.
-  Where protected branches are configured in the upstream repository, this
-  setting SHOULD be configured at the repository level. It helps to avoid
-  `git push` failures. */
-  "git.branchProtectionPrompt": "alwaysPrompt",
-  "git.branchProtection": [
-    // "stable",
-    // "release/*",
-  ],
+  /* Disable auto-closing tags for HTML and JS – consistent with the defaults
+  for "editor.autoClosingBrackets" and related settings (see below). It saves 
+  typing but is often more annoying than it's worth! */
+  "html.autoClosingTags": false,
+  "javascript.autoClosingTags": false,
 
-  /*
+  /* ---------------------------------------------------------------------------
   Theme and window chrome.
   */
-
-  /* Use VS Code's non-native title bar with the command centre in the middle.
-  Show only the name of the folder or workspace in the window title bar. */
-  "window.titleBarStyle": "custom",
-  "window.commandCenter": true,
-  "window.title": "${dirty}${rootName}${separator}",
-
-  /* Use VS Code's non-native dialog windows. */
-  "window.dialogStyle": "custom",
-
-  /* Open new VS Code windows maximized. */
-  "window.newWindowDimensions": "maximized",
-
-  /* Activity Bar position. */
-  "workbench.activityBar.location": "top",
-
-  /* Zoom. */
-  "window.zoomLevel": 1,
 
   /* Change the color scheme based on the system's color scheme. See
   `workbench.preferred[**]Theme` settings for additional options. */
@@ -99,6 +83,25 @@
   "workbench.preferredHighContrastLightColorTheme": "GitHub Light High Contrast",
   "workbench.iconTheme": "vs-minimal",
 
+  /* Zoom. */
+  "window.zoomLevel": 1,
+
+  /* Use VS Code's non-native title bar with the command centre in the middle.
+  Show only the name of the folder or workspace in the window title bar,
+  when it's visible. */
+  "window.titleBarStyle": "custom",
+  "window.commandCenter": true,
+  "window.title": "${dirty}${rootName}${separator}",
+
+  /* Use VS Code's non-native dialog windows. */
+  "window.dialogStyle": "custom",
+
+  /* Open new VS Code windows maximized. */
+  "window.newWindowDimensions": "maximized",
+
+  /* Activity Bar position. */
+  "workbench.activityBar.location": "top",
+
   /* Visual presentation of tree views in panels - eg File Explorer. */
   "workbench.tree.indent": 24,
   "workbench.tree.renderIndentGuides": "always",
@@ -110,9 +113,15 @@
   /* Collapse search results, so files must be expanded to show matching text. */
   "search.collapseResults": "alwaysCollapse",
 
-  /*
-  Tabs, tabs groups, and editor.
+  /* ---------------------------------------------------------------------------
+  Editors.
   */
+
+  /* Editor font. */
+  "editor.fontFamily": "Hack, monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 14,
+  "editor.fontWeight": "400",
 
   /* Disable various auto-complete mechanisms in the code editor. */
   "editor.autoClosingBrackets": "never",
@@ -126,24 +135,18 @@
   "editor.foldingHighlight": true,
   "editor.foldingStrategy": "indentation",
 
-  /* Editor font. */
-  "editor.fontFamily": "Hack, monospace",
-  "editor.fontLigatures": true,
-  "editor.fontSize": 14,
-  "editor.fontWeight": "400",
-
   /* Render guidelines for indentation and bracket pairs. */
   "editor.guides.indentation": true,
   "editor.guides.highlightActiveIndentation": false,
   "editor.guides.bracketPairs": true,
 
-  /* By default, disable inlay hints, which get injected within code
-  (eg showing function parameter names). */
+  /* By default, enable inlay hints, which get injected within code
+  (eg. showing function parameter names). */
   "editor.inlayHints.enabled": "on",
 
-  /* Show line numbers and hide the minimap. */
+  /* Show line numbers and the minimap. */
   "editor.lineNumbers": "on",
-  "editor.minimap.enabled": false,
+  "editor.minimap.enabled": true,
   "editor.minimap.size": "fill",
   "editor.minimap.renderCharacters": false,
   "editor.minimap.showSlider": "always",
@@ -163,28 +166,32 @@
   "editor.stickyScroll.maxLineCount": 5,
 
   /* Prioritize snippet suggestions over all other hints. Pre-select the first.
-  Show the toolbar automatically – this works well with Copilot. */
+  Show the toolbar automatically. Turn on tab completion for snippets only.
+  **These settings work well with Copilot.** */
   "editor.inlineSuggest.enabled": true,
   "editor.inlineSuggest.showToolbar": "always",
   "editor.snippetSuggestions": "none",
   "editor.suggestSelection": "recentlyUsedByPrefix",
-
-  /* Disable highlighting of ambiguous characters, eg. – (em dash) instead of - (hyphen). */
-  "editor.unicodeHighlight.ambiguousCharacters": false,
-
-  /* Turn on tab completion for snippets. */
   "editor.tabCompletion": "onlySnippets",
 
-  /* Shrink tab size as the available space decreases. */
-  "workbench.editor.tabSizing": "shrink",
+  /* Enable highlighting of ambiguous characters, 
+  eg. – (em dash) instead of - (hyphen). */
+  "editor.unicodeHighlight.ambiguousCharacters": true,
 
   /* Disable startup editor, which means editors are restored from prior session. */
   "workbench.startupEditor": "none",
 
+  /* ---------------------------------------------------------------------------
+  Editor tabs and tab groups.
+  */
+
+  /* Shrink tab size as the available space decreases. */
+  "workbench.editor.tabSizing": "shrink",
+
   /* Hide tabs when in Zen mode. */
   "zenMode.showTabs": "none",
 
-  /*
+  /* ---------------------------------------------------------------------------
   Auto-save and other editing features.
   */
 
@@ -192,17 +199,18 @@
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 5000,
 
-  /*
+  /* ---------------------------------------------------------------------------
   Diff and merge editor.
   */
 
   /* Do not use VS Code's new "advanced" diff algorithm just yet – unfortunately
-  it's proven to be quite slow at handling large diffs. */
+  it's proven to be quite slow at handling very large diffs. */
   "diffEditor.diffAlgorithm": "legacy",
   "mergeEditor.diffAlgorithm": "legacy",
 
-  /* Timeout in milliseconds after which diff computation is cancelled. Zero = disabled timeout. */
-  "diffEditor.maxComputationTime": 10000,
+  /* Timeout in milliseconds after which diff computation is cancelled.
+  Zero = disabled timeout. */
+  "diffEditor.maxComputationTime": 10000, /* 10 seconds */
 
   /* Mark inline deletions and insertions. */
   "diffEditor.experimental.showEmptyDecorations": true,
@@ -219,11 +227,25 @@
   /* Don't ignore trimmed whitespace in the diff. */
   "diffEditor.ignoreTrimWhitespace": false,
 
-  /*
+  /* ---------------------------------------------------------------------------
   Source code management (SCM) and the built-in Git GUI.
   */
 
-  /* Default name for new Git branches when created via VS Code's GUI. */
+  /* By default, prompt for user confirmation before committing directly to 
+  trunk lines. These are good defaults, but where protected branches are 
+  configured in the upstream repository, these settings SHOULD be explicitly 
+  configured at the repository level – to help avoid `git push` failures.
+  Other repositories may disable this entirely. */
+  "git.branchProtectionPrompt": "alwaysPrompt",
+  "git.branchProtection": [
+    "main",
+    "master",
+    "trunk",
+    "dev",
+    "release/*",
+  ],
+
+  /* The default name for new Git branches when created via VS Code's GUI. */
   "git.defaultBranchName": "dev",
 
   /* Allow overriding of Git hooks on commit operations. */
@@ -242,9 +264,9 @@
   "git.confirmNoVerifyCommit": false,
 
   /* Confirm before running sync operation (it may rewrite history). */
-  "git.confirmSync": false,
+  "git.confirmSync": true,
 
-  /* Commit all working changes when nothing is yet staged. */
+  /* Just go ahead and stage all working changes when committing an empty stage. */
   "git.enableSmartCommit": true,
 
   /* Remove sync control from status bar. */
@@ -269,30 +291,33 @@
   "git.repositoryScanMaxDepth": 3,
 
   /* Enable the feature to automatically save and restore open editors when
-  switching between source control branches. Since VS Code 1.89.0. */
+  switching between source control branches. Since VS Code 1.89.0. This works
+  only when a repository is opened in its own workspace, not for multi-root
+  workspaces. */
   "scm.workingSets.enabled": true,
 
-  /* When switching new a branch for the first time, close all currently-open editors. */
+  /* When switching new a branch for the first time, close all 
+  currently-open editors. */
   "scm.workingSets.default": "empty",
 
-  /*
+  /* ---------------------------------------------------------------------------
   Terminals - integrated and external.
   */
 
   /* Integrated terminal configuration. */
+  "terminal.integrated.fontFamily": "Hack NF",
+  "terminal.integrated.fontSize": 14,
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.cursorWidth": 3,
   "terminal.integrated.defaultLocation": "editor", /* Open in a new editor tab rather than panel. */
   "terminal.integrated.enableMultiLinePasteWarning": "never",
-  "terminal.integrated.fontFamily": "Hack NF",
-  "terminal.integrated.fontSize": 14,
   "terminal.integrated.shellIntegration.enabled": true,
 
-  /* Default profiles for integrated terminal - varies between Windows and WSL. */
+  /* Default profiles for integrated terminal - varies between Windows and WSL/Linux. */
   "terminal.integrated.defaultProfile.linux": "bash",
   "terminal.integrated.defaultProfile.windows": "Git Bash",
 
-  /* Use Windows Terminal as the external editor. */
+  /* Use Windows Terminal as the external editor on Windows. */
   "terminal.external.windowsExec": "wt",
 
   /* Adds "Open in Windows Terminal" to right-click menu of Explorer items. */
@@ -305,28 +330,28 @@
   "terminal.integrated.stickyScroll.enabled": true,
   "terminal.integrated.stickyScroll.maxLineCount": 3,
 
-  /*
+  /* ---------------------------------------------------------------------------
   Notebooks.
   */
 
   "notebook.stickyScroll.enabled": true,
   "notebook.stickyScroll.mode": "indented",
 
-  /*
+  /* ---------------------------------------------------------------------------
   External browser.
   */
 
   /* Open links in Firefox. */
   "workbench.externalBrowser": "firefox",
 
-  /*
+  /* ---------------------------------------------------------------------------
   Security settings.
   */
 
   /* Always open untrusted files into a trusted workspace without prompting. */
   "security.workspace.trust.untrustedFiles": "open",
 
-  /*
+  /* ---------------------------------------------------------------------------
   Extensions and built-in services.
   */
 
@@ -335,14 +360,5 @@
 
   /* Synchronize keybindings based on the OS. */
   "settingsSync.keybindingsPerPlatform": true,
-
-  /*
-  Language-specific settings.
-  */
-
-   /* Disable auto-closing tags - it saves typing but is often more annoying
-  than it's worth. */
-  "html.autoClosingTags": false,
-  "javascript.autoClosingTags": false
 
 }
