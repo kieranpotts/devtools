@@ -3,14 +3,14 @@
   {
     "key": "ctrl+alt+t",
     "when": "!terminalFocus",
-    "command": "workbench.action.terminal.openNativeConsole",
+    "command": "workbench.action.terminal.openNativeConsole"
   },
 
   /* Open external terminal in new tab (start at current working directory). */
   {
     "key": "ctrl+shift+t",
     "when": "terminalProcessSupported",
-    "command": "workbench.action.terminal.newWithCwd",
+    "command": "workbench.action.terminal.newWithCwd"
   },
 
   /* Toggle zen mode. */
@@ -23,14 +23,14 @@
   {
     "key": "ctrl+space",
     "when": "isInDiffEditor && editorTextFocus",
-    "command": "git.stageSelectedRanges",
+    "command": "git.stageSelectedRanges"
 
   },
   {
     "key": "ctrl+space",
     /* Diff editor is in read-only when viewing the staging index rather than the working tree. */
     "when": "isInDiffEditor && editorTextFocus && editorReadonly",
-    "command": "git.unstageSelectedRanges",
+    "command": "git.unstageSelectedRanges"
   },
   // {
   //   "key": "r",
@@ -42,12 +42,12 @@
   {
     "key": "ctrl+shift+s",
     "when": "!voiceChatInProgress",
-    "command": "workbench.action.chat.startVoiceChat",
+    "command": "workbench.action.chat.startVoiceChat"
   },
   {
     "key": "ctrl+shift+s",
     "when": "voiceChatInProgress",
-    "command": "workbench.action.chat.stopListeningAndSubmit",
+    "command": "workbench.action.chat.stopListeningAndSubmit"
   },
 
   /* Remove built-in shortcuts for Ctrl+Shift+s. */
@@ -58,11 +58,11 @@
   {
     "key": "ctrl+shift+s",
     "when": "editorLangId == 'markdown'",
-    "command": "-markdown-preview-enhanced.syncPreview",
+    "command": "-markdown-preview-enhanced.syncPreview"
   },
   {
     "key": "ctrl+shift+s",
     "when": "remoteFileDialogVisible",
-    "command": "-workbench.action.files.saveLocalFile",
-  },
+    "command": "-workbench.action.files.saveLocalFile"
+  }
 ]
