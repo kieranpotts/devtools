@@ -146,13 +146,13 @@
 
   /* Show line numbers and the minimap. */
   "editor.lineNumbers": "on",
-  "editor.minimap.enabled": true,
+  "editor.minimap.enabled": false,
   "editor.minimap.size": "fill",
   "editor.minimap.renderCharacters": false,
   "editor.minimap.showSlider": "always",
 
   /* Enable the breadcrumb trail across the top of editors. */
-  "breadcrumbs.enabled": true,
+  "breadcrumbs.enabled": false,
 
   /* Scrollbar. */
   "editor.scrollbar.vertical": "visible",
@@ -162,7 +162,7 @@
   "editor.mouseWheelScrollSensitivity": 1,
 
   /* Sticky scroll. */
-  "editor.stickyScroll.enabled": true,
+  "editor.stickyScroll.enabled": false,
   "editor.stickyScroll.maxLineCount": 5,
 
   /* Prioritize snippet suggestions over all other hints. Pre-select the first.
