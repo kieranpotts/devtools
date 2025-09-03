@@ -45,15 +45,12 @@ Then follow the steps below to set up everything.
 
 The configurations for VS Code and Windows Terminal depend on the following fonts being installed locally:
 
-* Hack
-* Hack Nerd Font
+* Hack + Hack NF
+* Maple Mono + Maple Mono NF (nerd font)
 
-TrueType formats of both fonts are included in the `./vendor/fonts` directory and need to be installed manually.
+TrueType files for these fonts are included in the `./vendor/fonts` directory and need to be installed manually.
 
-[NOTE]
-======
-Hack is a programming font. It adds special ligatures that merge multiple consecutive characters into a single composite glyph, for example `>=` is presented as `≥` and `!=` as `≠`, improving readability without changing the code. Hack NF (Nerd Font) is a version of the same font extended with additional glyphs that are used to create visual effects like icons and rounded corners in a shell's prompt line.
-======
+Hack and Maple Mono are similar programming fonts. They add special ligatures that merge multiple consecutive characters into a single composite glyph, for example `>=` is presented as `≥` and `!=` as `≠`, improving readability without changing the code. The Nerd Font versions are extended with additional glyphs that are used to create visual effects like icons and rounded corners in a shell's prompt line.
 
 ==== 2. Create symlinks to the configuration files
 

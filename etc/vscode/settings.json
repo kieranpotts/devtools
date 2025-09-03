@@ -109,7 +109,7 @@
   */
 
   /* Editor font. */
-  "editor.fontFamily": "Hack, monospace",
+  "editor.fontFamily": "'Maple Mono', monospace",
   "editor.fontLigatures": true,
   "editor.fontSize": 14,
   "editor.fontWeight": "400",
@@ -305,7 +305,7 @@
   */
 
   /* Integrated terminal configuration. */
-  "terminal.integrated.fontFamily": "Hack NF",
+  "terminal.integrated.fontFamily": "Maple Mono NF",
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.cursorWidth": 3,
