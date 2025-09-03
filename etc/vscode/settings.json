@@ -16,11 +16,11 @@
 
   /* A good default is to have VS Code automatically detect the indentation
   convention of each file. Within repository-level settings, this SHOULD be
-  disabled and consistent indentation enforced. */
+  disabled and consistent indentation enforced via this configuration. */
   "editor.detectIndentation": true,
 
   /* When `editor.detectIndentation` is on, VS Code will determine the following
-  settings automatically. The following settings are still good fallbacks. */
+  settings automatically. But these are still good fallback values. */
   "editor.insertSpaces": true,
   "editor.tabSize": 2,
 
@@ -48,7 +48,7 @@
   /* By default, disable VS Code's built-in formatter and validation for JS
   syntax. Projects are therefore REQUIRED to enable third party formatters and
   validators, such as ESLint, and to configure those tools specifically for
-  for compatibility with each project's syntax. */
+  compatibility with each project's syntax. */
   "javascript.format.enable": false,
   "javascript.validate.enable": false,
 
@@ -61,8 +61,8 @@
   "js/ts.implicitProjectConfig.checkJs": false,
 
   /* Disable auto-closing tags for HTML and JS – consistent with the defaults
-  for "editor.autoClosingBrackets" and related settings (see below). It saves
-  typing but is often more annoying than it's worth! */
+  for `editor.autoClosingBrackets` and related settings. It saves typing but
+  is often more annoying than it's worth! */
   "html.autoClosingTags": false,
   "javascript.autoClosingTags": false,
 
@@ -82,13 +82,6 @@
   "workbench.preferredHighContrastColorTheme": "GitHub Dark High Contrast",
   "workbench.preferredHighContrastLightColorTheme": "GitHub Light High Contrast",
   "workbench.iconTheme": "vs-minimal",
-
-  /* Zoom. */
-  "window.zoomLevel": 1,
-
-  /* Use VS Code's non-native title bar with the command centre in the middle.
-  Show only the name of the folder or workspace in the window title bar,
-  when it's visible. */
   "window.titleBarStyle": "custom",
   "window.commandCenter": true,
   "window.title": "${dirty}${rootName}${separator}",
@@ -101,8 +94,6 @@
 
   /* Activity Bar position. */
   "workbench.activityBar.location": "top",
-
-  /* Visual presentation of tree views in panels - eg File Explorer. */
   "workbench.tree.indent": 24,
   "workbench.tree.renderIndentGuides": "always",
 
@@ -130,7 +121,7 @@
   "editor.autoClosingQuotes": "never",
   "editor.autoSurround": "never",
 
-  /* Highlight folded ranges and always base code folding on indentation level
+  /* Highlight folded ranges and always base the code folding on indentation level
   rather than language-specific syntax. */
   "editor.foldingHighlight": true,
   "editor.foldingStrategy": "indentation",
@@ -144,14 +135,16 @@
   (eg. showing function parameter names). */
   "editor.inlayHints.enabled": "on",
 
-  /* Show line numbers and the minimap. */
+  /* Show line numbers but hide the minimap. */
   "editor.lineNumbers": "on",
   "editor.minimap.enabled": false,
+
+  /* Good defaults for when the minimap is on. */
   "editor.minimap.size": "fill",
   "editor.minimap.renderCharacters": false,
   "editor.minimap.showSlider": "always",
 
-  /* Enable the breadcrumb trail across the top of editors. */
+  /* Disable the breadcrumb trail across the top of editors. */
   "breadcrumbs.enabled": false,
 
   /* Scrollbar. */
@@ -167,7 +160,7 @@
 
   /* Prioritize snippet suggestions over all other hints. Pre-select the first.
   Show the toolbar automatically. Turn on tab completion for snippets only.
-  **These settings work well with Copilot.** */
+  ese settings work well with Copilot. */
   "editor.inlineSuggest.enabled": true,
   "editor.inlineSuggest.showToolbar": "always",
   "editor.snippetSuggestions": "none",
@@ -369,3 +362,4 @@
   "settingsSync.keybindingsPerPlatform": true
 
 }
+
