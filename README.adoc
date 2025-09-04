@@ -4,11 +4,13 @@
 :link-bootstrap: https://github.com/kieranpotts/bootstrap
 :link-codespace-settings: https://github.com/settings/codespaces
 :link-delta: https://github.com/dandavison/delta/releases
+:link-hack-font: https://github.com/source-foundry/Hack
 :link-htmlq: https://github.com/mgdm/htmlq/releases
 :link-jabba: https://github.com/shyiko/jabba/releases
 :link-jq: https://github.com/jqlang/jq/releases
 :link-lazygit: https://github.com/jesseduffield/lazygit/releases
 :link-make: https://sourceforge.net/projects/ezwinports/files/
+:link-maple-font: https://github.com/subframe7536/maple-font
 :link-nvm-windows: https://github.com/coreybutler/nvm-windows/releases/
 :link-ohmyposh: https://github.com/JanDeDobbeleer/oh-my-posh/releases
 :link-wget: https://eternallybored.org/misc/wget/
@@ -153,6 +155,12 @@ Fresh Windows binaries can be downloaded from the following links. The binaries 
 * {link-xpdf}[*Xpdf*]: Download the Windows Xpdf command line tool, extract, and copy the contents of the `bin64` directory.
 
 *Neovim* is not available as a standalone binary. It MUST be {link-neovim-install}[installed using a package manager] like Winget or Chocolatey, or the Windows installer package available from the project's {link-neovim}[releases page].
+
+Updates to the font packages can be downloaded from the following resources:
+
+* {link-hack-font}[*Hack Font*]: Download an archive of the TTF files from the repository's releases page.
+
+* {link-maple-font}[*Maple Font*]: Choose the default, unhinted TTF files with ligatures (ie. with merged characters_, from the repository's releases page. (The unhinted versions are optimized for high-resolution displays. The "normal" variant is another option. It is less opinionated than the "default" version, and is a little less characterful for it.)
 
 ''''
 
