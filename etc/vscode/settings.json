@@ -304,6 +304,11 @@
   currently-open editors. */
   "scm.workingSets.default": "empty",
 
+  /* Don't require Git user.name and user.email to be set at the repository
+  level. Disabling this means we can rely on the global Git configuration,
+  which means we can set our Git name and email values once only. */
+  "git.requireGitUserConfig": false,
+
   /* ---------------------------------------------------------------------------
   Terminals - integrated and external.
   */
