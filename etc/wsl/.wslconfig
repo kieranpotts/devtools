@@ -1,0 +1,12 @@
+[wsl2]
+# Memory allocation
+memory=4GB
+
+# Processor cores
+processors=2
+
+# Swap space
+swap=2GB
+
+# Networking mode
+networkingMode=NAT

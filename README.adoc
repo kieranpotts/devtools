@@ -34,7 +34,7 @@ Configurations are included for the following programs, all of which are OPTIONA
 
 === Installation
 
-To install these devtools on your own Windows machine, first fork this repository to your own GitHub account, then clone the upstream repository to any location on your local filesystem:
+To install these devtools on your own Windows machine, first fork this repository to your own GitHub account, then clone the upstream repository to any location on your Windows host. The repository should not be installed in WSL or other virtual machine, but directly on the Windows host OS.
 
 [source]
 ----
@@ -94,6 +94,15 @@ New-Item -ItemType SymbolicLink `
 ln --symbolic --force "${PWD}/etc/vscode/settings.json" ~/.config/[Code|VSCodium]/User/settings.json
 ln --symbolic --force "${PWD}/etc/vscode/keybindings.json" ~/.config/[Code|VSCodium]/User/keybindings.json
 ln --symbolic --force "${PWD}/etc/vscode/global.code-snippets" ~/.config/[Code|VSCodium]/User/snippets/global.code-snippets
+----
+
+.Windows Subsystem for Linux
+[source]
+----
+New-Item -ItemType SymbolicLink `
+  -Path "C:\Users\[User]\.wslconfig" `
+  -Target "C:\path\to\devtools\etc\wsl\.wslconfig" `
+  -Force
 ----
 
 .Windows Terminal
