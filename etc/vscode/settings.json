@@ -196,6 +196,17 @@
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 5000,
 
+  /* Limiting file watchers can reduce memory consumption of some language */
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/.hg/store/**": true,
+    "**/__pycache__/**": true,
+    "**/.venv/**": true,
+    "**/node_modules/**": true,
+    "**/venv/**": true
+  },
+
   /* ---------------------------------------------------------------------------
   Diff and merge editor.
   */
