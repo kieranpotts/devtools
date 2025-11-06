@@ -2,14 +2,13 @@
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
     "actions": [],
-    "confirmCloseAllTabs": false,
     "copyFormatting": "none",
     "copyOnSelect": true,
     "defaultProfile": "{963ff2f7-6aed-5ce3-9d91-90d99571f53a}",
     "firstWindowPreference": "defaultProfile",
     "initialCols": 90,
     "initialRows": 30,
-    "keybindings":
+    "keybindings": 
     [
         {
             "id": "Terminal.CopyToClipboard",
@@ -20,12 +19,12 @@
             "keys": "alt+enter"
         },
         {
-            "id": "Terminal.PasteFromClipboard",
-            "keys": "ctrl+v"
-        },
-        {
             "id": "Terminal.FindText",
             "keys": "ctrl+shift+f"
+        },
+        {
+            "id": "Terminal.PasteFromClipboard",
+            "keys": "ctrl+v"
         },
         {
             "id": "Terminal.ToggleFocusMode",
@@ -37,35 +36,29 @@
         }
     ],
     "launchMode": "default",
-    "newTabMenu":
+    "newTabMenu": 
     [
         {
             "type": "remainingProfiles"
         }
     ],
-    "profiles":
+    "profiles": 
     {
-        "defaults":
+        "defaults": 
         {
             "colorScheme": "Ocean",
-            "font":
+            "font": 
             {
                 "face": "Maple Mono NF",
                 "size": 12
             },
             "suppressApplicationTitle": true
         },
-        "list":
+        "list": 
         [
-            // {
-            //     "guid": "{d8e96812-b789-5068-a5ae-10b2fb53e95f}",
-            //     "hidden": false,
-            //     "name": "Ubuntu 24.04.1 LTS",
-            //     "source": "CanonicalGroupLimited.Ubuntu24.04LTS_79rhkp1fndgsc"
-            // },
             {
                 "colorScheme": "Ocean",
-                "font":
+                "font": 
                 {
                     "face": "Maple Mono NF",
                     "size": 12
@@ -86,7 +79,7 @@
             {
                 "colorScheme": "Ocean",
                 "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-                "font":
+                "font": 
                 {
                     "face": "Maple Mono NF",
                     "size": 12
@@ -99,7 +92,7 @@
             {
                 "colorScheme": "Ocean",
                 "commandline": "%SystemRoot%\\System32\\cmd.exe",
-                "font":
+                "font": 
                 {
                     "face": "Maple Mono NF",
                     "size": 12
@@ -111,7 +104,7 @@
             },
             {
                 "colorScheme": "Ocean",
-                "font":
+                "font": 
                 {
                     "face": "Maple Mono NF",
                     "size": 12
@@ -124,7 +117,7 @@
             }
         ]
     },
-    "schemes":
+    "schemes": 
     [
         {
             "background": "#2B303B",
@@ -154,5 +147,6 @@
     "showTerminalTitleInTitlebar": false,
     "tabWidthMode": "equal",
     "theme": "system",
-    "themes": []
+    "themes": [],
+    "warning.confirmCloseAllTabs": false
 }
