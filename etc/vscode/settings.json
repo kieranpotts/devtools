@@ -78,7 +78,7 @@
   is ignored and the `preferred[**]Theme` options are used instead. */
   "workbench.colorTheme": "Ocean Light",
   "workbench.preferredLightColorTheme": "GitHub Light",
-  "workbench.preferredDarkColorTheme": "Ocean Light",
+  "workbench.preferredDarkColorTheme": "GitHub Dark Default",
   "workbench.preferredHighContrastColorTheme": "GitHub Dark High Contrast",
   "workbench.preferredHighContrastLightColorTheme": "GitHub Light High Contrast",
   "workbench.iconTheme": "vs-minimal",
