@@ -41,6 +41,9 @@
     "editor.wordWrapColumn": 100,
   },
 
+  /* Allow direct committing to protected branches. */
+  "git.branchProtectionPrompt": "alwaysCommit",
+
   /*
   EXTENSION SETTINGS
   The following settings are applicable for the extensions listed in
