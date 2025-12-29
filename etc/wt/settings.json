@@ -150,5 +150,6 @@
     "tabWidthMode": "equal",
     "theme": "system",
     "themes": [],
+    "useAcrylicInTabRow": false,
     "warning.confirmCloseAllTabs": false
 }
