@@ -88,7 +88,7 @@
 
   /* Apply consistent zoom level to all windows. */
   "window.zoomPerWindow": false,
-  "window.zoomLevel": 0.75,
+  "window.zoomLevel": -0.5,
 
   /* Use VS Code's non-native dialog windows. */
   "window.dialogStyle": "custom",
