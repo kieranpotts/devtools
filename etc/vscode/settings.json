@@ -326,7 +326,7 @@
 
   /* Integrated terminal configuration. */
   "terminal.integrated.fontFamily": "Maple Mono NF",
-  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontSize": 12,
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.cursorWidth": 3,
   "terminal.integrated.defaultLocation": "editor", /* Open in a new editor tab rather than panel. */
@@ -379,6 +379,6 @@
   "extensions.ignoreRecommendations": true,
 
   /* Synchronize keybindings based on the OS. */
-  "settingsSync.keybindingsPerPlatform": true
+  "settingsSync.keybindingsPerPlatform": true,
 
 }
