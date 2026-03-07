@@ -325,6 +325,13 @@
   "git.requireGitUserConfig": false,
 
   /* ---------------------------------------------------------------------------
+  SettingsSync.
+  */
+
+  /* Synchronize keybindings based on the OS. */
+  "settingsSync.keybindingsPerPlatform": true,
+
+  /* ---------------------------------------------------------------------------
   Terminals - integrated and external.
   */
 
@@ -381,8 +388,5 @@
 
   /* Don't show popups for recommended extensions. */
   "extensions.ignoreRecommendations": true,
-
-  /* Synchronize keybindings based on the OS. */
-  "settingsSync.keybindingsPerPlatform": true,
 
 }
