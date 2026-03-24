@@ -169,7 +169,7 @@ Updates to the font packages can be downloaded from the following resources:
 
 * {link-hack-font}[*Hack Font*]: Download an archive of the TTF files from the repository's releases page.
 
-* {link-maple-font}[*Maple Font*]: Choose the default, unhinted TTF files with ligatures (ie. with merged characters_, from the repository's releases page. (The unhinted versions are optimized for high-resolution displays. The "normal" variant is another option. It is less opinionated than the "default" version, and is a little less characterful for it.)
+* {link-maple-font}[*Maple Font*]: Choose the default, unhinted TTF files with ligatures (ie. merged characters), from the repository's releases page. (The unhinted versions are optimized for high-resolution displays. The "normal" variant is another option. It is less opinionated than the "default" version, and is a little less characterful for it.)
 
 ''''
 
