@@ -115,6 +115,15 @@
   "search.collapseResults": "alwaysCollapse",
 
   /* ---------------------------------------------------------------------------
+  UI fonts.
+  */
+
+  /* Only certain bits of the UI can have its font customized. */
+  "chat.fontFamily": "'Maple Mono', monospace",
+  "editor.inlineSuggest.fontFamily": "'Maple Mono', monospace",
+  "scm.inputFontFamily": "'Maple Mono', monospace",
+
+  /* ---------------------------------------------------------------------------
   Editors.
   */
 
