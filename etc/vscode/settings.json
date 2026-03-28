@@ -97,7 +97,7 @@
   "window.newWindowDimensions": "maximized",
 
   /* Activity Bar position. */
-  "workbench.activityBar.location": "top",
+  "workbench.activityBar.location": "default",
   "workbench.tree.indent": 24,
   "workbench.tree.renderIndentGuides": "always",
 
