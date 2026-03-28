@@ -404,4 +404,12 @@
   /* Don't show popups for recommended extensions. */
   "extensions.ignoreRecommendations": true,
 
+  /* ---------------------------------------------------------------------------
+  Claude Code
+  */
+
+  "claudeCode.selectedModel": "haiku",
+  "claudeCode.preferredLocation": "panel",
+
+
 }
