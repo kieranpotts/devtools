@@ -1,3 +1,0 @@
-= VS Code Profiles
-
-These configurations are not automatically synchronized with the VS Code application. To export changes to the profiles, open a VS Code Workspace in Windows (not WSL), navigate to Profile, and use the Export option.

@@ -114,15 +114,7 @@ New-Item -ItemType SymbolicLink `
   -Force
 ----
 
-==== 3. Import the VS Code profiles
-
-NOTE: This step is required only if Settings Sync is not enabled in VS Code.
-
-In VS Code, go to File > Preferences > Profile > Profiles. Click the dropdown next to the New Profile button. Click Import Profile. Choose Select File. Select one of the `*.code-profile` files in `./etc/vscode`.
-
-Repeat for the remaining profiles.
-
-==== 4. Add the `bin` directory to your PATH environment variable
+==== 3. Add the `bin` directory to your PATH environment variable
 
 Windows binaries for various programs are bundled in the `bin` directory of this repository. These programs can be installed on your Windows machine simply by adding this repository's `bin` directory to your system's `PATH` environment variable.
 
@@ -131,7 +123,7 @@ Windows binaries for various programs are bundled in the `bin` directory of this
 The `delta`, `lazygit`, `oh-my-posh` binaries are required for my {link-dotfiles}[dotfiles] configuration to work in Git Bash for Windows. For WSL2 and other Unix environments, the equivalent packages can be installed using my {link-bootstrap}[bootstrap] scripts.
 ======
 
-==== 5. Sync VS Code settings with GitHub Codespaces
+==== 4. Sync VS Code settings with GitHub Codespaces
 
 Optionally, you can use GitHub Settings Sync to have a consistent user experience between cloud and local instances of VS Code. You will need to login to VS Code using your GitHub account, and enable Settings Sync in your VS Code user settings. Then go to your {link-codespace-settings}[GitHub Codespaces options] and enable the following option:
 
