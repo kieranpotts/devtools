@@ -436,6 +436,7 @@
   },
 
   "claudeCode.selectedModel": "haiku",
-  "claudeCode.preferredLocation": "panel"
+  "claudeCode.preferredLocation": "panel",
+  "remote.autoForwardPortsSource": "hybrid"
 
 }
