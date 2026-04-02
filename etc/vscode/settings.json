@@ -49,8 +49,8 @@
   syntax. Projects are therefore REQUIRED to enable third party formatters and
   validators, such as ESLint, and to configure those tools specifically for
   compatibility with each project's syntax. */
-  "javascript.format.enable": false,
-  "javascript.validate.enable": false,
+  "js/ts.format.enabled": false,
+  "js/ts.validate.enabled": false,
 
   /* By default, disable the TypeScript type checker in all JavaScript files.
   (This is the default behavior anyway.) Disabling this means that JavaScript
@@ -64,7 +64,7 @@
   for `editor.autoClosingBrackets` and related settings. It saves typing but
   is often more annoying than it's worth! */
   "html.autoClosingTags": false,
-  "javascript.autoClosingTags": false,
+  "js/ts.autoClosingTags.enabled": false,
 
   /* ---------------------------------------------------------------------------
   Theme and window chrome.
