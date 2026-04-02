@@ -409,8 +409,15 @@
   "extensions.ignoreRecommendations": true,
 
   /* ---------------------------------------------------------------------------
-  Dev Containers
+  Remotes and Dev Containers.
   */
+
+  /* Sets the source from which ports are automatically forwarded when
+  Remote: Auto Forward Ports is true (default). This is required for WSL.
+  On Windows and macOS remotes, the "process" and "hybrid" options have no
+  effect, and "output" will be used. */
+
+  "remote.autoForwardPortsSource": "hybrid",
 
   /* If you try opening a dev container from WSL, VS Code will detect
   WAYLAND_DISPLAY on your Windows host and so try to mount the Wayland
