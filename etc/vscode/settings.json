@@ -123,6 +123,10 @@
   "editor.inlineSuggest.fontFamily": "'Maple Mono', monospace",
   "scm.inputFontFamily": "'Maple Mono', monospace",
 
+  /* The fonted extension hacks the UI to allow customization
+  of the workspace font. */
+  "fonted.font": "'Maple Mono', monospace",
+
   /* ---------------------------------------------------------------------------
   Editors.
   */
