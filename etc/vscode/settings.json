@@ -99,6 +99,9 @@
   /* Open new VS Code windows maximized. */
   "window.newWindowDimensions": "maximized",
 
+  /* New windows should use the "Default" profile. */
+  "window.newWindowProfile": "Default",
+
   /* Activity Bar position and size. */
   "workbench.activityBar.location": "default",
   "workbench.activityBar.compact": true,
