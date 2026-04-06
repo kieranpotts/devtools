@@ -28,9 +28,10 @@ My devtools are for installation directly on Windows. I also maintain {link-dotf
 
 Configurations are included for the following programs, all of which are OPTIONAL:
 
-* link:https://www.sublimemerge.com/[Sublime Merge]
-* link:https://code.visualstudio.com/[Visual Studio Code]
-* link:https://github.com/microsoft/terminal[Windows Terminal]
+* https://www.sublimemerge.com/[Sublime Merge]
+* https://code.visualstudio.com/[Visual Studio Code]
+* https://github.com/microsoft/terminal[Windows Terminal]
+* https://keepassxc.org/[KeePassXC]
 
 === Installation
 
@@ -113,6 +114,8 @@ New-Item -ItemType SymbolicLink `
   -Target "C:\path\to\devtools\etc\wt\settings.json" `
   -Force
 ----
+
+The KeePassXC configuration file should be imported manually.
 
 ==== 3. Add the `bin` directory to your PATH environment variable
 
