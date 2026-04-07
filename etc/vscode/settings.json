@@ -126,6 +126,10 @@
   "editor.inlineSuggest.fontFamily": "'Maple Mono', monospace",
   "scm.inputFontFamily": "'Maple Mono', monospace",
 
+  /* Change VS Code's UI font. Requires the fonted extension. This is a hack!
+  https://marketplace.visualstudio.com/items?itemName=degreat.fonted */
+  "fonted.font": "Maple Mono",
+
   /* ---------------------------------------------------------------------------
   Editors.
   */
