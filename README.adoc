@@ -15,7 +15,7 @@
 :link-ohmyposh: https://github.com/JanDeDobbeleer/oh-my-posh/releases
 :link-wget: https://eternallybored.org/misc/wget/
 :link-xpdf: https://www.xpdfreader.com/download.html
-:link-neovim: link:https://github.com/neovim/neovim/releases
+:link-neovim: https://github.com/neovim/neovim/releases
 :link-neovim-install: https://github.com/neovim/neovim/blob/master/INSTALL.md
 
 This repository contains configurations for some of my development tools including Visual Studio Code and Windows Terminal. It also contains Windows ports of various Unix looks like `make` and `wget`, which I use often.
