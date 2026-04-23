@@ -115,7 +115,13 @@ New-Item -ItemType SymbolicLink `
   -Force
 ----
 
-The KeePassXC configuration file should be imported manually.
+The KeePassXC configuration file can either be symlinked or imported manually.
+
+.KeePassXC on Linux
+[source]
+----
+ln --symbolic --force "${PWD}/etc/keepassxc/keepassxc.ini" ~/.config/keepassxc/keepassxc.ini
+----
 
 ==== 3. Add the `bin` directory to your PATH environment variable
 
