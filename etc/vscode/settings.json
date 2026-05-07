@@ -445,6 +445,8 @@
     "~/.claude/rules": true
   },
 
+  "chat.disableAIFeatures": false,
+
   "claudeCode.selectedModel": "haiku",
   "claudeCode.preferredLocation": "panel"
 
