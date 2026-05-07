@@ -51,7 +51,7 @@ The configurations for VS Code and Windows Terminal depend on the following font
 * Hack + Hack NF
 * Maple Mono + Maple Mono NF (nerd font)
 
-TrueType files for these fonts are included in the `./vendor/fonts` directory and need to be installed manually.
+TrueType files for these fonts are included in the `./vendor/fonts` directory and need to be installed manually. In Ubuntu-based Linux distributions, you can simply copy them into the `~/.local/share/fonts` directory. If this directory does not exist, you can create it.
 
 Hack and Maple Mono are similar programming fonts. They add special ligatures that merge multiple consecutive characters into a single composite glyph, for example `>=` is presented as `≥` and `!=` as `≠`, improving readability without changing the code. The Nerd Font versions are extended with additional glyphs that are used to create visual effects like icons and rounded corners in a shell's prompt line.
 
