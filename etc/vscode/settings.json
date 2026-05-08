@@ -446,6 +446,7 @@
   },
 
   "chat.disableAIFeatures": false,
+  "chat.viewSessions.orientation": "stacked",
 
   "claudeCode.selectedModel": "haiku",
   "claudeCode.preferredLocation": "panel"
