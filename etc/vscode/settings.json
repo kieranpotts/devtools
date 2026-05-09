@@ -435,7 +435,7 @@
   "dev.containers.mountWaylandSocket": false,
 
   /* ---------------------------------------------------------------------------
-  Ai agents
+  AI agents
   */
 
   "chat.instructionsFilesLocations": {
