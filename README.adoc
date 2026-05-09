@@ -82,6 +82,11 @@ New-Item -ItemType SymbolicLink `
   -Force
 
 New-Item -ItemType SymbolicLink `
+  -Path "C:\Users\[User]\AppData\Roaming\[Code|VSCodium]\User\chatLanguageModels.json" `
+  -Target "C:\path\to\devtools\etc\vscode\chatLanguageModels.json" `
+  -Force
+
+New-Item -ItemType SymbolicLink `
   -Path "C:\Users\[User]\AppData\Roaming\[Code|VSCodium]\User\snippets\global.code-snippets" `
   -Target "C:\path\to\devtools\etc\vscode\global.code-snippets" `
   -Force
@@ -94,6 +99,7 @@ New-Item -ItemType SymbolicLink `
 
 ln --symbolic --force "${PWD}/etc/vscode/settings.json" ~/.config/[Code|VSCodium]/User/settings.json
 ln --symbolic --force "${PWD}/etc/vscode/keybindings.json" ~/.config/[Code|VSCodium]/User/keybindings.json
+ln --symbolic --force "${PWD}/etc/vscode/chatLanguageModels.json" ~/.config/[Code|VSCodium]/User/chatLanguageModels.json
 ln --symbolic --force "${PWD}/etc/vscode/global.code-snippets" ~/.config/[Code|VSCodium]/User/snippets/global.code-snippets
 ----
 
