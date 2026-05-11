@@ -445,7 +445,8 @@
     "~/.claude/rules": true
   },
 
-  "chat.disableAIFeatures": false,
+  /* Disable GitHub Copilot Chat - no longer an extension. */
+  "chat.disableAIFeatures": true,
   "chat.viewSessions.orientation": "stacked",
 
   "claudeCode.selectedModel": "haiku",
