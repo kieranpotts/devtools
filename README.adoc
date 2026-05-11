@@ -121,10 +121,11 @@ New-Item -ItemType SymbolicLink `
   -Force
 ----
 
-.Continue on Linux
+.AI tools on Linux
 [source]
 ----
 ln --symbolic --force "${PWD}/etc/continue/config.yaml" ~/.continue/config.yaml
+ln --symbolic --force "${PWD}/etc/qwen/settings.json" ~/.qwen/settings.json
 ----
 
 The KeePassXC configuration file can either be symlinked or imported manually.
