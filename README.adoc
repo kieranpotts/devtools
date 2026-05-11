@@ -121,6 +121,12 @@ New-Item -ItemType SymbolicLink `
   -Force
 ----
 
+.Continue on Linux
+[source]
+----
+ln --symbolic --force "${PWD}/etc/continue/config.yaml" ~/.continue/config.yaml
+----
+
 The KeePassXC configuration file can either be symlinked or imported manually.
 
 .KeePassXC on Linux
