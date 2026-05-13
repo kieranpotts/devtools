@@ -4,11 +4,15 @@ name: Local Config
 version: 1.0.0
 schema: v1
 models:
+  - name: Gemma 4 31b
+    provider: ollama
+    model: gemma4:31b
+    roles:
+      - chat
   - name: Llama 3.1 8B
     provider: ollama
     model: llama3.1:8b
     roles:
-      - chat
       - edit
       - apply
   - name: Qwen2.5-Coder 1.5B
