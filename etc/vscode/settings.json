@@ -383,7 +383,7 @@
   "terminal.integrated.stickyScroll.enabled": true,
   "terminal.integrated.stickyScroll.maxLineCount": 3,
 
-  /* Settings insisted upon by Kilo Code. Add these commands to the list of 
+  /* Settings insisted upon by Kilo Code. Add these commands to the list of
   keybindings that will not be sent to the shell, but instead will always be
   handled by VS Code – thus, keybindings like `Ctrl+P` to launch Quick Open
   will work even when the integrated terminal is in focus. */
@@ -459,6 +459,13 @@
   "chat.viewSessions.orientation": "stacked",
 
   "claudeCode.selectedModel": "haiku",
-  "claudeCode.preferredLocation": "panel"
+  "claudeCode.preferredLocation": "panel",
+
+  /* YAML Schema for Continue config. */
+  "yaml.schemas": {
+    "file:///home/kieran/.vscode/extensions/continue.continue-1.2.22-linux-x64/config-yaml-schema.json": [
+      ".continue/**/*.yaml"
+    ]
+  }
 
 }
