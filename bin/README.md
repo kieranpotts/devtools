@@ -1,4 +1,4 @@
-= The `bin` directory
+# The `bin` directory
 
 The `bin` directory is intended to be added to the user's system PATH, so making the bundled binaries, such as `jq` and `make`, available from the command line in any working directory.
 

@@ -1,76 +1,55 @@
-= Devtools
+# Devtools
 
-:link-dotfiles: https://github.com/kieranpotts/dotfiles
-:link-bootstrap: https://github.com/kieranpotts/bootstrap
-:link-codespace-settings: https://github.com/settings/codespaces
-:link-delta: https://github.com/dandavison/delta/releases
-:link-hack-font: https://github.com/source-foundry/Hack
-:link-htmlq: https://github.com/mgdm/htmlq/releases
-:link-jabba: https://github.com/shyiko/jabba/releases
-:link-jq: https://github.com/jqlang/jq/releases
-:link-lazygit: https://github.com/jesseduffield/lazygit/releases
-:link-make: https://sourceforge.net/projects/ezwinports/files/
-:link-maple-font: https://github.com/subframe7536/maple-font
-:link-nvm-windows: https://github.com/coreybutler/nvm-windows/releases/
-:link-ohmyposh: https://github.com/JanDeDobbeleer/oh-my-posh/releases
-:link-wget: https://eternallybored.org/misc/wget/
-:link-xpdf: https://www.xpdfreader.com/download.html
-:link-neovim: https://github.com/neovim/neovim/releases
-:link-neovim-install: https://github.com/neovim/neovim/blob/master/INSTALL.md
+This repository contains configurations for some of my development tools including Visual Studio Code and Windows Terminal. It also contains Windows ports of various Unix tools like `make` and `wget`, which I use often.
 
-This repository contains configurations for some of my development tools including Visual Studio Code and Windows Terminal. It also contains Windows ports of various Unix looks like `make` and `wget`, which I use often.
+My devtools are for installation directly on Windows. I also maintain [dotfiles](https://github.com/kieranpotts/dotfiles) that capture further devtools configurations for Unix-like environments. I install my dotfiles in guest VMs like WSL, emulators like Git Bash, and remote dev VMs.
 
-My devtools are for installation directly on Windows. I also maintain {link-dotfiles}[dotfiles] that capture further devtools configurations for Unix-like environments. I install my dotfiles in guest VMs like WSL, emulators like Git Bash, and remote dev VMs.
+## Documentation
 
-== Documentation
-
-=== Requirements
+### Requirements
 
 Configurations are included for the following programs, all of which are OPTIONAL:
 
-* https://www.sublimemerge.com/[Sublime Merge]
-* https://code.visualstudio.com/[Visual Studio Code]
-* https://github.com/microsoft/terminal[Windows Terminal]
-* https://keepassxc.org/[KeePassXC]
+- [Sublime Merge](https://www.sublimemerge.com/)
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Windows Terminal](https://github.com/microsoft/terminal)
+- [KeePassXC](https://keepassxc.org/)
 
-=== Installation
+### Installation
 
 To install these devtools on your own Windows machine, first fork this repository to your own GitHub account, then clone the upstream repository to any location on your Windows host. The repository should not be installed in WSL or other virtual machine, but directly on the Windows host OS.
 
-[source]
-----
+```
 git clone git@github.com:<user_or_org>/devtools.git
-----
+```
 
 Then follow the steps below to set up everything.
 
-==== 1. Install the fonts
+#### 1. Install the fonts
 
 The configurations for VS Code and Windows Terminal depend on the following fonts being installed locally:
 
-* Hack + Hack NF
-* Maple Mono + Maple Mono NF (nerd font)
+- Hack + Hack NF
+- Maple Mono + Maple Mono NF (nerd font)
 
 TrueType files for these fonts are included in the `./vendor/fonts` directory and need to be installed manually. In Ubuntu-based Linux distributions, you can simply copy them into the `~/.local/share/fonts` directory. If this directory does not exist, you can create it.
 
 Hack and Maple Mono are similar programming fonts. They add special ligatures that merge multiple consecutive characters into a single composite glyph, for example `>=` is presented as `≥` and `!=` as `≠`, improving readability without changing the code. The Nerd Font versions are extended with additional glyphs that are used to create visual effects like icons and rounded corners in a shell's prompt line.
 
-==== 2. Create symlinks to the configuration files
+#### 2. Create symlinks to the configuration files
 
 Configuration files are included for various development tools, including VS Code and Windows Terminal, for easy portability between machines. To use these configurations, you will need to create symlinks to them from the filesystem locations the target programs expect them to be. To do that, run Windows Powershell in administrator mode and execute the following commands, changing the filesystem paths as required.
 
-.Sublime Merge
-[source]
-----
+**Sublime Merge**
+```
 New-Item -ItemType SymbolicLink `
   -Path "C:\Users\[User]\AppData\Roaming\Sublime Merge\Packages\User\Preferences.sublime-settings" `
   -Target "C:\path\to\devtools\etc\sublime-merge\Preferences.sublime-settings" `
   -Force
-----
+```
 
-.VS Code / VS Codium on Windows
-[source]
-----
+**VS Code / VS Codium on Windows**
+```
 New-Item -ItemType SymbolicLink `
   -Path "C:\Users\[User]\AppData\Roaming\[Code|VSCodium]\User\settings.json" `
   -Target "C:\path\to\devtools\etc\vscode\settings.json" `
@@ -90,103 +69,95 @@ New-Item -ItemType SymbolicLink `
   -Path "C:\Users\[User]\AppData\Roaming\[Code|VSCodium]\User\snippets\global.code-snippets" `
   -Target "C:\path\to\devtools\etc\vscode\global.code-snippets" `
   -Force
-----
+```
 
-.VS Code / VS Codium on Linux
-[source]
-----
+**VS Code / VS Codium on Linux**
+```
 # Run these commands from the root directory of this repository.
 
 ln --symbolic --force "${PWD}/etc/vscode/settings.json" ~/.config/[Code|VSCodium]/User/settings.json
 ln --symbolic --force "${PWD}/etc/vscode/keybindings.json" ~/.config/[Code|VSCodium]/User/keybindings.json
 ln --symbolic --force "${PWD}/etc/vscode/chatLanguageModels.json" ~/.config/[Code|VSCodium]/User/chatLanguageModels.json
 ln --symbolic --force "${PWD}/etc/vscode/global.code-snippets" ~/.config/[Code|VSCodium]/User/snippets/global.code-snippets
-----
+```
 
-.Windows Subsystem for Linux
-[source]
-----
+**Windows Subsystem for Linux**
+```
 New-Item -ItemType SymbolicLink `
   -Path "C:\Users\[User]\.wslconfig" `
   -Target "C:\path\to\devtools\etc\wsl\.wslconfig" `
   -Force
-----
+```
 
-.Windows Terminal
-[source]
-----
+**Windows Terminal**
+```
 New-Item -ItemType SymbolicLink `
   -Path "C:\Users\[User]\AppData\Local\Packages\Microsoft.WindowsTerminal_[hash]\LocalState\settings.json" `
   -Target "C:\path\to\devtools\etc\wt\settings.json" `
   -Force
-----
+```
 
-.AI tools on Linux
-[source]
-----
+**AI tools on Linux**
+```
 ln --symbolic --force "${PWD}/etc/continue/config.yaml" ~/.continue/config.yaml
 ln --symbolic --force "${PWD}/etc/qwen/settings.json" ~/.qwen/settings.json
-----
+```
 
 The KeePassXC configuration file can either be symlinked or imported manually.
 
-.KeePassXC on Linux
-[source]
-----
+**KeePassXC on Linux**
+```
 ln --symbolic --force "${PWD}/etc/keepassxc/keepassxc.ini" ~/.config/keepassxc/keepassxc.ini
-----
+```
 
-==== 3. Add the `bin` directory to your PATH environment variable
+#### 3. Add the `bin` directory to your PATH environment variable
 
 Windows binaries for various programs are bundled in the `bin` directory of this repository. These programs can be installed on your Windows machine simply by adding this repository's `bin` directory to your system's `PATH` environment variable.
 
-[NOTE]
-======
-The `delta`, `lazygit`, `oh-my-posh` binaries are required for my {link-dotfiles}[dotfiles] configuration to work in Git Bash for Windows. For WSL2 and other Unix environments, the equivalent packages can be installed using my {link-bootstrap}[bootstrap] scripts.
-======
+> **Note:** The `delta`, `lazygit`, `oh-my-posh` binaries are required for my [dotfiles](https://github.com/kieranpotts/dotfiles) configuration to work in Git Bash for Windows. For WSL2 and other Unix environments, the equivalent packages can be installed using my [bootstrap](https://github.com/kieranpotts/bootstrap) scripts.
 
-==== 4. Sync VS Code settings with GitHub Codespaces
+#### 4. Sync VS Code settings with GitHub Codespaces
 
-Optionally, you can use GitHub Settings Sync to have a consistent user experience between cloud and local instances of VS Code. You will need to login to VS Code using your GitHub account, and enable Settings Sync in your VS Code user settings. Then go to your {link-codespace-settings}[GitHub Codespaces options] and enable the following option:
+Optionally, you can use GitHub Settings Sync to have a consistent user experience between cloud and local instances of VS Code. You will need to login to VS Code using your GitHub account, and enable Settings Sync in your VS Code user settings. Then go to your [GitHub Codespaces options](https://github.com/settings/codespaces) and enable the following option:
 
-image::./_/github-enable-settings-sync.png[]
+![](./_/github-enable-settings-sync.png)
 
-=== Maintenance
+### Maintenance
 
 _The following documentation is for the project maintainers._
 
 Fresh Windows binaries can be downloaded from the following links. The binaries bundled in this repository are for the x86-64 architecture, also known as x86_64, x64, or amd64, and compatible with the 64-bit CPU architecture used in Intel and AMD processors.
 
-* {link-delta}[*delta*]: Look for `delta-<version>-x86_64-pc-windows-msvc.zip`
+- [**delta**](https://github.com/dandavison/delta/releases): Look for `delta-<version>-x86_64-pc-windows-msvc.zip`
 
-* {link-htmlq}[*htmlq*]: Look for the latest `htmlq-x86_64-windows.zip` release.
+- [**htmlq**](https://github.com/mgdm/htmlq/releases): Look for the latest `htmlq-x86_64-windows.zip` release.
 
-* {link-jabba}[*jabba*]: Look for the latest `windows-amd64.exe` release.
+- [**jabba**](https://github.com/shyiko/jabba/releases): Look for the latest `windows-amd64.exe` release.
 
-* {link-jq}[*jq*]: Look for the latest `jq-win64.exe` release.
+- [**jq**](https://github.com/jqlang/jq/releases): Look for the latest `jq-win64.exe` release.
 
-* {link-lazygit}[*lazygit*]: Extract from `lazygit_<version>_Windows_x86_64.zip`.
+- [**lazygit**](https://github.com/jesseduffield/lazygit/releases): Extract from `lazygit_<version>_Windows_x86_64.zip`.
 
-* {link-make}[*make*]: Search for the latest `without-guile-w32-bin` and extract the `make.exe` file from the archive.
+- [**make**](https://sourceforge.net/projects/ezwinports/files/): Search for the latest `without-guile-w32-bin` and extract the `make.exe` file from the archive.
 
-* {link-nvm-windows}[*nvm (Node Version Manager) for Windows*]: Download the latest `nvm-noinstall.zip` archive and extract the `nvm.exe` file.
+- [**nvm (Node Version Manager) for Windows**](https://github.com/coreybutler/nvm-windows/releases/): Download the latest `nvm-noinstall.zip` archive and extract the `nvm.exe` file.
 
-* {link-ohmyposh}[*oh-my-posh*]: Download the `posh-windows-arm64.exe` file and rename it to `oh-my-posh.exe`.
+- [**oh-my-posh**](https://github.com/JanDeDobbeleer/oh-my-posh/releases): Download the `posh-windows-arm64.exe` file and rename it to `oh-my-posh.exe`.
 
-* {link-wget}[*wget*]: Download the latest x64 `.exe` file.
+- [**wget**](https://eternallybored.org/misc/wget/): Download the latest x64 `.exe` file.
 
-* {link-xpdf}[*Xpdf*]: Download the Windows Xpdf command line tool, extract, and copy the contents of the `bin64` directory.
+- [**Xpdf**](https://www.xpdfreader.com/download.html): Download the Windows Xpdf command line tool, extract, and copy the contents of the `bin64` directory.
 
-*Neovim* is not available as a standalone binary. It MUST be {link-neovim-install}[installed using a package manager] like Winget or Chocolatey, or the Windows installer package available from the project's {link-neovim}[releases page].
+**Neovim** is not available as a standalone binary. It MUST be [installed using a package manager](https://github.com/neovim/neovim/blob/master/INSTALL.md) like Winget or Chocolatey, or the Windows installer package available from the project's [releases page](https://github.com/neovim/neovim/releases).
 
 Updates to the font packages can be downloaded from the following resources:
 
-* {link-hack-font}[*Hack Font*]: Download an archive of the TTF files from the repository's releases page.
+- [**Hack Font**](https://github.com/source-foundry/Hack): Download an archive of the TTF files from the repository's releases page.
 
-* {link-maple-font}[*Maple Font*]: Choose the default, unhinted TTF files with ligatures (ie. merged characters), from the repository's releases page. (The unhinted versions are optimized for high-resolution displays. The "normal" variant is another option. It is less opinionated than the "default" version, and is a little less characterful for it.)
+- [**Maple Font**](https://github.com/subframe7536/maple-font): Choose the default, unhinted TTF files with ligatures (ie. merged characters), from the repository's releases page. (The unhinted versions are optimized for high-resolution displays. The "normal" variant is another option. It is less opinionated than the "default" version, and is a little less characterful for it.)
 
-''''
+---
 
-Copyright © 2020-present Kieran Potts, link:./LICENSE.txt[MIT License]
+Copyright © 2020-present Kieran Potts, [MIT License](./LICENSE.txt)
 
 The font files and executable binaries redistributed via this repository are copyright their respective authors and may be subject to alternative free and open source software licenses.
