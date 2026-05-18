@@ -282,7 +282,10 @@
     "main",
     "master",
     "trunk",
-    "dev",
+    //"dev", -> Allowed for continuous integration.
+    "test",
+    "ready",
+    "release",
     "release/*"
   ],
 
