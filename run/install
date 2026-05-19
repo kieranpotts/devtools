@@ -8,6 +8,16 @@
 # of any existing configuration files before they are replaced.
 #
 
+# This is required for the `ln` command to generate proper symlinks in
+# MSysGit / Git Bash for Windows. Without this configuration the `ln` command
+# in this runtime environment will create copies of the dotfiles, rather than
+# symlinks to them.
+
+windows() { [ -n "$WINDIR" ]; }
+if windows; then
+  export MSYS=winsymlinks:nativestrict
+fi
+
 # Absolute path to this script,
 # eg `/path/to/devtools/run/install`.
 
