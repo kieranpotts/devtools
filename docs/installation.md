@@ -70,6 +70,28 @@ New-Item -ItemType SymbolicLink `
   -Force
 
 #
+# Sublime Merge
+#
+
+New-Item -ItemType SymbolicLink `
+  -Path "C:\Users\[User]\AppData\Roaming\Sublime Merge\Packages\User\Preferences.sublime-settings" `
+  -Target "C:\path\to\devtools\etc\sublime-merge\Preferences.sublime-settings" `
+  -Force
+
+#
+# tmux
+#
+
+New-Item -ItemType SymbolicLink `
+  -Path "C:\Users\[User]\.tmux.conf" `
+  -Target "C:\path\to\dotfiles\etc\tmux\tmux.conf" `
+  -Force
+New-Item -ItemType SymbolicLink `
+  -Path "C:\Users\[User]\.tmux\dev" `
+  -Target "C:\path\to\dotfiles\etc\tmux\inc\dev" `
+  -Force
+
+#
 # VS Code / VS Codium
 #
 
@@ -100,28 +122,6 @@ New-Item -ItemType SymbolicLink `
 New-Item -ItemType SymbolicLink `
   -Path "C:\Users\[User]\AppData\Local\Packages\Microsoft.WindowsTerminal_[hash]\LocalState\settings.json" `
   -Target "C:\path\to\devtools\etc\wt\settings.json" `
-  -Force
-
-#
-# Sublime Merge
-#
-
-New-Item -ItemType SymbolicLink `
-  -Path "C:\Users\[User]\AppData\Roaming\Sublime Merge\Packages\User\Preferences.sublime-settings" `
-  -Target "C:\path\to\devtools\etc\sublime-merge\Preferences.sublime-settings" `
-  -Force
-
-#
-# tmux
-#
-
-New-Item -ItemType SymbolicLink `
-  -Path "C:\Users\[User]\.tmux.conf" `
-  -Target "C:\path\to\dotfiles\etc\tmux\tmux.conf" `
-  -Force
-New-Item -ItemType SymbolicLink `
-  -Path "C:\Users\[User]\.tmux\dev" `
-  -Target "C:\path\to\dotfiles\etc\tmux\inc\dev" `
   -Force
 
 #
