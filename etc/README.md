@@ -2,7 +2,7 @@
 
 The `etc` directory contains configuration files for various devtools – some of which are cross-platform and so the same configurations can be shared between Windows and Linux installations, for example.
 
-On Linux, the [installer](../run/install) creates the symlinks listed below automatically. On Windows, symlinks must be created manually via PowerShell – see [docs/installation.md](../docs/installation.md#create-symlinks-to-the-configuration-files) for the commands.
+On Linux, the [installer](../run/install) creates the symlinks listed below automatically (except for Windows-only apps: Sublime Merge, Windows Terminal, and WSL). On Windows, symlinks must be created manually via PowerShell – see [docs/installation.md](../docs/installation.md#create-symlinks-to-the-configuration-files) for the commands.
 
 Contents:
 
