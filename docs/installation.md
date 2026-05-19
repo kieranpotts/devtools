@@ -10,7 +10,7 @@ If using Windows with WSL2, the devtools may need to be cloned in two places –
 
 Then follow the steps below to set up everything.
 
-## 1. Install the fonts.
+## Install the fonts.
 
 Some devtools configurations depend on the following fonts being installed locally:
 
@@ -21,7 +21,7 @@ TrueType files for these fonts are included in the `./vendor/fonts` directory. T
 
 Hack and Maple Mono are programming fonts. They add special ligatures that merge multiple consecutive characters into a single composite glyph, for example `>=` is presented as `≥` and `!=` as `≠`, improving readability. The Nerd Font versions are extended with additional glyphs that are used to create visual effects like icons and rounded corners in a shell's prompt line.
 
-## 2. Create symlinks to the configuration files.
+## Create symlinks to the configuration files.
 
 **Linux**
 
@@ -39,7 +39,27 @@ The installer will back up any existing configuration files before replacing the
 
 Run Windows Powershell in administrator mode and execute the following commands, changing the filesystem paths as required.
 
+NOTE: Configurations for CLI tools like LazyGit, Neovim, and tmux MUST be installed in the Windows host to use those tools from emulators like MySysGit / Git Bash.
+
 ```powershell
+#
+# LazyGit
+#
+
+New-Item -ItemType SymbolicLink `
+  -Path "C:\Users\[User]\AppData\Roaming\lazygit\config.yml" `
+  -Target "C:\path\to\dotfiles\etc\lazygit\config.yml" `
+  -Force
+
+#
+# Neovim
+#
+
+New-Item -ItemType SymbolicLink `
+  -Path "C:\Users\[User]\AppData\Local\nvim\init.vim" `
+  -Target "C:\path\to\dotfiles\etc\nvim\init.vim" `
+  -Force
+
 #
 # VS Code / VS Codium
 #
@@ -83,6 +103,19 @@ New-Item -ItemType SymbolicLink `
   -Force
 
 #
+# tmux
+#
+
+New-Item -ItemType SymbolicLink `
+  -Path "C:\Users\[User]\.tmux.conf" `
+  -Target "C:\path\to\dotfiles\etc\tmux\tmux.conf" `
+  -Force
+New-Item -ItemType SymbolicLink `
+  -Path "C:\Users\[User]\.tmux\dev" `
+  -Target "C:\path\to\dotfiles\etc\tmux\inc\dev" `
+  -Force
+
+#
 # WSL
 #
 
@@ -92,7 +125,7 @@ New-Item -ItemType SymbolicLink `
   -Force
 ```
 
-## 3. Add the `bin` directory to your PATH environment variable.
+## Add the `bin` directory to your PATH environment variable.
 
 **Windows only.**
 
@@ -102,7 +135,7 @@ These programs can be installed on your Windows machine simply by adding this re
 
 Native binaries should be installed in WSL in the normal way.
 
-## 4. Sync VS Code settings with GitHub Codespaces.
+## Sync VS Code settings with GitHub Codespaces.
 
 Optionally, you can use GitHub Settings Sync to have a consistent user experience between cloud and local instances of VS Code. There are two steps to follow:
 

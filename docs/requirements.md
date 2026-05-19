@@ -2,7 +2,17 @@
 
 Configurations are included for the following programs, all of which are OPTIONAL:
 
-- [Sublime Merge](https://www.sublimemerge.com/)
-- [Visual Studio Code](https://code.visualstudio.com/)
-- [Windows Terminal](https://github.com/microsoft/terminal)
+- [Continue](https://www.continue.dev/)
 - [KeePassXC](https://keepassxc.org/)
+- [LazyGit](https://github.com/jesseduffield/lazygit)
+- [Neovim](https://neovim.io/)
+- [Qwen Code](https://github.com/QwenLM/qwen-code)
+- [Sublime Merge](https://www.sublimemerge.com/)
+- [tmux](https://github.com/tmux/tmux)
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Windows Subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/install)
+- [Windows Terminal](https://github.com/microsoft/terminal)
+
+## Other requirements
+
+If using Docker Desktop for Windows with the WSL back-end, it is RECOMMENDED to disable Docker's resource saver feature, as it is known to [freeze WSL](https://github.com/docker/for-win/issues/14656).

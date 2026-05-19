@@ -93,6 +93,34 @@ cp --no-clobber --dereference ~/.config/keepassxc/keepassxc.ini ~/.config/keepas
 ln --symbolic --force "${DIR_PATH}/etc/keepassxc/keepassxc.ini" ~/.config/keepassxc/keepassxc.ini || errors=1
 
 #
+# LazyGit
+#
+
+mkdir -p ~/.config/lazygit
+cp --no-clobber --dereference ~/.config/lazygit/config.yml ~/.config/lazygit/config.yml.bak 2> /dev/null
+ln --symbolic --force "${DIR_PATH}/etc/lazygit/config.yml" ~/.config/lazygit/config.yml || errors=1
+
+#
+# Neovim
+#
+
+mkdir -p ~/.config/nvim
+cp --no-clobber --dereference ~/.config/nvim/init.vim ~/.config/nvim/init.vim.bak 2> /dev/null
+ln --symbolic --force "${DIR_PATH}/etc/nvim/init.vim" ~/.config/nvim/init.vim || errors=1
+
+#
+# tmux
+#
+
+mkdir -p ~/.tmux
+
+cp --no-clobber --dereference ~/.tmux.conf ~/.tmux.conf.bak 2> /dev/null
+cp --no-clobber --dereference ~/.tmux/dev ~/.tmux/dev.bak 2> /dev/null
+
+ln --symbolic --force "${DIR_PATH}/etc/tmux/tmux.conf" ~/.tmux.conf || errors=1
+ln --symbolic --force "${DIR_PATH}/etc/tmux/inc/dev" ~/.tmux/dev || errors=1
+
+#
 # Outcome - Warn the user if one or more symlink generations failed.
 #
 
