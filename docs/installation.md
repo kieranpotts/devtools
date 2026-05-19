@@ -6,11 +6,11 @@ To install these devtools on a new machine, first clone the repository to the ho
 git clone git@github.com:<user_or_org>/devtools.git
 ```
 
-If using Windows with WSL2, the devtools should be cloned to the host (Windows) not the guest OS (WSL2).
+If using Windows with WSL2, the devtools may need to be cloned in two places – directly on the host (Windows) and also the guest OS (WSL2) – depending on which tools you're using and where.
 
 Then follow the steps below to set up everything.
 
-#### 1. Install the fonts.
+## 1. Install the fonts.
 
 Some devtools configurations depend on the following fonts being installed locally:
 
@@ -21,20 +21,29 @@ TrueType files for these fonts are included in the `./vendor/fonts` directory. T
 
 Hack and Maple Mono are programming fonts. They add special ligatures that merge multiple consecutive characters into a single composite glyph, for example `>=` is presented as `≥` and `!=` as `≠`, improving readability. The Nerd Font versions are extended with additional glyphs that are used to create visual effects like icons and rounded corners in a shell's prompt line.
 
-#### 2. Create symlinks to the configuration files.
+## 2. Create symlinks to the configuration files.
 
-Configuration files are included for various development tools, including VS Code and Windows Terminal, for easy portability between machines. To use these configurations, you will need to create symlinks to them from the filesystem locations the target programs expect them to be. To do that, run Windows Powershell in administrator mode and execute the following commands, changing the filesystem paths as required.
+**Linux**
 
-**Sublime Merge**
+Run the install script from the repository root:
+
 ```
-New-Item -ItemType SymbolicLink `
-  -Path "C:\Users\[User]\AppData\Roaming\Sublime Merge\Packages\User\Preferences.sublime-settings" `
-  -Target "C:\path\to\devtools\etc\sublime-merge\Preferences.sublime-settings" `
-  -Force
+./run/install
 ```
 
-**VS Code / VS Codium on Windows**
-```
+This installs symlinks to this repository's devtools configurations, from the locations that each devtool expects to find them.
+
+The installer will back up any existing configuration files before replacing them with symlinks into this repository.
+
+**Windows**
+
+Run Windows Powershell in administrator mode and execute the following commands, changing the filesystem paths as required.
+
+```powershell
+#
+# VS Code / VS Codium
+#
+
 New-Item -ItemType SymbolicLink `
   -Path "C:\Users\[User]\AppData\Roaming\[Code|VSCodium]\User\settings.json" `
   -Target "C:\path\to\devtools\etc\vscode\settings.json" `
@@ -54,55 +63,51 @@ New-Item -ItemType SymbolicLink `
   -Path "C:\Users\[User]\AppData\Roaming\[Code|VSCodium]\User\snippets\global.code-snippets" `
   -Target "C:\path\to\devtools\etc\vscode\global.code-snippets" `
   -Force
-```
 
-**VS Code / VS Codium on Linux**
-```
-# Run these commands from the root directory of this repository.
+#
+# Windows Terminal
+#
 
-ln --symbolic --force "${PWD}/etc/vscode/settings.json" ~/.config/[Code|VSCodium]/User/settings.json
-ln --symbolic --force "${PWD}/etc/vscode/keybindings.json" ~/.config/[Code|VSCodium]/User/keybindings.json
-ln --symbolic --force "${PWD}/etc/vscode/chatLanguageModels.json" ~/.config/[Code|VSCodium]/User/chatLanguageModels.json
-ln --symbolic --force "${PWD}/etc/vscode/global.code-snippets" ~/.config/[Code|VSCodium]/User/snippets/global.code-snippets
-```
+New-Item -ItemType SymbolicLink `
+  -Path "C:\Users\[User]\AppData\Local\Packages\Microsoft.WindowsTerminal_[hash]\LocalState\settings.json" `
+  -Target "C:\path\to\devtools\etc\wt\settings.json" `
+  -Force
 
-**Windows Subsystem for Linux**
-```
+#
+# Sublime Merge
+#
+
+New-Item -ItemType SymbolicLink `
+  -Path "C:\Users\[User]\AppData\Roaming\Sublime Merge\Packages\User\Preferences.sublime-settings" `
+  -Target "C:\path\to\devtools\etc\sublime-merge\Preferences.sublime-settings" `
+  -Force
+
+#
+# WSL
+#
+
 New-Item -ItemType SymbolicLink `
   -Path "C:\Users\[User]\.wslconfig" `
   -Target "C:\path\to\devtools\etc\wsl\.wslconfig" `
   -Force
 ```
 
-**Windows Terminal**
-```
-New-Item -ItemType SymbolicLink `
-  -Path "C:\Users\[User]\AppData\Local\Packages\Microsoft.WindowsTerminal_[hash]\LocalState\settings.json" `
-  -Target "C:\path\to\devtools\etc\wt\settings.json" `
-  -Force
-```
+## 3. Add the `bin` directory to your PATH environment variable.
 
-**AI tools on Linux**
-```
-ln --symbolic --force "${PWD}/etc/continue/config.yaml" ~/.continue/config.yaml
-ln --symbolic --force "${PWD}/etc/qwen/settings.json" ~/.qwen/settings.json
-```
+**Windows only.**
 
-The KeePassXC configuration file can either be symlinked or imported manually.
+Windows binaries for various Unix programs are bundled in the `bin` directory of this repository.
 
-**KeePassXC on Linux**
-```
-ln --symbolic --force "${PWD}/etc/keepassxc/keepassxc.ini" ~/.config/keepassxc/keepassxc.ini
-```
+These programs can be installed on your Windows machine simply by adding this repository's `bin` directory to your system's `PATH` environment variable. This will make the programs available to emulators like Git Bash for Windows.
 
-#### 3. Add the `bin` directory to your PATH environment variable.
+Native binaries should be installed in WSL in the normal way.
 
-Windows binaries for various programs are bundled in the `bin` directory of this repository. These programs can be installed on your Windows machine simply by adding this repository's `bin` directory to your system's `PATH` environment variable.
+## 4. Sync VS Code settings with GitHub Codespaces.
 
-> **Note:** The `delta`, `lazygit`, `oh-my-posh` binaries are required for my [dotfiles](https://github.com/kieranpotts/dotfiles) configuration to work in Git Bash for Windows. For WSL2 and other Unix environments, the equivalent packages can be installed using my [bootstrap](https://github.com/kieranpotts/bootstrap) scripts.
+Optionally, you can use GitHub Settings Sync to have a consistent user experience between cloud and local instances of VS Code. There are two steps to follow:
 
-#### 4. Sync VS Code settings with GitHub Codespaces.
+1. Login to VS Code using your GitHub account, and enable Settings Sync in your VS Code user settings.
 
-Optionally, you can use GitHub Settings Sync to have a consistent user experience between cloud and local instances of VS Code. You will need to login to VS Code using your GitHub account, and enable Settings Sync in your VS Code user settings. Then go to your [GitHub Codespaces options](https://github.com/settings/codespaces) and enable the Settings Sync opion there, too:
+2. Go to your [GitHub Codespaces options](https://github.com/settings/codespaces) and enable the Settings Sync opion there, too:
 
 ![](./_/github-enable-settings-sync.png)

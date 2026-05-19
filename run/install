@@ -1,0 +1,94 @@
+#!/bin/sh
+
+#
+# Devtools installation script.
+#
+# WARNING: Existing devtools configurations will be overwritten by symlinks to
+# the configurations in this repository. However, backups will be created
+# of any existing configuration files before they are replaced.
+#
+
+# Absolute path to this script,
+# eg `/path/to/devtools/run/install`.
+
+FILE_PATH=$(readlink -f "$0")
+
+# Absolute path to the repository root (one directory up from this script),
+# eg `/path/to/devtools`.
+
+DIR_PATH=$(dirname "$(dirname "$FILE_PATH")")
+
+# Accumulates failures across all symlink operations. Each `ln` command appends
+# `|| errors=1` so that a single failure does not abort subsequent operations.
+# The result is checked once at the end.
+
+errors=0
+
+#
+# VS Code
+#
+
+# Create backups of config files that will be replaced by symlinks. The
+# `--no-clobber` option ensures existing backups are not overwritten. Symbolic
+# links are followed (`--dereference`) to backup the actual files, not the
+# symlinks. Errors are suppressed because it is okay for the source files
+# to not exist.
+
+mkdir -p ~/.config/Code/User/snippets
+
+cp --no-clobber --dereference ~/.config/Code/User/settings.json ~/.config/Code/User/settings.json.bak 2> /dev/null
+cp --no-clobber --dereference ~/.config/Code/User/keybindings.json ~/.config/Code/User/keybindings.json.bak 2> /dev/null
+cp --no-clobber --dereference ~/.config/Code/User/chatLanguageModels.json ~/.config/Code/User/chatLanguageModels.json.bak 2> /dev/null
+cp --no-clobber --dereference ~/.config/Code/User/snippets/global.code-snippets ~/.config/Code/User/snippets/global.code-snippets.bak 2> /dev/null
+
+ln --symbolic --force "${DIR_PATH}/etc/vscode/settings.json" ~/.config/Code/User/settings.json || errors=1
+ln --symbolic --force "${DIR_PATH}/etc/vscode/keybindings.json" ~/.config/Code/User/keybindings.json || errors=1
+ln --symbolic --force "${DIR_PATH}/etc/vscode/chatLanguageModels.json" ~/.config/Code/User/chatLanguageModels.json || errors=1
+ln --symbolic --force "${DIR_PATH}/etc/vscode/global.code-snippets" ~/.config/Code/User/snippets/global.code-snippets || errors=1
+
+#
+# VS Codium
+#
+
+mkdir -p ~/.config/VSCodium/User/snippets
+
+cp --no-clobber --dereference ~/.config/VSCodium/User/settings.json ~/.config/VSCodium/User/settings.json.bak 2> /dev/null
+cp --no-clobber --dereference ~/.config/VSCodium/User/keybindings.json ~/.config/VSCodium/User/keybindings.json.bak 2> /dev/null
+cp --no-clobber --dereference ~/.config/VSCodium/User/chatLanguageModels.json ~/.config/VSCodium/User/chatLanguageModels.json.bak 2> /dev/null
+cp --no-clobber --dereference ~/.config/VSCodium/User/snippets/global.code-snippets ~/.config/VSCodium/User/snippets/global.code-snippets.bak 2> /dev/null
+
+ln --symbolic --force "${DIR_PATH}/etc/vscode/settings.json" ~/.config/VSCodium/User/settings.json || errors=1
+ln --symbolic --force "${DIR_PATH}/etc/vscode/keybindings.json" ~/.config/VSCodium/User/keybindings.json || errors=1
+ln --symbolic --force "${DIR_PATH}/etc/vscode/chatLanguageModels.json" ~/.config/VSCodium/User/chatLanguageModels.json || errors=1
+ln --symbolic --force "${DIR_PATH}/etc/vscode/global.code-snippets" ~/.config/VSCodium/User/snippets/global.code-snippets || errors=1
+
+#
+# AI tools
+#
+
+mkdir -p ~/.continue
+cp --no-clobber --dereference ~/.continue/config.yaml ~/.continue/config.yaml.bak 2> /dev/null
+ln --symbolic --force "${DIR_PATH}/etc/continue/config.yaml" ~/.continue/config.yaml || errors=1
+
+mkdir -p ~/.qwen
+cp --no-clobber --dereference ~/.qwen/settings.json ~/.qwen/settings.json.bak 2> /dev/null
+ln --symbolic --force "${DIR_PATH}/etc/qwen/settings.json" ~/.qwen/settings.json || errors=1
+
+#
+# KeePassXC
+#
+
+mkdir -p ~/.config/keepassxc
+cp --no-clobber --dereference ~/.config/keepassxc/keepassxc.ini ~/.config/keepassxc/keepassxc.ini.bak 2> /dev/null
+ln --symbolic --force "${DIR_PATH}/etc/keepassxc/keepassxc.ini" ~/.config/keepassxc/keepassxc.ini || errors=1
+
+#
+# Outcome - Warn the user if one or more symlink generations failed.
+#
+
+if [ $errors -ne 0 ]; then
+  echo "Failed to create one or more symbolic links. Try again with elevated privileges."
+else
+  echo "== Installed devtools =="
+  echo "Restart your applications for all changes to take effect."
+fi

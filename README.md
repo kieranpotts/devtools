@@ -1,6 +1,8 @@
 # Devtools
 
-Configurations for some of my development tools, plus Windows ports of useful Unix tools like`make` and `wget` – making these available to emulators like [Git Bash for Windows](https://gitforwindows.org/).
+Configurations for some of my development tools, plus Windows ports of useful Unix tools like `make` and `wget` for use in Linux emulators like [Git Bash for Windows](https://gitforwindows.org/).
+
+The purpose of this repository is to support the migration of devtools and their configurations between machines.
 
 ## 📓 Documentation
 
