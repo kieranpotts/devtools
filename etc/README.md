@@ -8,6 +8,8 @@ Contents:
 
 - [`continue/config.yaml`](./continue/config.yaml): Configuration for the [Continue](https://www.continue.dev/) AI coding assistant. Symlinked to `~/.continue/config.yaml`.
 
+- [`docker/desktop/settings-store.json`](./docker/desktop/settings-store.json): Settings for [Docker Desktop](https://www.docker.com/products/docker-desktop/). Symlinked to `~/.docker/desktop/settings-store.json` on Linux, or `%APPDATA%\Docker\settings-store.json` on Windows.
+
 - [`keepassxc/keepassxc.ini`](./keepassxc/keepassxc.ini): Configuration for [KeePassXC](https://keepassxc.org/). Symlinked to `~/.config/keepassxc/keepassxc.ini`.
 
 - [`lazygit/config.yml`](./lazygit/config.yml): Configuration for [LazyGit](https://github.com/jesseduffield/lazygit). Symlinked to `~/.config/lazygit/config.yml`.

@@ -43,6 +43,15 @@ NOTE: Configurations for CLI tools like LazyGit, Neovim, and tmux MUST be instal
 
 ```powershell
 #
+# Docker Desktop
+#
+
+New-Item -ItemType SymbolicLink `
+  -Path "$env:APPDATA\Docker\settings-store.json" `
+  -Target "C:\path\to\devtools\etc\docker\desktop\settings-store.json" `
+  -Force
+
+#
 # LazyGit
 #
 

@@ -1,0 +1,11 @@
+{
+  "AutoStart": false,
+  "DesktopTerminalEnabled": true,
+  "EnableDockerAI": false,
+  "LastContainerdSnapshotterEnable": 1754748163,
+  "LicenseTermsVersion": 2,
+  "NetworkType": "gvisor",
+  "SettingsVersion": 43,
+  "ThemeSource": "light",
+  "UseContainerdSnapshotter": true
+}

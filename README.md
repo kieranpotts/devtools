@@ -1,6 +1,6 @@
 # Devtools
 
-Configurations for some of my development tools, plus Windows ports of useful Unix tools like `make` and `wget` for use in Linux emulators like [MySysGit / Git Bash](https://gitforwindows.org/).
+Configurations for some of my development tools. Plus programming fonts for use in code editors, and Windows ports of useful Unix tools like `make` and `wget` for use in Linux emulators like [MySysGit / Git Bash](https://gitforwindows.org/).
 
 The purpose of this repository is to support the migration of devtools and their configurations between machines.
 
