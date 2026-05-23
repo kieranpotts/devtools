@@ -5,7 +5,6 @@
       "Grep",
       "Glob",
       "WebSearch",
-
       "Bash(ls *)",
       "Bash(cat *)",
       "Bash(pwd)",
@@ -18,7 +17,6 @@
       "Bash(tail *)",
       "Bash(wc *)",
       "Bash(diff *)",
-
       "Bash(git status)",
       "Bash(git status *)",
       "Bash(git diff *)",
@@ -30,7 +28,6 @@
       "Bash(git add *)",
       "Bash(git commit -m *)",
       "Bash(git restore *)",
-
       "Bash(npm run *)",
       "Bash(npm test *)",
       "Bash(npm ci)",
@@ -38,7 +35,6 @@
       "Bash(pnpm *)",
       "Bash(yarn *)",
       "Bash(npx *)",
-
       "Bash(python *)",
       "Bash(python3 *)",
       "Bash(pip install *)",
@@ -46,11 +42,9 @@
       "Bash(pytest *)",
       "Bash(ruff *)",
       "Bash(mypy *)",
-
       "Bash(make *)",
       "Bash(docker compose *)",
       "Bash(jq *)",
-
       "Bash(mkdir *)",
       "Bash(touch *)",
       "Bash(cp *)",
@@ -65,13 +59,11 @@
       "Read(**/credentials)",
       "Read(**/*.pem)",
       "Read(**/*.key)",
-
       "Bash(rm *)",
       "Bash(sudo *)",
       "Bash(dd *)",
       "Bash(mkfs *)",
       "Bash(chmod 777 *)",
-
       "Bash(git push *)",
       "Bash(git reset --hard *)",
       "Bash(git clean *)",
