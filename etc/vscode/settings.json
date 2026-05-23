@@ -114,6 +114,9 @@
   "workbench.tree.enableStickyScroll": true,
   "workbench.tree.stickyScrollMaxItemCount": 3,
 
+  /* Show icons, not labels, in secondary sidebar tabs. */
+  "workbench.secondarySideBar.showLabels": false,
+
   /* Collapse search results, so files must be expanded to show matching text. */
   "search.collapseResults": "alwaysCollapse",
 
