@@ -9,6 +9,7 @@ Configurations are included for the following programs, all of which are OPTIONA
 - [KeePassXC](https://keepassxc.org/)
 - [LazyGit](https://github.com/jesseduffield/lazygit)
 - [Neovim](https://neovim.io/)
+- [Pi](https://pi.dev/)
 - [Qwen Code](https://github.com/QwenLM/qwen-code)
 - [Sublime Merge](https://www.sublimemerge.com/)
 - [tmux](https://github.com/tmux/tmux)

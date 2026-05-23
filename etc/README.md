@@ -20,6 +20,8 @@ Contents:
 
 - [`nvim/init.vim`](./nvim/init.vim): Configuration for [Neovim](https://neovim.io/). Symlinked to `~/.config/nvim/init.vim`.
 
+- [`pi/settings.json`](./pi/settings.json): Configuration for [Pi](https://pi.dev/). Symlinked to `~/.pi/agent/settings.json`.
+
 - [`qwen/settings.json`](./qwen/settings.json): Configuration for the [Qwen](https://qwen.ai/) AI coding assistant. Symlinked to `~/.qwen/settings.json`.
 
 - [`sublime-merge/Preferences.sublime-settings`](./sublime-merge/Preferences.sublime-settings): Configuration for [Sublime Merge](https://www.sublimemerge.com/). Symlinked to `~/.config/sublime-merge/Packages/User/Preferences.sublime-settings` on Linux, or `%APPDATA%\Sublime Merge\Packages\User\Preferences.sublime-settings` on Windows.
