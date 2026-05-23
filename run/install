@@ -58,6 +58,15 @@ mkdir -p ~/.docker/desktop
 cp --force "${DIR_PATH}/etc/docker/desktop/settings-store.json" ~/.docker/desktop/settings-store.json || errors=1
 
 #
+# Ghostty
+#
+
+mkdir -p ~/.config/ghostty
+cp --no-clobber --dereference ~/.config/ghostty/config.ghostty ~/.config/ghostty/config.ghostty.bak 2> /dev/null
+ln --symbolic --force "${DIR_PATH}/etc/ghostty/config.ghostty" ~/.config/ghostty/config.ghostty || errors=1
+
+
+#
 # KeePassXC
 #
 

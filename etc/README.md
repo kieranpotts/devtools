@@ -12,6 +12,8 @@ Contents:
 
 - [`docker/desktop/settings-store.json`](./docker/desktop/settings-store.json): Settings for [Docker Desktop](https://www.docker.com/products/docker-desktop/). _Moved_ (not symlinked) to `~/.docker/desktop/settings-store.json` on Linux, or `%APPDATA%\Docker\settings-store.json` on Windows. ⚠️ Docker Desktop breaks when this file is symlinked, so in this case the install script overwrites the original. Synchronization must be done manually.
 
+- [`ghostty/config.ghostty`](./ghostty/config.ghostty): Configuration for [Ghostty](https://ghostty.org/). Symlinked to `~/.config/ghostty/config.ghostty`.
+
 - [`keepassxc/keepassxc.ini`](./keepassxc/keepassxc.ini): Configuration for [KeePassXC](https://keepassxc.org/). Symlinked to `~/.config/keepassxc/keepassxc.ini`.
 
 - [`lazygit/config.yml`](./lazygit/config.yml): Configuration for [LazyGit](https://github.com/jesseduffield/lazygit). Symlinked to `~/.config/lazygit/config.yml`.
