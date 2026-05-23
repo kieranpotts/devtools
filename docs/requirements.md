@@ -2,6 +2,7 @@
 
 Configurations are included for the following programs, all of which are OPTIONAL:
 
+- [Claude Code](https://claude.com/product/claude-code)
 - [Continue](https://www.continue.dev/)
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 - [KeePassXC](https://keepassxc.org/)

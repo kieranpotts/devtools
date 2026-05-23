@@ -6,6 +6,8 @@ On Linux, the [installer](../run/install) creates the symlinks listed below auto
 
 Contents:
 
+- [`claude/settings.json`](./claude/settings.json): Configuration for the [Claude Code](https://claude.com/product/claude-code) AI coding assistant. Symlinked to `~/.claude/settings.json`.
+
 - [`continue/config.yaml`](./continue/config.yaml): Configuration for the [Continue](https://www.continue.dev/) AI coding assistant. Symlinked to `~/.continue/config.yaml`.
 
 - [`docker/desktop/settings-store.json`](./docker/desktop/settings-store.json): Settings for [Docker Desktop](https://www.docker.com/products/docker-desktop/). _Moved_ (not symlinked) to `~/.docker/desktop/settings-store.json` on Linux, or `%APPDATA%\Docker\settings-store.json` on Windows. ⚠️ Docker Desktop breaks when this file is symlinked, so in this case the install script overwrites the original. Synchronization must be done manually.

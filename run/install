@@ -35,6 +35,14 @@ DIR_PATH=$(dirname "$(dirname "$FILE_PATH")")
 errors=0
 
 #
+# Claude
+#
+
+mkdir -p ~/.claude
+cp --no-clobber --dereference ~/.claude/settings.json ~/.claude/settings.json.bak 2> /dev/null
+ln --symbolic --force "${DIR_PATH}/etc/claude/settings.json" ~/.claude/settings.json || errors=1
+
+#
 # Continue
 #
 
