@@ -46,7 +46,7 @@ NOTE: Configurations for CLI tools like LazyGit, Neovim, and tmux MUST be instal
 # Docker Desktop
 #
 
-Move-Item `
+Copy-Item `
   -Path "C:\path\to\devtools\etc\docker\desktop\settings-store.json" `
   -Destination "$env:APPDATA\Docker\settings-store.json" `
   -Force
