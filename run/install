@@ -47,10 +47,7 @@ ln --symbolic --force "${DIR_PATH}/etc/continue/config.yaml" ~/.continue/config.
 #
 
 mkdir -p ~/.docker/desktop
-
-cp --no-clobber --dereference ~/.docker/desktop/settings-store.json ~/.docker/desktop/settings-store.json.bak 2> /dev/null
-
-ln --symbolic --force "${DIR_PATH}/etc/docker/desktop/settings-store.json" ~/.docker/desktop/settings-store.json || errors=1
+mv --force "${DIR_PATH}/etc/docker/desktop/settings-store.json" ~/.docker/desktop/settings-store.json || errors=1
 
 #
 # KeePassXC
