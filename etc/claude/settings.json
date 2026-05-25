@@ -71,5 +71,6 @@
       "Bash(pnpm publish *)",
       "Bash(docker push *)"
     ]
-  }
+  },
+  "model": "opus"
 }
