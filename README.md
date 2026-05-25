@@ -10,7 +10,7 @@ The purpose of this repository is to support the migration of devtools and their
 - [**Installation**](./docs/installation.md)
 - [**Maintenance**](./docs/maintenance.md)
 
----
+-----
 
 Copyright © 2020-present Kieran Potts, [MIT License](./LICENSE.txt)
 
