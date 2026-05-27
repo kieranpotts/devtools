@@ -17,6 +17,8 @@
       "Bash(tail *)",
       "Bash(wc *)",
       "Bash(diff *)",
+      "Bash(gh api *)",
+      "Bash(gh repo *)",
       "Bash(git status)",
       "Bash(git status *)",
       "Bash(git diff *)",
