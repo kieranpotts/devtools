@@ -461,7 +461,7 @@
   },
 
   /* Disable GitHub Copilot Chat - no longer an extension. */
-  "chat.disableAIFeatures": true,
+  "chat.disableAIFeatures": false,
   "chat.viewSessions.orientation": "stacked",
 
   "claudeCode.selectedModel": "haiku",
