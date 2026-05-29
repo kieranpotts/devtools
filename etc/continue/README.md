@@ -54,6 +54,18 @@ The opt-in `workstation` profile assumes a GPU, so every model runs locally.
 | `autocomplete` | `qwen2.5-coder:1.5b-base` | 💻 Local | ~1.5B code model; returns suggestions fast enough to feel instant. |
 | `embed` | `nomic-embed-text:latest` | 💻 Local | Purpose-built embedding model; embeds many files cheaply. |
 
+## Reranking (intentionally omitted)
+
+No model is assigned the `rerank` role. A reranker reorders the chunks returned by codebase retrieval before they reach the chat model, which sharpens `@codebase` relevance – but Continue [does not support Ollama as a rerank provider](https://docs.continue.dev/customize/model-roles/reranking). Ollama has no native rerank endpoint ([continuedev/continue#2487](https://github.com/continuedev/continue/issues/2487)), and reranking issues many parallel requests that local models handle poorly.
+
+Every reranker Continue *does* support would break a property these configs are built around:
+
+- **Voyage `rerank-2` / Cohere `rerank-english-v3.0`** – cloud services that require an API key. Since this repo is public the key could only be referenced via a secret/env var, and it adds a third-party cloud dependency (and, on the workstation, breaks the all-local guarantee).
+- **Hugging Face TEI** – stays local, but is a *separate* service to run and maintain (e.g. a `bge-reranker-v2-m3` container on `:8080`), not Ollama.
+- **LLM-as-reranker** – reuses a chat model, but Continue explicitly discourages it for higher cost and lower accuracy.
+
+Retrieval still works without a reranker; it just relies on the embedding model's ordering alone. Keeping both profiles backed purely by Ollama – with no extra services or secrets – is worth more here than the marginal retrieval gain. Revisit this if Ollama gains native rerank support, or if `@codebase` precision becomes a pain point worth a TEI service or a Voyage key.
+
 ## Pulling the models
 
 Continue does not download models; Ollama does. On each machine, pull the models its profile references before first use:
