@@ -91,6 +91,14 @@ cp --no-clobber --dereference ~/.config/nvim/init.vim ~/.config/nvim/init.vim.ba
 ln --symbolic --force "${DIR_PATH}/etc/nvim/init.vim" ~/.config/nvim/init.vim || errors=1
 
 #
+# Ollama
+#
+
+mkdir -p ~/.ollama
+cp --no-clobber --dereference ~/.ollama/config.json ~/.ollama/config.json.bak 2> /dev/null
+ln --symbolic --force "${DIR_PATH}/etc/ollama/config.json" ~/.ollama/config.json || errors=1
+
+#
 # Pi
 #
 

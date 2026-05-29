@@ -1,0 +1,13 @@
+{
+  "integrations": {
+    "pi": {
+      "models": [
+        "kimi-k2.6:cloud",
+        "qwen3.5:cloud",
+        "gemma4:31b-cloud",
+        "glm-5.1:cloud"
+      ]
+    }
+  },
+  "last_selection": "run"
+}
