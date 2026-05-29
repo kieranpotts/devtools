@@ -1,6 +1,6 @@
 # https://docs.continue.dev/reference
 
-name: Local Config
+name: Workstation Config
 version: 1.0.0
 schema: v1
 models:
@@ -33,7 +33,7 @@ models:
   # fire on every keystroke, so latency is the primary constraint. Models
   # with ~1.5B parameters return suggestions fast enough to feel instant.
   #
-  # The Qwen Coder models are tuned specificallyfor programming tasks,
+  # The Qwen Coder models are tuned specifically for programming tasks,
   # so they still produce good quality outputs despite their compact size.
   # The `-base` variants are optimal for raw text continuation, rather
   # than chat-style instructions.

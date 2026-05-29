@@ -35,6 +35,14 @@ This installs symlinks to this repository's devtools configurations, from the lo
 
 The installer will back up any existing configuration files before replacing them with symlinks into this repository.
 
+**Machine profiles.** Some tools have per-machine configuration variants. The installer uses the `default` profile unless told otherwise; pass `--profile workstation` to opt into the workstation variant instead:
+
+```
+./run/install --profile workstation
+```
+
+Currently only [Continue](../etc/continue/README.md) varies by profile: the `default` profile uses Ollama Cloud models (it works on any machine), while the opt-in `workstation` profile runs every model locally on a GPU. All other configurations are shared across profiles.
+
 **Windows**
 
 Run Windows Powershell in administrator mode and execute the following commands, changing the filesystem paths as required.

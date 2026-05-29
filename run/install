@@ -34,6 +34,43 @@ DIR_PATH=$(dirname "$(dirname "$FILE_PATH")")
 
 errors=0
 
+# Machine profile. Some tools have per-machine configuration variants. For
+# example, Continue uses Ollama Cloud-hosted models by default, but runs every
+# model locally under the opt-in `workstation` profile. The profile defaults to
+# `default` when not specified; pass `--profile workstation` (or
+# `--profile=workstation`) to opt into the workstation variant.
+
+PROFILE=default
+
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --profile=*)
+      PROFILE="${1#--profile=}"
+      ;;
+    --profile)
+      if [ $# -lt 2 ]; then
+        echo "Error: --profile requires a value ('default' or 'workstation')." >&2
+        exit 1
+      fi
+      PROFILE="$2"
+      shift
+      ;;
+    *)
+      echo "Error: unknown argument '$1'." >&2
+      exit 1
+      ;;
+  esac
+  shift
+done
+
+case "$PROFILE" in
+  default | workstation) ;;
+  *)
+    echo "Error: unknown profile '${PROFILE}' (expected 'default' or 'workstation')." >&2
+    exit 1
+    ;;
+esac
+
 #
 # Claude
 #
@@ -48,7 +85,7 @@ ln --symbolic --force "${DIR_PATH}/etc/claude/settings.json" ~/.claude/settings.
 
 mkdir -p ~/.continue
 cp --no-clobber --dereference ~/.continue/config.yaml ~/.continue/config.yaml.bak 2> /dev/null
-ln --symbolic --force "${DIR_PATH}/etc/continue/config.yaml" ~/.continue/config.yaml || errors=1
+ln --symbolic --force "${DIR_PATH}/etc/continue/config.${PROFILE}.yaml" ~/.continue/config.yaml || errors=1
 
 #
 # Docker Desktop
@@ -174,6 +211,6 @@ ln --symbolic --force "${DIR_PATH}/etc/vscode/global.code-snippets" ~/.config/VS
 if [ $errors -ne 0 ]; then
   echo "Failed to create one or more symbolic links. Try again with elevated privileges."
 else
-  echo "== Installed devtools =="
+  echo "== Installed devtools (profile: ${PROFILE}) =="
   echo "Restart your applications for all changes to take effect."
 fi

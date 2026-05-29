@@ -1,0 +1,56 @@
+# https://docs.continue.dev/reference
+
+name: Default Config
+version: 1.0.0
+schema: v1
+models:
+
+  # This is the default profile, used on any machine that does not have a local
+  # GPU to run large models. Chat is therefore served by a large general-purpose
+  # model hosted in Ollama Cloud. The `-cloud` tag routes the request through the
+  # local Ollama proxy out to Ollama's cloud, so the provider and base URL stay
+  # the same as for local models.
+
+  - name: Gemma 4 31b (Cloud)
+    provider: ollama
+    model: gemma4:31b-cloud
+    roles:
+      - chat
+
+  # Editing and applying changes also run against a cloud model. Latency here is
+  # network-bound rather than compute-bound, so there is little benefit to the
+  # smaller, faster model used on the workstation – for the same round-trip cost
+  # a more capable coder model produces more reliable diffs.
+
+  - name: Qwen 3.5 (Cloud)
+    provider: ollama
+    model: qwen3.5:cloud
+    roles:
+      - edit
+      - apply
+
+  # Autocomplete and embeddings stay local even in this default profile. Both
+  # models are small enough to run comfortably on CPU, and keeping them local
+  # avoids a network round-trip on the two latency-critical paths: autocomplete
+  # (fires on every keystroke) and codebase indexing (embeds many files). These
+  # are therefore the only two models that need to be pulled locally here.
+
+  - name: Qwen2.5-Coder 1.5B
+    provider: ollama
+    model: qwen2.5-coder:1.5b-base
+    roles:
+      - autocomplete
+
+  - name: Nomic Embed
+    provider: ollama
+    model: nomic-embed-text:latest
+    roles:
+      - embed
+
+  # Expose every other model that is pulled locally or available via Ollama
+  # Cloud sign-in, so they can be selected manually in the UI without being
+  # explicitly declared here.
+
+  - name: Autodetect
+    provider: ollama
+    model: AUTODETECT
