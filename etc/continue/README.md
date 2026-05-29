@@ -28,7 +28,7 @@ Continue lets a different model serve each *role*. Both profiles assign one mode
 | `autocomplete` | Inline completions streamed as you type. Fires on every keystroke, so latency is the hard constraint. Ideal model is very small but trained and fine-tuned primarily on code – so fast _and_ quality domain-specific output A `-base` (non-instruct) variant is preferred because raw text continuation (FIM) suits completion better than chat-tuned instructions. |
 | `embed` | Only vector embeddings are required for codebase indexing and semantic search. Text generation not required for this use case. A small, purpose-built embedding model is the right tool. |
 
-An `Autodetect` entry (`model: AUTODETECT`) is also declared in both profiles. This  exposes every other model available to the local Ollama install for manual selection in the UI, without each model needing to be declared explicitly.
+An `Autodetect` entry (`model: AUTODETECT`) is also declared in both profiles. This exposes every other model available to the local Ollama install for manual selection in the UI, without each model needing to be declared explicitly. Its `roles` are scoped to `chat` deliberately: an entry with no `roles` defaults to `[chat, edit, apply, summarize]`, which would let every autodetected model claim the silently selected `edit`/`apply` roles and undercut the deliberate per-role models above.
 
 ## Default profile
 

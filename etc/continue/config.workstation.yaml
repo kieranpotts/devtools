@@ -59,8 +59,13 @@ models:
 
   # The autodetect setting exposes every other model pulled into the local
   # Ollama install, so they can be selected manually in the UI without
-  # being explicitly declared here.
+  # being explicitly declared here. The `roles` list is scoped to `chat` on
+  # purpose: an entry with no `roles` defaults to [chat, edit, apply,
+  # summarize], which would let every autodetected model claim the silently
+  # selected edit/apply roles and undercut the deliberate per-role models above.
 
   - name: Autodetect
     provider: ollama
     model: AUTODETECT
+    roles:
+      - chat
