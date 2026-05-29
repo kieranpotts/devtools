@@ -96,7 +96,10 @@ ln --symbolic --force "${DIR_PATH}/etc/nvim/init.vim" ~/.config/nvim/init.vim ||
 
 mkdir -p ~/.pi/agent
 cp --no-clobber --dereference ~/.pi/agent/settings.json ~/.pi/agent/settings.json.bak 2> /dev/null
+cp --no-clobber --dereference ~/.pi/agent/models.json ~/.pi/agent/models.json.bak 2> /dev/null
 ln --symbolic --force "${DIR_PATH}/etc/pi/settings.json" ~/.pi/agent/settings.json || errors=1
+ln --symbolic --force "${DIR_PATH}/etc/pi/models.json" ~/.pi/agent/models.json || errors=1
+
 
 #
 # Qwen
