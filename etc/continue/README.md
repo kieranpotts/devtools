@@ -71,12 +71,16 @@ Retrieval still works without a reranker; it just relies on the embedding model'
 Continue does not download models; Ollama does. On each machine, pull the models its profile references before first use:
 
 ```sh
-# Default profile – only the two local models need pulling; the cloud
-# models are reached via `ollama signin` rather than `ollama pull`.
+# Default profile. It's recommended to explicitly pull the cloud
+# models, too. The models themselves won't be downloaded, but their
+# manifests will be, making the cloud models available to all tools
+# configured to interact with the local ollama API server.
+ollama pull gemma4:31b-cloud
+ollama pull qwen3.5:cloud
 ollama pull qwen2.5-coder:1.5b-base
 ollama pull nomic-embed-text
 
-# Workstation profile – pull everything locally.
+# Workstation profile.
 ollama pull gemma4:31b
 ollama pull llama3.1:8b
 ollama pull qwen2.5-coder:1.5b-base
