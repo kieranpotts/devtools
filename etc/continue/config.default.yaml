@@ -27,19 +27,30 @@ models:
     model: qwen3.5:cloud
     roles:
       - edit
-      - apply
+      - applying
 
-  # Autocomplete and embeddings stay local even in this default profile. Both
-  # models are small enough to run comfortably on CPU, and keeping them local
-  # avoids a network round-trip on the two latency-critical paths: autocomplete
-  # (fires on every keystroke) and codebase indexing (embeds many files). These
-  # are therefore the only two models that need to be pulled locally here.
+  # Qwen2.5-Coder 1.5B proved to be too slow on my Dell XPS for a useful
+  # autocomplete tool. Running local models should decrease latency for
+  # autocomplete, which is a latency-critical path (the autocomplete event
+  # fires on every keystroke - with a short debounce). However, I found
+  # latency to be very high on CPU only, and switching to a cloud model
+  # actually decreased the latency and reliability very considerably.
 
-  - name: Qwen2.5-Coder 1.5B
+  # - name: Qwen2.5-Coder 1.5B
+  #   provider: ollama
+  #   model: qwen2.5-coder:1.5b-base
+  #   roles:
+  #     - autocomplete
+
+  - name: Qwen3-Coder-Next
     provider: ollama
-    model: qwen2.5-coder:1.5b-base
+    model: qwen3-coder-next:cloud
     roles:
       - autocomplete
+
+  # I'm still running an embeddings model locally on my laptop. This model
+  # is used for codebase indexing, and apparently its small enough to run
+  # comfortably on consumer CPU.
 
   - name: Nomic Embed
     provider: ollama
