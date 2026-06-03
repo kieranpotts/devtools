@@ -14,8 +14,6 @@ Contents:
 
 - [`ghostty/config.ghostty`](./ghostty/config.ghostty): Configuration for [Ghostty](https://ghostty.org/). Symlinked to `~/.config/ghostty/config.ghostty`.
 
-- [`keepassxc/keepassxc.ini`](./keepassxc/keepassxc.ini): Configuration for [KeePassXC](https://keepassxc.org/). Symlinked to `~/.config/keepassxc/keepassxc.ini`.
-
 - [`lazygit/config.yml`](./lazygit/config.yml): Configuration for [LazyGit](https://github.com/jesseduffield/lazygit). Symlinked to `~/.config/lazygit/config.yml`.
 
 - [`nvim/init.vim`](./nvim/init.vim): Configuration for [Neovim](https://neovim.io/). Symlinked to `~/.config/nvim/init.vim`.

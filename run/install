@@ -102,15 +102,6 @@ mkdir -p ~/.config/ghostty
 cp --no-clobber --dereference ~/.config/ghostty/config.ghostty ~/.config/ghostty/config.ghostty.bak 2> /dev/null
 ln --symbolic --force "${DIR_PATH}/etc/ghostty/config.ghostty" ~/.config/ghostty/config.ghostty || errors=1
 
-
-#
-# KeePassXC
-#
-
-mkdir -p ~/.config/keepassxc
-cp --no-clobber --dereference ~/.config/keepassxc/keepassxc.ini ~/.config/keepassxc/keepassxc.ini.bak 2> /dev/null
-ln --symbolic --force "${DIR_PATH}/etc/keepassxc/keepassxc.ini" ~/.config/keepassxc/keepassxc.ini || errors=1
-
 #
 # LazyGit
 #

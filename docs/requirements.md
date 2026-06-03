@@ -6,7 +6,6 @@ Configurations are included for the following programs, all of which are OPTIONA
 - [Continue](https://www.continue.dev/)
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 - [Ghossty](https://ghostty.org/)
-- [KeePassXC](https://keepassxc.org/)
 - [LazyGit](https://github.com/jesseduffield/lazygit)
 - [Neovim](https://neovim.io/)
 - [Pi](https://pi.dev/)
