@@ -8,6 +8,9 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 
 {
+  "buffer_font_weight": 400.0,
+  "buffer_line_height": "comfortable",
+  "ui_font_weight": 500.0,
   "terminal": {
     "font_size": 14.0,
     "font_family": "Maple Mono NF",
@@ -70,8 +73,8 @@
     ],
     "model_parameters": [],
   },
-  "ui_font_size": 18,
-  "buffer_font_size": 14.0,
+  "ui_font_size": 17.0,
+  "buffer_font_size": 16.0,
   "theme": {
     "mode": "light",
     "light": "One Light",
