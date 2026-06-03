@@ -71,6 +71,12 @@ case "$PROFILE" in
     ;;
 esac
 
+# Create backups of config files that will be replaced by symlinks. The
+# `--no-clobber` option ensures existing backups are not overwritten. Symbolic
+# links are followed (`--dereference`) to backup the actual files, not the
+# symlinks. Errors are suppressed because it is okay for the source files
+# to not exist.
+
 #
 # Claude
 #
@@ -161,12 +167,6 @@ ln --symbolic --force "${DIR_PATH}/etc/tmux/inc/dev" ~/.tmux/dev || errors=1
 # VS Code
 #
 
-# Create backups of config files that will be replaced by symlinks. The
-# `--no-clobber` option ensures existing backups are not overwritten. Symbolic
-# links are followed (`--dereference`) to backup the actual files, not the
-# symlinks. Errors are suppressed because it is okay for the source files
-# to not exist.
-
 mkdir -p ~/.config/Code/User/snippets
 
 cp --no-clobber --dereference ~/.config/Code/User/settings.json ~/.config/Code/User/settings.json.bak 2> /dev/null
@@ -194,6 +194,14 @@ ln --symbolic --force "${DIR_PATH}/etc/vscode/settings.json" ~/.config/VSCodium/
 ln --symbolic --force "${DIR_PATH}/etc/vscode/keybindings.json" ~/.config/VSCodium/User/keybindings.json || errors=1
 ln --symbolic --force "${DIR_PATH}/etc/vscode/chatLanguageModels.json" ~/.config/VSCodium/User/chatLanguageModels.json || errors=1
 ln --symbolic --force "${DIR_PATH}/etc/vscode/global.code-snippets" ~/.config/VSCodium/User/snippets/global.code-snippets || errors=1
+
+#
+# Zed
+#
+
+mkdir -p ~/.config/zed
+cp --no-clobber --dereference ~/.config/zed/settings.json ~/.config/zed/settings.json.bak 2> /dev/null
+ln --symbolic --force "${DIR_PATH}/etc/zed/settings.json" ~/.config/zed/settings.json || errors=1
 
 #
 # Outcome - Warn the user if one or more symlink generations failed.

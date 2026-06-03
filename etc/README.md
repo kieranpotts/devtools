@@ -39,3 +39,5 @@ Contents:
 - [`wsl/.wslconfig`](./wsl/.wslconfig): Configuration for [Windows Subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/). Symlinked to `C:\Users\[User]\.wslconfig`. Windows only.
 
 - [`wt/settings.json`](./wt/settings.json): Configuration for [Windows Terminal](https://github.com/microsoft/terminal). Symlinked to `C:\Users\[User]\AppData\Local\Packages\Microsoft.WindowsTerminal_[hash]\LocalState\settings.json`. Windows only.
+
+- [`zed/settings.json`](./zed/settings.json): User settings for the [Zed editor](https://zed.dev/). Symlinked to `~/.config/zed/settings.json`.
