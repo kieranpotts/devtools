@@ -74,6 +74,6 @@
       "Bash(docker push *)"
     ]
   },
-  "effortLevel": "xhigh",
+  "effortLevel": "high",
   "model": "opus"
 }
