@@ -8,9 +8,36 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 
 {
+  "icon_theme": "Warm Charmed Icons",
+  "agent_ui_font_size": 16.0,
+  "tabs": {
+    "git_status": true,
+    "file_icons": false
+  },
+  "tab_bar": {
+    "show_tab_bar_buttons": true,
+    "show_nav_history_buttons": true,
+    "show": true
+  },
+  "title_bar": {
+    "button_layout": "platform_default",
+    "show_menus": false,
+    "show_branch_status_icon": true
+  },
+  "mouse_wheel_zoom": true,
+  "agent_buffer_font_size": 14.0,
+  "ui_font_family": "Maple Mono",
+  "agent_servers": {
+    "claude-acp": {
+      "default_config_options": {
+        "effort": "medium"
+      },
+      "type": "registry"
+    }
+  },
   "buffer_font_weight": 400.0,
   "buffer_line_height": "comfortable",
-  "ui_font_weight": 500.0,
+  "ui_font_weight": 400.0,
   "terminal": {
     "font_size": 14.0,
     "font_family": "Maple Mono NF",
@@ -73,11 +100,11 @@
     ],
     "model_parameters": [],
   },
-  "ui_font_size": 17.0,
-  "buffer_font_size": 16.0,
+  "ui_font_size": 15.0,
+  "buffer_font_size": 14.0,
   "theme": {
     "mode": "light",
-    "light": "One Light",
+    "light": "GitHub Light Tritanopia",
     "dark": "One Dark",
   },
 }
