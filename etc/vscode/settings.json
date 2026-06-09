@@ -423,8 +423,8 @@
   Extensions and built-in services.
   */
 
-  /* Don't show popups for recommended extensions. */
-  "extensions.ignoreRecommendations": true,
+  /* DO show popups for recommended extensions. */
+  "extensions.ignoreRecommendations": false,
 
   /* ---------------------------------------------------------------------------
   Remotes and Dev Containers.
@@ -452,6 +452,11 @@
   /* ---------------------------------------------------------------------------
   AI agents
   */
+
+  /* Disable GitHub Copilot completions for everything. */
+  "github.copilot.enable": {
+    "*": false
+  },
 
   "chat.instructionsFilesLocations": {
     ".github/instructions": true,
