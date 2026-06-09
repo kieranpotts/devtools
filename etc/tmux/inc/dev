@@ -2,17 +2,21 @@
 # Script to automate the creation of panes within tmux.
 #
 
-# Select the first (0) pane.
-selectp -t 0
+# Pane indices below are 1-based to match `pane-base-index 1` in
+# tmux.conf. If that setting changes, these targets must change too.
 
-# Split it into two halves, horizontally.
-splitw -h -p 50
-
-# Select the new, second (1) pane.
+# Select the first pane.
 selectp -t 1
 
+# Split it into two halves, horizontally. `-l 50%` sets the new pane to half
+# the size; the older `-p 50` percentage flag was removed in tmux 3.x.
+splitw -h -l 50%
+
+# Select the new, second pane.
+selectp -t 2
+
 # Split it into two halves, vertically.
-splitw -v -p 50
+splitw -v -l 50%
 
 # Go back to the first pane, so it has focus initially.
-selectp -t 0
+selectp -t 1
