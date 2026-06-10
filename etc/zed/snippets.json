@@ -1,0 +1,62 @@
+{
+  // Each snippet must have a name and body, but the prefix and description are optional.
+  // The prefix is used to trigger the snippet, but when omitted then the name is used.
+  //
+  // Use placeholders like $1, $2 or ${1:defaultValue} to define tab stops.
+  // The $0 determines the final cursor position.
+  // Placeholders with the same value are linked.
+  // If the snippet contains the $ symbol outside of a placeholder, it must be escaped with two slashes (e.g. \\$var).
+  //
+  // See https://zed.dev/docs/snippets
+
+  "Ellipsis": {
+    "prefix": "...",
+    "body": ["…"],
+    "description": "Replace three consecutive dots with an ellipsis"
+  },
+  "En_Dash": {
+    "prefix": "--",
+    "body": ["–"],
+    "description": "Replace double-hyphen with a single en-dash"
+  },
+  "Em_Dash": {
+    "prefix": "---",
+    "body": ["—"],
+    "description": "Replace triple-hyphen with a single em-dash"
+  },
+  "Right_Arrow": {
+    "prefix": "->",
+    "body": ["→"],
+    "description": "Replace dash + right angle bracket with right arrow"
+  },
+  "Left_Arrow": {
+    "prefix": "<-",
+    "body": ["←"],
+    "description": "Replace left angle bracket + dash with left arrow"
+  },
+  "Long_Right_Arrow": {
+    "prefix": "-->",
+    "body": ["🡒"],
+    "description": "Replace dash + dash + right angle bracket with 'rightwards sans-serif arrow'"
+  },
+  "Long_Left_Arrow": {
+    "prefix": "<--",
+    "body": ["🡐"],
+    "description": "Replace left angle bracket + dash + dash with 'leftwards sans-serif arrow'"
+  },
+  "Greater_Than_Or_Equal_To": {
+    "prefix": ">=",
+    "body": ["≥"],
+    "description": "Replace right angle bracket + equal sign with greater-than-or-equal-to character"
+  },
+  "Less_Than_Or_Equal_To": {
+    "prefix": "<=",
+    "body": ["≤"],
+    "description": "Replace left angle bracket + equal sign with less-than-or-equal-to character"
+  },
+  "Plus or Minus": {
+    "prefix": "+-",
+    "body": ["±"],
+    "description": "Replace a plus sign followed by a minus sign with the plus-or-minus character"
+  }
+}
