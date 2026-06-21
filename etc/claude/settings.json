@@ -70,12 +70,12 @@
       "Bash(git push *)",
       "Bash(git reset --hard *)",
       "Bash(git clean *)",
-      "Bash(git commit -m *)",
+      "Bash(git commit *)",
       "Bash(npm publish *)",
       "Bash(pnpm publish *)",
       "Bash(docker push *)"
     ]
   },
   "effortLevel": "high",
-  "model": "opus"
+  "model": "sonnet"
 }
