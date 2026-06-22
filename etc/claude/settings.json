@@ -51,7 +51,11 @@
       "Bash(mkdir *)",
       "Bash(touch *)",
       "Bash(cp *)",
-      "Bash(mv *)"
+      "Bash(mv *)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:docs.antora.org)",
+      "WebFetch(domain:docs.asciidoctor.org)"
     ],
     "deny": [
       "Read(./.env)",
