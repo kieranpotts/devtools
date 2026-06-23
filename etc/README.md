@@ -26,7 +26,7 @@ Contents:
 
 - [`tmux/tmux.conf`](./tmux/tmux.conf): Configuration for [tmux](https://github.com/tmux/tmux). Symlinked to `~/.tmux.conf`.
 
-- [`tmux/inc/layout`](./tmux/inc/layout): A tmux layout script that can be loaded with `Ctrl-b L`. Symlinked to `~/.tmux/layout`.
+- [`tmux/inc/layout`](./tmux/inc/layout): A tmux layout script that can be loaded with `Ctrl-t L`. Symlinked to `~/.tmux/layout`.
 
 - [`vscode/settings.json`](./vscode/settings.json): User settings for [VS Code](https://code.visualstudio.com/) / [VS Codium](https://vscodium.com/). Symlinked to `~/.config/Code/User/settings.json` or `~/.config/VSCodium/User/settings.json`.
 
