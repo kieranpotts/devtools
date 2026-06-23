@@ -95,8 +95,8 @@ New-Item -ItemType SymbolicLink `
   -Target "C:\path\to\dotfiles\etc\tmux\tmux.conf" `
   -Force
 New-Item -ItemType SymbolicLink `
-  -Path "C:\Users\[User]\.tmux\dev" `
-  -Target "C:\path\to\dotfiles\etc\tmux\inc\dev" `
+  -Path "C:\Users\[User]\.tmux\layout" `
+  -Target "C:\path\to\dotfiles\etc\tmux\inc\layout" `
   -Force
 
 #

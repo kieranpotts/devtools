@@ -158,10 +158,10 @@ ln --symbolic --force "${DIR_PATH}/etc/qwen/settings.json" ~/.qwen/settings.json
 mkdir -p ~/.tmux
 
 cp --no-clobber --dereference ~/.tmux.conf ~/.tmux.conf.bak 2> /dev/null
-cp --no-clobber --dereference ~/.tmux/dev ~/.tmux/dev.bak 2> /dev/null
+cp --no-clobber --dereference ~/.tmux/layout ~/.tmux/layout.bak 2> /dev/null
 
 ln --symbolic --force "${DIR_PATH}/etc/tmux/tmux.conf" ~/.tmux.conf || errors=1
-ln --symbolic --force "${DIR_PATH}/etc/tmux/inc/dev" ~/.tmux/dev || errors=1
+ln --symbolic --force "${DIR_PATH}/etc/tmux/inc/layout" ~/.tmux/layout || errors=1
 
 #
 # VS Code
