@@ -293,7 +293,7 @@
   ],
 
   /* The default name for new Git branches when created via VS Code's GUI. */
-  "git.defaultBranchName": "dev",
+  "git.defaultBranchName": "latest/dev",
 
   /* Allow overriding of Git hooks on commit operations. */
   "git.allowNoVerifyCommit": true,
@@ -437,15 +437,15 @@
 
   "remote.autoForwardPortsSource": "hybrid",
 
-  /* If you try opening a dev container from WSL, VS Code will detect
+  /* If you try opening a devcontainer from WSL, VS Code will detect
   WAYLAND_DISPLAY on your Windows host and so try to mount the Wayland
   socket into the container. But Docker can't actually access it through
   the WSL guest layer, resulting in a "Failed to connect to Wayland display"
-  error when you try to open a dev container for a workspace or directory
+  error when you try to open a devcontainer for a workspace or directory
   that's located in WSL. The following option, which must be set at the
   user or profile level, disables the Wayland socket mount and so avoids
   this error. This is not a problem as long as you only need CLI access
-  to the dev container environment. */
+  to the devcontainer environment. */
 
   "dev.containers.mountWaylandSocket": false,
 

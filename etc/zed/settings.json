@@ -45,7 +45,7 @@
   },
   "base_keymap": "VSCode",
   "git_panel": {
-    "fallback_branch_name": "dev"
+    "fallback_branch_name": "latest/dev"
   },
   "sticky_scroll": {
     "enabled": false
