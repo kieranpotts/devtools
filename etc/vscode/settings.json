@@ -125,9 +125,9 @@
   */
 
   /* Only certain bits of the UI can have its font customized. */
-  "chat.fontFamily": "'Maple Mono', monospace",
-  "editor.inlineSuggest.fontFamily": "'Maple Mono', monospace",
-  "scm.inputFontFamily": "'Maple Mono', monospace",
+  "chat.fontFamily": "'Maple Mono', 'Droid Sans Mono', monospace",
+  "editor.inlineSuggest.fontFamily": "'Maple Mono', 'Droid Sans Mono', monospace",
+  "scm.inputFontFamily": "'Maple Mono', 'Droid Sans Mono', monospace",
 
   /* Change VS Code's UI font. Requires the fonted extension. This is a hack!
   https://marketplace.visualstudio.com/items?itemName=degreat.fonted */
@@ -138,7 +138,7 @@
   */
 
   /* Editor font. */
-  "editor.fontFamily": "'Maple Mono', monospace",
+  "editor.fontFamily": "'Maple Mono', 'Droid Sans Mono', monospace",
   "editor.fontLigatures": true,
   "editor.fontSize": 14,
   "editor.fontWeight": "300",
