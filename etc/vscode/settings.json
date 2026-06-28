@@ -479,6 +479,23 @@
     "file:///home/kieran/.vscode/extensions/continue.continue-1.2.22-linux-x64/config-yaml-schema.json": [
       ".continue/**/*.yaml"
     ]
-  }
+  },
+
+
+  /* ---------------------------------------------------------------------------
+  Previews
+  */
+
+  "markdown.preview.fontFamily": "'Maple Mono', 'Droid Sans Mono', monospace",
+  "markdown.preview.fontSize": 17,
+
+  /* Depends on extension: https://marketplace.visualstudio.com/items?itemName=asciidoctor.asciidoctor-vscode */
+  "asciidoc.preview.fontFamily": "'Maple Mono', 'Droid Sans Mono', monospace",
+  "asciidoc.preview.fontSize": 17,
+
+  /* When previewing Asciidoc files, use VS Code's workbench color theme,
+  rather than the default Asciidoc style. This ensures the colors of the
+  preview are consistent with the enabled VS Code theme. */
+  "asciidoc.preview.useEditorStyle": true
 
 }
