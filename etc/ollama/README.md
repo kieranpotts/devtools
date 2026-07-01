@@ -10,6 +10,29 @@ The Ollama API is compatible with OpenAI's API, so any front-end that supports O
 
 Run `ollama` and follow the instructions to configure your front-end tool. For example, to configure Pi, go to **Launch Pi** → Select model. Ollama will update it's own `config.json` and also Pi's `models.json`. However, it clobbers the symlinks I use to keep my devtool configurations under version control. For this reason, I prefer to manage my Ollama and Pi settings manually.
 
+## Context length (`num_ctx`)
+
+Ollama decides how large a context to load each model with (`num_ctx`), independently of what any front-end requests. Its default is VRAM-based:
+
+| VRAM      | Default `num_ctx` |
+| --------- | ----------------- |
+| < 24 GB   | 4,096             |
+| 24–48 GB  | 32,768            |
+| 48+ GB    | 262,144           |
+
+My workstation's discrete GPU has ~32 GB VRAM, so the default is **32768**. When a front-end sends more history than `num_ctx`, Ollama silently truncates the oldest tokens, so the model quietly forgets earlier context. A front-end's declared context window MUST therefore be ≤ the real `num_ctx` (Pi's `models.json` `contextWindow` is set to 32768 to match — see the Pi README).
+
+Override the default with the `OLLAMA_CONTEXT_LENGTH` environment variable. Note that the `ollama` **systemd service does not inherit your shell environment**, so exporting the variable in `.bashrc` has no effect on the running server — it must be set on the service:
+
+```sh
+sudo systemctl edit ollama.service
+# [Service]
+# Environment="OLLAMA_CONTEXT_LENGTH=32768"
+sudo systemctl daemon-reload && sudo systemctl restart ollama
+```
+
+Do not raise it beyond what fits in VRAM: larger contexts grow the KV cache, and on this ~32 GB GPU anything past ~32k offloads the 27–35B models to CPU and tanks throughput. After any change, run `ollama ps` and confirm the model shows "100% GPU" (CPU offload means it doesn't fit) and the expected context length. Truncation in progress shows up in the journal as `memory_seq_rm` entries.
+
 ## Model selections
 
 My current model choices, and their rationale, are documented here.
