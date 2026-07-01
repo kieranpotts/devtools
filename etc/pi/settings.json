@@ -4,12 +4,13 @@
     "keepRecentTokens": 14000,
     "reserveTokens": 8192
   },
-  "defaultModel": "qwen3.6:35b",
+  "defaultModel": "glm-4.7-flash:latest",
   "defaultProvider": "ollama",
   "defaultThinkingLevel": "low",
   "lastChangelogVersion": "0.80.3",
   "packages": [
     "npm:@ollama/pi-web-search"
   ],
-  "theme": "dark"
+  "theme": "light",
+  "defaultProjectTrust": "ask"
 }
