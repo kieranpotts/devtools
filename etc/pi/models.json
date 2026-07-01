@@ -37,6 +37,16 @@
           ],
           "reasoning": true,
           "maxTokens": 131072
+        },
+        {
+          "_launch": true,
+          "contextWindow": 262144,
+          "id": "magistral:24b",
+          "input": [
+            "text"
+          ],
+          "reasoning": true,
+          "maxTokens": 131072
         }
       ]
     }
