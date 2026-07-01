@@ -17,6 +17,8 @@
         "gpt-oss:20b",
         "gpt-oss-safeguard:20b",
         "magistral:24b",
+        "nemotron-3-nano:4b",
+        "nemotron-3-nano:30b",
         "qwen3.6:27b",
         "qwen3.6:35b"
       ]
