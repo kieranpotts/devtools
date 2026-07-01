@@ -1,9 +1,10 @@
 {
-  "defaultModel": "gemma4:31b-cloud",
+  "defaultModel": "qwen3.6:35b",
   "defaultProvider": "ollama",
   "defaultThinkingLevel": "low",
-  "lastChangelogVersion": "0.77.0",
+  "lastChangelogVersion": "0.80.3",
   "packages": [
     "npm:@ollama/pi-web-search"
-  ]
+  ],
+  "theme": "dark"
 }
