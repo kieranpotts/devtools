@@ -35,105 +35,37 @@ Do not raise it beyond what fits in VRAM: larger contexts grow the KV cache, and
 
 ## Model selections
 
-My current model choices, and their rationale, are documented here.
+All reasoning/thinking models. Context is the model's native maximum; locally
+every model is capped to Ollama's `num_ctx` (32768 here — see above).
 
-### Chat models
+### Chat & agentic models (Pi)
 
-- [**`gemma4:31b`**](https://ollama.com/library/gemma4:31b) (default):
+Served to Pi via the local endpoint. `qwen3.6:35b` is the Pi default.
 
-  - local + cloud
-  - 30.7B parameters (dense, not MoE)
-  - 256K token context
-  - multimodal: text + images
-  - native tool calling
-  - configurable thinking modes
+| Model | Params | In | Native ctx | Role / notes |
+| --- | --- | --- | --- | --- |
+| [`deepseek-r1`](https://ollama.com/library/deepseek-r1) `:8b` `:14b` `:32b` | dense | text | 128K | Reasoning-first: math, code, logic. |
+| [`gemma4:12b`](https://ollama.com/library/gemma4) | dense 12B | text+img | 256K | Multimodal general-purpose; native tools. |
+| [`gemma4:26b`](https://ollama.com/library/gemma4) | MoE 25B / 3.8B active | text+img | 256K | Sparse multimodal; more capable, still light. |
+| [`gemma4:31b`](https://ollama.com/library/gemma4) | dense 30.7B | text+img | 256K | Largest dense Gemma; Continue default. |
+| [`glm-4.7-flash`](https://ollama.com/library/glm-4.7-flash) | MoE 30B / A3B | text | 198K | Strong 30B-class generalist. |
+| [`gpt-oss:20b`](https://ollama.com/library/gpt-oss) | MoE / 3.6B active | text | 128K | Agentic: function calls, browsing, python; configurable reasoning effort. |
+| [`gpt-oss-safeguard:20b`](https://ollama.com/library/gpt-oss-safeguard) | MoE / 3.6B active | text | 128K | Policy/content classification (Trust & Safety), not general chat. |
+| [`magistral:24b`](https://ollama.com/library/magistral) | dense 24B | text | 128K (≤40K rec.) | Transparent, multilingual reasoning. |
+| [`nemotron3:33b`](https://ollama.com/library/nemotron3) | dense 33B | text+img | 128K | Multimodal (text/img/video/audio) enterprise Q&A, summarization, doc intelligence. |
+| [`nemotron-3-nano:4b`](https://ollama.com/library/nemotron-3-nano) | dense 4B | text | 256K | Efficient small agentic model; native tools. |
+| [`nemotron-3-nano:30b`](https://ollama.com/library/nemotron-3-nano) | hybrid Mamba-2 MoE / 3.5B active | text | 1M | Efficient long-context agentic; native tools. |
+| [`north-mini-code-1.0`](https://ollama.com/library/north-mini-code-1.0) | MoE 30B / 3B active | text | 256K in / 64K out | Cohere agentic software-engineering model; interleaved thinking. |
+| [`qwen3.6`](https://ollama.com/library/qwen3.6) `:27b` `:35b` | dense | text+img | 256K | Agentic coding with thinking preservation; **`:35b` is the Pi default**. |
 
-  This is my default model in both Pi and Continue. It's a general-purpose model that's a good default for chat. ~30B parameter count is the sweet spot for open-ended conversation, giving the model reasoning depth and knowledge breadth, while not suffering from the latency of the largest models. Multimodal capabilities mean conversations can alternate between text and images. This is also a decent choice for mid-weight agentic tasks.
+### Utility models (Continue)
 
-  This model is not resource-hungry, so it performs well locally on workstations with mainstream consumer GPUs. Ollama Cloud hosts the same model, which is the default on my laptop.
+Small, special-purpose models backing in-editor roles in [Continue](../continue/config.yaml).
+These fire continuously (autocomplete) or in bulk (embedding), so latency and
+footprint matter more than raw capability.
 
-- [**`qwen3.5`**](https://ollama.com/library/qwen3.5):
-
-  - local + cloud
-  - variety of local model sizes from 0.8B to 122B to fit all devices…
-  - … plus MLX builds for Apple Silicon and a 397B cloud model
-  - 256K token context (all variants)
-  - multimodal: text + images
-  - native tool calling
-  - thinking
-
-  I switch to this model for probelms where the bottleneck is *thinking*, not throughput: debugging subtle logic, working through algorithms, planning an approach before code, and tool-calling chains that need each step reasoned through carefully. Multimodal input also makes this a good choice for working on diagrams and UI mock-ups, etc.
-
-  A wide variety of model sizes are available from Ollama to download and run locally. I keep a few of those around.
-
-### Agentic workflows
-
-While `gemma4:31b` works fine for mid-weight agentic tasks, sustaining autonomous execution over short time periods, I turn to `glm-5.1` or `kimi-k2.6` – both cloud-only models – where I want sustained iteration over much longer horizons.
-
-These models maintain high output quality over long sessions. They are specifically built to stay on-task over hundreds of iterations and thousands of tool calls, without hand-holding. They're overkill, though, for most day-to-day programming tasks.
-
-- [**`glm-5.1`**](https://ollama.com/library/glm-5.1):
-
-  - cloud only
-  - ~754B parameters (MoE, ~40B active)
-  - 198K token context
-  - text only
-  - native tool calling
-  - thinking
-
-  This model is for the longest, most autonomous tasks: large refactors, multi-step migrations, end-to-end features, that sort of thing. It has proven to keep working coherently over very long sessions without drifting, demonstrating sustainable iteration.
-
-  The full weights are ~1.65TB, so local hosting is impractical for all but exotic setups.
-
-- [**`kimi-k2.6`**](https://ollama.com/library/kimi-k2.6):
-
-  - cloud only
-  - ~1.04T parameters (MoE; ~32B active)
-  - 256K token context
-  - multimodal: text + images
-  - tool use
-  - extended "thinking" reasoning
-
-  Another reliable workhorse for long-horizon agentic execution in the cloud. This model is well regarded for its strong coding capabilities and for its proven ability to run for many turns without losing the thread.
-
-  It's not as good as `glm-5.1` for sustained iteration over very long time horizons, but what sets it apart is its swarming capabilities. This makes this model a good pick when you want to fan a problem out across parallel sub-agents.
-
-### Utility models
-
-These are small, special-purpose, locally-run models that back the in-editor roles in my [Continue](../continue/config.yaml) setup — applying changes, autocomplete, and embeddings.
-
-These models are deliberately compact. The events these models respond to either fire continuously (eg. autocomplete) or run in bulk (eg. embedding a whole codebase), so latency and resource cost matter far more than for coding and agentic models.
-
-- [**`llama3.1:8b`**](https://ollama.com/library/llama3.1)
-
-  - 8.03B parameters (dense)
-  - 128K token context
-  - text only
-  - tool use
-
-  Configured for the "edit" and "apply" roles in Continue, ie. rewriting selected code from an instruction.
-
-  The ~8B class is the sweet spot for interactive editing. The model is capable enough to produce correct diffs, and fast enough to keep the edit-feedback loop tight.
-
-- [**`qwen2.5-coder:1.5b-base`**](https://ollama.com/library/qwen2.5-coder)
-
-  - 1.54B parameters
-  - code-specialised
-  - text only
-
-  This model is configured for the "autocomplete" (ie. inline completions) role in Continue.
-
-  The `-base` (non-instruct) variant is required because text continuation is fill-in-the-middle, not chat-style instruction following.
-
-  At 1.5B it returns suggestions fast enough to feel instant on every keystroke. The Qwen Coder models are fine-tuned on computer program code, so producing good quality outputs despite the small size.
-
-- [**`nomic-embed-text:latest`**](https://ollama.com/library/nomic-embed-text)
-
-  - ~137M parameters
-  - 768-dimension embeddings
-  - ~2K-token context
-  - 274 MB on disk
-
-  This is a dedicated encoder that produces embeddings only — no text generation. It is purpose-built for cheap, high-quality vector embeddings across many files, ideal for indexing codebases and semantic search.
-
-  This model is configured for the "embed" role in Continue.
+| Model | Params | Ctx | Continue role |
+| --- | --- | --- | --- |
+| [`llama3.1:8b`](https://ollama.com/library/llama3.1) | 8B dense | 128K | `edit` / `apply` — rewrite selected code from an instruction; tool use. |
+| [`qwen2.5-coder:1.5b-base`](https://ollama.com/library/qwen2.5-coder) | 1.5B | 32K | `autocomplete` — base (non-instruct) variant required for fill-in-the-middle. |
+| [`nomic-embed-text:latest`](https://ollama.com/library/nomic-embed-text) | 137M | 2K | `embed` — embeddings only (no generation); codebase indexing / semantic search. |
