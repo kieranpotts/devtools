@@ -49,6 +49,16 @@
         {
           "_launch": true,
           "contextWindow": 32768,
+          "id": "glm-4.7-flash:latest",
+          "input": [
+            "text"
+          ],
+          "reasoning": true,
+          "maxTokens": 8192
+        },
+        {
+          "_launch": true,
+          "contextWindow": 32768,
           "id": "gpt-oss:20b",
           "input": [
             "text"

@@ -14,6 +14,7 @@
         "deepseek-r1:14b",
         "deepseek-r1:32b",
         "gemma4:31b",
+        "glm-4.7-flash:latest",
         "gpt-oss:20b",
         "gpt-oss-safeguard:20b",
         "magistral:24b",
