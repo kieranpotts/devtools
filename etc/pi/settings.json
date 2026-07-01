@@ -1,4 +1,9 @@
 {
+  "compaction": {
+    "enabled": true,
+    "keepRecentTokens": 14000,
+    "reserveTokens": 8192
+  },
   "defaultModel": "qwen3.6:35b",
   "defaultProvider": "ollama",
   "defaultThinkingLevel": "low",
