@@ -14,6 +14,8 @@
         "deepseek-r1:14b",
         "deepseek-r1:32b",
         "gemma4:31b",
+        "gpt-oss:20b",
+        "gpt-oss-safeguard:20b",
         "magistral:24b",
         "qwen3.6:27b",
         "qwen3.6:35b"
