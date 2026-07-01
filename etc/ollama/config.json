@@ -1,13 +1,5 @@
 {
   "integrations": {
-    "continue": {
-      "models": [
-        "gemma4:31b",
-        "llama3.1:8b",
-        "qwen2.5-coder:1.5b-base",
-        "nomic-embed-text:latest"
-      ]
-    },
     "pi": {
       "models": [
         "deepseek-r1:8b",

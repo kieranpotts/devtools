@@ -35,10 +35,7 @@ Do not raise it beyond what fits in VRAM: larger contexts grow the KV cache, and
 
 ## Model selections
 
-All reasoning/thinking models. Context is the model's native maximum; locally
-every model is capped to Ollama's `num_ctx` (32768 here — see above).
-
-### Chat & agentic models (Pi)
+All reasoning/thinking models. Context is the model's native maximum; locally every model is capped to Ollama's `num_ctx` (32768 here — see above).
 
 Served to Pi via the local endpoint. `qwen3.6:35b` is the Pi default.
 
@@ -47,7 +44,7 @@ Served to Pi via the local endpoint. `qwen3.6:35b` is the Pi default.
 | [`deepseek-r1`](https://ollama.com/library/deepseek-r1) `:8b` `:14b` `:32b` | dense | text | 128K | Reasoning-first: math, code, logic. |
 | [`gemma4:12b`](https://ollama.com/library/gemma4) | dense 12B | text+img | 256K | Multimodal general-purpose; native tools. |
 | [`gemma4:26b`](https://ollama.com/library/gemma4) | MoE 25B / 3.8B active | text+img | 256K | Sparse multimodal; more capable, still light. |
-| [`gemma4:31b`](https://ollama.com/library/gemma4) | dense 30.7B | text+img | 256K | Largest dense Gemma; Continue default. |
+| [`gemma4:31b`](https://ollama.com/library/gemma4) | dense 30.7B | text+img | 256K | Largest dense Gemma. |
 | [`glm-4.7-flash`](https://ollama.com/library/glm-4.7-flash) | MoE 30B / A3B | text | 198K | Strong 30B-class generalist. |
 | [`gpt-oss:20b`](https://ollama.com/library/gpt-oss) | MoE / 3.6B active | text | 128K | Agentic: function calls, browsing, python; configurable reasoning effort. |
 | [`gpt-oss-safeguard:20b`](https://ollama.com/library/gpt-oss-safeguard) | MoE / 3.6B active | text | 128K | Policy/content classification (Trust & Safety), not general chat. |
@@ -57,15 +54,3 @@ Served to Pi via the local endpoint. `qwen3.6:35b` is the Pi default.
 | [`nemotron-3-nano:30b`](https://ollama.com/library/nemotron-3-nano) | hybrid Mamba-2 MoE / 3.5B active | text | 1M | Efficient long-context agentic; native tools. |
 | [`north-mini-code-1.0`](https://ollama.com/library/north-mini-code-1.0) | MoE 30B / 3B active | text | 256K in / 64K out | Cohere agentic software-engineering model; interleaved thinking. |
 | [`qwen3.6`](https://ollama.com/library/qwen3.6) `:27b` `:35b` | dense | text+img | 256K | Agentic coding with thinking preservation; **`:35b` is the Pi default**. |
-
-### Utility models (Continue)
-
-Small, special-purpose models backing in-editor roles in [Continue](../continue/config.yaml).
-These fire continuously (autocomplete) or in bulk (embedding), so latency and
-footprint matter more than raw capability.
-
-| Model | Params | Ctx | Continue role |
-| --- | --- | --- | --- |
-| [`llama3.1:8b`](https://ollama.com/library/llama3.1) | 8B dense | 128K | `edit` / `apply` — rewrite selected code from an instruction; tool use. |
-| [`qwen2.5-coder:1.5b-base`](https://ollama.com/library/qwen2.5-coder) | 1.5B | 32K | `autocomplete` — base (non-instruct) variant required for fill-in-the-middle. |
-| [`nomic-embed-text:latest`](https://ollama.com/library/nomic-embed-text) | 137M | 2K | `embed` — embeddings only (no generation); codebase indexing / semantic search. |

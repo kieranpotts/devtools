@@ -8,8 +8,6 @@ Contents:
 
 - [`claude/settings.json`](./claude/settings.json): Configuration for the [Claude Code](https://claude.com/product/claude-code) AI coding assistant. Symlinked to `~/.claude/settings.json`.
 
-- [`continue/`](./continue/): Configuration for the [Continue](https://www.continue.dev/) AI coding assistant. This config has two per-machine variants – [`config.default.yaml`](./continue/config.default.yaml), which uses models hosted in Ollama Cloud, except for a couple of very small models run locally for autocomplete and embeddings; and [`config.workstation.yaml`](./continue/config.workstation.yaml), which runs all models locally. The [installer](../run/install) symlinks the one matching the `--profile` argument (default: `default`). Pass `--profile workstation` to opt in to the workstation profile. See [`continue/README.md`](./continue/README.md) for the rationale behind the model choices.
-
 - [`docker/desktop/settings-store.json`](./docker/desktop/settings-store.json): Settings for [Docker Desktop](https://www.docker.com/products/docker-desktop/). _Moved_ (not symlinked) to `~/.docker/desktop/settings-store.json` on Linux, or `%APPDATA%\Docker\settings-store.json` on Windows. ⚠️ Docker Desktop breaks when this file is symlinked, so in this case the install script overwrites the original. Synchronization must be done manually.
 
 - [`ghostty/config.ghostty`](./ghostty/config.ghostty): Configuration for [Ghostty](https://ghostty.org/). Symlinked to `~/.config/ghostty/config.ghostty`.

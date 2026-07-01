@@ -41,8 +41,6 @@ The installer will back up any existing configuration files before replacing the
 ./run/install --profile workstation
 ```
 
-Currently only [Continue](../etc/continue/README.md) varies by profile: the `default` profile uses Ollama Cloud models (it works on any machine), while the opt-in `workstation` profile runs every model locally on a GPU. All other configurations are shared across profiles.
-
 **Windows**
 
 Run Windows Powershell in administrator mode and execute the following commands, changing the filesystem paths as required.

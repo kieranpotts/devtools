@@ -86,14 +86,6 @@ cp --no-clobber --dereference ~/.claude/settings.json ~/.claude/settings.json.ba
 ln --symbolic --force "${DIR_PATH}/etc/claude/settings.json" ~/.claude/settings.json || errors=1
 
 #
-# Continue
-#
-
-mkdir -p ~/.continue
-cp --no-clobber --dereference ~/.continue/config.yaml ~/.continue/config.yaml.bak 2> /dev/null
-ln --symbolic --force "${DIR_PATH}/etc/continue/config.${PROFILE}.yaml" ~/.continue/config.yaml || errors=1
-
-#
 # Docker Desktop
 #
 

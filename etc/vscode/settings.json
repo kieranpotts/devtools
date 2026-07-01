@@ -474,14 +474,6 @@
   "claudeCode.selectedModel": "haiku",
   "claudeCode.preferredLocation": "panel",
 
-  /* YAML Schema for Continue config. */
-  "yaml.schemas": {
-    "file:///home/kieran/.vscode/extensions/continue.continue-1.2.22-linux-x64/config-yaml-schema.json": [
-      ".continue/**/*.yaml"
-    ]
-  },
-
-
   /* ---------------------------------------------------------------------------
   Previews
   */
