@@ -12,6 +12,16 @@ See the [Pi docs](https://pi.dev/docs/latest/models) for more details about conf
 
 All are reasoning/thinking models with support for tools.
 
+### cost
+
+Every model sets `cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 }`. The Pi TUI multiplies these per-million-token rates against usage to render a running $ total.
+
+Zero is the *correct* value here for both categories of model, not a placeholder:
+
+- Locally-served models (everything except the `:cloud` tags) cost real money in electricity but nothing per-token — there's no API meter to report.
+
+- The `:cloud`-tagged models (`glm-5.2:cloud`, `kimi-k2.7-code:cloud`) run on Ollama Cloud's flat subscription/quota, not per-token billing, so a per-token $ rate would misrepresent the actual cost. Usage against that quota is tracked on the Ollama account dashboard, not in Pi.
+
 ### maxTokens
 
 Pi's default `maxTokens` is only 16384 if the field is omitted, which can truncate long responses ("Model stopped because it reached the maximum output token limit"). Always set it explicitly. It is capped at 8192 here so a single verbose reasoning turn cannot dominate the (small, local) context window.
