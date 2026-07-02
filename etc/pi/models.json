@@ -80,7 +80,7 @@
         },
         {
           "_launch": true,
-          "contextWindow": 32768,
+          "contextWindow": 999424,
           "id": "glm-5.2:cloud",
           "input": [
             "text"
@@ -110,7 +110,7 @@
         },
         {
           "_launch": true,
-          "contextWindow": 32768,
+          "contextWindow": 262144,
           "id": "kimi-k2.7-code:cloud",
           "input": [
             "text",
