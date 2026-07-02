@@ -55,17 +55,14 @@ Cloud values were rounded to the exact figures reported on each model's Ollama l
 
 ### Longer-running sessions
 
-Session length comes from auto-compaction. When context fills, Pi summarizes older messages and continues. `settings.json` sizes this for the 32768 window (defaults of `reserveTokens: 16384` + keepRecentTokens:
-20000` overflow a 32k window):
+When the context window fills, Pi automatically triggers compaction, which involves summarizing older messages to reduce current context length.
+
+The following settings control Pi's compaction globally. The `reserveTokens` setting compacts early, before the context window is blown, to leave some headroom for new response output. The `keepRecentTokens` stops the most recent context from being compacts — only older messages are summarized.
 
 - `compaction.enabled`: `true`
-- `compaction.reserveTokens`: `8192`: Headroom for the response; compaction triggers at `contextWindow - reserveTokens` (= 24576).
-- `compaction.keepRecentTokens`: `14000`: Recent work kept verbatim through each compaction; older content is summarized.
 
-### Other settings.json values
+- `compaction.reserveTokens`: `8192`: Headroom for the response. Compaction triggers at `contextWindow - reserveTokens`. For example, if a model's `contextWindow` is 32768, the compaction will happen at 32768 - 8192 = 24576.
 
-- `defaultProvider`: `ollama`
-- `defaultModel`: `qwen3.6:35b`
-- `defaultThinkingLevel`: `low`
-- `theme`: `dark`
-- `packages`: `npm:@ollama/pi-web-search`
+- `compaction.keepRecentTokens`: `14000`: Recent work kept verbatim through each compaction.
+
+These settings have been deliberately reduced from Pi's defaults, which are `reserveTokens: 16384` and `keepRecentTokens: 20000`. The sum of these two settings overflows a 32k window. You want to keep the sum well below the minimum context window you have available for your models.
