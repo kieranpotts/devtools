@@ -10,7 +10,7 @@ See the [Pi docs](https://pi.dev/docs/latest/models) for more details about conf
 
 `models.json` defines the `ollama` provider models, all served locally via the Ollama OpenAI-compatible endpoint (`http://127.0.0.1:11434/v1`).
 
-All are reasoning/thinking models with support for tools.
+All are reasoning/thinking models with support for tools, except `ornith:9b` and `ornith:35b`, which are text-only coding models with no reasoning/thinking mode (`reasoning: false`).
 
 ### cost
 
@@ -48,6 +48,7 @@ Native context lengths per model, per the [Ollama library](https://ollama.com/li
 | `nemotron3:33b` | 32768 | 128K | Capped to VRAM tier; local. |
 | `nemotron-3-nano:4b` / `:30b` | 32768 | 256K / 1M | Capped to VRAM tier; local. |
 | `north-mini-code-1.0` | 32768 | 256K | Capped to VRAM tier; local. |
+| `ornith:9b` / `:35b` | 32768 | 256K | Capped to VRAM tier; local. Text-only, no reasoning mode. |
 | `qwen3.6:27b` / `:35b` | 32768 | 256K | Capped to VRAM tier; local. |
 
 Cloud values were rounded to the exact figures reported on each model's Ollama library page rather than the round "1M"/"256K" marketing numbers, since `contextWindow` should reflect what the API will actually honor.
