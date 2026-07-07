@@ -8,6 +8,10 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 
 {
+  "diff_view_style": "unified",
+  "session": {
+    "trust_all_worktrees": true
+  },
   "icon_theme": "Warm Charmed Icons",
   "agent_ui_font_size": 16.0,
   "tabs": {
@@ -30,6 +34,7 @@
   "agent_servers": {
     "claude-acp": {
       "default_config_options": {
+        "mode": "acceptEdits",
         "effort": "medium"
       },
       "type": "registry"
