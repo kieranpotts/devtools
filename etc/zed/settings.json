@@ -85,7 +85,7 @@
   "hard_tabs": false,
   "tab_size": 2,
   "agent": {
-    "default_profile": "minimal",
+    "default_profile": "write",
     "default_model": {
       "provider": "ollama",
       "model": "glm-5.2:cloud",
