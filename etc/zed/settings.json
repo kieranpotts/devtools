@@ -50,6 +50,7 @@
   },
   "base_keymap": "VSCode",
   "git_panel": {
+    "tree_view": true,
     "fallback_branch_name": "latest/dev",
   },
   "sticky_scroll": {
