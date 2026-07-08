@@ -10,23 +10,23 @@
 {
   "diff_view_style": "unified",
   "session": {
-    "trust_all_worktrees": true
+    "trust_all_worktrees": true,
   },
   "icon_theme": "Warm Charmed Icons",
   "agent_ui_font_size": 16.0,
   "tabs": {
     "git_status": true,
-    "file_icons": false
+    "file_icons": false,
   },
   "tab_bar": {
     "show_tab_bar_buttons": true,
     "show_nav_history_buttons": true,
-    "show": true
+    "show": true,
   },
   "title_bar": {
     "button_layout": "platform_default",
     "show_menus": false,
-    "show_branch_status_icon": true
+    "show_branch_status_icon": true,
   },
   "mouse_wheel_zoom": true,
   "agent_buffer_font_size": 14.0,
@@ -35,10 +35,10 @@
     "claude-acp": {
       "default_config_options": {
         "mode": "acceptEdits",
-        "effort": "medium"
+        "effort": "medium",
       },
-      "type": "registry"
-    }
+      "type": "registry",
+    },
   },
   "buffer_font_weight": 400.0,
   "buffer_line_height": "comfortable",
@@ -46,36 +46,34 @@
   "terminal": {
     "font_size": 14.0,
     "font_family": "Maple Mono NF",
-    "cursor_shape": "bar"
+    "cursor_shape": "bar",
   },
   "base_keymap": "VSCode",
   "git_panel": {
-    "fallback_branch_name": "latest/dev"
+    "fallback_branch_name": "latest/dev",
   },
   "sticky_scroll": {
-    "enabled": false
+    "enabled": false,
   },
   "scroll_sensitivity": 1.0,
   "gutter": {
-    "line_numbers": true
+    "line_numbers": true,
   },
   "minimap": {
     "show": "never",
-    "thumb": "always"
+    "thumb": "always",
   },
   "scrollbar": {
     "axes": {
-      "vertical": true
-    }
+      "vertical": true,
+    },
   },
   "autosave": {
     "after_delay": {
-      "milliseconds": 5000
-    }
+      "milliseconds": 5000,
+    },
   },
-  "buffer_font_fallbacks": [
-    "monospace"
-  ],
+  "buffer_font_fallbacks": ["monospace"],
   "buffer_font_family": "Maple Mono",
   "auto_indent_on_paste": false,
   "use_on_type_format": false,
@@ -83,7 +81,7 @@
   "show_whitespaces": "all",
   "show_edit_predictions": true,
   "indent_guides": {
-    "enabled": true
+    "enabled": true,
   },
   "wrap_guides": [],
   "soft_wrap": "editor_width",
