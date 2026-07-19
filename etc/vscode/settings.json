@@ -133,6 +133,12 @@
   https://marketplace.visualstudio.com/items?itemName=degreat.fonted */
   "fonted.font": "Maple Mono",
 
+  /* Font sizes for UI elements. */
+  "chat.editor.fontSize": 15,
+  "chat.fontSize": 15,
+  "debug.console.fontSize": 15,
+  "scm.inputFontSize": 15,
+
   /* ---------------------------------------------------------------------------
   Editors.
   */
@@ -140,7 +146,7 @@
   /* Editor font. */
   "editor.fontFamily": "'Maple Mono', 'Droid Sans Mono', monospace",
   "editor.fontLigatures": true,
-  "editor.fontSize": 14,
+  "editor.fontSize": 17,
   "editor.fontWeight": "300",
 
   /* Disable various auto-complete mechanisms in the code editor. */
@@ -365,7 +371,7 @@
 
   /* Integrated terminal configuration. */
   "terminal.integrated.fontFamily": "Maple Mono NF",
-  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontSize": 17,
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.cursorWidth": 3,
   "terminal.integrated.defaultLocation": "editor", /* Open in a new editor tab rather than panel. */
