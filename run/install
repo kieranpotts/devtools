@@ -167,7 +167,7 @@ cp --no-clobber --dereference ~/.config/zed/settings.json ~/.config/zed/settings
 cp --no-clobber --dereference ~/.config/zed/snippets/snippets.json ~/.config/zed/snippets/snippets.json.bak 2> /dev/null
 
 ln --symbolic --force "${DIR_PATH}/etc/zed/settings.json" ~/.config/zed/settings.json || errors=1
-ln --symbolic --force "${DIR_PATH}/etc/zed/snippets/snippets.json" ~/.config/zed/snippets/snippets.json || errors=1
+ln --symbolic --force "${DIR_PATH}/etc/zed/snippets.json" ~/.config/zed/snippets/snippets.json || errors=1
 
 #
 # Outcome - Warn the user if one or more symlink generations failed.
