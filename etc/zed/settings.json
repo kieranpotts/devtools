@@ -13,7 +13,7 @@
     "trust_all_worktrees": true,
   },
   "icon_theme": "Warm Charmed Icons",
-  "agent_ui_font_size": 16.0,
+  "agent_ui_font_size": 17.0,
   "tabs": {
     "git_status": true,
     "file_icons": false,
@@ -29,7 +29,7 @@
     "show_branch_status_icon": true,
   },
   "mouse_wheel_zoom": true,
-  "agent_buffer_font_size": 14.0,
+  "agent_buffer_font_size": 17.0,
   "ui_font_family": "Maple Mono",
   "agent_servers": {
     "claude-acp": {
@@ -104,8 +104,8 @@
     ],
     "model_parameters": [],
   },
-  "ui_font_size": 16.0,
-  "buffer_font_size": 14.0,
+  "ui_font_size": 17.0,
+  "buffer_font_size": 17.0,
   "theme": {
     "mode": "light",
     "light": "GitHub Light Tritanopia",
