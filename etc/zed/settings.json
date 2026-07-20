@@ -35,7 +35,7 @@
     "claude-acp": {
       "default_config_options": {
         "mode": "acceptEdits",
-        "effort": "medium",
+        "effort": "low",
       },
       "type": "registry",
     },
@@ -44,7 +44,7 @@
   "buffer_line_height": "comfortable",
   "ui_font_weight": 400.0,
   "terminal": {
-    "font_size": 14.0,
+    "font_size": 17.0,
     "font_family": "Maple Mono NF",
     "cursor_shape": "bar",
   },
@@ -104,7 +104,7 @@
     ],
     "model_parameters": [],
   },
-  "ui_font_size": 15.0,
+  "ui_font_size": 16.0,
   "buffer_font_size": 14.0,
   "theme": {
     "mode": "light",
