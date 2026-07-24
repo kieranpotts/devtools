@@ -41,6 +41,9 @@
     "source.fixAll": "never"
   },
 
+  /* Screen reader support. */
+  "editor.accessibilitySupport": "on",
+
   /* ---------------------------------------------------------------------------
   Language-specific settings. These also tend to be project-specific.
   */
@@ -494,6 +497,7 @@
   /* When previewing Asciidoc files, use VS Code's workbench color theme,
   rather than the default Asciidoc style. This ensures the colors of the
   preview are consistent with the enabled VS Code theme. */
-  "asciidoc.preview.useEditorStyle": true
+  "asciidoc.preview.useEditorStyle": true,
+  "editor.accessibilitySupport": "off"
 
 }
