@@ -149,7 +149,7 @@
   /* Editor font. */
   "editor.fontFamily": "'Maple Mono', 'Droid Sans Mono', monospace",
   "editor.fontLigatures": true,
-  "editor.fontSize": 17,
+  "editor.fontSize": 18,
   "editor.fontWeight": "300",
 
   /* Disable various auto-complete mechanisms in the code editor. */
@@ -497,7 +497,6 @@
   /* When previewing Asciidoc files, use VS Code's workbench color theme,
   rather than the default Asciidoc style. This ensures the colors of the
   preview are consistent with the enabled VS Code theme. */
-  "asciidoc.preview.useEditorStyle": true,
-  "editor.accessibilitySupport": "off"
+  "asciidoc.preview.useEditorStyle": true
 
 }
