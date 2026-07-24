@@ -8,6 +8,11 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 
 {
+  "git": {
+    "inline_blame": {
+      "location": "status_bar"
+    }
+  },
   "diff_view_style": "unified",
   "session": {
     "trust_all_worktrees": true,
@@ -92,7 +97,7 @@
     "default_profile": "write",
     "default_model": {
       "provider": "ollama",
-      "model": "glm-5.2:cloud",
+      "model": "kimi-k2.7-code:cloud",
       "enable_thinking": true,
     },
     "favorite_models": [
