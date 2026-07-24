@@ -126,6 +126,14 @@ ln --symbolic --force "${DIR_PATH}/etc/tmux/tmux.conf" ~/.tmux.conf || errors=1
 ln --symbolic --force "${DIR_PATH}/etc/tmux/inc/layout" ~/.tmux/layout || errors=1
 
 #
+# Voxd
+#
+
+mkdir -p ~/.config/voxd
+cp --no-clobber --dereference ~/.config/voxd/config.yaml ~/.config/voxd/config.yaml.bak 2> /dev/null
+ln --symbolic --force "${DIR_PATH}/etc/voxd/config.yaml" ~/.config/voxd/config.yaml || errors=1
+
+#
 # VS Code
 #
 
