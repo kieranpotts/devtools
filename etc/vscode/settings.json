@@ -42,7 +42,7 @@
   },
 
   /* Screen reader support. */
-  "editor.accessibilitySupport": "on",
+  "editor.accessibilitySupport": "off",
 
   /* ---------------------------------------------------------------------------
   Language-specific settings. These also tend to be project-specific.
