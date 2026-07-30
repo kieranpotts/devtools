@@ -220,8 +220,11 @@
   Editor tabs and tab groups.
   */
 
-  /* Shrink tab size as the available space decreases. */
+  /* Shrink tab size as the available space decreases... */
   "workbench.editor.tabSizing": "shrink",
+
+  /* ... and then wrap tabs to new lines when there's no space left. */
+  "workbench.editor.wrapTabs": true,
 
   /* Hide tabs when in Zen mode. */
   "zenMode.showTabs": "none",
