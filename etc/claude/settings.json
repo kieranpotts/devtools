@@ -80,6 +80,6 @@
       "Bash(docker push *)"
     ]
   },
-  "effortLevel": "low",
+  "effortLevel": "medium",
   "model": "sonnet"
 }
