@@ -12,12 +12,18 @@
     "inline_blame": {
       "location": "status_bar"
     },
-    "worktree_directory": ""
+    // When using Zed to create new worktrees, they will be created in a sub-directory of
+    // the project root, which is the `.bare` directory due to the pointer file, thus
+    // `.bare/<random-worktree-name>`. To create worktrees in the project root proper,
+    // we MUST use the CLI: `git worktree add ./<directory-name> <existing-branch-name>`
+    // or `git worktree add -b <new-branch-name> ./<directory-name>`
+    "worktree_directory": "./"
+  },
+  "session": {
+    // Do not skip worktreee/workspace trust prompts.
+    "trust_all_worktrees": false,
   },
   "diff_view_style": "unified",
-  "session": {
-    "trust_all_worktrees": true,
-  },
   "icon_theme": "Warm Charmed Icons",
   "agent_ui_font_size": 17.0,
   "tabs": {
