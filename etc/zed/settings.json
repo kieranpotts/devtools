@@ -11,7 +11,8 @@
   "git": {
     "inline_blame": {
       "location": "status_bar"
-    }
+    },
+    "worktree_directory": ""
   },
   "diff_view_style": "unified",
   "session": {
