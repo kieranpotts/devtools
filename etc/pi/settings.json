@@ -13,5 +13,8 @@
     "npm:@ollama/pi-web-search"
   ],
   "theme": "dark",
-  "defaultProjectTrust": "ask"
+  "defaultProjectTrust": "ask",
+  "retry": {
+    "enabled": true
+  }
 }
