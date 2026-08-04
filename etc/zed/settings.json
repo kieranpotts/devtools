@@ -104,7 +104,7 @@
     "default_profile": "write",
     "default_model": {
       "provider": "ollama",
-      "model": "kimi-k2.7-code:cloud",
+      "model": "glm-5.2:cloud",
       "enable_thinking": true,
     },
     "favorite_models": [
