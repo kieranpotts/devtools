@@ -1,12 +1,26 @@
 # Claude settings
 
-`~/.claude/settings.json`, and project-level `.claude/settings.json`, are shared between the CLI and VS Code extensiosn - all UIs to Claude.
+`~/.claude/settings.json`, and project-level `.claude/settings.json`, are shared
+between the CLI and VS Code extensions... indeed, all UIs to Claude.
 
-Anything about how Claude Code _behaves_ – permissions, hooks, MCP, model/provider – belongs in `~/.claude/settings.json`. MCP serves need to be added through the CLI.
+Anything about how Claude Code _behaves_ – permissions, hooks, MCP,
+model/provider – belongs in `~/.claude/settings.json`. MCP serves need to be
+added through the CLI.
+
+> [!NOTE]
+> Claude's settings.json does NOT support inline comments.
 
 ## Permissions
 
-The most liberal option is `bypassPermissions`, which is the equivalent of passing the `--dangerously-skip-permissions` flag when starting a new session. This mode skips all permission prompts, including writes to `.git`, `.claude`, `.vscode`, `.idea`, and `.husky`. There are still a few hardcoded guardrails. For example, removals targeting the filesystem root or home directory, such as `rm -rf /` and `rm -rf ~`, still prompt as a circuit breaker against model error. Nevertheless, this setting is suitable only for highly isolated environments – containers or VMs where AIs let loose can't cause widespread damage.
+The most liberal option is `bypassPermissions`, which is the equivalent of
+passing the `--dangerously-skip-permissions` flag when starting a new session.
+This mode skips all permission prompts, including writes to `.git`, `.claude`,
+`.vscode`, `.idea`, and `.husky`. There are still a few hardcoded guardrails.
+For example, removals targeting the filesystem root or home directory, such
+as `rm -rf /` and `rm -rf ~`, still prompt as a circuit breaker against model
+error. Nevertheless, this setting is suitable only for highly isolated
+environments – containers or VMs where AIs let loose can't cause widespread
+damage.
 
 ```json
 {
@@ -16,7 +30,10 @@ The most liberal option is `bypassPermissions`, which is the equivalent of passi
 }
 ```
 
-For working on local development machines, the safer low-friction pattern is the `dontAsk` mode paired with an explicit `permissions.allow` list. Anything not on the list is denied outright, instead of prompting, so flow is uninterrupted and so support asynchronous agentic working.
+For working on local development machines unattended, the safer low-friction
+pattern is the `dontAsk` mode paired with an explicit `permissions.allow` list.
+Anything not on the list is denied outright, instead of prompting, so flow is
+uninterrupted — supporting away-from-keyboard agentic working.
 
 ```json
 {
@@ -26,14 +43,47 @@ For working on local development machines, the safer low-friction pattern is the
 }
 ```
 
-My settings include both allow and deny lists that are designed to skip prompts for inspection and routine dev tasks, but to keep prompts for anything that mutates the world outside of the current repository/workspace:
+A middle ground is `acceptEdits`, which is what I actually run day-to-day. It
+auto-approves file edits — `Write`, `Edit`, `NotebookEdit` — without prompting,
+but everything else (`Bash`, `WebFetch`, etc.) still goes through the normal
+allow/deny/ask permission flow. This removes the most repetitive prompt
+(confirming every file change) while keeping a human-in-the-loop for anything
+that runs a command or reaches the network. It's the right default for
+sitting at the keyboard and reviewing diffs as they happen, as opposed to
+`dontAsk`/`bypassPermissions`, which are for unattended runs.
 
-- `rm`, `sudo`, `dd`, `mkfs` are the classic foot-guns and stay on the deny. File deletion is the operation most worth confirming explicitly.
+```json
+{
+  "permissions": {
+    "defaultMode": "acceptEdits"
+  }
+}
+```
 
-- `git commit` is allowed but `git push` is denied. Reasoning: local history is cheap to fix, but remote history isn't. Same logic for `npm publish` and `docker push`.
+## Allow/deny lists
 
-- Reading of `.env`, `~/.ssh` and other credentials are denied. These rules not only apply to Claude's built-in tools, but also to shell commands like `cat`, `head`, `tail`, and `sed`. But they do not apply to arbitrary subprocesses that read or write files indirectly, like a Python or Node scripts that opens files itself. So it's not a perfect sandbox.
+My settings include both allow and deny lists that are designed to skip prompts
+for inspection and routine dev tasks, but to keep prompts for anything that
+mutates the world outside of the current repository/workspace.
 
-- I've included explicit settings for `ls`, `cat`, `pwd`, `head`, `tail`, `grep`, `find`, `diff`, and read-only `git` subcommands. Out-of-the-box, Clause will run these in any mode anyway, so these configurations are technically redundant, but I've included them anyway to document intent.
+- `rm`, `sudo`, `dd`, `mkfs` are the classic foot-guns and stay on the deny.
+  File deletion is the operation most worth confirming explicitly.
 
-- Per-project `.claude/settings.json` should add project-specific commands (eg. `Bash(terraform plan *)` for an infra repo) rather than putting them globally.
+- `git commit` is allowed but `git push` is denied. Reasoning: local history
+  is cheap to fix, but remote history isn't. Same logic for `npm publish` and
+  `docker push`.
+
+- Reading of `.env`, `~/.ssh` and other credentials are denied. These rules not
+  only apply to Claude's built-in tools, but also to shell commands like `cat`,
+  `head`, `tail`, and `sed`. But they do not apply to arbitrary subprocesses
+  that read or write files indirectly, like a Python or Node scripts that opens
+  files itself. So it's not a perfect sandbox.
+
+- I've included explicit settings for `ls`, `cat`, `pwd`, `head`, `tail`,
+  `grep`, `find`, `diff`, and read-only `git` subcommands. Out-of-the-box,
+  Clause will run these in any mode anyway, so these configurations are
+  technically redundant, but I've included them anyway to document intent.
+
+- Per-project `.claude/settings.json` should add project-specific commands
+  (eg. `Bash(terraform plan *)` for an infra repo) rather than putting them
+  globally.
