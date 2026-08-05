@@ -69,13 +69,17 @@ mutates the world outside of the current repository/workspace.
 - `rm`, `sudo`, `dd`, `mkfs` are the classic foot-guns and stay on the deny.
   File deletion is the operation most worth confirming explicitly.
 
-- Read-only `git` subcommands (`status`, `diff`, `log`, `show`, `branch`) plus
-  `add`, `restore`, and `rm` are allowed, since these are either inert or
-  locally reversible. But `commit`, `push`, `reset --hard`, and `clean` are
-  all denied. Mutating revision history (even if append-only) and pushing new
-  artifacts to upstream repositories or registries — these activities should
-  be deliberate, confirmed actions by the user. The same logic applied for
-  `npm publish`, `pnpm publish`, and `docker push`.
+- `git` and `npm` are allowed wholesale (`Bash(git *)`, `Bash(npm *)`) rather
+  than as a list of specific subcommands, because the deny list backstops the
+  risky ones regardless: `commit`, `push`, `reset --hard`, `clean`, and
+  `config --global` are denied for `git`; `publish` is denied for `npm` (and
+  `pnpm publish`, `docker push`). Deny always wins over allow on a matching
+  command, so this is a line-count reduction, not a loosening — it also means
+  previously-unlisted-but-safe subcommands (`git fetch`, `npm outdated`, etc.)
+  no longer trigger a prompt. Mutating revision history, pushing to upstream
+  repositories or registries, and changing git's *global* config (as opposed
+  to per-repo) are the activities that should stay deliberate, confirmed
+  actions by the user.
 
 - Reading of `.env`, `~/.ssh` and other credentials are denied. These rules not
   only apply to Claude's built-in tools, but also to shell commands like `cat`,
