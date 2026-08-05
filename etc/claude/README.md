@@ -7,6 +7,16 @@ Anything about how Claude Code _behaves_ – permissions, hooks, MCP,
 model/provider – belongs in `~/.claude/settings.json`. MCP serves need to be
 added through the CLI.
 
+These settings assume Claude is running inside a devcontainer or other
+throwaway environment, not directly on a machine holding anything
+irreplaceable. That assumption is what makes the allow list's looser entries
+(`Bash(pip install *)`, `Bash(npm *)`, `Bash(make *)`, etc.) reasonable to
+auto-approve. Worst case, a package with unwanted side effects gets
+installed into a disposable container that gets torn down.
+The deny list still guards against a handful of higher-severity foot-guns
+regardless of environment (credential reads, `rm`, `sudo`, force-pushes,
+and so on).
+
 > [!NOTE]
 > Claude's settings.json does NOT support inline comments.
 
