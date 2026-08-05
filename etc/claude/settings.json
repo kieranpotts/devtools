@@ -1,7 +1,6 @@
 {
-  // Auto-approves file edits.
-  "defaultMode": "acceptEdits",
   "permissions": {
+    "defaultMode": "acceptEdits",
     "allow": [
       "Read",
       "Grep",
