@@ -101,6 +101,14 @@
   "hard_tabs": false,
   "tab_size": 2,
   "agent": {
+    "profiles": {
+
+    },
+    "tool_permissions": {
+      // Auto-approve most tool calls. Dangerous operations
+      // like `rm -rf /` can't be overridden.
+      "default": "allow"
+    },
     "default_profile": "write",
     "default_model": {
       "provider": "ollama",
