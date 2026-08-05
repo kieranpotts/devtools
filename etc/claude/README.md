@@ -87,11 +87,17 @@ mutates the world outside of the current repository/workspace.
   to per-repo) are the activities that should stay deliberate, confirmed
   actions by the user.
 
-- Reading of `.env`, `~/.ssh` and other credentials are denied. These rules not
-  only apply to Claude's built-in tools, but also to shell commands like `cat`,
-  `head`, `tail`, and `sed`. But they do not apply to arbitrary subprocesses
-  that read or write files indirectly, like a Python or Node scripts that opens
-  files itself. So it's not a perfect sandbox.
+- Reading of `.env`, `~/.ssh` and other credentials are denied, using `**/`-rooted
+  globs (`Read(**/.env)`, `Read(**/.ssh/**)`, etc.) rather than `./`- or
+  `~/`-rooted ones. A `./`-rooted pattern only matches the exact working
+  directory at session start, missing nested cases like `apps/web/.env` in a
+  monorepo; `~`-expansion in permission globs isn't something to rely on
+  either. `**/` matches at any depth, so it catches both the conventional
+  location and any unexpected nested one. These rules not only apply to
+  Claude's built-in tools, but also to shell commands like `cat`, `head`,
+  `tail`, and `sed`. But they do not apply to arbitrary subprocesses that read
+  or write files indirectly, like a Python or Node scripts that opens files
+  itself. So it's not a perfect sandbox.
 
 - I've included explicit settings for `ls`, `cat`, `pwd`, `head`, `tail`,
   `wc`, `rg`, `fd`, `diff`, and read-only `git` subcommands. Out-of-the-box,

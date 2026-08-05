@@ -43,11 +43,11 @@
       "WebFetch(domain:docs.asciidoctor.org)"
     ],
     "deny": [
-      "Read(./.env)",
-      "Read(./.env.*)",
-      "Read(~/.ssh/**)",
-      "Read(~/.aws/**)",
-      "Read(~/.config/gh/**)",
+      "Read(**/.env)",
+      "Read(**/.env.*)",
+      "Read(**/.ssh/**)",
+      "Read(**/.aws/**)",
+      "Read(**/.config/gh/**)",
       "Read(**/credentials)",
       "Read(**/*.pem)",
       "Read(**/*.key)",
