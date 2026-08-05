@@ -66,8 +66,14 @@ My settings include both allow and deny lists that are designed to skip prompts
 for inspection and routine dev tasks, but to keep prompts for anything that
 mutates the world outside of the current repository/workspace.
 
-- `rm`, `sudo`, `dd`, `mkfs` are the classic foot-guns and stay on the deny.
-  File deletion is the operation most worth confirming explicitly.
+- `rm`, `sudo`, `dd`, `mkfs`, `chmod`, `chown`, `kill -9`, `killall`,
+  `shutdown`, `reboot`, and `crontab -r` are the classic foot-guns and stay on
+  the deny. File deletion, permission/ownership changes, forcefully killing
+  processes, and anything that stops the machine or wipes the user's cron
+  table are the operations most worth confirming explicitly. `docker system
+  prune`, `docker rm`, and `docker rmi` get the same treatment — bulk or
+  irreversible deletion of container state, same spirit as the `docker push`
+  deny below.
 
 - `git` and `npm` are allowed wholesale (`Bash(git *)`, `Bash(npm *)`) rather
   than as a list of specific subcommands, because the deny list backstops the

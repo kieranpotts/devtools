@@ -55,7 +55,13 @@
       "Bash(sudo *)",
       "Bash(dd *)",
       "Bash(mkfs *)",
-      "Bash(chmod 777 *)",
+      "Bash(chmod *)",
+      "Bash(chown *)",
+      "Bash(kill -9 *)",
+      "Bash(killall *)",
+      "Bash(shutdown *)",
+      "Bash(reboot *)",
+      "Bash(crontab -r*)",
       "Bash(git push *)",
       "Bash(git reset --hard *)",
       "Bash(git clean *)",
@@ -63,7 +69,10 @@
       "Bash(git config --global *)",
       "Bash(npm publish *)",
       "Bash(pnpm publish *)",
-      "Bash(docker push *)"
+      "Bash(docker push *)",
+      "Bash(docker system prune *)",
+      "Bash(docker rm *)",
+      "Bash(docker rmi *)"
     ]
   },
   "effortLevel": "medium",
