@@ -69,9 +69,13 @@ mutates the world outside of the current repository/workspace.
 - `rm`, `sudo`, `dd`, `mkfs` are the classic foot-guns and stay on the deny.
   File deletion is the operation most worth confirming explicitly.
 
-- `git commit` is allowed but `git push` is denied. Reasoning: local history
-  is cheap to fix, but remote history isn't. Same logic for `npm publish` and
-  `docker push`.
+- Read-only `git` subcommands (`status`, `diff`, `log`, `show`, `branch`) plus
+  `add`, `restore`, and `rm` are allowed, since these are either inert or
+  locally reversible. But `commit`, `push`, `reset --hard`, and `clean` are
+  all denied. Mutating revision history (even if append-only) and pushing new
+  artifacts to upstream repositories or registries — these activities should
+  be deliberate, confirmed actions by the user. The same logic applied for
+  `npm publish`, `pnpm publish`, and `docker push`.
 
 - Reading of `.env`, `~/.ssh` and other credentials are denied. These rules not
   only apply to Claude's built-in tools, but also to shell commands like `cat`,
@@ -80,9 +84,17 @@ mutates the world outside of the current repository/workspace.
   files itself. So it's not a perfect sandbox.
 
 - I've included explicit settings for `ls`, `cat`, `pwd`, `head`, `tail`,
-  `grep`, `find`, `diff`, and read-only `git` subcommands. Out-of-the-box,
-  Clause will run these in any mode anyway, so these configurations are
-  technically redundant, but I've included them anyway to document intent.
+  `wc`, `rg`, `fd`, `diff`, and read-only `git` subcommands. Out-of-the-box,
+  Claude will run these in any mode anyway (and `Grep`/`Glob` are separate
+  built-in tools, not Bash calls), so these configurations are technically
+  redundant, but I've included them anyway to document intent.
+
+- Routine dev-tooling is allowed outright: `npm`/`pnpm`/`yarn`/`npx`,
+  `python`/`pip`/`uv`/`pytest`/`ruff`/`mypy`, `make`, `docker compose`, `jq`,
+  and basic filesystem ops (`mkdir`, `touch`, `cp`, `mv`).
+
+- `WebSearch` is allowed, and `WebFetch` is scoped to a handful of trusted doc
+  domains (GitHub, Antora, Asciidoctor) rather than the open internet.
 
 - Per-project `.claude/settings.json` should add project-specific commands
   (eg. `Bash(terraform plan *)` for an infra repo) rather than putting them
