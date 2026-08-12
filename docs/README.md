@@ -1,5 +1,3 @@
-# Documentation
+# 📓 Developer documentation
 
-- [**Requirements**](./requirements.md)
-- [**Installation**](./installation.md)
-- [**Maintenance**](./maintenance.md)
+See [CONTRIBUTING](../CONTRIBUTING.md).
