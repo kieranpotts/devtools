@@ -22,47 +22,47 @@ SHOULD NOT, OPTIONAL, and MAY are to be interpreted as described in
 
 ## Project structure
 
-- **`etc/<tool>/`** \
+- `etc/<tool>/` \
   Source-of-truth config files, one directory per tool. See
   [`etc/README.md`](./etc/README.md) for the full list and each file's
   install target path.
 
-- **`bin/`** \
+- `bin/` \
   Bundled Windows binaries (x86-64/amd64) for use in Git Bash.
 
-- **`run/install`** \
+- `run/install` \
   POSIX shell installer. Backs up any existing config file
   (`--no-clobber`, dereferencing symlinks), then symlinks each file under
   `etc/` to its target location (e.g. `etc/claude/settings.json` →
   `~/.claude/settings.json`). Handles Windows (`MSYS=winsymlinks:nativestrict`)
   so `ln` creates real symlinks rather than copies. Windows-only apps
   (Sublime Merge, Windows Terminal, WSL) and Docker Desktop (which breaks
-  if its settings file is symlinked) require manual steps — see
+  if its settings file is symlinked) require manual steps. See
   `docs/installation.md`.
 
-- **`docs/`** \
+- `docs/` \
   `requirements.md`, `installation.md`, `maintenance.md` (where to fetch
   fresh Windows binaries and fonts).
 
 ## Tools
 
-- **`sh run/install`** to symlink all tracked configs into place (Linux;
+- Run `sh run/install` to symlink all tracked configs into place (Linux;
   run from Git Bash on Windows for the applicable subset).
 
 ## Rules
 
 - MUST update [`etc/README.md`](./etc/README.md) when adding, removing, or
-  retargeting a config file under `etc/` — it is the canonical map of
+  retargeting a config file under `etc/`. It is the canonical map of
   source file to install location.
 
 - MUST add a corresponding symlink command to `run/install` for any new
   config file that should be installed automatically (Docker Desktop's
-  settings file is the documented exception: it is copied, not symlinked).
+  settings file is the documented exception. It is copied, not symlinked).
 
 ## References
 
 This project follows Kieran Potts' technical standards. Read the relevant
-standard(s) below for the current task; their RFC 2119 rules MUST be
+standard(s) below for the current task. Their RFC 2119 rules MUST be
 followed unless explicitly overridden elsewhere in this file.
 
 - **[TS-9: Version Control](https://kieranpotts.com/standards/009)**
