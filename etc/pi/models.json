@@ -253,54 +253,6 @@
         {
           "_launch": true,
           "contextWindow": 32768,
-          "id": "north-mini-code-1.0:latest",
-          "input": [
-            "text"
-          ],
-          "reasoning": true,
-          "maxTokens": 8192,
-          "cost": {
-            "input": 0,
-            "output": 0,
-            "cacheRead": 0,
-            "cacheWrite": 0
-          }
-        },
-        {
-          "_launch": true,
-          "contextWindow": 32768,
-          "id": "ornith:9b",
-          "input": [
-            "text"
-          ],
-          "reasoning": false,
-          "maxTokens": 8192,
-          "cost": {
-            "input": 0,
-            "output": 0,
-            "cacheRead": 0,
-            "cacheWrite": 0
-          }
-        },
-        {
-          "_launch": true,
-          "contextWindow": 32768,
-          "id": "ornith:35b",
-          "input": [
-            "text"
-          ],
-          "reasoning": false,
-          "maxTokens": 8192,
-          "cost": {
-            "input": 0,
-            "output": 0,
-            "cacheRead": 0,
-            "cacheWrite": 0
-          }
-        },
-        {
-          "_launch": true,
-          "contextWindow": 32768,
           "id": "qwen3.6:27b",
           "input": [
             "text",
