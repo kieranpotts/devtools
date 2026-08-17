@@ -112,7 +112,6 @@ or ~22 GiB in the f16 fallback case. Against the on-disk sizes:
 
 | Model | On disk | 32k @ `q8_0` |
 | --- | --- | --- |
-| `nemotron3:33b` | 27 GB | ❌ — see below |
 | `nemotron-3-nano:30b` | 24 GB | ⚠️ tight (~29 GiB measured) |
 | `qwen3.6:35b` | 23 GB | ✅ |
 | `glm-4.7-flash`, `deepseek-r1:32b`, `gemma4:31b` | 19 GB | ✅ |
@@ -120,17 +119,6 @@ or ~22 GiB in the f16 fallback case. Against the on-disk sizes:
 | `magistral:24b` | 14 GB | ✅ |
 | `gpt-oss:20b`, `gpt-oss-safeguard:20b` | 13 GB | ✅ |
 | everything smaller | ≤9 GB | ✅ |
-
-> [!IMPORTANT]
-> `nemotron3:33b` is the one model that cannot take the server-wide 32768. At
-> 27 GB of weights it needs ~31 GiB even with `q8_0` KV, which exceeds the
-> budget. Give it a per-model `num_ctx` via a Modelfile (a Modelfile-pinned
-> `num_ctx` takes priority over `OLLAMA_CONTEXT_LENGTH`), or retire it in
-> favour of `qwen3.6:35b`, which is 4 GB smaller and fits.
->
-> Whichever way that is settled, Pi's `models.json` declares `contextWindow`
-> **32768** for `nemotron3:33b` — so until the model is capped or dropped, that
-> one entry over-declares and its history will be silently truncated.
 
 After any change, run `ollama ps` and confirm the model shows "100% GPU" (a
 CPU split means it doesn't fit) and the expected context length. For the full
@@ -161,7 +149,6 @@ every model's context will be capped to Ollama's `num_ctx` setting.
 | [`gpt-oss`](https://ollama.com/library/gpt-oss) `:20b`                      | MoE / 3.6B active                | text     | 128K              | Agentic: function calls, browsing, python; configurable reasoning effort.          |
 | [`gpt-oss-safeguard`](https://ollama.com/library/gpt-oss-safeguard) `:20b`  | MoE / 3.6B active                | text     | 128K              | Policy/content classification (Trust & Safety), not general chat.                  |
 | [`magistral`](https://ollama.com/library/magistral) `:24b`                  | dense 24B                        | text     | 128K (≤40K rec.)  | Transparent, multilingual reasoning.                                               |
-| [`nemotron3`](https://ollama.com/library/nemotron3) `:33b`                  | dense 33B                        | text+img | 128K              | Multimodal (text/img/video/audio) enterprise Q&A, summarization, doc intelligence. |
 | [`nemotron-3-nano`](https://ollama.com/library/nemotron-3-nano) `:4b`       | dense 4B                         | text     | 256K              | Efficient small agentic model; native tools.                                       |
 | [`nemotron-3-nano`](https://ollama.com/library/nemotron-3-nano) `:30b`      | hybrid Mamba-2 MoE / 3.5B active | text     | 1M                | Efficient long-context agentic; native tools.                                      |
 | [`qwen3.6`](https://ollama.com/library/qwen3.6) `:27b` `:35b`               | dense                            | text+img | 256K              | Agentic coding with thinking preservation.                                         |

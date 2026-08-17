@@ -70,10 +70,7 @@ Native context lengths per model, per the
 | `gpt-oss:20b` / `gpt-oss-safeguard:20b` | 32768           | 128K        | Capped to VRAM tier; local.                               |
 | `kimi-k2.7-code:cloud`                  | **262144**      | 256K        | Cloud-served — set to native max, VRAM cap doesn't apply. |
 | `magistral:24b`                         | 32768           | 128K (*)    | Capped to VRAM tier; local.                               |
-| `nemotron3:33b`                         | 32768           | 128K        | Capped to VRAM tier; local.                               |
 | `nemotron-3-nano:4b` / `:30b`           | 32768           | 256K / 1M   | Capped to VRAM tier; local.                               |
-| `north-mini-code-1.0`                   | 32768           | 256K        | Capped to VRAM tier; local.                               |
-| `ornith:9b` / `:35b`                    | 32768           | 256K        | Capped to VRAM tier; local. Text-only, no reasoning mode. |
 | `qwen3.6:27b` / `:35b`                  | 32768           | 256K        | Capped to VRAM tier; local.                               |
 
 (*) Mistral recommends ≤40K in practice.
