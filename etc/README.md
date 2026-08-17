@@ -1,6 +1,8 @@
 # The `etc` directory
 
-The `etc` directory contains configuration files for various devtools – some of which are cross-platform and so the same configurations can be shared between Windows and Linux installations, for example.
+The `etc` directory contains configuration files for various devtools – some of
+which are cross-platform and so the same configurations can be shared between
+Windows and Linux installations, for example.
 
 On Linux, the [installer](../run/install) creates the symlinks listed below automatically (except for Windows-only apps: Sublime Merge, Windows Terminal, and WSL). On Windows, symlinks must be created manually via PowerShell – see [docs/installation.md](../docs/installation.md#create-symlinks-to-the-configuration-files) for the commands.
 
@@ -15,6 +17,10 @@ Contents:
 - [`lazygit/config.yml`](./lazygit/config.yml): Configuration for [LazyGit](https://github.com/jesseduffield/lazygit). Symlinked to `~/.config/lazygit/config.yml`.
 
 - [`nvim/init.vim`](./nvim/init.vim): Configuration for [Neovim](https://neovim.io/). Symlinked to `~/.config/nvim/init.vim`.
+
+- [`ollama/config.json`](./ollama/config.json): Configuration for [Ollama](https://ollama.com/). Symlinked to `~/.ollama/config.json`.
+
+- [`ollama/override.conf`](./ollama/override.conf): systemd drop-in for the `ollama` service, setting the VRAM-related server options documented in [`ollama/README.md`](./ollama/README.md). _Copied_ (not symlinked) to `/etc/systemd/system/ollama.service.d/override.conf`. ⚠️ Requires root, so the install script cannot place it. Install manually and re-copy after any change — see [`ollama/README.md`](./ollama/README.md#the-drop-in). Linux only.
 
 - [`pi/settings.json`](./pi/settings.json): Configuration for [Pi](https://pi.dev/). Symlinked to `~/.pi/agent/settings.json`.
 
