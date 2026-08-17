@@ -102,6 +102,11 @@
   "hard_tabs": false,
   "tab_size": 2,
   "agent": {
+    "sandbox_permissions": {
+      "network_hosts": [
+        "en.wikipedia.org"
+      ]
+    },
     "profiles": {
 
     },
