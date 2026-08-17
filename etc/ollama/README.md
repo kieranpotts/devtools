@@ -161,6 +161,10 @@ every model's context will be capped to Ollama's `num_ctx` setting.
 | [`nemotron-3-nano`](https://ollama.com/library/nemotron-3-nano) `:30b`      | hybrid Mamba-2 MoE / 3.5B active | text     | 1M                | Efficient long-context agentic; native tools.                                      |
 | [`qwen3.6`](https://ollama.com/library/qwen3.6) `:27b` `:35b`               | dense                            | text+img | 256K              | Agentic coding with thinking preservation.                                         |
 
+I also use [`codellama:7b-code-q4_K_M`](https://ollama.com/library/codellama)
+for autocomplete via the [Llama Coder](https://marketplace.visualstudio.com/items?itemName=ex3ndr.llama-coder)
+VS Code extension.
+
 ### Cloud models
 
 Cloud models are offloaded to Ollama's servers rather than run locally, so
