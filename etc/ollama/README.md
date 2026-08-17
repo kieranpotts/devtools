@@ -101,6 +101,9 @@ would mean that KV size would be double.
 With 30.5 GiB of RAM the page cache cannot hold two ~20 GB model files, so every
 model switch is a real disk read.
 
+**`OLLAMA_KEEP_ALIVE=10m`.** Controls how long an idle model keeps its VRAM
+allocation before it is released. Default = 5m.
+
 **`OLLAMA_FLASH_ATTENTION` — deliberately unset.** Since Ollama 0.31.2 this is
 a tri-state override, not an opt-in switch. Unset it means "auto-enable wherever
 the runtime and device support it". Forcing `1` has caused quality regressions
