@@ -1,6 +1,5 @@
 {
   "permissions": {
-    "defaultMode": "acceptEdits",
     "allow": [
       "Bash(cat *)",
       "Bash(cp *)",
@@ -75,8 +74,10 @@
       "Read(**/.env.*)",
       "Read(**/.ssh/**)",
       "Read(**/credentials)"
-    ]
+    ],
+    "defaultMode": "acceptEdits"
   },
+  "model": "sonnet",
   "effortLevel": "medium",
-  "model": "sonnet"
+  "agentPushNotifEnabled": true
 }
