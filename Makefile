@@ -1,9 +1,13 @@
-.DEFAULT_GOAL := help
-
-install: ## Symlink devtools configurations into place, backing up any existing files
-	./run/install
-
-help: ## Show this help message
-	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
+#
+# Task runners for this project's development lifecycle.
+#
 
 .PHONY: install help
+
+help:
+	@echo "Available targets:"
+	@echo "  install  - Symlink devtools configurations into place, backing up any existing files"
+	@echo "  help     - Show this help message"
+
+install:
+	./run/install
