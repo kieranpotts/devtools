@@ -48,7 +48,7 @@
     "claude-acp": {
       "default_config_options": {
         "mode": "acceptEdits",
-        "effort": "low",
+        "effort": "medium",
       },
       "type": "registry",
     },
@@ -118,7 +118,7 @@
     "default_profile": "write",
     "default_model": {
       "provider": "ollama",
-      "model": "glm-5.2:cloud",
+      "model": "glm-5.3:cloud",
       "enable_thinking": true,
     },
     "favorite_models": [
