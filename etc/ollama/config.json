@@ -9,7 +9,7 @@
         "gemma4:26b",
         "gemma4:31b",
         "glm-4.7-flash:latest",
-        "glm-5.2:cloud",
+        "glm-5.3:cloud",
         "gpt-oss:20b",
         "gpt-oss-safeguard:20b",
         "kimi-k2.7-code:cloud",

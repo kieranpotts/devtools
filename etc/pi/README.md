@@ -51,7 +51,7 @@ offload means it doesn't fit).
 Diagnose truncation with `ollama ps` (shows the live context length) or the
 Ollama journal (`memory_seq_rm` entries mark tokens being evicted).
 
-The two `:cloud`-tagged models (`glm-5.2:cloud`, `kimi-k2.7-code:cloud`) are
+The two `:cloud`-tagged models (`glm-5.3:cloud`, `kimi-k2.7-code:cloud`) are
 exempt from this cap, since they run on Ollama's cloud infrastructure. Their
 `contextWindow` is set to their native context length, instead.
 
@@ -62,7 +62,7 @@ Native context lengths per model, per the [Ollama library](https://ollama.com/li
 | `deepseek-r1:8b` / `:14b` / `:32b`      | 32768           | 128K        | Capped to VRAM tier; local.                               |
 | `gemma4:12b` / `:26b` / `:31b`          | 32768           | 256K        | Capped to VRAM tier; local.                               |
 | `glm-4.7-flash`                         | 32768           | ~198K       | Capped to VRAM tier; local.                               |
-| `glm-5.2:cloud`                         | 999424          | ~976K (~1M) | Cloud-served — set to native max, VRAM cap doesn't apply. |
+| `glm-5.3:cloud`                         | 999424          | ~976K (~1M) | Cloud-served — set to native max, VRAM cap doesn't apply. |
 | `gpt-oss:20b` / `gpt-oss-safeguard:20b` | 32768           | 128K        | Capped to VRAM tier; local.                               |
 | `kimi-k2.7-code:cloud`                  | 262144          | 256K        | Cloud-served — set to native max, VRAM cap doesn't apply. |
 | `magistral:24b`                         | 32768           | 128K (*)    | Capped to VRAM tier; local.                               |

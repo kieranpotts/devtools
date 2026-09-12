@@ -4,7 +4,7 @@
     "keepRecentTokens": 14000,
     "reserveTokens": 8192
   },
-  "defaultModel": "glm-5.2:cloud",
+  "defaultModel": "glm-5.3:cloud",
   "defaultProvider": "ollama",
   "defaultThinkingLevel": "low",
   "enableSkillCommands": true,

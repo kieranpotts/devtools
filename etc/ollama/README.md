@@ -172,5 +172,5 @@ local VRAM and the `num_ctx` cap above do not apply to them.
 
 | Model                                                                  | Params                  | In       | Native ctx | Role / notes                                                                                                      |
 | ---------------------------------------------------------------------- | ----------------------- | -------- | ---------- | ----------------------------------------------------------------------------------------------------------------- |
-| [`glm-5.2`](https://ollama.com/library/glm-5.2) `:cloud`               | MoE ~750B / ~40B active | text     | ~1M        | Z.ai flagship. Long-horizon coding and agentic work; thinking effort selectable (high/max). MIT.                  |
+| [`glm-5.3`](https://ollama.com/library/glm-5.3) `:cloud`               | MoE ~753B / ~40B active | text     | ~1M        | Z.ai flagship. Long-horizon coding, agentic and security work; thinking effort selectable (low/high/max). Bespoke GLM-5.3 license, not MIT. |
 | [`kimi-k2.7-code`](https://ollama.com/library/kimi-k2.7-code) `:cloud` | MoE ~1T / 32B active    | text+img | 256K       | Moonshot AI coding specialist. End-to-end SWE workflows, multi-step tool calls, reasoning preserved across turns. |
