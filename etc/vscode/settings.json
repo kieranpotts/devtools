@@ -480,7 +480,7 @@
   /* Enable/disable GitHub Copilot Chat - it's no longer an extension. AI
   features MUST be enabled for the VS Code Speech extension to work,
   it seems. */
-  "chat.disableAIFeatures": false,
+  "chat.disableAIFeatures": true,
   "chat.viewSessions.orientation": "stacked",
 
   "claudeCode.selectedModel": "haiku",
