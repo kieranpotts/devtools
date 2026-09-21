@@ -124,11 +124,33 @@
     "favorite_models": [
       {
         "provider": "ollama",
-        "model": "gemma4:31b-cloud",
+        "model": "kimi-k2.7-code:cloud",
         "enable_thinking": true,
       },
     ],
     "model_parameters": [],
+  },
+  "language_models": {
+    "ollama": {
+      // `max_tokens` is sent as `num_ctx`. Zed's default is 4096. Values below are
+      // each model's maximum, as reported by `ollama show <model>`.
+      "available_models": [
+        {
+          "name": "glm-5.3:cloud",
+          "max_tokens": 1048576,
+          "supports_tools": true,
+          "supports_images": false,
+          "supports_thinking": true,
+        },
+        {
+          "name": "kimi-k2.7-code:cloud",
+          "max_tokens": 262144,
+          "supports_tools": true,
+          "supports_images": true,
+          "supports_thinking": true,
+        },
+      ],
+    },
   },
   "ui_font_size": 17.0,
   "buffer_font_size": 15.0,
