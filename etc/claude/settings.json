@@ -79,5 +79,10 @@
   },
   "model": "sonnet",
   "effortLevel": "medium",
-  "agentPushNotifEnabled": true
+  "agentPushNotifEnabled": true,
+  "modelSettings": {
+    "claude-opus-5-5": {
+      "effortLevel": "high"
+    }
+  }
 }
