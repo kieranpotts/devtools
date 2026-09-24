@@ -485,6 +485,7 @@
 
   "claudeCode.selectedModel": "haiku",
   "claudeCode.preferredLocation": "panel",
+  "claudeCode.archiveInactiveSessions": 7
 
   /* ---------------------------------------------------------------------------
   Previews
