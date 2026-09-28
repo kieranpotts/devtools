@@ -47,7 +47,7 @@
   "agent_servers": {
     "claude-acp": {
       "default_config_options": {
-        "model": "sonnet",
+        "model": "opus",
         "mode": "acceptEdits",
         "effort": "medium",
       },
@@ -104,6 +104,7 @@
   "tab_size": 2,
   "agent": {
     "sandbox_permissions": {
+      "allow_unsandboxed": true,
       "network_hosts": [
         "en.wikipedia.org"
       ]
