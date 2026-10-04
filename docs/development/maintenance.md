@@ -6,7 +6,7 @@ The binaries bundled in this repository are for the x86-64 architecture, also
 known as x86_64, x64, or amd64, and compatible with the 64-bit CPU architecture
 used in Intel and AMD processors.
 
-- [**delta**](https://github.com/dandavison/delta/releases) \
+- [**git-delta**](https://github.com/dandavison/delta/releases) \
   Look for `delta-<version>-x86_64-pc-windows-msvc.zip`
 
 - [**htmlq**](https://github.com/mgdm/htmlq/releases) \
