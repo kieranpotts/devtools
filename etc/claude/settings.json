@@ -82,9 +82,15 @@
   "modelSettings": {
     "claude-opus-5-5": {
       "effortLevel": "high"
+    },
+    "claude-sonnet-5": {
+      "effortLevel": "low"
+    },
+    "claude-sonnet-5-5": {
+      "effortLevel": "medium"
     }
   },
   "tui": "fullscreen",
-  "agentPushNotifEnabled": true,
-  "autoMemoryEnabled": false
+  "autoMemoryEnabled": false,
+  "agentPushNotifEnabled": true
 }
