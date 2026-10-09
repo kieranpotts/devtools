@@ -77,7 +77,7 @@
     ],
     "defaultMode": "acceptEdits"
   },
-  "model": "sonnet",
+  "model": "opus",
   "effortLevel": "medium",
   "modelSettings": {
     "claude-opus-5-5": {

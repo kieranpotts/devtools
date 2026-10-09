@@ -165,6 +165,25 @@ I also use [`codellama:7b-code-q4_K_M`](https://ollama.com/library/codellama)
 for autocomplete via the [Llama Coder](https://marketplace.visualstudio.com/items?itemName=ex3ndr.llama-coder)
 VS Code extension.
 
+For edit predictions in Zed I use [Zeta 2.1](https://huggingface.co/zed-industries/zeta-2.1),
+Zed's own 8B edit prediction model. It is not in Ollama's library, so
+[`run/install-zeta`](../../run/install-zeta) pulls a community GGUF build from
+Hugging Face and aliases it to `zeta2.1`, the name that
+[`etc/zed/settings.json`](../zed/settings.json) points at.
+
+```sh
+make install-zeta
+```
+
+The default quantization is `Q4_K_M` (~5 GB). Pass another tag to the script
+to change it, eg `./run/install-zeta Q8_0`.
+
+> [!WARNING]
+> `OLLAMA_MAX_LOADED_MODELS=1` means Zeta and a local agent model cannot be
+> loaded together. Every edit prediction evicts the agent's model, and vice
+> versa, at the cost of a full reload each time. Pair Zed's edit predictions
+> with a cloud model for agent work.
+
 ### Cloud models
 
 Cloud models are offloaded to Ollama's servers rather than run locally, so

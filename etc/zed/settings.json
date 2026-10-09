@@ -98,6 +98,18 @@
   "use_auto_surround": false,
   "show_whitespaces": "all",
   "show_edit_predictions": true,
+  "edit_predictions": {
+    // Zeta 2.1 served by the local Ollama server. The model is not in Ollama's
+    // library. Install it with `run/install-zeta` from the devtools repo.
+    "provider": "ollama",
+    "ollama": {
+      "api_url": "http://localhost:11434",
+      "model": "zeta2.1",
+      // Set explicitly, not left to "infer", which depends on the model name.
+      "prompt_format": "zeta2_1",
+      "max_output_tokens": 512,
+    },
+  },
   "indent_guides": {
     "enabled": true,
   },

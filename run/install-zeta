@@ -1,0 +1,87 @@
+#!/bin/sh
+set -eu
+
+#
+# Installs Zeta 2.1, Zed's open-weight edit prediction model, into the local
+# Ollama model store, under the name that Zed's settings refer to.
+#
+# Zeta is not in Ollama's own library, so a community GGUF build is pulled
+# from Hugging Face and then aliased to `zeta2.1`. The alias keeps the choice
+# of quantization out of `etc/zed/settings.json`.
+#
+# Usage: run/install-zeta [<quantization>]
+#
+#   <quantization>  GGUF quantization tag to pull, eg `Q4_K_M` (the default,
+#                   ~5 GB) or `Q8_0` (~9 GB). Re-run with a different tag to
+#                   repoint the alias.
+#
+# Dependencies: `ollama`, with its server running.
+#
+# Exit codes:
+#
+#   0  Success.
+#   1  Invalid arguments.
+#   2  Ollama is not installed.
+#   3  The Ollama server is not reachable.
+#   4  Failed to pull or alias the model.
+#
+
+readonly repository="hf.co/mradermacher/zeta-2.1-GGUF"
+readonly alias_name="zeta2.1"
+
+# Prints an error message to stderr.
+#
+# Arguments:
+#   $1  The message.
+
+error() {
+  printf 'install-zeta: %s\n' "$1" >&2
+}
+
+if [ $# -gt 1 ]; then
+  error "expected at most one argument, got $#."
+  exit 1
+fi
+
+readonly quantization="${1:-Q4_K_M}"
+
+# The quantization becomes part of a model reference, so restrict it to the
+# characters that GGUF quantization tags are made of.
+
+case "${quantization}" in
+  '' | *[!A-Za-z0-9_]*)
+    error "invalid quantization '${quantization}'."
+    exit 1
+    ;;
+esac
+
+readonly source_name="${repository}:${quantization}"
+
+if ! command -v ollama > /dev/null 2>&1; then
+  error "ollama is not installed. See https://ollama.com/download"
+  exit 2
+fi
+
+if ! ollama list > /dev/null 2>&1; then
+  error "cannot reach the Ollama server. Is the ollama service running?"
+  exit 3
+fi
+
+printf 'Pulling %s ...\n' "${source_name}" >&2
+
+if ! ollama pull "${source_name}" >&2; then
+  error "failed to pull ${source_name}."
+  exit 4
+fi
+
+# `ollama cp` overwrites an existing destination, so re-running this script
+# with a different quantization repoints the alias. The copy shares the
+# source's blobs. It takes no extra disk space.
+
+if ! ollama cp "${source_name}" "${alias_name}" >&2; then
+  error "failed to alias ${source_name} as ${alias_name}."
+  exit 4
+fi
+
+printf '== Installed %s as %s ==\n' "${source_name}" "${alias_name}" >&2
+printf 'Restart Zed for edit predictions to use the model.\n' >&2

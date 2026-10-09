@@ -40,6 +40,12 @@ SHOULD NOT, OPTIONAL, and MAY are to be interpreted as described in
   if its settings file is symlinked) require manual steps. See
   `docs/installation.md`.
 
+- `run/install-zeta` \
+  POSIX shell script. Pulls the Zeta 2.1 edit prediction model into the
+  local Ollama model store and aliases it to `zeta2.1`, the model name
+  that `etc/zed/settings.json` points at. Not run by `run/install`. See
+  [`etc/ollama/README.md`](./etc/ollama/README.md).
+
 - `docs/` \
   `requirements.md`, `installation.md`, `maintenance.md` (where to fetch
   fresh Windows binaries and fonts).
