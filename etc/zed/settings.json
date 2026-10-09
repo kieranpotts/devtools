@@ -52,9 +52,9 @@
         "mode": "acceptEdits",
         "effort": "high",
       },
-      "env": {
-        "CLAUDE_CODE_EXECUTABLE": "/usr/bin/claude"
-      }
+      // "env": {
+      //   "CLAUDE_CODE_EXECUTABLE": "/usr/bin/claude"
+      // }
     }
   },
   "buffer_font_weight": 400.0,
