@@ -141,6 +141,11 @@
     "favorite_models": [
       {
         "provider": "ollama",
+        "model": "glm-5.3-flash:cloud",
+        "enable_thinking": true,
+      },
+      {
+        "provider": "ollama",
         "model": "kimi-k2.7-code:cloud",
         "enable_thinking": true,
       },
