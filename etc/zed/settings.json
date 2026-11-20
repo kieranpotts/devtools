@@ -49,7 +49,7 @@
       "type": "registry",
       "default_config_options": {
         "model": "sonnet",
-        "mode": "acceptEdits",
+        "mode": "default",
         "effort": "high",
       },
       "env": {
