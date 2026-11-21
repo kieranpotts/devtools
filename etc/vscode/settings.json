@@ -483,6 +483,9 @@
   "chat.disableAIFeatures": true,
   "chat.viewSessions.orientation": "stacked",
 
+  /* Disable Claude Code's built-in memory. */
+  "chat.copilot.memory.enabled": false,
+
   "claudeCode.selectedModel": "haiku",
   "claudeCode.preferredLocation": "panel",
   "claudeCode.archiveInactiveSessions": 7,
